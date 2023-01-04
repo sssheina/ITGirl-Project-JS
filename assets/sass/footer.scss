@@ -1,4 +1,16 @@
 footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     background-color: #F4A48D;
+    height: 33px;
+    // color: white;
+
+    // margin-bottom: -50px;
+}
+
+.footer__text {
+    color: white;
+    margin: 10px auto;
+    text-align: center;
 }

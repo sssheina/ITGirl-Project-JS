@@ -685,11 +685,11 @@ h6 {
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
   line-height: 1;
-  background: #fafafa;
+  background: white;
   font-size: 14px;
-  color: #252b42;
+  color: #757575;
   font-weight: 500;
   font-family: Montserrat;
 }
@@ -711,7 +711,7 @@ body {
   background: #F4A48D;
   color: #fff;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 20px;
   outline: none;
 }
 
@@ -776,14 +776,45 @@ body {
   width: 40px;
   background-color: white;
   color: #F4A48D;
-  font-size: 30px;
-  font-weight: 600;
-  vertical-align: middle;
+}
+
+.header__buttonpic {
+  width: 22px;
+  height: 22px;
+  text-align: center;
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   background-color: #F4A48D;
+  height: 33px;
+}
+
+.footer__text {
+  color: white;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.page__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-block__body {
+  display: flex;
+  flex-direction: row;
+}
+
+.breadcrumb {
+  font-weight: 800;
+  font-size: 14px;
+  color: #757575;
+  padding-left: 1.2em;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */
