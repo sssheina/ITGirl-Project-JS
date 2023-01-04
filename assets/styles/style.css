@@ -706,7 +706,6 @@ body {
 .btn {
   width: 100%;
   padding: 9px 10px;
-  font-size: 18px;
   font-weight: 600;
   border: 0px;
   background: #F4A48D;
@@ -729,7 +728,7 @@ body {
 }
 
 ._container {
-  max-width: 1046px;
+  width: 1046px;
   padding: 0px 15px;
   margin: 0px auto;
   box-sizing: content-box;
@@ -744,6 +743,47 @@ body {
 
 .input:focus {
   border: 1px solid #F4A48D;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  background-color: #F4A48D;
+}
+
+.header__logopic {
+  height: 54px;
+  margin-right: 1em;
+  vertical-align: middle;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-size: 30px;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+}
+
+.header__button {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  color: #F4A48D;
+  font-size: 30px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+footer {
+  width: 100%;
+  background-color: #F4A48D;
 }
 
 /*# sourceMappingURL=style.css.map */

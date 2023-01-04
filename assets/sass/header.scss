@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    background-color: #F4A48D;
+}
+.header__logopic {
+    height: 54px;
+    margin-right: 1em;
+    vertical-align: middle;
+}
+
+.header__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+.header__logo {
+    font-size: 30px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 1);
+    ;
+}
+.header__button {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color:#F4A48D;
+    font-size: 30px;
+    font-weight: 600;
+    vertical-align: middle;
+}
