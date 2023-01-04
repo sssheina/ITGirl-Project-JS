@@ -6,8 +6,10 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -42,9 +44,12 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /**
@@ -52,8 +57,10 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Text-level semantics
@@ -70,9 +77,12 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
 }
 
 /**
@@ -90,8 +100,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /**
@@ -141,10 +153,14 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
 }
 
 /**
@@ -152,7 +168,8 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -161,7 +178,8 @@ input { /* 1 */
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -210,12 +228,18 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -238,8 +262,10 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -255,8 +281,10 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /**
@@ -271,8 +299,10 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /* Interactive
@@ -424,9 +454,12 @@ audio:not([controls]) {
  *    user zoom.
  */
 html {
-  font-size: 100%; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -ms-text-size-adjust: 100%; /* 2 */
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /**
@@ -449,8 +482,10 @@ a:hover {
  * 2. Improve image quality when scaled in IE 7.
  */
 img {
-  border: 0; /* 1 */
-  -ms-interpolation-mode: bicubic; /* 2 */
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
 }
 
 /**
@@ -482,10 +517,13 @@ fieldset {
  * 3. Correct alignment displayed oddly in IE 6/7.
  */
 legend {
-  border: 0; /* 1 */
+  border: 0;
+  /* 1 */
   padding: 0;
-  white-space: normal; /* 2 */
-  *margin-left: -7px; /* 3 */
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
 }
 
 /**
@@ -498,10 +536,14 @@ button,
 input,
 select,
 textarea {
-  font-size: 100%; /* 1 */
-  margin: 0; /* 2 */
-  vertical-align: baseline; /* 3 */
-  *vertical-align: middle; /* 3 */
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
 }
 
 /**
@@ -537,9 +579,12 @@ button,
 html input[type=button],
 input[type=reset],
 input[type=submit] {
-  -webkit-appearance: button; /* 2 */
-  cursor: pointer; /* 3 */
-  *overflow: visible; /* 4 */
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
 }
 
 /**
@@ -558,10 +603,14 @@ html input[disabled] {
  */
 input[type=checkbox],
 input[type=radio] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-  *height: 13px; /* 3 */
-  *width: 13px; /* 3 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
 }
 
 /**
@@ -570,9 +619,11 @@ input[type=radio] {
  *    (include `-moz` to future-proof).
  */
 input[type=search] {
-  -webkit-appearance: textfield; /* 1 */
+  -webkit-appearance: textfield;
+  /* 1 */
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box; /* 2 */
+  -webkit-box-sizing: content-box;
+  /* 2 */
   box-sizing: content-box;
 }
 
@@ -599,8 +650,10 @@ input::-moz-focus-inner {
  * 2. Improve readability and alignment in all browsers.
  */
 textarea {
-  overflow: auto; /* 1 */
-  vertical-align: top; /* 2 */
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
 }
 
 /**
@@ -808,6 +861,69 @@ footer {
   flex-direction: row;
 }
 
+
+.menu__list {
+  width: 309px;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.menu__item {
+  padding: 15px;
+  display: block;
+  background: #F4A48D;
+  margin: 20px;
+}
+
+.showSub {
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.active + .nav_sub {
+  display: block;
+}
+
+.show.nav_active {
+  color: #000;
+  outline: 0;
+  font-weight: 400;
+}
+
+.menu_sub {
+  display: none;
+}
+
+li {
+  display: block;
+}
+
+ul {
+  padding: 0;
+  margin-top: 8px;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+li:not(.nav_active):hover a {
+  color: #eee;
+=======
 .inbox__name {
   width: 667px;
   height: 54px;
@@ -846,6 +962,7 @@ footer {
   height: 47px;
   font-size: 16px;
   font-weight: 800;
+
 }
 
 .breadcrumb {
@@ -856,5 +973,3 @@ footer {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-
-/*# sourceMappingURL=style.css.map */
