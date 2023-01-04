@@ -32,7 +32,7 @@
       <!-- ОСНОВНОЙ БЛОК -->
 
       <main class="page">
-        <div class="page__inbox">
+        <!-- <div class="page__inbox"> -->
           <div class="page__container _container">
             <!-- ХЛЕБНЫЕ КРОШКИ -->
 
@@ -62,27 +62,32 @@
 
                   <!-- ОСНОВНОЙ КОНТЕНТ -->
 
-                  <section class="page__contact contact">
-                    <div class="contact__container _container">
+                  <section class="page__inbox">
+                    <div class="inbox__container ">
                       <!-- ИНПУТ -->
 
-                      <div>
-                        <div class="inputfield">
-                          <label>Name</label>
-                          <input type="text" class="input" id="userName" />
+                      <div class="inbox__name">ВХОДЯЩИЕ
                         </div>
+                        <div class="inbox__enterBlock">
+                        <div class="inbox__inputfield">
+                          <label class="inbox__lable" >ВВЕДИТЕ НАЗВАНИЕ</label>
+                          <textarea type="textarea" rows="3" cols="45" class="inbox__input input" id="inboxInput"></textarea>
+                        
                       </div>
                       <div>
-                        <input type="submit" value="Register" class="btn" />
+                        <button  class="inbox__button btn">СОХРАНИТЬ</button>
                       </div>
+                        </div>
+                    
 
                       <!-- СПИСОК ВХОДЯЩИХ-->
                       <div></div>
                     </div>
+                    </div>
                   </section>
                 </div>
               </div>
-            </div>
+            <!-- </div> -->
           </div>
         </div>
       </main>
