@@ -1,0 +1,24 @@
+.btn{
+    width: 100%;
+    padding: 9px 10px;
+    font-size: 18px;
+    font-weight: 600; 
+    border: 0px;
+    background:  #F4A48D;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 30px;
+    outline: none;
+  }
+
+  .btn:hover{
+    background: #fdc2b1;
+  }
+
+  .checkmark {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #F4A48D;
+    display: block;
+    position: relative;
+}
