@@ -26,6 +26,7 @@
     width: 667px;
     height: 256px;
     background-color: rgba(244, 164, 141, 0.18);
+    margin-bottom: 60px;
 }
 .inbox__inputfield {
     display: flex;
@@ -46,3 +47,23 @@ font-weight: 800;
 }
 
 
+.inbox__listItem {
+    display: grid;
+    grid-template-columns: 1fr 13fr 1.5fr 1.5fr;
+    align-items: center;
+    border: 1px dashed #CCD1D0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.3em;
+}
+.inbox__item {
+    font-size: 12px;
+    font-weight: 600;
+}
+.inbox__btn {
+    height: 40px;
+    width: 40px;
+    background-color: #F4A48D;
+    color:white;
+}
