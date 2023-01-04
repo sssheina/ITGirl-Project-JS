@@ -5,6 +5,7 @@
 .main-block__body {
     display: flex;
     flex-direction: row;
+    justify-content: space-between
 }
 
 .inbox__name {
@@ -43,3 +44,4 @@ font-weight: 600;
     font-size: 16px;
 font-weight: 800;
 }
+
