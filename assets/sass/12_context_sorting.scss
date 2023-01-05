@@ -93,3 +93,8 @@ font-weight: 800;
 .contexts__block {
     width: 667px;
 }
+
+.context-sorting__breadcrumb {
+    display: flex;
+    flex-direction: row;
+}
