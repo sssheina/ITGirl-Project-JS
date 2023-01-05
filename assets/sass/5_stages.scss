@@ -1,0 +1,251 @@
+.page__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-block__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.inbox__name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 667px;
+    height: 54px;
+    background-color: #F4A48D;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    padding-left: 35px;
+    padding-top: 15px;
+}
+
+.inbox__enterBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 667px;
+    height: 256px;
+    background-color: rgba(244, 164, 141, 0.18);
+    margin-bottom: 60px;
+}
+
+.inbox__inputfield {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+.inbox__lable {
+    padding-right: 34px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.inbox__button {
+    width: 280px;
+    height: 47px;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+.inbox__listItem {
+    display: grid;
+    grid-template-columns: 1fr 13fr 1.5fr 1.5fr;
+    align-items: center;
+    border: 1px dashed #CCD1D0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.3em;
+}
+
+.inbox__item {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.inbox__btn {
+    height: 40px;
+    width: 40px;
+    background-color: #F4A48D;
+    color: white;
+}
+.check{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+
+  .check input[type="checkbox"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .checkmark{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #F4A48D;
+    display: block;
+    position: relative;
+  }
+
+  .checkmark:before{
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 5px;
+    height: 2px;
+    border: 2px solid;
+    border-color: transparent transparent #fff #fff;
+    transform: rotate(-45deg);
+    display: none;
+  }
+
+  .check input[type="checkbox"]:checked ~ .checkmark{
+    background: #F4A48D;
+  }
+  .check input[type="checkbox"]:checked ~ .checkmark:before{
+    display: block;
+    box-sizing: unset;
+  }
+  
+
+.inbox__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 35px;
+    gap: 322px;
+
+    width: 667px;
+    height: 70px;
+    background: #F4A48D;
+
+}
+
+.page__breadcrumb {
+    display: flex;
+    flex-direction: row;
+}
+.page__container {
+    display: flex;
+    flex-direction: column;
+}
+.main-block__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.inbox__name {
+    width: 667px;
+    height: 54px;
+    background-color: #F4A48D;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    padding-left: 35px;
+    padding-top: 15px;
+}
+
+.inbox__stages {
+    width: 667px;
+    height: 54px;
+    background: rgba(244, 164, 141, 0.18);
+    color: #F4A48D;
+    font-size: 20px;
+    font-weight: 800;
+    padding-left: 35px;
+    padding-top: 15px;
+}
+.inbox__enterBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 667px;
+    height: 256px;
+    background-color: rgba(244, 164, 141, 0.18);
+    margin-bottom: 60px;
+}
+.inbox__inputfield {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+.inbox__lable {
+padding-right: 34px;
+font-size: 16px;
+font-weight: 600;
+}
+
+.inbox__button {
+    width: 280px;
+    height: 47px;
+    font-size: 16px;
+font-weight: 800;
+}
+
+
+.inbox__listItem {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 11.5fr 1.5fr 1.5fr;
+    align-items: center;
+    border: 1px dashed #CCD1D0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.3em;
+}
+.inbox__item {
+    font-size: 12px;
+    font-weight: 600;
+}
+.inbox__btn {
+    height: 40px;
+    width: 40px;
+    background-color: #F4A48D;
+    color:white;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #F4A48D;
+    height: 33px;
+    // color: white;
+
+    // margin-bottom: -50px;
+}
+
+.footer__text {
+    color: white;
+    margin: 11px auto;
+    text-align: center;
+}
+
+.input {
+    outline: none;
+  border: 1px solid #d5dbd9;
+//   font-size: 15px;
+//   padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  border: 1px solid #F4A48D;
+}
