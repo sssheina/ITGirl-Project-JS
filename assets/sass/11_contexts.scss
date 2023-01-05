@@ -9,16 +9,23 @@
 }
 
 .contexts__name {
+    display: flex;
+    flex-direction: row;
     width: 667px;
-    height: 54px;
+    height: 70px;
     background-color: #F4A48D;
+    padding-left: 35px;
+    padding-right: 35px;
+    align-items: center;
+    justify-content: space-between;
+}
+.contexts__title {
     color: white;
     font-size: 20px;
     font-weight: 800;
-    padding-left: 35px;
-    padding-top: 15px;
+    
 }
-.contexts__enterBlock {
+.inbox__enterBlock {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -28,18 +35,18 @@
     background-color: rgba(244, 164, 141, 0.18);
     margin-bottom: 60px;
 }
-.contexts__inputfield {
+.inbox__inputfield {
     display: flex;
     flex-direction: row;
     align-items: center
 }
-.contexts__lable {
+.inbox__lable {
 padding-right: 34px;
 font-size: 16px;
 font-weight: 600;
 }
 
-.contexts__button {
+.inbox__button {
     width: 280px;
     height: 47px;
     font-size: 16px;
@@ -49,21 +56,88 @@ font-weight: 800;
 
 .contexts__listItem {
     display: grid;
-    grid-template-columns: 1fr 13fr 1.5fr 1.5fr;
+    grid-template-columns: 1fr;
     align-items: center;
     border: 1px dashed #CCD1D0;
     border-top: none;
     border-right: none;
     border-left: none;
     padding: 1.3em;
+    height: 70px;
 }
 .contexts__item {
+    
     font-size: 12px;
     font-weight: 600;
+    
 }
-.contexts__btn {
+
+.contexts__buttonPlus {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color:#F4A48D;
+}
+
+.contexts__buttonpic {
+    width: 22px;
+    height: 22px;
+    text-align: center;
+}
+.inbox__btn {
     height: 40px;
     width: 40px;
     background-color: #F4A48D;
     color:white;
+}
+.contexts__block {
+    width: 667px;
+}
+.contexts__home {
+    background-color:#ffc423;
+    
+}
+.contexts__phone {
+    background-color:#FBB4DA;
+    
+}
+
+.contexts__outdoors {
+    background-color:#CBD666;
+    
+}
+
+.contexts__computer {
+    background-color:#BEEAEA;
+    
+}
+
+.contexts__computer {
+    background-color:#BEEAEA;
+    
+}
+
+.contexts__delegating {
+    background-color:#fca0b2;
+    
+}
+
+.contexts__city {
+    background-color:#95FCCF;
+    
+}
+
+.contexts__school {
+    background-color:#DECCAA;
+    
+}
+
+.contexts__kindergarten {
+    background-color:#FFCB79;
+    
+}
+
+.contexts__minsk {
+    background-color:#8BDEF8;
+    
 }
