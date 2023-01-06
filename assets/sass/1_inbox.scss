@@ -61,9 +61,13 @@ font-weight: 800;
     font-size: 12px;
     font-weight: 600;
 }
-.inbox__btn {
+.inbox__btn-edit, .inbox__btn-delite {
     height: 40px;
     width: 40px;
     background-color: #F4A48D;
     color:white;
 }
+
+// .inbox__listItems {
+//     overflow: scroll;
+// }
