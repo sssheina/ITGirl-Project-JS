@@ -1,0 +1,203 @@
+.page__container {
+    display: flex;
+    flex-direction: column;
+}
+.main-block__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.checklist__name {
+    width: 667px;
+    height: 54px;
+    background-color: #F4A48D;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    padding-left: 35px;
+    padding-top: 15px;
+}
+.checklist__enterBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 667px;
+    height: 256px;
+    background-color: rgba(244, 164, 141, 0.18);
+    margin-bottom: 60px;
+}
+.checklist__inputfield {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+.checklist__lable {
+padding-right: 34px;
+font-size: 16px;
+font-weight: 600;
+}
+
+.checklist__button {
+    width: 280px;
+    height: 47px;
+    font-size: 16px;
+font-weight: 800;
+}
+
+
+.checklist__listItem {
+    display: grid;
+    grid-template-columns: 1fr 13fr 1.5fr 1.5fr;
+    align-items: center;
+    border: 1px dashed #CCD1D0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.3em;
+}
+.checklist__item {
+    font-size: 12px;
+    font-weight: 600;
+}
+.checklist__btn-edit, .checklist__btn-delite {
+    height: 40px;
+    width: 40px;
+    background-color: #F4A48D;
+    color:white;
+}
+
+
+
+
+// ЧЕК_ЛИСТ
+
+
+.container {
+    width: 600px;
+    margin: auto;
+    box-shadow: 0 0 2px hsla(0,0%,0%,0.2); 
+    // border-radius:6px;
+    background-color:rgba(244, 164, 141, 0.18);
+  }
+  
+  @keyframes shake {
+    from {left: -2px;}
+    to   {left: 2px;}
+  }
+  
+  @keyframes birth {
+    from {height:0;}
+    to   {height: 50px;}
+  }
+  
+  .task--row {
+    height: 50px;
+    padding:0 20px;
+    line-height:50px;
+  }
+  
+  .task__head {
+    background: #F4A48D;
+    color: white;
+    font-size: 20px;
+    font-weight:800;
+    height: 70px;
+    padding-top: 13px;
+    // border-top-left-radius:6px;
+    // border-top-right-radius:6px;
+  }
+  
+  .task__footer {
+    transition: all 0.2s cubic-bezier(.7,.2,.17,1);
+    background: #F4A48D;
+    // border-bottom-left-radius:6px;
+    // border-bottom-right-radius:6px;
+  }
+  
+  .task__footer:hover {background-color:rgba(7, 183, 206, 0.4)}
+  
+  .task {
+    overflow:hidden;
+    transition: all 0.2s 0.2s cubic-bezier(.7,.2,.17,1);
+    position:relative;
+    display:block;
+  }
+  
+  .task__check {
+    position: absolute;
+    left: -9999px; 
+    z-index: -1;
+  }
+  
+  .task__field {
+    transition: background-size 0.8s 0.2s cubic-bezier(.7,.2,.17,1),
+                background-color 0.2s cubic-bezier(.7,.2,.17,1),
+                height 0.2s 1s cubic-bezier(.7,.2,.17,1);
+    position:relative;
+    background-color:rgba(244, 164, 141, 0.12);
+    border-top: 1px solid #eee;
+    background-image: linear-gradient(to right, #FE5F55, red);
+    background-size: 0 2px;
+    background-repeat:no-repeat;
+    background-position: left bottom;
+  }
+  
+  .task__field:hover {background-color:white;}
+  
+  .task:first-child .task__field {
+    border-top:none;
+  }
+  
+  .task--new:last-child {
+    animation: birth 0.3s cubic-bezier(.7,.2,.17,1) 1;
+  }
+  
+  .task__field.shaking {
+    animation: shake 0.1s 0.1s infinite ease-in-out;
+    background-size: 100% 2px;
+  }
+  
+  .task__check:checked + .task__field {
+    color: rgba(7, 183, 206, 0.8);
+  }
+  
+  .task__important {
+    transition: all 0.3s cubic-bezier(.09,.66,.36,1.8);
+    opacity:0;
+    position: absolute;
+    right:0;
+    top:0;
+    transform: scale(0);
+    color: #47D185;
+    font-size:1.4em;
+    height:50px;
+    width:50px;
+    border:0;
+    background:none;
+  }
+  
+  .task__check:checked + .task__field > .task__important {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  
+  .task__field.delete {
+    transition: all 0.2s cubic-bezier(.7,.2,.17,1);
+    transform: scale(1.5, 2);
+    height:0;
+    opacity:0;
+  }
+  
+  .task__add {
+    height:50px;
+    border:0;
+    background:none;
+    width:100%;
+    color:white;
+  }
+  
+  
+  
+  
