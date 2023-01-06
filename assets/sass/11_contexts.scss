@@ -1,0 +1,67 @@
+.contexts__container {
+    display: flex;
+    flex-direction: column;
+}
+.contexts__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.contexts__name {
+    display: flex;
+    flex-direction: row;
+    width: 667px;
+    height: 70px;
+    background-color: #F4A48D;
+    padding-left: 35px;
+    padding-right: 35px;
+    align-items: center;
+    justify-content: space-between;
+}
+.contexts__title {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    
+}
+
+.contexts__listItem {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    border: 1px dashed #CCD1D0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.3em;
+    height: 70px;
+}
+.contexts__item {
+    
+    font-size: 12px;
+    font-weight: 600;
+    
+}
+
+.contexts__buttonPlus {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color:#F4A48D;
+}
+
+.contexts__buttonpic {
+    width: 22px;
+    height: 22px;
+    text-align: center;
+}
+.inbox__btn {
+    height: 40px;
+    width: 40px;
+    background-color: #F4A48D;
+    color:white;
+}
+.contexts__block {
+    width: 667px;
+}

@@ -1,0 +1,73 @@
+.waiting-list__container, .waiting-list__container-main, .waiting-list__container-page  {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.waiting-list__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.waiting-list__name {
+    display: flex;
+    flex-direction: row;
+    width: 667px;
+    height: 70px;
+    background-color: #F4A48D;
+    padding-left: 35px;
+    padding-right: 35px;
+    align-items: center;
+    justify-content: space-between;
+}
+.waiting-list__title, .waiting-list__sort {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    
+}
+
+
+.waiting-list__listItem {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 7fr 4fr 1.5fr 1.5fr;
+    align-items: center;
+    border: 1px dashed #CCD1D0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.3em;
+    height: 70px;
+}
+.waiting-list__item {
+    
+    font-size: 12px;
+    font-weight: 600;
+    
+}
+
+
+
+.waiting-list__block {
+    width: 667px;
+}
+
+.waiting-list__breadcrumb {
+    display: flex;
+    flex-direction: row;
+}
+
+.waiting-list__btn-edit, .waiting-list__btn-delite {
+    height: 40px;
+    width: 40px;
+    background-color: #F4A48D;
+    color:white;
+}
+
+
+.waiting-list__buttonpic {
+    width: 22px;
+    height: 22px;
+    text-align: center;
+}

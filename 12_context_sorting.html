@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./assets/images/logo_peach.png">
-    <link rel="stylesheet" href="./dist/styles/style.css" >
+      href="./assets/images/logo_peach.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="./dist/styles/style.css" />
     <title>ПЛАНЕР</title>
   </head>
   <body>
@@ -20,7 +22,8 @@
             ><img
               class="header__logopic"
               src="./assets/images/logo_white.svg"
-              alt="logo">ПЛАНЕР</a
+              alt="logo"
+            />ПЛАНЕР</a
           >
           <nav class="header__menu menu">
             <ul class="menu__list"></ul>
@@ -29,30 +32,30 @@
             <img
               class="header__buttonpic"
               src="./assets/images/plus_peach_transparent.png"
-              alt="logo_white">
-         
+              alt="logo_white"
+            />
           </button>
         </div>
       </header>
 
       <!-- ОСНОВНОЙ БЛОК -->
 
-      <main class="projects">
-        <div class="projects__container _container">
+      <main class="context-sorting">
+        <div class="context-sorting__container _container">
           <!-- ХЛЕБНЫЕ КРОШКИ -->
 
-          <ul class="projects__breadcrumb breadcrumb">
+          <ul class="context-sorting__breadcrumb breadcrumb">
             <li class="active">
-              <a href="./4_projects.html"
-                ><span class="projects__breadcrumb_main breadcrumb"
-                  >АКТУАЛЬНЫЕ</span
+              <a href="./11_contexts.html"
+                ><span class="context-sorting__breadcrumb_main breadcrumb"
+                  >КОНТЕКСТЫ</span
                 ></a
               >
             </li>
             <li class="active">
-              <a href="./4_projects.html"
-                ><span class="projects__breadcrumb-next breadcrumb-thin"
-                  >/ ПРОЕКТЫ</span
+              <a href="./12_context_sorting.html"
+                ><span class="context-sorting__breadcrumb-next breadcrumb-thin"
+                  >/ СОРТИРОВКА ПО КОНТЕКСТАМ</span
                 ></a
               >
             </li>
@@ -60,9 +63,9 @@
 
           <!-- КОНЕЦ ХЛЕБНЫЕ КРОШКИ -->
 
-          <div class="projects__main-block main-block">
-            <div class="projects__container-main _container">
-              <div class="projects__body">
+          <div class="context-sorting__main-block main-block">
+            <div class="context-sorting__container-main _container">
+              <div class="context-sorting__body">
                 <!-- БОКОВОЕ МЕНЮ -->
 
                 <nav class="page__menu menu">
@@ -103,157 +106,171 @@
 
                 <!-- ОСНОВНОЙ КОНТЕНТ -->
 
-                <section class="projects__page">
-                  <div class="projects__container-page">
-                    <div class="projects__name">
-                      <div class="projects__title">ПРОЕКТЫ</div>
+                <section class="context-sorting__page">
+                  <div class="context-sorting__container-page">
+                    <div class="context-sorting__name">
+                      <div class="context-sorting__title">
+                        СПИСОК КОНТЕКСТОВ:
+                        <span class="contexts__sort">ТЕЛЕФОН</span>
+                      </div>
                     </div>
 
                     <!-- СПИСОК КОНТЕКСТОВ-->
 
                     <!-- первый пункт -->
 
-                    <div class="projects__block">
-                      <div class="projects__listItem listItem">
+                    <div class="context-sorting__block">
+                      <div class="context-sorting__listItem listItem">
                         <div
-                          class="projects__category category-ideas"
+                          class="context-sorting__category category-home"
                         ></div>
-                        <div class="projects__inputfield">
-                          <label class="projects__check check">
-                            <input type="checkbox" >
+                        <div class="context-sorting__inputfield">
+                          <label class="context-sorting__check check">
+                            <input type="checkbox" />
                             <span
-                              class="projects__checkmark checkmark"
+                              class="context-sorting__checkmark checkmark"
                             ></span>
                           </label>
                         </div>
-                        <div class="projects__item-name">
+                        <div class="context-sorting__item-name">
                           Позвонить в мастерскую
                         </div>
 
-                        
-                        <button class="projects__btn-edit btn">
+                        <div class="context-sorting__item">
+                          <span class="contexts__home phone-tag">@ТЕЛЕФОН</span>
+                        </div>
+                        <button class="context-sorting__btn-edit btn">
                           <img
-                            class="projects__buttonpic"
+                            class="header__buttonpic"
                             src="./assets/images/pencil_white.png"
                             alt="logo_white"
-                          >
+                          />
                         </button>
-                        <button class="projects__btn-delite btn">
+                        <button class="context-sorting__btn-delite btn">
                           <img
-                            class="projects__buttonpic"
+                            class="header__buttonpic"
                             src="./assets/images/delite_white.png"
                             alt="logo_white"
-                          >
+                          />
                         </button>
                       </div>
                     </div>
 
                     <!-- второй пункт -->
 
-                    <div class="projects__block">
-                      <div class="projects__listItem listItem">
+                    <div class="context-sorting__block">
+                      <div class="context-sorting__listItem listItem">
                         <div
-                          class="projects__category category-recreation"
+                          class="context-sorting__category category-recreation"
                         ></div>
 
-                        <div class="projects__inputfield">
-                          <label class="projects__check check">
-                            <input type="checkbox" >
+                        <div class="context-sorting__inputfield">
+                          <label class="context-sorting__check check">
+                            <input type="checkbox" />
                             <span
-                              class="projects__checkmark checkmark"
+                              class="context-sorting__checkmark checkmark"
                             ></span>
                           </label>
                         </div>
-                        <div class="projects__item-name">
-                          КУПИТЬ НОУТБУК
+                        <div class="context-sorting__item-name">
+                          Позвонить в мастерскую
                         </div>
 
-                        
-                        <button class="projects__btn-edit btn">
+                        <div class="context-sorting__item">
+                          <span class="contexts__home phone-tag">@ТЕЛЕФОН</span>
+                        </div>
+                        <button class="context-sorting__btn-edit btn">
                           <img
-                            class="projects__buttonpic"
+                            class="header__buttonpic"
                             src="./assets/images/pencil_white.png"
-                            alt="logo_white" >
-         
+                            alt="logo_white"
+                          />
                         </button>
-                        <button class="projects__btn-delite btn">
+                        <button class="context-sorting__btn-delite btn">
                           <img
-                            class="projects__buttonpic"
+                            class="header__buttonpic"
                             src="./assets/images/delite_white.png"
                             alt="logo_white"
-                          >
+                          />
                         </button>
                       </div>
                     </div>
 
                     <!-- третий пункт -->
 
-                    <div class="projects__block">
-                      <div class="projects__listItem listItem">
+                    <div class="context-sorting__block">
+                      <div class="context-sorting__listItem listItem">
                         <div
-                          class="projects__category category-sport"
+                          class="context-sorting__category category-self-development"
                         ></div>
-
-                        <div class="projects__inputfield">
-                          <label class="projects__check check">
-                            <input type="checkbox" >
+                        <div class="context-sorting__inputfield">
+                          <label class="context-sorting__check check">
+                            <input type="checkbox" />
                             <span
-                              class="projects__checkmark checkmark"
+                              class="context-sorting__checkmark checkmark"
                             ></span>
                           </label>
                         </div>
-                        <div class="projects__item-name">
-                          СХОДИТЬ В МАГАЗИН
+                        <div class="context-sorting__item-name">
+                          Позвонить в мастерскую
                         </div>
 
-                        
-                        <button class="projects__btn-edit btn">
+                        <div class="context-sorting__item">
+                          <span class="contexts__home phone-tag">@ТЕЛЕФОН</span>
+                        </div>
+                        <button class="context-sorting__btn-edit btn">
                           <img
-                            class="projects__buttonpic"
+                            class="header__buttonpic"
                             src="./assets/images/pencil_white.png"
                             alt="logo_white"
-                          >
+                          />
                         </button>
-                        <button class="projects__btn-delite btn">
+                        <button class="context-sorting__btn-delite btn">
                           <img
-                            class="projects__buttonpic"
+                            class="header__buttonpic"
                             src="./assets/images/delite_white.png"
-                            alt="logo_white">
+                            alt="logo_white"
+                          />
                         </button>
                       </div>
                     </div>
 
                     <!-- четвёртый пункт  -->
 
-                    <div class="projects__block">
-                      <div class="projects__listItem listItem">
+                    <div class="context-sorting__block">
+                      <div class="context-sorting__listItem listItem">
                         <div
-                          class="projects__category category-self-care"
+                          class="context-sorting__category category-job"
                         ></div>
 
-                        <div class="projects__inputfield">
-                          <label class="projects__check check">
-                            <input type="checkbox" >
+                        <div class="context-sorting__inputfield">
+                          <label class="context-sorting__check check">
+                            <input type="checkbox" />
                             <span
-                              class="projects__checkmark checkmark"
+                              class="context-sorting__checkmark checkmark"
                             ></span>
                           </label>
                         </div>
-                        <div class="projects__item-name">НАЙТИ МАСТЕРА</div>
+                        <div class="context-sorting__item-name">
+                          Позвонить в мастерскую
+                        </div>
 
-                        
-                        <button class="projects__btn-edit btn">
+                        <div class="context-sorting__item">
+                          <span class="contexts__home phone-tag">@ТЕЛЕФОН</span>
+                        </div>
+                        <button class="context-sorting__btn-edit btn">
                           <img
-                            class="projects__buttonpic"
+                            class="header__buttonpic"
                             src="./assets/images/pencil_white.png"
-                            alt="logo_white">
+                            alt="logo_white"
+                          />
                         </button>
-                        <button class="projects__btn-delite btn">
+                        <button class="context-sorting__btn-delite btn">
                           <img
-                            class="projects__buttonpic"
+                            class="header__buttonpic"
                             src="./assets/images/delite_white.png"
                             alt="logo_white"
-                          >
+                          />
                         </button>
                       </div>
                     </div>

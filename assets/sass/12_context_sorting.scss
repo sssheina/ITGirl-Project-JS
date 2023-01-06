@@ -1,0 +1,66 @@
+.context-sorting__container, .context-sorting__container-main, .context-sorting__container-page  {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.context-sorting__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.context-sorting__name {
+    display: flex;
+    flex-direction: row;
+    width: 667px;
+    height: 70px;
+    background-color: #F4A48D;
+    padding-left: 35px;
+    padding-right: 35px;
+    align-items: center;
+    justify-content: space-between;
+}
+.context-sorting__title, .context-sorting__sort {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    
+}
+
+
+.context-sorting__listItem {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 7fr 4fr 1.5fr 1.5fr;
+    align-items: center;
+    border: 1px dashed #CCD1D0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.3em;
+    height: 70px;
+}
+.context-sorting__item {
+    
+    font-size: 12px;
+    font-weight: 600;
+    
+}
+
+
+
+.context-sorting__block {
+    width: 667px;
+}
+
+.context-sorting__breadcrumb {
+    display: flex;
+    flex-direction: row;
+}
+
+.context-sorting__btn-edit, .context-sorting__btn-delite {
+    height: 40px;
+    width: 40px;
+    background-color: #F4A48D;
+    color:white;
+}
