@@ -46,7 +46,7 @@ function generateInboxList() {
 }
 
 function InboxDelite() {
-    inboxItem.innerHTML = "";
+    inboxItem.innerHTML = null;
 }
 
 
@@ -120,5 +120,8 @@ function checkList() {
 }
 
 checkList();
+
+
+
 
 },{}]},{},[1]);
