@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
 }
+
 .main-block__body {
     display: flex;
     flex-direction: row;
     justify-content: space-between
 }
 
-.inbox__name {
+.quick__name {
     width: 667px;
     height: 54px;
     background-color: #F4A48D;
@@ -18,36 +19,29 @@
     padding-left: 35px;
     padding-top: 15px;
 }
-.inbox__enterBlock {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 667px;
-    height: 256px;
-    background-color: rgba(244, 164, 141, 0.18);
-    margin-bottom: 60px;
-}
-.inbox__inputfield {
+
+
+.quick__inputfield {
     display: flex;
     flex-direction: row;
     align-items: center
 }
-.inbox__lable {
-padding-right: 34px;
-font-size: 16px;
-font-weight: 600;
+
+.quick__lable {
+    padding-right: 34px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
-.inbox__button {
+.quick__button {
     width: 280px;
     height: 47px;
     font-size: 16px;
-font-weight: 800;
+    font-weight: 800;
 }
 
 
-.inbox__listItem {
+.quick__listItem {
     display: grid;
     grid-template-columns: 1.5fr 1fr 11fr 1.5fr 1.5fr;
     align-items: center;
@@ -57,14 +51,16 @@ font-weight: 800;
     border-left: none;
     padding: 1.3em;
 }
-.inbox__item {
+
+.quick__item {
     font-size: 12px;
     font-weight: 600;
 }
-.inbox__btn {
+
+.quick__edit__btn,
+.quick__delete__btn  {
     height: 40px;
     width: 40px;
     background-color: #F4A48D;
-    color:white;
+    color: white;
 }
-
