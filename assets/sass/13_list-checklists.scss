@@ -1,17 +1,17 @@
-.projects__container,
-.projects__container-main,
-.projects__container-page {
+.list-checklists__container,
+.list-checklists__container-main,
+.list-checklists__container-page {
   display: flex;
   flex-direction: column;
 }
 
-.projects__body {
+.list-checklists__body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.projects__name {
+.list-checklists__name {
   display: flex;
   flex-direction: row;
   width: 667px;
@@ -22,16 +22,16 @@
   align-items: center;
   justify-content: space-between;
 }
-.projects__title,
-.projects__sort {
+.list-checklists__title,
+.list-checklists__sort {
   color: white;
   font-size: 20px;
   font-weight: 800;
 }
 
-.projects__listItem {
+.list-checklists__listItem {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 11fr 1.5fr 1.5fr;
+  grid-template-columns: 1fr 13fr 1.5fr 1.5fr;
   align-items: center;
   border: 1px dashed #ccd1d0;
   border-top: none;
@@ -40,39 +40,30 @@
   padding: 1.3em;
   height: 70px;
 }
-.projects__item {
+.list-checklists__item {
   font-size: 12px;
   font-weight: 600;
 }
 
-.projects__block {
+.list-checklists__block {
   width: 667px;
 }
 
-.projects__breadcrumb {
+.list-checklists__breadcrumb {
   display: flex;
   flex-direction: row;
 }
 
-.projects__btn-edit,
-.projects__btn-delite {
+.list-checklists__btn-edit,
+.list-checklists__btn-delite {
   height: 40px;
   width: 40px;
   background-color: #f4a48d;
   color: white;
 }
 
-.projects__buttonpic {
+.list-checklists__buttonpic {
   width: 22px;
   height: 22px;
   text-align: center;
-}
-
-
-
-.projects__buttonPlus {
-  height: 40px;
-  width: 40px;
-  background-color: white;
-  color: #f4a48d;
 }
