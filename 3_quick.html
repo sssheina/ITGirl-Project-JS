@@ -1,159 +1,211 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="./assets/images/logo_peach.png"
-      type="image/png"
-    />
-    <link rel="stylesheet" href="./dist/styles/style.css" />
-    <title>ПЛАНЕР</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- ХЕДЕР -->
 
-      <header class="header">
-        <div class="header__container _container">
-          <a href="./index.html" class="header__logo"
-            ><img
-              class="header__logopic"
-              src="./assets/images/logo_white.svg"
-              alt="logo"
-            />ПЛАНЕР</a
-          >
-          <nav class="header__menu menu">
-            <ul class="menu__list"></ul>
-          </nav>
-          <button class="header__button btn">
-            <img
-              class="header__buttonpic"
-              src="./assets/images/plus_peach_transparent.png"
-              alt="logo_white"
-            />
-          </button>
-        </div>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./assets/images/logo_peach.png" type="image/png" />
+  <link rel="stylesheet" href="./dist/styles/style.css" />
+  <title>3 страницв</title>
+</head>
 
-      <!-- ОСНОВНОЙ БЛОК -->
+<body>
+  <div class="wrapper">
+    <!-- ХЕДЕР -->
 
-      <main class="page">
-        <div class="page__container _container">
-          
+    <header class="header">
+      <div class="header__container _container">
+        <a href="./index.html" class="header__logo"><img class="header__logopic" src="./assets/images/logo_white.svg"
+            alt="logo" />ПЛАНЕР</a>
+        <nav class="header__menu menu">
+          <ul class="menu__list"></ul>
+        </nav>
+        <button class="header__button btn">
+          <img class="header__buttonpic" src="./assets/images/plus_peach_transparent.png" alt="logo_white" />
+        </button>
+      </div>
+    </header>
 
-          <!-- ХЛЕБНЫЕ КРОШКИ -->
+    <!-- ОСНОВНОЙ БЛОК -->
 
-          <ul class="page__breadcrumb breadcrumb">
-            <li class="active">
-              <a href="#"><span class="breadcrumb">БЫСТРЫЕ ДЕЛА</span></a>
-            </li>
-          </ul>
-
-          <!-- КОНЕЦ ХЛЕБНЫЕ КРОШКИ -->
+    <main class="page">
+      <div class="page__container _container">
 
 
-          <div class="page__main-block main-block">
-            <div class="main-block__container _container">
-              <div class="main-block__body">
-                <!-- БОКОВОЕ МЕНЮ -->
+        <!-- ХЛЕБНЫЕ КРОШКИ -->
 
-                <nav class="page__menu menu">
-                  <ul class="menu__list">
-                    <li class="menu__item menu_active">
-                      <a href="#" class="show">Входящие</a>
-                    </li>
-                    <li class="menu__item">
-                      <a href="#" class="show">Актуальные</a>
-                    </li>
-                    <li class="menu__item">
-                      <a href="#" class="show">Отложенные</a>
-                    </li>
-                    <li class="menu__item">
-                      <a href="#" class="show">Категории</a>
-                      <a href="#" class="showSub">Сортировка по категориям</a>
-                      <ul class="menu__sub">
-                        <li><a href="#">Дом</a></li>
-                        <li><a href="#">Здоровье</a></li>
-                        <li><a href="#">Семья</a></li>
-                      </ul>
-                    </li>
-                    <li class="menu__item">
-                      <a href="#" class="show">Контексты</a>
-                      <ul>
-                        <li class="menu__sub">
-                          <a href="#" class="show showSub"
-                            >Сортировка по контекстам</a
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="menu__item">
-                      <a href="#" class="show">Чек-листы</a>
-                    </li>
-                  </ul>
-                </nav>
+        <ul class="page__breadcrumb breadcrumb">
+          <li class="active">
+            <a href="#"><span class="breadcrumb">БЫСТРЫЕ ДЕЛА</span></a>
+          </li>
+        </ul>
+
+        <!-- КОНЕЦ ХЛЕБНЫЕ КРОШКИ -->
 
 
-                <!-- ОСНОВНОЙ КОНТЕНТ -->
+        <div class="page__main-block main-block">
+          <div class="main-block__container _container">
+            <div class="main-block__body">
+              <!-- БОКОВОЕ МЕНЮ -->
 
-                <section class="page__inbox">
-                    <div class="inbox__name">БЫСТРЫЕ ДЕЛА</div>
+              <nav class="page__menu menu">
+                <ul class="menu__list">
+                  <li class="menu__item menu_active">
+                    <a href="#" class="show">Входящие</a>
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" class="show">Актуальные</a>
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" class="show">Отложенные</a>
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" class="show">Категории</a>
+                    <a href="#" class="showSub">Сортировка по категориям</a>
+                    <ul class="menu__sub">
+                      <li><a href="#">Дом</a></li>
+                      <li><a href="#">Здоровье</a></li>
+                      <li><a href="#">Семья</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" class="show">Контексты</a>
+                    <ul>
+                      <li class="menu__sub">
+                        <a href="#" class="show showSub">Сортировка по контекстам</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu__item">
+                    <a href="#" class="show">Чек-листы</a>
+                  </li>
+                </ul>
+              </nav>
 
 
-                    <div class="inbox__listItem listItem">
-                        <div class="quick__categoryMark category-home"></div>
+              <!-- ОСНОВНОЙ КОНТЕНТ -->
 
-                        <!-- Чекбоксы -->
-  
+              <section class="page__inbox">
+                <div class="inbox__name">БЫСТРЫЕ ДЕЛА</div>
+
+                <!-- первое дело -->
+                <div class="inbox__listItem listItem">
+                  <div class="quick__categoryMark category-home"></div>
+
+                  <div class="inbox__inputfield">
+                    <label class="inbox__check check">
+                      <input type="checkbox" />
+                      <span class="inbox__checkmark checkmark"></span>
+                    </label>
+
+
+                    <div class="inbox__item"></div>
+                    <button class="inbox__btn btn">
+                      <img class="header__buttonpic" src="./assets/images/pencil_white.png" alt="logo_white" />
+                    </button>
+                    <button class="inbox__btn btn">
+                      <img class="header__buttonpic" src="./assets/images/delite_white.png" alt="logo_white" />
+                    </button>
+                  </div>
+                </div>
+
+                <!-- второе дело -->
+                <div class="inbox__listItem listItem">
+                  <div class="quick__categoryMark category-learning"></div>
+
+                  <div class="inbox__inputfield">
+                    <label class="inbox__check check">
+                      <input type="checkbox" />
+                      <span class="inbox__checkmark checkmark"></span>
+                    </label>
+
+                    <div class="inbox__item"></div>
+                    <button class="inbox__btn btn">
+                      <img class="header__buttonpic" src="./assets/images/pencil_white.png" alt="logo_white" />
+                    </button>
+                    <button class="inbox__btn btn">
+                      <img class="header__buttonpic" src="./assets/images/delite_white.png" alt="logo_white" />
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 3 дело -->
+                <div class="inbox__listItem listItem">
+                  <div class="quick__categoryMark category-job"></div>
+
+                  <div class="inbox__inputfield">
+                    <label class="inbox__check check">
+                      <input type="checkbox" />
+                      <span class="inbox__checkmark checkmark"></span>
+                    </label>
+
+                    <div class="inbox__item"></div>
+                    <button class="inbox__btn btn">
+                      <img class="header__buttonpic" src="./assets/images/pencil_white.png" alt="logo_white" />
+                    </button>
+                    <button class="inbox__btn btn">
+                      <img class="header__buttonpic" src="./assets/images/delite_white.png" alt="logo_white" />
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 4 дело -->
+                <div class="inbox__listItem listItem">
+                  <div class="quick__categoryMark category-self-development"></div>
+
+
+                  <div class="inbox__inputfield">
+                    <label class="inbox__check check">
+                      <input type="checkbox" />
+                      <span class="inbox__checkmark checkmark"></span>
+                    </label>
+
+                    <div class="inbox__item"></div>
+                    <button class="inbox__btn btn">
+                      <img class="header__buttonpic" src="./assets/images/pencil_white.png" alt="logo_white" />
+                    </button>
+                    <button class="inbox__btn btn">
+                      <img class="header__buttonpic" src="./assets/images/delite_white.png" alt="logo_white" />
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Чекбоксы -->
+                <!-- 
                         <div class="inbox__inputfield">
                           <label class="inbox__check check">
                             <input type="checkbox" />
                             <span class="inbox__checkmark checkmark"></span>
                           </label>
-                        </div>
-  
-                        <!-- конец Чекбоксов -->
-  
-                        <div class="inbox__item">ВХОДЯЩИЕ</div>
-                        <button class="inbox__btn btn">
-                          <img
-                            class="header__buttonpic"
-                            src="./assets/images/pencil_white.png"
-                            alt="logo_white"
-                          />
-                        </button>
-                        <button class="inbox__btn btn">
-                          <img
-                            class="header__buttonpic"
-                            src="./assets/images/delite_white.png"
-                            alt="logo_white"
-                          />
-                        </button>
-                      </div>
+                        </div> -->
+
+                <!-- конец Чекбоксов -->
 
 
-                </section>
-
-                <!-- ОКОНЧАНИЕ ОСНОВНОГО КОНТЕНТА -->
-
-              </div>
             </div>
+
+
+            </section>
+
+            <!-- ОКОНЧАНИЕ ОСНОВНОГО КОНТЕНТА -->
+
           </div>
         </div>
-      </main>
+      </div>
+  </div>
+  </main>
 
-      <!-- ФУТЕР -->
-      <footer class="footer">
-        <h4 class="footer__text">2022 © DESIGN AND DEVELOPMENT CREATORS</h4>
-      </footer>
+  <!-- ФУТЕР -->
+  <footer class="footer">
+    <h4 class="footer__text">2022 © DESIGN AND DEVELOPMENT CREATORS</h4>
+  </footer>
 
-      
 
-    </div>
 
-    <script src="./bundle.js"></script>
-  </body>
+  </div>
+
+  <script src="./bundle.js"></script>
+</body>
+
 </html>
