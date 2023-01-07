@@ -94,7 +94,7 @@ function hideOtherSubmenu() {
   })
 };
 
-// --------------- МОДАЛЬНОЕ ОКНО -------------
+// --------------- МОДАЛЬНОЕ ОКНО 1 -------------
 
 // if (window.screen.availWidth < window.screen.availHeight) {
 //   document.querySelector(".popup__img").src =
