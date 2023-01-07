@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo_peach.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="./dist/styles/style.css" />
+    <title>ПЛАНЕР</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- ХЕДЕР -->
+
+      <header class="header">
+        <div class="header__container _container">
+          <a href="./index.html" class="header__logo"
+            ><img
+              class="header__logopic"
+              src="./assets/images/logo_white.svg"
+              alt="logo"
+            />ПЛАНЕР</a
+          >
+          <nav class="header__menu menu">
+            <ul class="menu__list"></ul>
+          </nav>
+          <button class="header__button btn">
+            <img
+              class="header__buttonpic"
+              src="./assets/images/plus_peach_transparent.png"
+              alt="logo_white"
+            />
+          </button>
+        </div>
+      </header>
+
+      <!-- ОСНОВНОЙ БЛОК -->
+
+      <main class="categories">
+        <div class="categories__container _container">
+          
+
+          <!-- ХЛЕБНЫЕ КРОШКИ -->
+
+          <ul class="categories__breadcrumb breadcrumb">
+            <li class="active">
+              <a href="./9_categories.html"><span class="categories__breadcrumb-main breadcrumb">КАТЕГОРИИ</span></a>
+            </li>
+          </ul>
+
+          <!-- КОНЕЦ ХЛЕБНЫЕ КРОШКИ -->
+
+
+          <div class="categories__main-block main-block">
+            <div class="categories__container-main _container">
+              <div class="categories__body">
+                <!-- БОКОВОЕ МЕНЮ -->
+
+                <nav class="page__menu menu">
+                  <ul class="menu__list">
+                    <li class="menu__item menu_active">
+                      <a href="#" class="show">Входящие</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="show">Актуальные</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="show">Отложенные</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="show">Категории</a>
+                      <a href="#" class="showSub">Сортировка по категориям</a>
+                      <ul class="menu__sub">
+                        <li><a href="#">Дом</a></li>
+                        <li><a href="#">Здоровье</a></li>
+                        <li><a href="#">Семья</a></li>
+                      </ul>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="show">Контексты</a>
+                      <ul>
+                        <li class="menu__sub">
+                          <a href="#" class="show showSub"
+                            >Сортировка по контекстам</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="show">Чек-листы</a>
+                    </li>
+                  </ul>
+                </nav>
+
+
+                <!-- ОСНОВНОЙ КОНТЕНТ -->
+
+                <section class="page__categories">
+
+                  <div class="categories__container-page">
+                    
+
+                    <div class="categories__name"><div class="categories__title">КАТЕГОРИИ</div>
+                        <button class="categories__buttonPlus btn">
+                        <img
+                          class="categories__buttonpic"
+                          src="./assets/images/plus_peach_transparent.png"
+                          alt="logo_white"
+                        />
+                        </button>
+                    </div>
+
+
+                    
+
+                    <!-- СПИСОК КОНТЕКСТОВ-->
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-home"></div>
+                            <div class="categories__item"> ДОМ</div>
+                      
+                        </div>
+                    </div>
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-learning "></div>
+                            <div class="categories__item"> УЧЁБА</div>
+                      
+                        </div>
+                    </div>
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-job"></div>
+                            <div class="categories__item"> РАБОТА</div>
+                      
+                        </div>
+                    </div>
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-self-development"></div>
+                            <div class="categories__item"> САМОРАЗВИТИЕ</div>
+                      
+                        </div>
+                    </div>
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-health"></div>
+                            <div class="categories__item"> ЗДОРОВЬЕ</div>
+                      
+                        </div>
+                    </div>
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-recreation"></div>
+                            <div class="categories__item"> ОТДЫХ</div>
+                      
+                        </div>
+                    </div>
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-hobby"></div>
+                            <div class="categories__item"> ХОББИ</div>
+                      
+                        </div>
+                    </div>
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-ideas"></div>
+                            <div class="categories__item"> ИДЕИ</div>
+                      
+                        </div>
+                    </div>
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-household"></div>
+                            <div class="categories__item"> ХОЗЯЙСТВО</div>
+                      
+                        </div>
+                    </div>
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-sport"></div>
+                            <div class="categories__item"> СПОРТ</div>
+                      
+                        </div>
+                    </div>
+
+                    <div class="categories__block">
+                        <div class="categories__listItem listItem">
+
+                     
+                            <div class="categories__category category-self-care"></div>
+                            <div class="categories__item"> УХОД ЗА СОБОЙ</div>
+                      
+                        </div>
+                    </div>
+
+                    
+                    
+
+                </div>
+                </section>
+
+                <!-- ОКОНЧАНИЕ ОСНОВНОГО КОНТЕНТА -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- ФУТЕР -->
+      <footer class="footer">
+        <h4 class="footer__text">2022 © DESIGN AND DEVELOPMENT CREATORS</h4>
+      </footer>
+
+      
+
+    </div>
+
+    <script src="./bundle.js"></script>
+  </body>
+</html>

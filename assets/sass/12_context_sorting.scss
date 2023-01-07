@@ -1,16 +1,16 @@
-.quick__container, .quick__container-main, .quick__container-page  {
+.context-sorting__container, .context-sorting__container-main, .context-sorting__container-page  {
     display: flex;
     flex-direction: column;
 }
 
 
-.quick__body {
+.context-sorting__body {
     display: flex;
     flex-direction: row;
     justify-content: space-between
 }
 
-.quick__name {
+.context-sorting__name {
     display: flex;
     flex-direction: row;
     width: 667px;
@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: space-between;
 }
-.quick__title, .quick__sort {
+.context-sorting__title, .context-sorting__sort {
     color: white;
     font-size: 20px;
     font-weight: 800;
@@ -29,7 +29,7 @@
 }
 
 
-.quick__listItem {
+.context-sorting__listItem {
     display: grid;
     grid-template-columns: 1.5fr 1fr 7fr 4fr 1.5fr 1.5fr;
     align-items: center;
@@ -40,7 +40,7 @@
     padding: 1.3em;
     height: 70px;
 }
-.quick__item {
+.context-sorting__item {
     
     font-size: 12px;
     font-weight: 600;
@@ -49,40 +49,18 @@
 
 
 
-.quick__block {
+.context-sorting__block {
     width: 667px;
 }
 
-.quick__breadcrumb {
+.context-sorting__breadcrumb {
     display: flex;
     flex-direction: row;
 }
 
-.quick__btn-edit, .quick__btn-delite {
+.context-sorting__btn-edit, .context-sorting__btn-delite {
     height: 40px;
     width: 40px;
     background-color: #F4A48D;
     color:white;
 }
-
-
-.quick__buttonpic {
-    width: 22px;
-    height: 22px;
-    text-align: center;
-}
-
-.quick__buttonPlus {
-    height: 40px;
-    width: 40px;
-    background-color: white;
-    color: #f4a48d;
-  }
-  
-  
-  .quick__btn {
-    height: 40px;
-    width: 40px;
-    background-color: #f4a48d;
-    color: white;
-  }

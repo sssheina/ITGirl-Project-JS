@@ -1,12 +1,10 @@
-footer {
-    position: absolute;
+.footer {
+    position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #F4A48D;
     height: 33px;
-    // color: white;
-
-    // margin-bottom: -50px;
+    margin-top: 30px;
 }
 
 .footer__text {

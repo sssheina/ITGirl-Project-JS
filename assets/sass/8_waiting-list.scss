@@ -1,16 +1,16 @@
-.quick__container, .quick__container-main, .quick__container-page  {
+.waiting-list__container, .waiting-list__container-main, .waiting-list__container-page  {
     display: flex;
     flex-direction: column;
 }
 
 
-.quick__body {
+.waiting-list__body {
     display: flex;
     flex-direction: row;
     justify-content: space-between
 }
 
-.quick__name {
+.waiting-list__name {
     display: flex;
     flex-direction: row;
     width: 667px;
@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: space-between;
 }
-.quick__title, .quick__sort {
+.waiting-list__title, .waiting-list__sort {
     color: white;
     font-size: 20px;
     font-weight: 800;
@@ -29,7 +29,7 @@
 }
 
 
-.quick__listItem {
+.waiting-list__listItem {
     display: grid;
     grid-template-columns: 1.5fr 1fr 7fr 4fr 1.5fr 1.5fr;
     align-items: center;
@@ -40,7 +40,7 @@
     padding: 1.3em;
     height: 70px;
 }
-.quick__item {
+.waiting-list__item {
     
     font-size: 12px;
     font-weight: 600;
@@ -49,16 +49,16 @@
 
 
 
-.quick__block {
+.waiting-list__block {
     width: 667px;
 }
 
-.quick__breadcrumb {
+.waiting-list__breadcrumb {
     display: flex;
     flex-direction: row;
 }
 
-.quick__btn-edit, .quick__btn-delite {
+.waiting-list__btn-edit, .waiting-list__btn-delite {
     height: 40px;
     width: 40px;
     background-color: #F4A48D;
@@ -66,13 +66,13 @@
 }
 
 
-.quick__buttonpic {
+.waiting-list__buttonpic {
     width: 22px;
     height: 22px;
     text-align: center;
 }
 
-.quick__buttonPlus {
+.waiting-list__buttonPlus {
     height: 40px;
     width: 40px;
     background-color: white;
@@ -80,7 +80,7 @@
   }
   
   
-  .quick__btn {
+  .waiting-list__btn {
     height: 40px;
     width: 40px;
     background-color: #f4a48d;

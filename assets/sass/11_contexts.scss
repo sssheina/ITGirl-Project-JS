@@ -1,16 +1,14 @@
-.quick__container, .quick__container-main, .quick__container-page  {
+.contexts__container {
     display: flex;
     flex-direction: column;
 }
-
-
-.quick__body {
+.contexts__body {
     display: flex;
     flex-direction: row;
     justify-content: space-between
 }
 
-.quick__name {
+.contexts__name {
     display: flex;
     flex-direction: row;
     width: 667px;
@@ -21,17 +19,16 @@
     align-items: center;
     justify-content: space-between;
 }
-.quick__title, .quick__sort {
+.contexts__title {
     color: white;
     font-size: 20px;
     font-weight: 800;
     
 }
 
-
-.quick__listItem {
+.contexts__listItem {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 7fr 4fr 1.5fr 1.5fr;
+    grid-template-columns: 1fr;
     align-items: center;
     border: 1px dashed #CCD1D0;
     border-top: none;
@@ -40,49 +37,31 @@
     padding: 1.3em;
     height: 70px;
 }
-.quick__item {
+.contexts__item {
     
     font-size: 12px;
     font-weight: 600;
     
 }
 
-
-
-.quick__block {
-    width: 667px;
+.contexts__buttonPlus {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color:#F4A48D;
 }
 
-.quick__breadcrumb {
-    display: flex;
-    flex-direction: row;
+.contexts__buttonpic {
+    width: 22px;
+    height: 22px;
+    text-align: center;
 }
-
-.quick__btn-edit, .quick__btn-delite {
+.inbox__btn {
     height: 40px;
     width: 40px;
     background-color: #F4A48D;
     color:white;
 }
-
-
-.quick__buttonpic {
-    width: 22px;
-    height: 22px;
-    text-align: center;
+.contexts__block {
+    width: 667px;
 }
-
-.quick__buttonPlus {
-    height: 40px;
-    width: 40px;
-    background-color: white;
-    color: #f4a48d;
-  }
-  
-  
-  .quick__btn {
-    height: 40px;
-    width: 40px;
-    background-color: #f4a48d;
-    color: white;
-  }

@@ -1,0 +1,138 @@
+.page__breadcrumb {
+    display: flex;
+    flex-direction: row;
+}
+.stages__container {
+    display: flex;
+    flex-direction: column;
+  }
+.stages__name {
+    display: flex;
+    flex-direction: row;
+    width: 667px;
+    height: 70px;
+    background-color: #f4a48d;
+    padding-left: 35px;
+    padding-right: 35px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .stages__title {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  
+  .stages__buttonPlus {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color: #f4a48d;
+  }
+  
+  .stages__buttonpic {
+    width: 22px;
+    height: 22px;
+    text-align: center;
+  }
+
+.stages__inbox__stages {
+    width: 667px;
+    height: 54px;
+    background: rgba(244, 164, 141, 0.18);
+    color: #F4A48D;
+    font-size: 20px;
+    font-weight: 800;
+    padding-left: 35px;
+    padding-top: 15px;
+}
+
+.stages__inbox__listItem {
+    display: grid;
+    grid-template-columns: 1fr 13fr 1.5fr 1.5fr;
+    align-items: center;
+    border: 1px dashed #CCD1D0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.3em;
+}
+
+.stages__inbox__item {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stages__container, .stages__container-main, .stages__container-page  {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.stages__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.stages__name {
+    display: flex;
+    flex-direction: row;
+    width: 667px;
+    height: 70px;
+    background-color: #F4A48D;
+    padding-left: 35px;
+    padding-right: 35px;
+    align-items: center;
+    justify-content: space-between;
+}
+.stages__title, .stages__sort {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    
+}
+
+
+.stages__listItem {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 7fr 4fr 1.5fr 1.5fr;
+    align-items: center;
+    border: 1px dashed #CCD1D0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1.3em;
+    height: 70px;
+}
+.stages__item {
+    
+    font-size: 12px;
+    font-weight: 600;
+    
+}
+
+
+
+.stages__block {
+    width: 667px;
+}
+
+.stages__breadcrumb {
+    display: flex;
+    flex-direction: row;
+}
+
+.stages__btn-edit, .stages__btn-delite {
+    height: 40px;
+    width: 40px;
+    background-color: #F4A48D;
+    color:white;
+}
+
+
+.stages__buttonpic {
+    width: 22px;
+    height: 22px;
+    text-align: center;
+}

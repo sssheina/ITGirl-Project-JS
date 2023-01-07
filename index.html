@@ -42,18 +42,17 @@
 
       <main class="page">
         <div class="page__container _container">
-          
-
           <!-- ХЛЕБНЫЕ КРОШКИ -->
 
           <ul class="page__breadcrumb breadcrumb">
             <li class="active">
-              <a href="#"><span class="breadcrumb">ВХОДЯЩИЕ</span></a>
+              <a href="./index.html"
+                ><span class="breadcrumb">ВХОДЯЩИЕ</span></a
+              >
             </li>
           </ul>
 
           <!-- КОНЕЦ ХЛЕБНЫЕ КРОШКИ -->
-
 
           <div class="page__main-block main-block">
             <div class="main-block__container _container">
@@ -157,7 +156,7 @@
                   </div>
                   <div class="menu__tooltip">
                     <li class="menu__item">
-                      <a href="#" class="show">Чек-листы</a>
+                      <a href="./13_list-checklists.html" class="show">Чек-листы</a>
                     </li>
                     <span class="menu__tooltiptext">список пунктов для рутины или для 
                       какого-то повторяющегося дела. 
@@ -169,11 +168,9 @@
                   </ul>
                 </nav>
 
-
                 <!-- ОСНОВНОЙ КОНТЕНТ -->
 
                 <section class="page__inbox">
-
                   <div class="inbox__container">
                     <!-- ИНПУТ -->
 
@@ -194,10 +191,10 @@
                     </div>
 
                     <!-- СПИСОК ВХОДЯЩИХ-->
+                    <ul class="inbox__listItems">
 
-                    <div class="inbox__listItem listItem">
-
-                      <!-- Чекбоксы -->
+                    <!-- <div class="inbox__listItem listItem">
+                      
 
                       <div class="inbox__inputfield">
                         <label class="inbox__check check">
@@ -206,29 +203,30 @@
                         </label>
                       </div>
 
-                      <!-- конец Чекбоксов -->
+                      
 
                       <div class="inbox__item">ВХОДЯЩИЕ</div>
-                      <button class="inbox__btn btn">
+                      <button class="inbox__btn-edit btn">
                         <img
                           class="header__buttonpic"
                           src="./assets/images/pencil_white.png"
                           alt="logo_white"
                         />
                       </button>
-                      <button class="inbox__btn btn">
+                      <button class="inbox__btn-delite btn">
                         <img
                           class="header__buttonpic"
                           src="./assets/images/delite_white.png"
                           alt="logo_white"
                         />
                       </button>
-                    </div>
+                    </div> -->
+
+                  </ul>
                   </div>
                 </section>
 
                 <!-- ОКОНЧАНИЕ ОСНОВНОГО КОНТЕНТА -->
-
               </div>
             </div>
           </div>
@@ -239,9 +237,6 @@
       <footer class="footer">
         <h4 class="footer__text">2022 © DESIGN AND DEVELOPMENT CREATORS</h4>
       </footer>
-
-      <!-- ФУТЕР -->
-
     </div>
 
     <script src="./bundle.js"></script>
