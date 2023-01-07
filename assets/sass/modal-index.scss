@@ -26,7 +26,7 @@
     width: 65%;
     min-width: 260px;
     max-width: 667px;
-    height: 431px;
+    height: 490px;
     position: absolute;
     // padding: 1rem;
     // box-shadow: 0 0 10px 4px rgba(64, 86, 98, 0.8);
@@ -91,7 +91,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 377px;
+    height: 400px;
   }
 
   .modal__inputfield {
@@ -106,7 +106,7 @@
     width: 160px;
     }
 
-#case_type, #project_category {
+#case_type, #project_category, #date_type {
     width: 356px;
     height: 30px;
 }
