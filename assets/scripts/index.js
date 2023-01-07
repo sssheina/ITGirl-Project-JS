@@ -94,7 +94,24 @@ function hideOtherSubmenu() {
   })
 };
 
+// --------------- МОДАЛЬНОЕ ОКНО -------------
 
+if (window.screen.availWidth < window.screen.availHeight) {
+  document.querySelector(".popup__img").src =
+    "./assets/images/modal-window_mobile-01.png";
+}
+
+let modalWindow = document.getElementById("overlay");
+let btnClosePopup = document.getElementById("close");
+let delay_popup = 5000;
+
+setTimeout(() => {
+  modalWindow.style.display = "block";
+}, delay_popup);
+
+btnClosePopup.onclick = () => {
+  modalWindow.style.display = "none";
+};
 
 
 
