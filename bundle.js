@@ -11,11 +11,17 @@ let inboxItem = document.querySelector(".inbox__item");
 let task = {
     nameTask: "",
     category: "",
-    context: "",
+    contextTask: "",
+    dateTask: "",
     stages:[]
 
 }
 
+let stage = {
+  nameStage: "",
+  contextStage: "",
+    dateStage: "",
+}
 
 
 let arrayInbox = [];
@@ -95,7 +101,7 @@ function hideOtherSubmenu() {
   })
 };
 
-// --------------- МОДАЛЬНОЕ ОКНО -------------
+// --------------- МОДАЛЬНОЕ ОКНО 1 -------------
 
 // if (window.screen.availWidth < window.screen.availHeight) {
 //   document.querySelector(".popup__img").src =
