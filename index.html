@@ -62,19 +62,28 @@
 
                 <nav class="page__menu menu">
                   <ul class="menu__list">
-                    <li class="menu__item menu__item_selected">
-                      <a href="#">Входящие</a>
-                    </li>
-                    <li class="menu__item">
-                      <a href="#">
-                        Актуальные
-                        <img 
-                          class="menu__arrow"
-                          src="./assets/images/arrow_down.svg"
-                          alt="show"
-                        >
-                      </a>
-                    </li>
+                    <div class="menu__tooltip">
+                      <li class="menu__item menu__item_selected">
+                        <a href="#">Входящие</a>
+                      </li>
+                      <span class="menu__tooltiptext">все быстрые дела, многоэтапные проекты, 
+                        письма, документы, справочные материалы и задачи на будущее, которые надо добавить в планер, чтобы обработать позже</span>
+                    </div>
+                    <div class="menu__tooltip">
+                      <li class="menu__item">
+                        <a href="#">
+                          Актуальные
+                          <img 
+                            class="menu__arrow"
+                            src="./assets/images/arrow_down.svg"
+                            alt="show"
+                          >
+                        </a>
+                      </li>
+                    <span class="menu__tooltiptext">1.быстрые задачи - выполнение занимает около 2 минут;<br>
+                      2.проекты - долгосрочные, делятся на несколько этапов - физических действий.</span>
+                    </div>
+                    <div class="menu__tooltip">
                     <li class="menu__item">
                       <a href="#">
                         Отложенные
@@ -85,9 +94,13 @@
                         >
                       </a>
                     </li>
+                    <span class="menu__tooltiptext">1.справочные материалы, которые надо сохранить - инструкции, адреса, визитные карточки и т.п.
+                    2.лист ожидания - отложенные на неопределённый период проекты и задачи.</span>
+                    </div>
+                    <div class="menu__tooltip">
                     <li class="menu__item">
                       <a href="#">Категории</a>
-                      <a href="#" class="menu__item_with_submenu">
+                      <a href="#" class="menu__item_withSubmenu">
                         Сортировка по категориям
                         <img 
                           class="menu__arrow"
@@ -109,11 +122,14 @@
                         <li><a href="#">Уход за собой</a></li>
                       </ul>
                     </li>
+                    <span class="menu__tooltiptext">общая тематика для разных проектов - одна из сфер жизни. Например, работа, дом, учёба, личное, хозяйство и т.п.</span>
+                  </div>
+                  <div class="menu__tooltip">
                     <li class="menu__item">
                       <a href="#">Контексты</a>
                       <ul>
                         <li>
-                          <a href="#" class="menu__item_with_submenu">
+                          <a href="#" class="menu__item_withSubmenu">
                             Сортировка по контекстам
                             <img 
                               class="menu__arrow"
@@ -134,9 +150,22 @@
                         </li>
                       </ul>
                     </li>
+                    <span class="menu__tooltiptext">общее место выполнения или один и тот жеинструмент для выполнения разных задач 
+                      (этапов из разных проектов). Например,
+                      телефон, вне дома, магазин, компьютер 
+                      и т.п.</span>
+                  </div>
+                  <div class="menu__tooltip">
                     <li class="menu__item">
                       <a href="#" class="show">Чек-листы</a>
                     </li>
+                    <span class="menu__tooltiptext">список пунктов для рутины или для 
+                      какого-то повторяющегося дела. 
+                      Например, список утренней рутины для 
+                      сбора на работу или список 
+                      повторяющихся действий для подготовки
+                      к запуску нового проекта.</span>
+                  </div>
                   </ul>
                 </nav>
 
