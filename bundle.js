@@ -97,10 +97,10 @@ function hideOtherSubmenu() {
 
 // --------------- МОДАЛЬНОЕ ОКНО -------------
 
-if (window.screen.availWidth < window.screen.availHeight) {
-  document.querySelector(".popup__img").src =
-    "./assets/images/modal-window_mobile-01.png";
-}
+// if (window.screen.availWidth < window.screen.availHeight) {
+//   document.querySelector(".popup__img").src =
+//     "./assets/images/modal-window_mobile-01.png";
+// }
 
 let modalWindow = document.getElementById("overlay");
 let btnClosePopup = document.getElementById("close");
@@ -115,7 +115,19 @@ btnClosePopup.onclick = () => {
 };
 
 
+// --------------- МОДАЛЬНОЕ ОКНО 2 -------------
 
+let modalWindow2 = document.getElementById("overlay2");
+let btnClosePopup2 = document.getElementById("close2");
+let delay_popup2 = 5000;
+
+setTimeout(() => {
+  modalWindow2.style.display = "block";
+}, delay_popup2);
+
+btnClosePopup2.onclick = () => {
+  modalWindow2.style.display = "none";
+};
 
 
 // ЧЕК_ЛИСТ
