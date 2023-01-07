@@ -61,37 +61,110 @@
 
                 <nav class="page__menu menu">
                   <ul class="menu__list">
-                    <li class="menu__item menu_active">
-                      <a href="./index.html" class="show">Входящие</a>
-                    </li>
+                    <div class="menu__tooltip">
+                      <li class="menu__item menu__item_selected">
+                        <a href="#">Входящие</a>
+                      </li>
+                      <span class="menu__tooltiptext">все быстрые дела, многоэтапные проекты, 
+                        письма, документы, справочные материалы и задачи на будущее, которые надо добавить в планер, чтобы обработать позже</span>
+                    </div>
+                    <div class="menu__tooltip">
+                      <li class="menu__item">
+                        <a href="#">
+                          Актуальные
+                          <img 
+                            class="menu__arrow"
+                            src="./assets/images/arrow_down.svg"
+                            alt="show"
+                          >
+                        </a>
+                      </li>
+                    <span class="menu__tooltiptext">1.быстрые задачи - выполнение занимает около 2 минут;<br>
+                      2.проекты - долгосрочные, делятся на несколько этапов - физических действий.</span>
+                    </div>
+                    <div class="menu__tooltip">
                     <li class="menu__item">
-                      <a href="./3_quick.html" class="show">Актуальные</a>
+                      <a href="#">
+                        Отложенные
+                        <img 
+                          class="menu__arrow"
+                          src="./assets/images/arrow_down.svg"
+                          alt="show"
+                        >
+                      </a>
                     </li>
+                    <span class="menu__tooltiptext">1.справочные материалы, которые надо сохранить - инструкции, адреса, визитные карточки и т.п.
+                    2.лист ожидания - отложенные на неопределённый период проекты и задачи.</span>
+                    </div>
+                    <div class="menu__tooltip">
                     <li class="menu__item">
-                      <a href="./5_stages.html" class="show">Отложенные</a>
-                    </li>
-                    <li class="menu__item">
-                      <a href="./9_categories.html" class="show">Категории</a>
-                      <a href="#" class="showSub">Сортировка по категориям</a>
-                      <ul class="menu__sub">
-                        <li><a href="./10_category_sorting.html">Дом</a></li>
+                      <a href="#">Категории</a>
+                      <a href="#" class="menu__item_withSubmenu">
+                        Сортировка по категориям
+                        <img 
+                          class="menu__arrow"
+                          src="./assets/images/arrow_down.svg"
+                          alt="show"
+                        >
+                      </a>
+                      <ul class="menu__item_submenu">
+                        <li><a href="#">Дом</a></li>
+                        <li><a href="#">Учеба</a></li>
+                        <li><a href="#">Работа</a></li>
+                        <li><a href="#">Саморазвитие</a></li>
                         <li><a href="#">Здоровье</a></li>
-                        <li><a href="#">Семья</a></li>
+                        <li><a href="#">Отдых</a></li>
+                        <li><a href="#">Хобби</a></li>
+                        <li><a href="#">Идеи</a></li>
+                        <li><a href="#">Хозяйство</a></li>
+                        <li><a href="#">Спорт</a></li>
+                        <li><a href="#">Уход за собой</a></li>
                       </ul>
                     </li>
+                    <span class="menu__tooltiptext">общая тематика для разных проектов - одна из сфер жизни. Например, работа, дом, учёба, личное, хозяйство и т.п.</span>
+                  </div>
+                  <div class="menu__tooltip">
                     <li class="menu__item">
-                      <a href="./11_contexts.html" class="show">Контексты</a>
+                      <a href="#">Контексты</a>
                       <ul>
-                        <li class="menu__sub">
-                          <a href="./12_context_sorting.html" class="show showSub"
-                            >Сортировка по контекстам</a
-                          >
+                        <li>
+                          <a href="#" class="menu__item_withSubmenu">
+                            Сортировка по контекстам
+                            <img 
+                              class="menu__arrow"
+                              src="./assets/images/arrow_down.svg"
+                              alt="show"
+                            >
+                          </a>
+                          <ul class="menu__item_submenu">
+                            <li><a href="#">Телефон</a></li>
+                            <li><a href="#">Вне дома</a></li>
+                            <li><a href="#">Школа</a></li>
+                            <li><a href="#">Дет. сад</a></li>
+                            <li><a href="#">Компьютер</a></li>
+                            <li><a href="#">Минск</a></li>
+                            <li><a href="#">В городе</a></li>
+                            <li><a href="#">Делегировано</a></li>
+                          </ul>
                         </li>
                       </ul>
                     </li>
+                    <span class="menu__tooltiptext">общее место выполнения или один и тот жеинструмент для выполнения разных задач 
+                      (этапов из разных проектов). Например,
+                      телефон, вне дома, магазин, компьютер 
+                      и т.п.</span>
+                  </div>
+                  <div class="menu__tooltip">
                     <li class="menu__item">
                       <a href="./13_list-checklists.html" class="show">Чек-листы</a>
                     </li>
+                    <span class="menu__tooltiptext">список пунктов для рутины или для 
+                      какого-то повторяющегося дела. 
+                      Например, список утренней рутины для 
+                      сбора на работу или список 
+                      повторяющихся действий для подготовки
+                      к запуску нового проекта.</span>
+                  </div>
                   </ul>
                 </nav>
 

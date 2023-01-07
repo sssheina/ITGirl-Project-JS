@@ -1,44 +1,54 @@
-.menu__list {
-  width: 309px;
+.page__menu {
+  list-style-type: none;
+  text-transform: uppercase;
 }
 
-.menu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  color: #FFFFFF;
-  text-transform: uppercase;
+.page__menu span {
+  text-transform: lowercase;
+}
+
+.menu__list {
+  width: 309px;
+  outline: none;
 }
 
 .menu__item {
   padding: 15px;
   display: block;
   background: #F4A48D;
-  margin: 20px;
-}
-
-.showSub {
-  margin-top: 8px;
-  font-weight: 400;
-}
-
-.active+.nav_sub {
+  margin-bottom: 20px;
   display: block;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.show.nav_active {
-  color: #000;
-  outline: 0;
-  font-weight: 400;
-  // font-weight: 900;
+.menu__arrow {
+  margin-top: 2px;
 }
 
-.menu_sub {
+.menu__item_selected {
+  background: #fdc2b1;
+}
+
+.menu__item_withSubmenu {
+  letter-spacing: 1.1px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.menu__item_submenu {
   display: none;
+  margin-top: 8px;
+  letter-spacing: 1.1px;
+  font-weight: 500;
+}
+
+.menu__item_submenu li {
+  margin-bottom: 3px;
+}
+
+.menu__item_withSubmenu.menu__item_submenu_selected+.menu__item_submenu {
+  display: block;
 }
 
 li {
@@ -47,7 +57,6 @@ li {
 
 ul {
   padding: 0;
-  margin-top: 8px;
 }
 
 a {
@@ -56,8 +65,51 @@ a {
   height: 100%;
   width: 100%;
   color: #FFFFFF;
+  outline: none !important;
 }
 
-li:not(.nav_active):hover a {
-  color: #eee
+/* Контейнер подсказок */
+.menu__tooltip {
+  position: relative;
+  display: block;
+}
+
+/* Текст подсказки */
+.menu__tooltip .menu__tooltiptext {
+  visibility: hidden;
+  width: 309px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Расположите текст подсказки */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Исчезают в подсказке */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Подсказка стрелка */
+.menu__tooltip .menu__tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Отображение текста подсказки при наведении курсора мыши на контейнер подсказки */
+.menu__tooltip:hover .menu__tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
