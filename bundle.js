@@ -2,72 +2,135 @@
 const inbox = document.querySelector(".inbox__input");
 const inboxButton = document.querySelector(".inbox__button");
 const placeInboxList = document.querySelector(".inbox__listItems");
-const buttonInboxEdit = document.querySelector(".inbox__btn-edit");
+// const buttonInboxEdit = document.querySelector(".inbox__btn-edit");
 const buttonInboxDelite = document.querySelector(".inbox__btn-delite");
 let inboxItem = document.querySelector(".inbox__item");
 
 // let nameTask == inbox.value;
 
-let task = {
-    nameTask: "",
-    category: "",
-    contextTask: "",
-    dateTask: "",
-    stages:[]
+// let task = {
+//     nameTask: "",
+//     category: "",
+//     contextTask: "",
+//     dateTask: "",
+//     stages:[]
 
-}
+// }
 
-let stage = {
-  nameStage: "",
-  contextStage: "",
-    dateStage: "",
-}
+// let stage = {
+//   nameStage: "",
+//   contextStage: "",
+//     dateStage: "",
+// }
 
 
-let arrayInbox = [];
+// let arrayInbox = [];
 
-inboxButton.addEventListener("click", generateInboxList);
 
-function generateInboxList() {
-    arrayInbox.push(inbox.value);
-    console.log(arrayInbox);
-    placeInboxList.innerHTML += `<li class="inbox__listItem listItem">
+
+// function generateInboxList() {
+//     arrayInbox.push(inbox.value);
+//     console.log(arrayInbox);
+//     placeInboxList.innerHTML += `<li class="inbox__listItem listItem">
                       
 
-    <div class="inbox__inputfield">
-      <label class="inbox__check check">
-        <input type="checkbox" />
-        <span class="inbox__checkmark checkmark"></span>
-      </label>
-    </div>
+//     <div class="inbox__inputfield">
+//       <label class="inbox__check check">
+//         <input type="checkbox" class="inbox__input-check"/>
+//         <span class="inbox__checkmark checkmark"></span>
+//       </label>
+//     </div>
 
     
 
-    <div class="inbox__item">${inbox.value}</div>
-    <button class="inbox__btn-edit btn">
-      <img
-        class="header__buttonpic"
-        src="./assets/images/pencil_white.png"
-        alt="logo_white"
-      />
-    </button>
-    <button class="inbox__btn-delite btn" onclick="InboxDelite()">
-      <img
-        class="header__buttonpic"
-        src="./assets/images/delite_white.png"
-        alt="logo_white"
-      />
-    </button>
-  </li>`
+//     <div class="inbox__item">${inbox.value}</div>
+//     <button class="inbox__btn-edit btn">
+//       <img
+//         class="header__buttonpic-edit"
+//         src="./assets/images/pencil_white.png"
+//         alt="logo_white"
+//       />
+//     </button>
+//     <button class="inbox__btn-delite btn" onclick="InboxDelite()">
+//       <img
+//         class="header__buttonpic"
+//         src="./assets/images/delite_white.png"
+//         alt="logo_white"
+//       />
+//     </button>
+//   </li>`
 
-  inbox.value = "";
-  console.log(buttonInboxEdit);
+//   inbox.value = "";
+//   console.log(buttonInboxEdit);
+// }
+
+
+
+const createСard = (obj) => {
+  const block = document.createElement('li');
+  block.className = "inbox__listItem";
+  const check = document.createElement('div');
+  check.className = "inbox__inputfield";
+  // name.textContent = obj.name;
+  const labelCheck = document.createElement('label');
+  labelCheck.className = "inbox__check check";
+  const inputCheck = document.createElement('input');
+  inputCheck.className = "inbox__input-check";
+  inputCheck.setAttribute("type", "checkbox");
+  const checkmark = document.createElement('span');
+  checkmark.className = "inbox__checkmark checkmark";
+  const item = document.createElement('div');
+  item.className = "inbox__item";
+  item.textContent = `${inbox.value}`;
+  const buttonEdit = document.createElement('button');
+  buttonEdit.className = "inbox__btn-edit";
+  //  const imgButtonEdit = document.createElement('img');
+  // imgButtonEdit.className = "header__buttonpic-edit";
+  const buttonDelite = document.createElement('button');
+  buttonDelite .className = "inbox__btn-delite";
+  //  const imgButtonDelite= document.createElement('img');
+  // imgButtonDelite.className = "header__buttonpic-delite";
+ 
+  
+
+
+
+
+
+  
+
+  block.append(check);
+  block.append(item);
+  block.append(buttonEdit);
+  block.append(buttonDelite);
+  check.append(labelCheck);
+  labelCheck.append(inputCheck);
+  labelCheck.append(checkmark);
+  // buttonEdit.append(imgButtonEdit);
+  // buttonDelite.append(imgButtonDelite);
+
+  
+  // console.log(block);
+  return block;
 }
 
 
-function InboxDelite() {
-    inboxItem.innerHTML = null;
+
+// function InboxDelite() {
+//     inboxItem.innerHTML = null;
+// }
+// placeInboxList
+
+const addCard = (objItem, ) => {
+  const item = createСard(objItem);
+  placeInboxList.appendChild(item);
 }
+
+inboxButton.addEventListener("click", () => {
+  createСard();
+  addCard();
+});
+
 
 // МЕНЮ
 // показывает выбранный пункт меню, выдавая класс с цветом
@@ -81,7 +144,7 @@ menuItems.forEach(el => {
 });
 
 function removeClassSelected() {
-  li.forEach(el => {
+  menuItems.forEach(el => {
     el.classList.remove('menu__item_selected');
   })
 };
@@ -110,39 +173,36 @@ function hideOtherSubmenu() {
 
 // --------------- МОДАЛЬНОЕ ОКНО 1 -------------
 
-// if (window.screen.availWidth < window.screen.availHeight) {
-//   document.querySelector(".popup__img").src =
-//     "./assets/images/modal-window_mobile-01.png";
-// }
 
-let modalWindow = document.getElementById("overlay");
-let btnClosePopup = document.getElementById("close");
-let delay_popup = 5000;
+
+// let modalWindow = document.getElementById("overlay");
+// let btnClosePopup = document.getElementById("close");
+// let delay_popup = 5000;
 
 
 
-setTimeout(() => {
-  modalWindow.style.display = "block";
-}, delay_popup);
+// setTimeout(() => {
+//   modalWindow.style.display = "block";
+// }, delay_popup);
 
-btnClosePopup.onclick = () => {
-  modalWindow.style.display = "none";
-};
+// btnClosePopup.onclick = () => {
+//   modalWindow.style.display = "none";
+// };
 
 
 // --------------- МОДАЛЬНОЕ ОКНО 2 -------------
 
-let modalWindow2 = document.getElementById("overlay2");
-let btnClosePopup2 = document.getElementById("close2");
-let delay_popup2 = 5000;
+// let modalWindow2 = document.getElementById("overlay2");
+// let btnClosePopup2 = document.getElementById("close2");
+// let delay_popup2 = 5000;
 
-setTimeout(() => {
-  modalWindow2.style.display = "block";
-}, delay_popup2);
+// setTimeout(() => {
+//   modalWindow2.style.display = "block";
+// }, delay_popup2);
 
-btnClosePopup2.onclick = () => {
-  modalWindow2.style.display = "none";
-};
+// btnClosePopup2.onclick = () => {
+//   modalWindow2.style.display = "none";
+// };
 
 
 
