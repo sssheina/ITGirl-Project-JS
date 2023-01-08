@@ -6,10 +6,6 @@ const buttonInboxEdit = document.querySelector(".inbox__btn-edit");
 const buttonInboxDelite = document.querySelector(".inbox__btn-delite");
 let inboxItem = document.querySelector(".inbox__item");
 
-
-// let nameTask == inbox.value;
-
-
 // let nameTask == inbox.value;
 
 let task = {
@@ -28,8 +24,6 @@ let stage = {
 }
 
 
-
-
 let arrayInbox = [];
 
 inboxButton.addEventListener("click", generateInboxList);
@@ -39,7 +33,6 @@ function generateInboxList() {
     console.log(arrayInbox);
     placeInboxList.innerHTML += `<li class="inbox__listItem listItem">
                       
-
 
     <div class="inbox__inputfield">
       <label class="inbox__check check">
@@ -67,21 +60,20 @@ function generateInboxList() {
     </button>
   </li>`
 
-
   inbox.value = "";
   console.log(buttonInboxEdit);
 }
-
 
 
 function InboxDelite() {
     inboxItem.innerHTML = null;
 }
 
-// показывает выбранный пункт меню
-const li = document.querySelectorAll('.menu__item');
+// МЕНЮ
+// показывает выбранный пункт меню, выдавая класс с цветом
+const menuItems = document.querySelectorAll('.menu__item');
 
-li.forEach(el => {
+menuItems.forEach(el => {
   el.addEventListener('click', function () {
     removeClassSelected();
     el.classList.add('menu__item_selected');
@@ -94,13 +86,19 @@ function removeClassSelected() {
   })
 };
 
-// открывает под-меню
+// открывает и закрывает под-меню по клику + закрывает соседние
 const submenu = document.querySelectorAll('.menu__item_withSubmenu');
 
 submenu.forEach(el => {
   el.addEventListener('click', function () {
-    hideOtherSubmenu();
-    el.classList.add('menu__item_submenu_selected');
+
+    if(el.classList.contains("menu__item_submenu_selected")) {
+      el.classList.remove("menu__item_submenu_selected")
+    } else {
+      hideOtherSubmenu();
+      el.classList.add('menu__item_submenu_selected');
+    }
+
   });
 });
 
@@ -120,6 +118,8 @@ function hideOtherSubmenu() {
 let modalWindow = document.getElementById("overlay");
 let btnClosePopup = document.getElementById("close");
 let delay_popup = 5000;
+
+
 
 setTimeout(() => {
   modalWindow.style.display = "block";
