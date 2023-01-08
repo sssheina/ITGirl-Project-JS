@@ -80,7 +80,7 @@ menuItems.forEach(el => {
 });
 
 function removeClassSelected() {
-  li.forEach(el => {
+  menuItems.forEach(el => {
     el.classList.remove('menu__item_selected');
   })
 };
