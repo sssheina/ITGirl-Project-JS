@@ -63,14 +63,14 @@
                   <ul class="menu__list">
                     <div class="menu__tooltip">
                       <li class="menu__item menu__item_selected">
-                        <a href="#">Входящие</a>
+                        <a href="./index.html">Входящие</a>
                       </li>
                       <span class="menu__tooltiptext">все быстрые дела, многоэтапные проекты, 
                         письма, документы, справочные материалы и задачи на будущее, которые надо добавить в планер, чтобы обработать позже</span>
                     </div>
                     <div class="menu__tooltip">
                       <li class="menu__item">
-                        <a href="#">
+                        <a href="#" class="menu__item_withSubmenu" id="current">
                           Актуальные
                           <img 
                             class="menu__arrow"
@@ -78,13 +78,17 @@
                             alt="show"
                           >
                         </a>
+                        <ul class="menu__item_submenu">
+                          <li><a href="#">Быстрые задачи</a></li>
+                          <li><a href="#">Проекты</a></li>
+                        </ul>
                       </li>
-                    <span class="menu__tooltiptext">1.быстрые задачи - выполнение занимает около 2 минут;<br>
-                      2.проекты - долгосрочные, делятся на несколько этапов - физических действий.</span>
+                    <span class="menu__tooltiptext">1. быстрые задачи - выполнение занимает около 2 минут;<br>
+                      2. проекты - долгосрочные, делятся на несколько этапов - физических действий.</span>
                     </div>
                     <div class="menu__tooltip">
                     <li class="menu__item">
-                      <a href="#">
+                      <a href="#" class="menu__item_withSubmenu" id="delayed">
                         Отложенные
                         <img 
                           class="menu__arrow"
@@ -92,9 +96,13 @@
                           alt="show"
                         >
                       </a>
+                      <ul class="menu__item_submenu">
+                        <li><a href="#">Справочные материалы</a></li>
+                        <li><a href="#">Лист ожидания</a></li>
+                      </ul>
                     </li>
-                    <span class="menu__tooltiptext">1.справочные материалы, которые надо сохранить - инструкции, адреса, визитные карточки и т.п.
-                    2.лист ожидания - отложенные на неопределённый период проекты и задачи.</span>
+                    <span class="menu__tooltiptext">1. справочные материалы, которые надо сохранить - инструкции, адреса, визитные карточки и т.п.<br>
+                    2. лист ожидания - отложенные на неопределённый период проекты и задачи.</span>
                     </div>
                     <div class="menu__tooltip">
                     <li class="menu__item">
@@ -121,7 +129,7 @@
                         <li><a href="#">Уход за собой</a></li>
                       </ul>
                     </li>
-                    <span class="menu__tooltiptext">общая тематика для разных проектов - одна из сфер жизни. Например, работа, дом, учёба, личное, хозяйство и т.п.</span>
+                    <span class="menu__tooltiptext">общая тематика для разных проектов - одна из сфер жизни. <br>Например, работа, дом, учёба, личное, хозяйство и т.п.</span>
                   </div>
                   <div class="menu__tooltip">
                     <li class="menu__item">
@@ -149,10 +157,7 @@
                         </li>
                       </ul>
                     </li>
-                    <span class="menu__tooltiptext">общее место выполнения или один и тот жеинструмент для выполнения разных задач 
-                      (этапов из разных проектов). Например,
-                      телефон, вне дома, магазин, компьютер 
-                      и т.п.</span>
+                    <span class="menu__tooltiptext">общее место выполнения или один и тот же инструмент для выполнения разных задач (этапов из разных проектов). Например, телефон, вне дома, магазин, компьютер и т.п.</span>
                   </div>
                   <div class="menu__tooltip">
                     <li class="menu__item">
@@ -167,6 +172,7 @@
                   </div>
                   </ul>
                 </nav>
+                <!-- КОНЕЦ БОКОВОЕ МЕНЮ -->
 
                 <!-- ОСНОВНОЙ КОНТЕНТ -->
 
