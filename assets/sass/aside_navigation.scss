@@ -22,7 +22,7 @@
 }
 
 .menu__item_selected {
-  background: #fdc2b1;
+  background: rgba(7, 183, 206, 0.4);
 }
 
 .menu__item_withSubmenu {
@@ -41,10 +41,13 @@
   margin-top: 8px;
   letter-spacing: 1.1px;
   font-weight: 500;
+  background-color:#fdc2b1;
+  padding: 15px;
 }
 
 .menu__item_submenu li {
-  margin-bottom: 3px;
+  margin-bottom: 7px;
+  // color: #F4A48D;
 }
 
 .menu__item_withSubmenu.menu__item_submenu_selected+.menu__item_submenu {
@@ -59,6 +62,12 @@ ul {
   padding: 0;
 }
 
+.menu__spanTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #757575;
+  margin-bottom: 10px;
+}
 a {
   text-decoration: none;
   display: block;
@@ -78,17 +87,19 @@ a {
 .menu__tooltip .menu__tooltiptext {
   visibility: hidden;
   width: 309px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  text-transform: lowercase;
+  background-color: rgb(255, 255, 255);
+  color: #757575;
+  // text-align: center;
+  padding: 15px 15px;
+  // border-radius: 6px;
+  text-transform: none;
+  box-shadow: 0 0 10px 4px rgba(64, 86, 98, 0.4);
+  
 
   /* Расположите текст подсказки */
   position: absolute;
   z-index: 1;
-  top: -88px;
+  top: -138px;
   left: 50%;
   margin-left: -60px;
 
@@ -96,6 +107,8 @@ a {
   opacity: 0;
   transition: opacity 0.3s;
 }
+
+
 
 /* Подсказка стрелка */
 .menu__tooltip .menu__tooltiptext::after {
