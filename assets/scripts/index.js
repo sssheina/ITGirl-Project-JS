@@ -119,7 +119,7 @@ let btnClosePopup = document.getElementById("close");
 let delay_popup = 5000;
 
 
-=======
+
 setTimeout(() => {
   modalWindow.style.display = "block";
 }, delay_popup);
