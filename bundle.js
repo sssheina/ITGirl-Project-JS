@@ -6,6 +6,10 @@ const buttonInboxEdit = document.querySelector(".inbox__btn-edit");
 const buttonInboxDelite = document.querySelector(".inbox__btn-delite");
 let inboxItem = document.querySelector(".inbox__item");
 
+
+// let nameTask == inbox.value;
+
+
 // let nameTask == inbox.value;
 
 let task = {
@@ -24,6 +28,8 @@ let stage = {
 }
 
 
+
+
 let arrayInbox = [];
 
 inboxButton.addEventListener("click", generateInboxList);
@@ -33,6 +39,7 @@ function generateInboxList() {
     console.log(arrayInbox);
     placeInboxList.innerHTML += `<li class="inbox__listItem listItem">
                       
+
 
     <div class="inbox__inputfield">
       <label class="inbox__check check">
@@ -60,9 +67,11 @@ function generateInboxList() {
     </button>
   </li>`
 
+
   inbox.value = "";
   console.log(buttonInboxEdit);
 }
+
 
 
 function InboxDelite() {
@@ -134,6 +143,7 @@ setTimeout(() => {
 btnClosePopup2.onclick = () => {
   modalWindow2.style.display = "none";
 };
+
 
 
 // ЧЕК_ЛИСТ

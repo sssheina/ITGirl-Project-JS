@@ -68,10 +68,11 @@ function InboxDelite() {
     inboxItem.innerHTML = null;
 }
 
-// показывает выбранный пункт меню
-const li = document.querySelectorAll('.menu__item');
+// МЕНЮ
+// показывает выбранный пункт меню, выдавая класс с цветом
+const menuItems = document.querySelectorAll('.menu__item');
 
-li.forEach(el => {
+menuItems.forEach(el => {
   el.addEventListener('click', function () {
     removeClassSelected();
     el.classList.add('menu__item_selected');
@@ -84,13 +85,19 @@ function removeClassSelected() {
   })
 };
 
-// открывает под-меню
+// открывает и закрывает под-меню по клику + закрывает соседние
 const submenu = document.querySelectorAll('.menu__item_withSubmenu');
 
 submenu.forEach(el => {
   el.addEventListener('click', function () {
-    hideOtherSubmenu();
-    el.classList.add('menu__item_submenu_selected');
+
+    if(el.classList.contains("menu__item_submenu_selected")) {
+      el.classList.remove("menu__item_submenu_selected")
+    } else {
+      hideOtherSubmenu();
+      el.classList.add('menu__item_submenu_selected');
+    }
+
   });
 });
 
@@ -111,6 +118,8 @@ let modalWindow = document.getElementById("overlay");
 let btnClosePopup = document.getElementById("close");
 let delay_popup = 5000;
 
+
+=======
 setTimeout(() => {
   modalWindow.style.display = "block";
 }, delay_popup);
@@ -133,6 +142,7 @@ setTimeout(() => {
 btnClosePopup2.onclick = () => {
   modalWindow2.style.display = "none";
 };
+
 
 
 // ЧЕК_ЛИСТ

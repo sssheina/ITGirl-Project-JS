@@ -3,13 +3,8 @@
   text-transform: uppercase;
 }
 
-.page__menu span {
-  text-transform: lowercase;
-}
-
 .menu__list {
   width: 309px;
-  outline: none;
 }
 
 .menu__item {
@@ -31,9 +26,14 @@
 }
 
 .menu__item_withSubmenu {
-  letter-spacing: 1.1px;
   font-weight: 500;
   margin-top: 10px;
+}
+
+#delayed,
+#current {
+  font-weight: 800;
+  margin-top: 0;
 }
 
 .menu__item_submenu {
@@ -83,11 +83,12 @@ a {
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
+  text-transform: lowercase;
 
   /* Расположите текст подсказки */
   position: absolute;
   z-index: 1;
-  bottom: 125%;
+  top: -88px;
   left: 50%;
   margin-left: -60px;
 
