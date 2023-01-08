@@ -10,11 +10,17 @@ let inboxItem = document.querySelector(".inbox__item");
 let task = {
     nameTask: "",
     category: "",
-    context: "",
+    contextTask: "",
+    dateTask: "",
     stages:[]
 
 }
 
+let stage = {
+  nameStage: "",
+  contextStage: "",
+    dateStage: "",
+}
 
 
 let arrayInbox = [];
@@ -99,6 +105,42 @@ function hideOtherSubmenu() {
   submenu.forEach(el => {
     el.classList.remove('menu__item_submenu_selected');
   })
+};
+
+// --------------- МОДАЛЬНОЕ ОКНО 1 -------------
+
+// if (window.screen.availWidth < window.screen.availHeight) {
+//   document.querySelector(".popup__img").src =
+//     "./assets/images/modal-window_mobile-01.png";
+// }
+
+let modalWindow = document.getElementById("overlay");
+let btnClosePopup = document.getElementById("close");
+let delay_popup = 5000;
+
+
+=======
+setTimeout(() => {
+  modalWindow.style.display = "block";
+}, delay_popup);
+
+btnClosePopup.onclick = () => {
+  modalWindow.style.display = "none";
+};
+
+
+// --------------- МОДАЛЬНОЕ ОКНО 2 -------------
+
+let modalWindow2 = document.getElementById("overlay2");
+let btnClosePopup2 = document.getElementById("close2");
+let delay_popup2 = 5000;
+
+setTimeout(() => {
+  modalWindow2.style.display = "block";
+}, delay_popup2);
+
+btnClosePopup2.onclick = () => {
+  modalWindow2.style.display = "none";
 };
 
 

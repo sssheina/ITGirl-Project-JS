@@ -26,8 +26,8 @@
   .stages__buttonPlus {
     height: 40px;
     width: 40px;
-    background-color: white;
-    color: #f4a48d;
+    background-color: #f4a48d;
+    // color: #f4a48d;
   }
   
   .stages__buttonpic {
@@ -36,16 +36,28 @@
     text-align: center;
   }
 
-.stages__inbox__stages {
-    width: 667px;
-    height: 54px;
-    background: rgba(244, 164, 141, 0.18);
-    color: #F4A48D;
+.stages__stages {
+    // width: 667px;
+    // height: 54px;
+    // background: rgba(244, 164, 141, 0.18);
+    // color: #F4A48D;
     font-size: 20px;
     font-weight: 800;
+    // padding-left: 35px;
+    // padding-top: 15px;
+
+    display: flex;
+    flex-direction: row;
+    width: 667px;
+    height: 70px;
+    background: rgba(244, 164, 141, 0.18);
+    color: #F4A48D;
     padding-left: 35px;
-    padding-top: 15px;
+    padding-right: 35px;
+    align-items: center;
+    justify-content: space-between;
 }
+
 
 .stages__inbox__listItem {
     display: grid;

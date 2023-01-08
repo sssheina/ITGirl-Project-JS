@@ -239,6 +239,76 @@
         </div>
       </main>
 
+
+      <!-- МОДАЛЬНОЕ ОКНО -->
+
+      <div id="overlay">
+        <div id="popup" class="popup">
+          
+            
+          <div class="window_name">Название входящей задачи</div>
+            <!-- <div>
+                <label for="change_name" id="change_text"> Переименовать </label>
+                <input type="text" id="change_name" class="input" name="change_name" required />
+            </div> -->
+            <div class="modal_enterBlock">
+            <div class="modal__inputfield">
+              <label class="modal__lable">ПЕРЕИМЕНОВАТЬ:</label>
+              <textarea
+                rows="3"
+                cols="45"
+                class="inbox__input input"
+                id="inboxInput"
+              ></textarea>
+            </div>
+            <div class="modal__inputfield">
+                <label for="case_type" id="case_text" class="modal__lable"> ТИП: </label><br />
+                <select id="case_type" class="input">
+                    <option value=""> </option>
+                    <option value="Быстрые дела"> БЫСТРЫЕ ДЕЛА</option>
+                    <option value="Проекты"> ПРОЕКТЫ</option>
+                    <option value="Справочны материалы"> СПРАВОЧНЫЕ МАТЕРИАЛЫ</option>
+                    <option value="Лист ожидания"> ЛИСТ ОЖИДАНИЯ</option>
+                </select>
+            </div>
+
+
+            <div class="modal__inputfield">
+                <label for="project_category" id="category_text" class="modal__lable"> КАТЕГОРИЯ: </label><br />
+                <select id="project_category" class="input">
+                    <option value=""> </option>
+                    <option value="Семья"> ДОМ</option>
+                    <option value="Дом"> УЧЁБА</option>
+                    <option value="Работа"> РАБОТА</option>
+                    <option value="САМОРАЗВИТИЕ"> САМОРАЗВИТИЕ</option>
+                    <option value="ЗДОРОВЬЕ"> ЗДОРОВЬЕ</option>
+                    <option value="ОТДЫХ"> ОТДЫХ</option>
+                    <option value="ХОББИ"> ХОББИ</option>
+                    <option value="ИДЕИ"> ИДЕИ</option>
+                    <option value="ХОЗЯЙСТВО"> ХОЗЯЙСТВО</option>
+                    <option value="СПОРТ"> СПОРТ</option>
+                    <option value="УХОД ЗА СОБОЙ"> УХОД ЗА СОБОЙ</option>
+                    <option value="ОТДЫХ"> ОТДЫХ</option>
+                </select>
+            </div>
+
+            <div class="modal__inputfield">
+              <label for="date_type" id="date_text" class="modal__lable"> ДАТА: </label><br />
+              <input type="date" id="date_type" class="input">
+              </input>
+          </div>
+
+            <button id="close" class="close" title="Close"></button>
+          <!-- <a href="#" class="close btn">Сохранить</a> -->
+          <div>
+            <button class="modal__button btn">СОХРАНИТЬ</button>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- конец модального окна -->
+
       <!-- ФУТЕР -->
       <footer class="footer">
         <h4 class="footer__text">2022 © DESIGN AND DEVELOPMENT CREATORS</h4>

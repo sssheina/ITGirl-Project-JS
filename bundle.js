@@ -6,15 +6,27 @@ const buttonInboxEdit = document.querySelector(".inbox__btn-edit");
 const buttonInboxDelite = document.querySelector(".inbox__btn-delite");
 let inboxItem = document.querySelector(".inbox__item");
 
+
+// let nameTask == inbox.value;
+
+
 // let nameTask == inbox.value;
 
 let task = {
     nameTask: "",
     category: "",
-    context: "",
+    contextTask: "",
+    dateTask: "",
     stages:[]
 
 }
+
+let stage = {
+  nameStage: "",
+  contextStage: "",
+    dateStage: "",
+}
+
 
 
 
@@ -27,6 +39,7 @@ function generateInboxList() {
     console.log(arrayInbox);
     placeInboxList.innerHTML += `<li class="inbox__listItem listItem">
                       
+
 
     <div class="inbox__inputfield">
       <label class="inbox__check check">
@@ -54,20 +67,21 @@ function generateInboxList() {
     </button>
   </li>`
 
+
   inbox.value = "";
   console.log(buttonInboxEdit);
 }
+
 
 
 function InboxDelite() {
     inboxItem.innerHTML = null;
 }
 
-// МЕНЮ
-// показывает выбранный пункт меню, выдавая класс с цветом
-const menuItems = document.querySelectorAll('.menu__item');
+// показывает выбранный пункт меню
+const li = document.querySelectorAll('.menu__item');
 
-menuItems.forEach(el => {
+li.forEach(el => {
   el.addEventListener('click', function () {
     removeClassSelected();
     el.classList.add('menu__item_selected');
@@ -80,19 +94,13 @@ function removeClassSelected() {
   })
 };
 
-// открывает и закрывает под-меню по клику + закрывает соседние
+// открывает под-меню
 const submenu = document.querySelectorAll('.menu__item_withSubmenu');
 
 submenu.forEach(el => {
   el.addEventListener('click', function () {
-
-    if(el.classList.contains("menu__item_submenu_selected")) {
-      el.classList.remove("menu__item_submenu_selected")
-    } else {
-      hideOtherSubmenu();
-      el.classList.add('menu__item_submenu_selected');
-    }
-
+    hideOtherSubmenu();
+    el.classList.add('menu__item_submenu_selected');
   });
 });
 
@@ -100,6 +108,40 @@ function hideOtherSubmenu() {
   submenu.forEach(el => {
     el.classList.remove('menu__item_submenu_selected');
   })
+};
+
+// --------------- МОДАЛЬНОЕ ОКНО 1 -------------
+
+// if (window.screen.availWidth < window.screen.availHeight) {
+//   document.querySelector(".popup__img").src =
+//     "./assets/images/modal-window_mobile-01.png";
+// }
+
+let modalWindow = document.getElementById("overlay");
+let btnClosePopup = document.getElementById("close");
+let delay_popup = 5000;
+
+setTimeout(() => {
+  modalWindow.style.display = "block";
+}, delay_popup);
+
+btnClosePopup.onclick = () => {
+  modalWindow.style.display = "none";
+};
+
+
+// --------------- МОДАЛЬНОЕ ОКНО 2 -------------
+
+let modalWindow2 = document.getElementById("overlay2");
+let btnClosePopup2 = document.getElementById("close2");
+let delay_popup2 = 5000;
+
+setTimeout(() => {
+  modalWindow2.style.display = "block";
+}, delay_popup2);
+
+btnClosePopup2.onclick = () => {
+  modalWindow2.style.display = "none";
 };
 
 

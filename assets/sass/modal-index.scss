@@ -1,0 +1,133 @@
+#overlay {
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 999;
+    -webkit-animation: fade 0.8s;
+    -moz-animation: fade 0.8s;
+    animation: fade 0.8s;
+    overflow: auto;
+    transition: all 0.5s ease-in-out;
+  }
+
+  
+
+  /* модальный блок */
+  .popup {
+    top: 15%;
+    left: 0;
+    right: 40px;
+    margin: 0 auto;
+    width: 65%;
+    min-width: 260px;
+    max-width: 667px;
+    height: 490px;
+    position: absolute;
+    // padding: 1rem;
+    // box-shadow: 0 0 10px 4px rgba(64, 86, 98, 0.8);
+    background: #FDEFEA;
+    z-index: 1000;
+    // border-radius: 4px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  /* кнопка закрытия */
+  .close {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    color:#F4A48D;
+    position: absolute;
+    border: none;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    // background-color: #3919af;
+    // -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    //   0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    // -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    //   0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    // box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.16),
+    //   0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    outline: none;
+  }
+  .close:before {
+    // color: #000;
+    // color: rgba(255, 255, 255, 0.9);
+    content: "X";
+    // text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+    // -webkit-transition: all 0.5s;
+    // -moz-transition: all 0.5s;
+    // transition: all 0.5s;
+  }
+  /* кнопка закрытия при наведении */
+  .close:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+
+  .window_name {
+    width: 667px;
+    height: 54px;
+    background-color: #F4A48D;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    padding-left: 35px;
+    padding-top: 15px;
+  }
+  .modal_enterBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 400px;
+  }
+
+  .modal__inputfield {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+.modal__lable {
+    margin-right: 34px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 160px;
+    }
+
+#case_type, #project_category, #date_type {
+    width: 356px;
+    height: 30px;
+}
+
+
+  .modal__button {
+    width: 280px;
+    height: 47px;
+    font-size: 16px;
+font-weight: 800;
+}
+  
+  @media (max-width: 456px) {
+    .popup {
+      top: 2rem;
+    }
+    
+    .details {
+      width: 70%;
+    }
+    .details a {
+      font-size: calc(10px + (2 + 2 * 0.7) * ((100vw - 320px) / 744));
+    }
+  }
