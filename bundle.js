@@ -140,7 +140,7 @@ function createObject() {
       
 }
 
-objIndex = myArray.findIndex((obj => obj.id == 1))
+// objIndex = myArray.findIndex((obj => obj.id == 1))
 
 // function InboxDelite() {
 //     inboxItem.innerHTML = null;
@@ -194,7 +194,10 @@ placeInboxList.addEventListener('click', (event) => {
 // })
 
 
-// МЕНЮ
+// МЕНЮ_________________________________________________________
+
+
+
 // показывает выбранный пункт меню, выдавая класс с цветом
 const menuItems = document.querySelectorAll('.menu__item');
 
