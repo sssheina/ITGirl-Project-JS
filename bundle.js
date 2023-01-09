@@ -27,9 +27,6 @@ let nameModale = document.querySelector(".window_name");
 // }
 
 
-let arrayInbox = [];
-let i = 0;
-
 
 // function generateInboxList() {
 //     arrayInbox.push(inbox.value);
@@ -67,7 +64,26 @@ let i = 0;
 //   console.log(buttonInboxEdit);
 // }
 
+let arrayInbox = [];
+let i = 0;
 
+function createTaskObject() {
+  const objInbox = {
+    id: i++,
+    name: inbox.value,
+  }
+  arrayInbox.push(objInbox);
+}
+
+function findTask(e) {
+  const id = e.parentNode.id;
+  const task = arrayInbox.find(el => el.id == id);
+  showTitle(task.name);
+}
+  
+function showTitle(title) {
+  nameModale.innerHTML = `${title}`;
+}
 
 const createСard = (obj) => {
   const block = document.createElement('li');
@@ -93,14 +109,6 @@ const createСard = (obj) => {
   buttonDelite.className = "inbox__btn-delite";
   //  const imgButtonDelite= document.createElement('img');
   // imgButtonDelite.className = "header__buttonpic-delite";
- 
-  
-
-
-
-
-
-  
 
   block.append(check);
   block.append(item);
@@ -109,12 +117,13 @@ const createСard = (obj) => {
   check.append(labelCheck);
   labelCheck.append(inputCheck);
   labelCheck.append(checkmark);
+
+  arrayInbox.forEach(el => {
+    block.setAttribute("id", `${el.id}`);
+    buttonEdit.setAttribute("onClick", "findTask(this)");
+  })
   // buttonEdit.append(imgButtonEdit);
   // buttonDelite.append(imgButtonDelite);
-
-  
-  // console.log(block);
-  
   return block;
 }
 
@@ -128,20 +137,6 @@ const createСard = (obj) => {
   
 //     }
 
-function createObject() {
-  const objInbox = {
-    id: i++,
-    name: inbox.value,
-
-      }
-      arrayInbox.push (objInbox);
-      // for (let i=0; i<)
-      
-      
-}
-
-// objIndex = myArray.findIndex((obj => obj.id == 1))
-
 // function InboxDelite() {
 //     inboxItem.innerHTML = null;
 // }
@@ -154,15 +149,9 @@ const addCard = (objItem, ) => {
 }
 
 inboxButton.addEventListener("click", () => {
-  const objInbox = {
-    name: inbox.value,
-      }
-      nameModale.textContent = objInbox.name;
-      console.log(objInbox);
+  createTaskObject();
   createСard();
   addCard();
-  createObject();
-  console.log(arrayInbox);
   inbox.value = "";
 });
 
