@@ -110,6 +110,7 @@ const createСard = (obj) => {
 
   
   // console.log(block);
+  
   return block;
 }
 
@@ -123,11 +124,13 @@ const createСard = (obj) => {
 const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
+  
 }
 
 inboxButton.addEventListener("click", () => {
   createСard();
   addCard();
+  inbox.value = "";
 });
 
 

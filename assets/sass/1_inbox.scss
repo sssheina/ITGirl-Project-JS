@@ -71,6 +71,9 @@ font-weight: 800;
     text-align: center;
     background-image: url('/assets/images/pencil_white.png');
     background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 25px;
+    
 }
 .inbox__btn-delite {
     height: 40px;
@@ -82,7 +85,24 @@ font-weight: 800;
     text-align: center;
     background-image: url('/assets/images/pencil_white.png');
     background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 25px;
+    
 }
 // .inbox__listItems {
 //     overflow: scroll;
 // }
+
+.inbox__btn-edit:before {
+    content: "/";
+    font-weight: 700;
+} 
+
+.inbox__btn-delite:before {
+    content: "X";
+    font-weight: 700;
+} 
+
+.inbox__btn-edit:hover, .inbox__btn-delite:hover {
+    background-color: #fdc2b1;
+  }
