@@ -4,6 +4,9 @@ const placeInboxList = document.querySelector(".inbox__listItems");
 // const buttonInboxEdit = document.querySelector(".inbox__btn-edit");
 const buttonInboxDelite = document.querySelector(".inbox__btn-delite");
 let inboxItem = document.querySelector(".inbox__item");
+let modalWindow = document.getElementById("overlay");
+let btnClosePopup = document.getElementById("close");
+let nameModale = document.querySelector(".window_name");
 
 // let nameTask == inbox.value;
 
@@ -23,8 +26,8 @@ let inboxItem = document.querySelector(".inbox__item");
 // }
 
 
-// let arrayInbox = [];
-
+let arrayInbox = [];
+let i = 0;
 
 
 // function generateInboxList() {
@@ -86,7 +89,7 @@ const createСard = (obj) => {
   //  const imgButtonEdit = document.createElement('img');
   // imgButtonEdit.className = "header__buttonpic-edit";
   const buttonDelite = document.createElement('button');
-  buttonDelite .className = "inbox__btn-delite";
+  buttonDelite.className = "inbox__btn-delite";
   //  const imgButtonDelite= document.createElement('img');
   // imgButtonDelite.className = "header__buttonpic-delite";
  
@@ -114,7 +117,29 @@ const createСard = (obj) => {
   return block;
 }
 
+// const objInbox = {
+//   name: inbox.value,
+//   type: "",
+//   category: "",
+//   context: "",
+//   date: "",
+// id:"",
+  
+//     }
 
+function createObject() {
+  const objInbox = {
+    id: i++,
+    name: inbox.value,
+
+      }
+      arrayInbox.push (objInbox);
+      // for (let i=0; i<)
+      
+      
+}
+
+objIndex = myArray.findIndex((obj => obj.id == 1))
 
 // function InboxDelite() {
 //     inboxItem.innerHTML = null;
@@ -128,18 +153,44 @@ const addCard = (objItem, ) => {
 }
 
 inboxButton.addEventListener("click", () => {
+  const objInbox = {
+    name: inbox.value,
+      }
+      nameModale.textContent = objInbox.name;
+      console.log(objInbox);
   createСard();
   addCard();
+  createObject();
+  console.log(arrayInbox);
   inbox.value = "";
 });
 
+// placeInboxList.addEventListener('click', (event) => {
+//   if (event.target.classList.placeInboxList('inbox__btn-delite')) {
+//     console.log(event.target.parentNode.remove);
+//   }
+// })
+
 placeInboxList.addEventListener('click', (event) => {
-  if (event.target.classList.placeInboxList('inbox__btn-delite')) {
-    console.log(event.target);
+  if (event.target.classList.contains('inbox__btn-delite')) {
+    event.target.parentNode.remove();
   }
 })
 
+placeInboxList.addEventListener('click', (event) => {
+  if (event.target.classList.contains('inbox__btn-edit')) {
+    modalWindow.style.display = "block";
+    
+    // btnClosePopup.onclick = ClosePopup();
+  }
+})
 
+// const modalButton = document.querySelector('modal__button');
+// inboxButton.addEventListener('click', () => {
+//   const objInbox = {
+//     name: inbox.value,
+//   }
+// })
 
 
 // МЕНЮ
@@ -185,8 +236,7 @@ function hideOtherSubmenu() {
 
 
 
-// let modalWindow = document.getElementById("overlay");
-// let btnClosePopup = document.getElementById("close");
+
 // let delay_popup = 5000;
 
 
@@ -195,10 +245,11 @@ function hideOtherSubmenu() {
 //   modalWindow.style.display = "block";
 // }, delay_popup);
 
-// btnClosePopup.onclick = () => {
+
+// function ClosePopup() {
 //   modalWindow.style.display = "none";
 // };
-
+// btnClosePopup.onclick = ClosePopup();
 
 // --------------- МОДАЛЬНОЕ ОКНО 2 -------------
 
