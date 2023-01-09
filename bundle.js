@@ -134,6 +134,14 @@ inboxButton.addEventListener("click", () => {
   inbox.value = "";
 });
 
+placeInboxList.addEventListener('click', (event) => {
+  if (event.target.classList.placeInboxList('inbox__btn-delite')) {
+    console.log(event.target);
+  }
+})
+
+
+
 
 // МЕНЮ
 // показывает выбранный пункт меню, выдавая класс с цветом
