@@ -7,6 +7,7 @@ let inboxItem = document.querySelector(".inbox__item");
 let modalWindow = document.getElementById("overlay");
 let btnClosePopup = document.getElementById("close");
 let nameModale = document.querySelector(".window_name");
+const headerButton = document.querySelector(".header__button")
 
 // let nameTask == inbox.value;
 
