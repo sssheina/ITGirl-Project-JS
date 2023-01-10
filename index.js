@@ -70,17 +70,14 @@ const modalDate = document.getElementById("date_type");
 
 let arrayInbox = [];
 let i = 0;
+// глобальная переменная для сохранения обрабатываемого таска из функции findTask
+let currentObject = "";
 
 // создает объект из таска и записывает его в массив
 function createTaskObject() {
   const objInbox = {
     id: i++,
     name: inbox.value,
-    type: modalType.value,
-    category: modalCategory.value,
-    context: "",
-    date: modalDate.value,
-
   }
   arrayInbox.push(objInbox);
 }
@@ -93,7 +90,8 @@ function findTask(el) {
   const task = arrayInbox.find(el => el.id == id);
   // передает имя таска в showTitle
   showTitle(task.name);
-  addValues(task);
+  // записывает в глобальную переменную найденный объект, чтобы передавать его в другие функции
+  currentObject = task;
 }
 
 // засовывает имя таска в модальное окно
@@ -252,16 +250,18 @@ function closePopup() {
   modalWindow.style.display = "none";
 };
 
-
-function addValues(task) {
-  // const type = document.getElementById("case_type").value;
-  // task.type = type;
-  // let category = document.querySelector(".modal__category").value;
-  // task.category = `${category}`;
-  // const data = document.getElementById("date_type").value;
-  // task.data = data;
-  console.log(task);
-    };
+// висит на онклике кнопки "Сохранить" в модальном окне
+function addValues() {
+  // нужный объект найден в функции findTask и записан в глобальную переменную currentObject
+  // забирает все значения из полей, записывает их в объект и выводит объект в консоль
+  const type = document.getElementById("case_type").value;
+  currentObject.type = `${type}`;
+  const category = document.getElementById("project_category").value;
+  currentObject.category = `${category}`;
+  const data = document.getElementById("date_type").value;
+  currentObject.data = `${data}`;
+  console.log(currentObject);
+};
 
 
 
