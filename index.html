@@ -243,7 +243,7 @@
 
       <!-- МОДАЛЬНОЕ ОКНО -->
 
-      <div id="overlay">
+      <div id="overlay" class="overlay">
         <div id="popup" class="popup">
           
             
@@ -259,17 +259,17 @@
                 rows="3"
                 cols="45"
                 class="inbox__input input"
-                id="inboxInput"
+                id="modalInput"
               ></textarea>
             </div>
             <div class="modal__inputfield">
                 <label for="case_type" id="case_text" class="modal__lable"> ТИП: </label><br />
                 <select id="case_type" class="input">
-                    <option value=""> </option>
-                    <option value="Быстрые дела"> БЫСТРЫЕ ДЕЛА</option>
-                    <option value="Проекты"> ПРОЕКТЫ</option>
-                    <option value="Справочны материалы"> СПРАВОЧНЫЕ МАТЕРИАЛЫ</option>
-                    <option value="Лист ожидания"> ЛИСТ ОЖИДАНИЯ</option>
+                    <option class="modal__type" value=""> </option>
+                    <option class="modal__type" value="Быстрые дела"> БЫСТРЫЕ ДЕЛА</option>
+                    <option class="modal__type" value="Проекты"> ПРОЕКТЫ</option>
+                    <option class="modal__type" value="Справочны материалы"> СПРАВОЧНЫЕ МАТЕРИАЛЫ</option>
+                    <option class="modal__type" value="Лист ожидания"> ЛИСТ ОЖИДАНИЯ</option>
                 </select>
             </div>
 
@@ -277,19 +277,19 @@
             <div class="modal__inputfield">
                 <label for="project_category" id="category_text" class="modal__lable"> КАТЕГОРИЯ: </label><br />
                 <select id="project_category" class="input">
-                    <option value=""> </option>
-                    <option value="Семья"> ДОМ</option>
-                    <option value="Дом"> УЧЁБА</option>
-                    <option value="Работа"> РАБОТА</option>
-                    <option value="САМОРАЗВИТИЕ"> САМОРАЗВИТИЕ</option>
-                    <option value="ЗДОРОВЬЕ"> ЗДОРОВЬЕ</option>
-                    <option value="ОТДЫХ"> ОТДЫХ</option>
-                    <option value="ХОББИ"> ХОББИ</option>
-                    <option value="ИДЕИ"> ИДЕИ</option>
-                    <option value="ХОЗЯЙСТВО"> ХОЗЯЙСТВО</option>
-                    <option value="СПОРТ"> СПОРТ</option>
-                    <option value="УХОД ЗА СОБОЙ"> УХОД ЗА СОБОЙ</option>
-                    <option value="ОТДЫХ"> ОТДЫХ</option>
+                    <option class="modal__category" value=""> </option>
+                    <option class="modal__category" value="Семья"> ДОМ</option>
+                    <option class="modal__category" value="Дом"> УЧЁБА</option>
+                    <option class="modal__category" value="Работа"> РАБОТА</option>
+                    <option class="modal__category" value="САМОРАЗВИТИЕ"> САМОРАЗВИТИЕ</option>
+                    <option class="modal__category" value="ЗДОРОВЬЕ"> ЗДОРОВЬЕ</option>
+                    <option class="modal__category" value="ОТДЫХ"> ОТДЫХ</option>
+                    <option class="modal__category" value="ХОББИ"> ХОББИ</option>
+                    <option class="modal__category" value="ИДЕИ"> ИДЕИ</option>
+                    <option class="modal__category" value="ХОЗЯЙСТВО"> ХОЗЯЙСТВО</option>
+                    <option class="modal__category" value="СПОРТ"> СПОРТ</option>
+                    <option class="modal__category" value="УХОД ЗА СОБОЙ"> УХОД ЗА СОБОЙ</option>
+                    <option class="modal__category" value="ОТДЫХ"> ОТДЫХ</option>
                 </select>
             </div>
 
@@ -299,10 +299,10 @@
               </input>
           </div>
 
-            <button id="close" class="close" title="Close"></button>
+            <button id="close" class="close" title="Close" onclick="closePopup()"></button>
           <!-- <a href="#" class="close btn">Сохранить</a> -->
           <div>
-            <button class="modal__button btn">СОХРАНИТЬ</button>
+            <button class="modal__button btn" onclick="addValues()">СОХРАНИТЬ</button>
           </div>
         </div>
         </div>

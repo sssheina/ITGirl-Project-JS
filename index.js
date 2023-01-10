@@ -8,7 +8,11 @@ let modalWindow = document.getElementById("overlay");
 let btnClosePopup = document.getElementById("close");
 let nameModale = document.querySelector(".window_name");
 const headerButton = document.querySelector(".header__button")
-
+const modalButton = document.querySelector(".modal__button");
+const modalInput = document.getElementById("modalInput");
+const modalCategory = document.querySelector(".modal__category");
+const modalType = document.querySelector(".modal__type");
+const modalDate = document.getElementById("date_type");
 // let nameTask == inbox.value;
 
 // let task = {
@@ -72,6 +76,11 @@ function createTaskObject() {
   const objInbox = {
     id: i++,
     name: inbox.value,
+    type: modalType.value,
+    category: modalCategory.value,
+    context: "",
+    date: modalDate.value,
+
   }
   arrayInbox.push(objInbox);
 }
@@ -84,11 +93,13 @@ function findTask(el) {
   const task = arrayInbox.find(el => el.id == id);
   // передает имя таска в showTitle
   showTitle(task.name);
+  addValues(task);
 }
 
 // засовывает имя таска в модальное окно
 function showTitle(title) {
   nameModale.innerHTML = `${title}`;
+  modalInput.innerHTML = `${title}`;
 }
 
 const createСard = (obj) => {
@@ -180,16 +191,14 @@ placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-edit')) {
     modalWindow.style.display = "block";
     
-    // btnClosePopup.onclick = ClosePopup();
+      }
+  if (event.target.classList.contains('overlay')) {
+    modalWindow.style.display = "none";
+    
+    
   }
 })
 
-// const modalButton = document.querySelector('modal__button');
-// inboxButton.addEventListener('click', () => {
-//   const objInbox = {
-//     name: inbox.value,
-//   }
-// })
 
 
 // МЕНЮ_________________________________________________________
@@ -239,19 +248,36 @@ function hideOtherSubmenu() {
 
 
 
-// let delay_popup = 5000;
+function closePopup() {
+  modalWindow.style.display = "none";
+};
+
+
+function addValues(task) {
+  // const type = document.getElementById("case_type").value;
+  // task.type = type;
+  // let category = document.querySelector(".modal__category").value;
+  // task.category = `${category}`;
+  // const data = document.getElementById("date_type").value;
+  // task.data = data;
+  console.log(task);
+    };
 
 
 
-// setTimeout(() => {
-//   modalWindow.style.display = "block";
-// }, delay_popup);
 
 
-// function ClosePopup() {
-//   modalWindow.style.display = "none";
-// };
-// btnClosePopup.onclick = ClosePopup();
+  
+  // modalButton.onclick = addValues(task); 
+    
+  
+
+
+
+
+
+
+
 
 // --------------- МОДАЛЬНОЕ ОКНО 2 -------------
 
