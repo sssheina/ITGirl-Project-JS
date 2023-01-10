@@ -27,9 +27,6 @@ const headerButton = document.querySelector(".header__button")
 // }
 
 
-let arrayInbox = [];
-let i = 0;
-
 
 // function generateInboxList() {
 //     arrayInbox.push(inbox.value);
@@ -67,7 +64,32 @@ let i = 0;
 //   console.log(buttonInboxEdit);
 // }
 
+let arrayInbox = [];
+let i = 0;
 
+// создает объект из таска и записывает его в массив
+function createTaskObject() {
+  const objInbox = {
+    id: i++,
+    name: inbox.value,
+  }
+  arrayInbox.push(objInbox);
+}
+
+// по нажатию на кнопку редактирования у определенного таска вызывается эта функция
+function findTask(el) {
+  // забирает id из родительского элемента, который мы дали при создании карточки таска в createCard 
+  const id = el.parentNode.id;
+  // находит в массиве тасков соответсвующий таск по id
+  const task = arrayInbox.find(el => el.id == id);
+  // передает имя таска в showTitle
+  showTitle(task.name);
+}
+
+// засовывает имя таска в модальное окно
+function showTitle(title) {
+  nameModale.innerHTML = `${title}`;
+}
 
 const createСard = (obj) => {
   const block = document.createElement('li');
@@ -93,14 +115,6 @@ const createСard = (obj) => {
   buttonDelite.className = "inbox__btn-delite";
   //  const imgButtonDelite= document.createElement('img');
   // imgButtonDelite.className = "header__buttonpic-delite";
- 
-  
-
-
-
-
-
-  
 
   block.append(check);
   block.append(item);
@@ -109,12 +123,16 @@ const createСard = (obj) => {
   check.append(labelCheck);
   labelCheck.append(inputCheck);
   labelCheck.append(checkmark);
+
+  // проходится по записанным в массив таскам
+  arrayInbox.forEach(el => {
+  // дает создаваемому элементу block (li) id, доставая его из объекта
+    block.setAttribute("id", `${el.id}`);
+  // дает кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+    buttonEdit.setAttribute("onClick", "findTask(this)");
+  })
   // buttonEdit.append(imgButtonEdit);
   // buttonDelite.append(imgButtonDelite);
-
-  
-  // console.log(block);
-  
   return block;
 }
 
@@ -128,20 +146,6 @@ const createСard = (obj) => {
   
 //     }
 
-function createObject() {
-  const objInbox = {
-    id: i++,
-    name: inbox.value,
-
-      }
-      arrayInbox.push (objInbox);
-      // for (let i=0; i<)
-      
-      
-}
-
-// objIndex = myArray.findIndex((obj => obj.id == 1))
-
 // function InboxDelite() {
 //     inboxItem.innerHTML = null;
 // }
@@ -154,15 +158,9 @@ const addCard = (objItem, ) => {
 }
 
 inboxButton.addEventListener("click", () => {
-  const objInbox = {
-    name: inbox.value,
-      }
-      nameModale.textContent = objInbox.name;
-      console.log(objInbox);
+  createTaskObject();
   createСard();
   addCard();
-  createObject();
-  console.log(arrayInbox);
   inbox.value = "";
 });
 
