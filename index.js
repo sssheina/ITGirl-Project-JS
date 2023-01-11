@@ -181,8 +181,6 @@ inboxButton.addEventListener("click", () => {
 //   }
 // })
 
-let arrayProgressCounter = [];
-
 let delay_placeInboxList = 5000;
 
 
