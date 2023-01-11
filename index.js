@@ -260,12 +260,7 @@ function checkBox(check) {
 
     let progressCounter = document.querySelector(".header__counter");
     progressCounter.textContent = arrayProgressCounter.length;
-    arrayProgressCounter.push(1);
-    console.log('checked! ' + arrayProgressCounter.length);
 
-  } else {
-    arrayProgressCounter.pop();
-    console.log('unchecked! ' + arrayProgressCounter.length);
   }
 
 
