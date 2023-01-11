@@ -133,23 +133,24 @@ placeInboxList.addEventListener('click', (event) => {
 let arrayProgressCounter = [];
 
 function checkBox(checkbox) {
-  let t;
+  let timeoutID;
 
   if (checkbox.checked) {
-    t = setTimeout(() =>
+    timeoutID = setTimeout(() =>
       checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
     );
     arrayProgressCounter.push(1);
     console.log('checked! ' + arrayProgressCounter.length);
 
   } else {
-    clearTimeout(t);
+    clearTimeout(timeoutID);
     arrayProgressCounter.pop();
     console.log('unchecked! ' + arrayProgressCounter.length);
   }
 
   let progressCounter = document.querySelector(".header__counter");
   progressCounter.textContent = arrayProgressCounter.length;
+
 }
 
 
