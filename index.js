@@ -22,7 +22,6 @@ const modalContext = document.getElementById("context_type");
 //     contextTask: "",
 //     dateTask: "",
 //     stages:[]
-
 // }
 
 // let stage = {
@@ -37,7 +36,7 @@ const modalContext = document.getElementById("context_type");
 //     arrayInbox.push(inbox.value);
 //     console.log(arrayInbox);
 //     placeInboxList.innerHTML += `<li class="inbox__listItem listItem">
-                      
+
 
 //     <div class="inbox__inputfield">
 //       <label class="inbox__check check">
@@ -46,7 +45,7 @@ const modalContext = document.getElementById("context_type");
 //       </label>
 //     </div>
 
-    
+
 
 //     <div class="inbox__item">${inbox.value}</div>
 //     <button class="inbox__btn-edit btn">
@@ -136,14 +135,15 @@ const createСard = (obj) => {
 
   // проходится по записанным в массив таскам
   arrayInbox.forEach(el => {
-  // дает создаваемому элементу block (li) id, доставая его из объекта
+    // дает создаваемому элементу block (li) id, доставая его из объекта
     block.setAttribute("id", `${el.id}`);
-  // дает кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+    // дает кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
     buttonEdit.setAttribute("onClick", "findTask(this)");
   })
   // buttonEdit.append(imgButtonEdit);
   // buttonDelite.append(imgButtonDelite);
   return block;
+
 }
 
 // const objInbox = {
@@ -153,7 +153,7 @@ const createСard = (obj) => {
 //   context: "",
 //   date: "",
 // id:"",
-  
+
 //     }
 
 // function InboxDelite() {
@@ -164,13 +164,14 @@ const createСard = (obj) => {
 const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
-  
 }
 
 inboxButton.addEventListener("click", () => {
   createTaskObject();
   createСard();
   addCard();
+  checkBox();
+
   inbox.value = "";
 });
 
@@ -204,12 +205,11 @@ console.log(arrayProgressCounter.length);
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-edit')) {
     modalWindow.style.display = "block";
-    
-      }
+
+  }
   if (event.target.classList.contains('overlay')) {
     modalWindow.style.display = "none";
-    
-    
+
   }
 })
 
@@ -221,11 +221,46 @@ placeInboxList.addEventListener('click', (event) => {
 
 
 
-// placeInboxList.addEventListener('click', (event) => {
-//   if (event.target.classList.contains('inbox__input-check')) {
-//     event.target.parentNode.remove();
-//   }
-// })
+// ЧЕКБОКС______________________________________________________
+
+let arrayProgressCounter = [];
+
+function checkBox() {
+  const checkbox = document.querySelector(".inbox__input-check");
+
+  // checkbox.addEventListener('click', (event) => {
+  //   if (event.target.checked) {
+  //     setTimeout(() =>
+  //       event.target.parentNode.parentNode.parentNode.remove(), 5000
+  //     );
+
+  //     arrayProgressCounter.push(1);
+  //     console.log('checked! ' + arrayProgressCounter.length);
+
+  //   } else {
+  //     arrayProgressCounter.pop();
+  //     console.log('unchecked! ' + arrayProgressCounter.length);
+  //   }
+  // })
+
+  checkbox.onclick = function (event) {
+    if (checkbox.checked) {
+      setTimeout(() =>
+        event.target.parentNode.parentNode.parentNode.remove(), 5000
+      );
+
+      arrayProgressCounter.push(1);
+      console.log('checked! ' + arrayProgressCounter.length);
+  
+    } else {
+      arrayProgressCounter.pop();
+      console.log('unchecked! ' + arrayProgressCounter.length);
+    }
+  }
+
+}
+
+
 
 // МЕНЮ_________________________________________________________
 
@@ -253,7 +288,7 @@ const submenu = document.querySelectorAll('.menu__item_withSubmenu');
 submenu.forEach(el => {
   el.addEventListener('click', function () {
 
-    if(el.classList.contains("menu__item_submenu_selected")) {
+    if (el.classList.contains("menu__item_submenu_selected")) {
       el.classList.remove("menu__item_submenu_selected")
     } else {
       hideOtherSubmenu();
@@ -298,17 +333,8 @@ function addValues() {
 
 
 
-  
-  // modalButton.onclick = addValues(task); 
-    
-  
 
-
-
-
-
-
-
+// modalButton.onclick = addValues(task); 
 
 // --------------- МОДАЛЬНОЕ ОКНО 2 -------------
 
@@ -338,13 +364,13 @@ function addValues() {
 
 // $('form').on('submit', function(event){
 //   event.preventDefault();
-  
+
 //   var taskText = $('.task__add').val();
 //   var tasksN = $('.task').length + 1;
-  
+
 //   var newTask = '<label for="task--' + tasksN + '" class="task task--new"><input class="task__check" type="checkbox" id="task--' + tasksN + '" /> <div class="task__field task--row">' + taskText + '<button class="task__important"><i class="fa fa-check" aria-hidden="true"></i></button></div></label>'
 
-  
+
 //   $('.task__list').append(newTask);
 
 //   $('.task__add').val('');
@@ -355,8 +381,8 @@ function addValues() {
 
 
 // function checkList() {
-  
-  
+
+
 //   $('.task').each(function(){
 
 //     var $field = $(this).find('.task__field');
@@ -379,7 +405,7 @@ function addValues() {
 //         $field.addClass('delete');
 //         lastDeletedTask = $field.text();
 //         console.log(lastDeletedTask);
-        
+
 //         setTimeout(function(){
 //            $field.remove();
 //         }, 200);
@@ -390,6 +416,3 @@ function addValues() {
 // }
 
 // checkList();
-
-
-
