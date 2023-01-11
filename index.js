@@ -14,69 +14,17 @@ const modalCategory = document.querySelector(".modal__category");
 const modalType = document.querySelector(".modal__type");
 const modalDate = document.getElementById("date_type");
 const modalContext = document.getElementById("context_type");
-// let nameTask == inbox.value;
 
-// let task = {
-//     nameTask: "",
-//     category: "",
-//     contextTask: "",
-//     dateTask: "",
-//     stages:[]
-// }
-
-// let stage = {
-//   nameStage: "",
-//   contextStage: "",
-//     dateStage: "",
-// }
-
-
-
-// function generateInboxList() {
-//     arrayInbox.push(inbox.value);
-//     console.log(arrayInbox);
-//     placeInboxList.innerHTML += `<li class="inbox__listItem listItem">
-
-
-//     <div class="inbox__inputfield">
-//       <label class="inbox__check check">
-//         <input type="checkbox" class="inbox__input-check"/>
-//         <span class="inbox__checkmark checkmark"></span>
-//       </label>
-//     </div>
-
-
-
-//     <div class="inbox__item">${inbox.value}</div>
-//     <button class="inbox__btn-edit btn">
-//       <img
-//         class="header__buttonpic-edit"
-//         src="./assets/images/pencil_white.png"
-//         alt="logo_white"
-//       />
-//     </button>
-//     <button class="inbox__btn-delite btn" onclick="InboxDelite()">
-//       <img
-//         class="header__buttonpic"
-//         src="./assets/images/delite_white.png"
-//         alt="logo_white"
-//       />
-//     </button>
-//   </li>`
-
-//   inbox.value = "";
-//   console.log(buttonInboxEdit);
-// }
 
 let arrayInbox = [];
-let i = 0;
+let currObjId = 0;
 // глобальная переменная для сохранения обрабатываемого таска из функции findTask
 let currentObject = "";
 
 // создает объект из таска и записывает его в массив
 function createTaskObject() {
   const objInbox = {
-    id: i++,
+    id: currObjId++,
     name: inbox.value,
   }
   arrayInbox.push(objInbox);
@@ -147,20 +95,7 @@ const createСard = (obj) => {
 
 }
 
-// const objInbox = {
-//   name: inbox.value,
-//   type: "",
-//   category: "",
-//   context: "",
-//   date: "",
-// id:"",
 
-//     }
-
-// function InboxDelite() {
-//     inboxItem.innerHTML = null;
-// }
-// placeInboxList
 
 const addCard = (objItem,) => {
   const item = createСard(objItem);
@@ -425,3 +360,72 @@ function addValues() {
 // }
 
 // checkList();
+
+// let nameTask == inbox.value;
+
+// let task = {
+//     nameTask: "",
+//     category: "",
+//     contextTask: "",
+//     dateTask: "",
+//     stages:[]
+// }
+
+// let stage = {
+//   nameStage: "",
+//   contextStage: "",
+//     dateStage: "",
+// }
+
+
+
+// function generateInboxList() {
+//     arrayInbox.push(inbox.value);
+//     console.log(arrayInbox);
+//     placeInboxList.innerHTML += `<li class="inbox__listItem listItem">
+
+
+//     <div class="inbox__inputfield">
+//       <label class="inbox__check check">
+//         <input type="checkbox" class="inbox__input-check"/>
+//         <span class="inbox__checkmark checkmark"></span>
+//       </label>
+//     </div>
+
+
+
+//     <div class="inbox__item">${inbox.value}</div>
+//     <button class="inbox__btn-edit btn">
+//       <img
+//         class="header__buttonpic-edit"
+//         src="./assets/images/pencil_white.png"
+//         alt="logo_white"
+//       />
+//     </button>
+//     <button class="inbox__btn-delite btn" onclick="InboxDelite()">
+//       <img
+//         class="header__buttonpic"
+//         src="./assets/images/delite_white.png"
+//         alt="logo_white"
+//       />
+//     </button>
+//   </li>`
+
+//   inbox.value = "";
+//   console.log(buttonInboxEdit);
+// }
+
+// const objInbox = {
+//   name: inbox.value,
+//   type: "",
+//   category: "",
+//   context: "",
+//   date: "",
+// id:"",
+
+//     }
+
+// function InboxDelite() {
+//     inboxItem.innerHTML = null;
+// }
+// placeInboxList
