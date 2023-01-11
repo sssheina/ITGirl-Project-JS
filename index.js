@@ -253,10 +253,18 @@ function checkBox() {
     } else {
       arrayProgressCounter.pop();
       console.log('unchecked! ' + arrayProgressCounter.length);
+      //тут дб строка которая возвращает блок
     }
-  }
 
+    let progressCounter = document.querySelector(".header__counter");
+    progressCounter.textContent = arrayProgressCounter.length;
+  }
 }
+
+// СЧЕТЧИК ЗАВЕРШЕННЫХ ДЕЛ___________________________________________________
+//<div class="header__labelCounter">ЗАВЕРШЁННЫЕ ДЕЛА:<br><br><span class="header__counter">0</span></div>
+//        </div>
+//document.getElementById("myspan").textContent="newtext";
 
 
 
