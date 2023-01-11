@@ -95,12 +95,14 @@ font-weight: 800;
 
 .inbox__btn-edit:before {
     content: "/";
-    font-weight: 700;
+    font-weight: 400;
+    font-size: 20px;
 } 
 
 .inbox__btn-delite:before {
     content: "X";
-    font-weight: 700;
+    font-weight: 400;
+    font-size: 20px;
 } 
 
 .inbox__btn-edit:hover, .inbox__btn-delite:hover {
