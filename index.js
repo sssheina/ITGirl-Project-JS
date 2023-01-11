@@ -189,14 +189,14 @@ placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-delite')) {
     event.target.parentNode.remove();
   }
-  else if (event.target.classList.contains('inbox__checkmark')) {
-    setTimeout(() => {
+  //else if (event.target.classList.contains('inbox__checkmark')) {
+    //setTimeout(() => {
     // event.target.parentNode.remove();
     // this.parents('.inbox__checkmark').remove();
-  }, delay_placeInboxList);
-  arrayProgressCounter.push(1);
-console.log(arrayProgressCounter.length);
-  }
+//  }, delay_placeInboxList);
+//  arrayProgressCounter.push(1);
+//console.log(arrayProgressCounter.length);
+//  }
 
 })
 
