@@ -197,7 +197,19 @@ placeInboxList.addEventListener('click', (event) => {
   }
 })
 
+// let arrayProgressCounter = [];
 
+// let delay_placeInboxList = 5000;
+
+// setTimeout(() => {
+//   placeInboxList.style.display = "block";
+// }, delay_popup);
+
+// placeInboxList.addEventListener('click', (event) => {
+//   if (event.target.classList.contains('inbox__input-check')) {
+//     event.target.parentNode.remove();
+//   }
+// })
 
 // МЕНЮ_________________________________________________________
 
