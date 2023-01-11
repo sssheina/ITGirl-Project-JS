@@ -13,6 +13,7 @@ const modalInput = document.getElementById("modalInput");
 const modalCategory = document.querySelector(".modal__category");
 const modalType = document.querySelector(".modal__type");
 const modalDate = document.getElementById("date_type");
+const modalContext = document.getElementById("context_type");
 // let nameTask == inbox.value;
 
 // let task = {
@@ -285,6 +286,8 @@ function addValues() {
   currentObject.type = `${type}`;
   const category = document.getElementById("project_category").value;
   currentObject.category = `${category}`;
+  const context = document.getElementById("context_type").value;
+  currentObject.context = `${context}`;
   const data = document.getElementById("date_type").value;
   currentObject.data = `${data}`;
   console.log(currentObject);
