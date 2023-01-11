@@ -199,6 +199,8 @@ placeInboxList.addEventListener('click', (event) => {
 
 // let arrayProgressCounter = [];
 
+// arrayProgressCounter.push();
+
 // let delay_placeInboxList = 5000;
 
 // setTimeout(() => {
