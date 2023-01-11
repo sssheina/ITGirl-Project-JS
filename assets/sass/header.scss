@@ -14,9 +14,11 @@
 .header__container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between
+    justify-content: space-between;
+    align-items: center;
 }
 .header__logo {
+    width: 400px;
     font-size: 30px;
     font-weight: 800;
     color: rgba(255, 255, 255, 1);
@@ -52,3 +54,19 @@
     // background-image: url('/assets/images/delite_white.png');
     // background-repeat: no-repeat;
 // }
+
+.header__labelCounter {
+    // width: 1000px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.header__counter {
+    // padding-top: 35px;
+    font-weight: 800;
+    font-size: 22px;
+    background-color: white;
+    color:#F4A48D
+}
