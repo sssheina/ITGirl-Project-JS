@@ -153,16 +153,12 @@ const createСard = (obj) => {
 //   category: "",
 //   context: "",
 //   date: "",
-// id:"",
+//   id:"",
 
-//     }
+//}
 
-// function InboxDelite() {
-//     inboxItem.innerHTML = null;
-// }
-// placeInboxList
 
-const addCard = (objItem,) => {
+const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -172,34 +168,14 @@ inboxButton.addEventListener("click", () => {
   createTaskObject();
   createСard();
   addCard();
-  // checkBox();
 
   inbox.value = "";
 });
-
-// placeInboxList.addEventListener('click', (event) => {
-//   if (event.target.classList.placeInboxList('inbox__btn-delite')) {
-//     console.log(event.target.parentNode.remove);
-//   }
-// })
-
-let delay_placeInboxList = 5000;
-
-
 
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-delite')) {
     event.target.parentNode.remove();
   }
-  //else if (event.target.classList.contains('inbox__checkmark')) {
-  //setTimeout(() => {
-  // event.target.parentNode.remove();
-  // this.parents('.inbox__checkmark').remove();
-  //  }, delay_placeInboxList);
-  //  arrayProgressCounter.push(1);
-  //console.log(arrayProgressCounter.length);
-  //  }
-
 })
 
 placeInboxList.addEventListener('click', (event) => {
@@ -213,65 +189,32 @@ placeInboxList.addEventListener('click', (event) => {
   }
 })
 
-
-
-// arrayProgressCounter.push();
-
-// 
-
-
-
 // ЧЕКБОКС______________________________________________________
 
 let arrayProgressCounter = [];
 
-function checkBox(check) {
-  const checkbox = check;
+function checkBox(checkbox) {
+  let t;
 
-  // checkbox.addEventListener('click', (event) => {
-  //   if (event.target.checked) {
-  //     setTimeout(() =>
-  //       event.target.parentNode.parentNode.parentNode.remove(), 5000
-  //     );
-
-  //     arrayProgressCounter.push(1);
-  //     console.log('checked! ' + arrayProgressCounter.length);
-
-  //   } else {
-  //     arrayProgressCounter.pop();
-  //     console.log('unchecked! ' + arrayProgressCounter.length);
-  //   }
-  // })
-
-  // checkbox.onclick = function (event) {
   if (checkbox.checked) {
-    setTimeout(() =>
-      checkbox.parentNode.parentNode.parentNode.remove(), 5000
+    t = setTimeout(() =>
+      checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
     );
+    arrayProgressCounter.push(1);
+    console.log('checked! ' + arrayProgressCounter.length);
 
-      arrayProgressCounter.push(1);
-      console.log('checked! ' + arrayProgressCounter.length);
-  
-    } else {
-      arrayProgressCounter.pop();
-      console.log('unchecked! ' + arrayProgressCounter.length);
-      //тут дб строка которая возвращает блок
-    }
-
-    let progressCounter = document.querySelector(".header__counter");
-    progressCounter.textContent = arrayProgressCounter.length;
-
+  } else {
+    clearTimeout(t);
+    arrayProgressCounter.pop();
+    console.log('unchecked! ' + arrayProgressCounter.length);
   }
 
-
-// СЧЕТЧИК ЗАВЕРШЕННЫХ ДЕЛ___________________________________________________
-//<div class="header__labelCounter">ЗАВЕРШЁННЫЕ ДЕЛА:<br><br><span class="header__counter">0</span></div>
-//        </div>
-//document.getElementById("myspan").textContent="newtext";
+  let progressCounter = document.querySelector(".header__counter");
+  progressCounter.textContent = arrayProgressCounter.length;
+}
 
 
-
-// МЕНЮ_________________________________________________________
+// МЕНЮ________________________________________________________  _
 
 
 
