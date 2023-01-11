@@ -139,6 +139,7 @@ const createСard = (obj) => {
     block.setAttribute("id", `${el.id}`);
     // дает кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
     buttonEdit.setAttribute("onClick", "findTask(this)");
+    inputCheck.setAttribute("onClick", "checkBox(this)");
   })
   // buttonEdit.append(imgButtonEdit);
   // buttonDelite.append(imgButtonDelite);
@@ -161,16 +162,17 @@ const createСard = (obj) => {
 // }
 // placeInboxList
 
-const addCard = (objItem, ) => {
+const addCard = (objItem,) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
 
+// слушатель кнопки "Сохранить" на главной
 inboxButton.addEventListener("click", () => {
   createTaskObject();
   createСard();
   addCard();
-  checkBox();
+  // checkBox();
 
   inbox.value = "";
 });
@@ -190,13 +192,13 @@ placeInboxList.addEventListener('click', (event) => {
     event.target.parentNode.remove();
   }
   //else if (event.target.classList.contains('inbox__checkmark')) {
-    //setTimeout(() => {
-    // event.target.parentNode.remove();
-    // this.parents('.inbox__checkmark').remove();
-//  }, delay_placeInboxList);
-//  arrayProgressCounter.push(1);
-//console.log(arrayProgressCounter.length);
-//  }
+  //setTimeout(() => {
+  // event.target.parentNode.remove();
+  // this.parents('.inbox__checkmark').remove();
+  //  }, delay_placeInboxList);
+  //  arrayProgressCounter.push(1);
+  //console.log(arrayProgressCounter.length);
+  //  }
 
 })
 
@@ -223,8 +225,8 @@ placeInboxList.addEventListener('click', (event) => {
 
 let arrayProgressCounter = [];
 
-function checkBox() {
-  const checkbox = document.querySelector(".inbox__input-check");
+function checkBox(check) {
+  const checkbox = check;
 
   // checkbox.addEventListener('click', (event) => {
   //   if (event.target.checked) {
@@ -241,20 +243,20 @@ function checkBox() {
   //   }
   // })
 
-  checkbox.onclick = function (event) {
-    if (checkbox.checked) {
-      setTimeout(() =>
-        event.target.parentNode.parentNode.parentNode.remove(), 5000
-      );
+  // checkbox.onclick = function (event) {
+  if (checkbox.checked) {
+    setTimeout(() =>
+      checkbox.parentNode.parentNode.parentNode.remove(), 5000
+    );
 
-      arrayProgressCounter.push(1);
-      console.log('checked! ' + arrayProgressCounter.length);
-  
-    } else {
-      arrayProgressCounter.pop();
-      console.log('unchecked! ' + arrayProgressCounter.length);
-    }
+    arrayProgressCounter.push(1);
+    console.log('checked! ' + arrayProgressCounter.length);
+
+  } else {
+    arrayProgressCounter.pop();
+    console.log('unchecked! ' + arrayProgressCounter.length);
   }
+  // }
 
 }
 
@@ -332,7 +334,7 @@ function addValues() {
 
 
 
-// modalButton.onclick = addValues(task); 
+// modalButton.onclick = addValues(task);
 
 // --------------- МОДАЛЬНОЕ ОКНО 2 -------------
 
