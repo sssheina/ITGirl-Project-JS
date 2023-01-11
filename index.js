@@ -179,10 +179,25 @@ inboxButton.addEventListener("click", () => {
 //   }
 // })
 
+let arrayProgressCounter = [];
+
+let delay_placeInboxList = 5000;
+
+
+
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-delite')) {
     event.target.parentNode.remove();
   }
+  else if (event.target.classList.contains('inbox__checkmark')) {
+    setTimeout(() => {
+    // event.target.parentNode.remove();
+    // this.parents('.inbox__checkmark').remove();
+  }, delay_placeInboxList);
+  arrayProgressCounter.push(1);
+console.log(arrayProgressCounter.length);
+  }
+
 })
 
 placeInboxList.addEventListener('click', (event) => {
@@ -197,15 +212,13 @@ placeInboxList.addEventListener('click', (event) => {
   }
 })
 
-// let arrayProgressCounter = [];
+
 
 // arrayProgressCounter.push();
 
-// let delay_placeInboxList = 5000;
+// 
 
-// setTimeout(() => {
-//   placeInboxList.style.display = "block";
-// }, delay_popup);
+
 
 // placeInboxList.addEventListener('click', (event) => {
 //   if (event.target.classList.contains('inbox__input-check')) {
@@ -275,6 +288,7 @@ function addValues() {
   const data = document.getElementById("date_type").value;
   currentObject.data = `${data}`;
   console.log(currentObject);
+  closePopup();
 };
 
 
