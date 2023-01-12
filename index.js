@@ -21,6 +21,8 @@ let arrayInbox = [];
 let currObjId = 0;
 // глобальная переменная для сохранения обрабатываемого таска из функции findTask
 let currentObject = "";
+// переменная для карточки таска, записывается по нажатию на кнопку редактирования
+let taskCard = "";
 
 
 // let key будет указан при вызове метода, или по умолчанию устанавливается в the private property _ITEMS_DESCRIPTOR
@@ -89,6 +91,7 @@ function findTask(el) {
   showTitle(task.name);
   // записывает в глобальную переменную найденный объект, чтобы передавать его в другие функции
   currentObject = task;
+  taskCard = el.parentNode;
 }
 
 // засовывает имя таска в модальное окно
@@ -134,8 +137,9 @@ const createСard = (obj) => {
   arrayInbox.forEach(el => {
     // дает создаваемому элементу block (li) id, доставая его из объекта
     block.setAttribute("id", `${el.id}`);
-    // дает кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+    // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
     buttonEdit.setAttribute("onClick", "findTask(this)");
+    // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
     inputCheck.setAttribute("onClick", "checkBox(this)");
   })
   // buttonEdit.append(imgButtonEdit);
@@ -146,19 +150,22 @@ const createСard = (obj) => {
 
 
 
-const addCard = (objItem, ) => {
+const addCard = (objItem,) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
 
-// слушатель кнопки "Сохранить" на главной
-inboxButton.addEventListener("click", () => {
-  createTaskObject();
-  createСard();
-  addCard();
+// проверка нахождения пользователя на главной странице
+if (window.location.href.split('/').at(-1) == "index.html") {
+  // слушатель кнопки "Сохранить" на главной
+  inboxButton.addEventListener("click", () => {
+    createTaskObject();
+    createСard();
+    addCard();
 
-  inbox.value = "";
-});
+    inbox.value = "";
+  });
+};
 
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-delite')) {
@@ -258,6 +265,7 @@ function closePopup() {
 function addValues() {
   // нужный объект найден в функции findTask и записан в глобальную переменную currentObject
   // забирает все значения из полей, записывает их в объект и выводит объект в консоль
+
   const name = document.getElementById("modalInput").value;
   currentObject.name = `${name}`;
     const type = document.getElementById("case_type").value;
@@ -269,14 +277,31 @@ function addValues() {
   const data = document.getElementById("date_type").value;
   currentObject.data = `${data}`;
   
+
   console.log(currentObject);
+  // очищение полей модального окна
+  type.value = "";
+  category.value = "";
+  context.value = "";
+  data.value = "";
+  // удаление карточки таска
+  taskCard.remove();
+  // закрытие модального окна
   closePopup();
+  // sortByType();
 };
 
 
+// ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
+// let array = [];
+// function sortByType(a, b) {
+  // if (arrayInbox.find(({ type }) => type === "Проекты")) {
+  //   array.push();
+  // }
+  // console.log(array);
 
-
-
+  // return arr.filter((el) => el.type.includes(query));
+// }
 
 // modalButton.onclick = addValues(task);
 
