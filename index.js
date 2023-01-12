@@ -281,17 +281,17 @@ function addValues() {
 
 
 
-  
+
   const name = document.getElementById("modalInput").value;
   currentObject.name = `${name}`;
-  const type = document.getElementById("case_type").value;
-  currentObject.type = `${type}`;
-  const category = document.getElementById("project_category").value;
-  currentObject.category = `${category}`;
-  const context = document.getElementById("context_type").value;
-  currentObject.context = `${context}`;
-  const data = document.getElementById("date_type").value;
-  currentObject.data = `${data}`;
+  let type = document.getElementById("case_type");
+  currentObject.type = `${type.value}`;
+  let category = document.getElementById("project_category");
+  currentObject.category = `${category.value}`;
+  let context = document.getElementById("context_type");
+  currentObject.context = `${context.value}`;
+  let data = document.getElementById("date_type");
+  currentObject.data = `${data.value}`;
 
 
   console.log(currentObject);
