@@ -27,7 +27,7 @@ function giveId() {
     id = 0;
   }
   else {
-    id = localStorage.getItem("lastTaskId");
+    id = Number(localStorage.getItem("lastTaskId")) + 1;
   }
   console.log(id);
   return id;
