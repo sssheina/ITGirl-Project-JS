@@ -45,20 +45,26 @@ function createTaskObject() {
   }
   arrayInbox.push(objInbox);
 
-  console.log(objInbox);
+  // console.log(objInbox);
 
   let keyId = `planerTaskObjId_${objInbox.id}`;
   localStorage.setItem(keyId, JSON.stringify(objInbox.id));
 
-  let keyObj = `planerTaskObj_${objInbox.id}`;
-  localStorage.setItem(keyObj, JSON.stringify(objInbox));
 
-  //   let d = localStorage.getItem('c');
-  // d = JSON.parse(d);
-  // console.log(d);
-  // console.log(typeof b);
+  // сохраняем в локальное хранилище массив входящих задач
+  localStorage.setItem('arrayInbox', JSON.stringify(arrayInbox));
+  console.log(arrayInbox);
 
+  // let keyObj = `planerTaskObj_${objInbox.id}`;
+  // localStorage.setItem(keyObj, JSON.stringify(objInbox));
+
+ 
 }
+
+// парсим массив входящих задач
+let arrayInboxParse = localStorage.getItem('arrayInbox');
+arrayInboxParse = JSON.parse(arrayInboxParse);
+console.log(arrayInboxParse);
 
 
 
@@ -66,7 +72,7 @@ function createTaskObject() {
 // ЛОКАЛЬНОЕ ХРАНИЛИЩЕ_______________________
 
 window.addEventListener('storage', event => {
-  console.log(event);
+  // console.log(event);
 
 })
 
@@ -78,17 +84,7 @@ window.addEventListener('storage', event => {
 
 
 
-// function Storage() {
-//   this._ITEMS_DESCRIPTOR = 'items'; // Я полагаю, ключ по умолчанию?
-// }
-// // let key будет указан при вызове метода, или по умолчанию устанавливается в the private property _ITEMS_DESCRIPTOR
-// Storage.prototype.get = function(key) {
-//   var fromStorage = localStorage.getItem(key  ? key : this._planerTaskObjId);
-//   return fromStorage ? JSON.parse(fromStorage) : [];
-// };
-// Storage.prototype.set = function(key, items) {
-//   localStorage.setItem(key, JSON.stringify(items));
-// };
+
 
 // _________________________________________________________________
 
@@ -281,17 +277,18 @@ function addValues() {
 
 
 
-
-  const name = document.getElementById("modalInput").value;
+  
+  let name = document.getElementById("modalInput").value;
   currentObject.name = `${name}`;
-  let type = document.getElementById("case_type");
-  currentObject.type = `${type.value}`;
-  let category = document.getElementById("project_category");
-  currentObject.category = `${category.value}`;
-  let context = document.getElementById("context_type");
-  currentObject.context = `${context.value}`;
-  let data = document.getElementById("date_type");
-  currentObject.data = `${data.value}`;
+  let type = document.getElementById("case_type").value;
+  currentObject.type = `${type}`;
+  let category = document.getElementById("project_category").value;
+  currentObject.category = `${category}`;
+  let context = document.getElementById("context_type").value;
+  currentObject.context = `${context}`;
+  let data = document.getElementById("date_type").value;
+  currentObject.data = `${data}`;
+
 
 
   console.log(currentObject);
@@ -299,8 +296,8 @@ function addValues() {
   // let keyId = `planerTaskObjId_${objInbox.id}`;
   // localStorage.setItem(keyId, JSON.stringify(objInbox.id));
 
-  // let keyObj = `planerTaskObj_${objInbox.id}`;
-  // localStorage.setItem(keyObj, JSON.stringify(objInbox));
+  let keyType = `planerCurrentObject_${currentObject.name}`;
+  localStorage.setItem(keyType, JSON.stringify(currentObject));
 
 
   // очищение полей модального окна
@@ -478,3 +475,15 @@ function addValues() {
 //     inboxItem.innerHTML = null;
 // }
 // placeInboxList
+
+// function Storage() {
+//   this._ITEMS_DESCRIPTOR = 'items'; // Я полагаю, ключ по умолчанию?
+// }
+// // let key будет указан при вызове метода, или по умолчанию устанавливается в the private property _ITEMS_DESCRIPTOR
+// Storage.prototype.get = function(key) {
+//   var fromStorage = localStorage.getItem(key  ? key : this._planerTaskObjId);
+//   return fromStorage ? JSON.parse(fromStorage) : [];
+// };
+// Storage.prototype.set = function(key, items) {
+//   localStorage.setItem(key, JSON.stringify(items));
+// };
