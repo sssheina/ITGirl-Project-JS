@@ -29,7 +29,7 @@ function giveId() {
   else {
     id = Number(localStorage.getItem("lastTaskId")) + 1;
   }
-  console.log(id);
+  // console.log(id);
   return id;
 }
 
@@ -48,6 +48,7 @@ let taskCard = "";
 //   localStorage.setItem(key, JSON.stringify(items));
 // };
 
+let arrayObjId = [];
 
 
 
@@ -66,12 +67,14 @@ function createTaskObject() {
 
   // записывает последний выданный объекту id
   let keyLastId = `lastTaskId`;
-  localStorage.setItem(keyLastId, JSON.stringify(objInbox.id));
+  localStorage.setItem("planerArrayObjId", JSON.stringify(objInbox.id));
+
+
 
 
   // сохраняем в локальное хранилище массив входящих задач
-  localStorage.setItem('arrayInbox', JSON.stringify(arrayInbox));
-  console.log(arrayInbox);
+  // localStorage.setItem('arrayInbox', JSON.stringify(arrayInbox));
+  // console.log(arrayInbox);
 
   // let keyObj = `planerTaskObj_${objInbox.id}`;
   // localStorage.setItem(keyObj, JSON.stringify(objInbox));
@@ -215,26 +218,42 @@ placeInboxList.addEventListener('click', (event) => {
 
 let arrayProgressCounter = [];
 let timeoutID;
+let progressCounter = document.querySelector(".header__counter");
 
 function checkBox(checkbox) {
-
+  
   if (checkbox.checked) {
     timeoutID = setTimeout(() =>
       checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
     );
     arrayProgressCounter.push(1);
-    console.log('checked! ' + arrayProgressCounter.length);
+    // console.log('checked! ' + arrayProgressCounter.length);
 
   } else {
     clearTimeout(timeoutID);
     arrayProgressCounter.pop();
-    console.log('unchecked! ' + arrayProgressCounter.length);
+    // console.log('unchecked! ' + arrayProgressCounter.length);
   }
 
-  let progressCounter = document.querySelector(".header__counter");
+  // let progressCounter = document.querySelector(".header__counter");
   progressCounter.textContent = arrayProgressCounter.length;
 
+  localStorage.setItem("planerCounter", JSON.stringify(arrayProgressCounter.length));
+
 }
+
+addEventListener('DOMContentLoaded', () => {
+  
+    let lastLenghtCounter = Number(localStorage.getItem("planerCounter"));
+    arrayProgressCounter.length = lastLenghtCounter;
+    progressCounter.textContent = arrayProgressCounter.length;
+    
+})
+
+
+
+
+
 
 
 // МЕНЮ________________________________________________________  _
@@ -311,12 +330,12 @@ function addValues() {
 
   console.log(currentObject);
 
-  // let keyId = `planerTaskObjId_${objInbox.id}`;
-  // localStorage.setItem(keyId, JSON.stringify(objInbox.id));
+  let keyObj  = `planerTaskObj_${currentObject.id}`;
+  localStorage.setItem(keyObj, JSON.stringify(currentObject));
 
-  let keyType = `planerCurrentObject_${currentObject.name}`;
-  localStorage.setItem(keyType, JSON.stringify(currentObject));
-
+//   let arrayInboxParse = localStorage.getItem('arrayInbox');
+// arrayInboxParse = JSON.parse(arrayInboxParse);
+// console.log(arrayInboxParse);
 
   // очищение полей модального окна
   type.value = "";
@@ -328,6 +347,8 @@ function addValues() {
   // закрытие модального окна
   closePopup();
   // sortByType();
+  
+  
 };
 
 
