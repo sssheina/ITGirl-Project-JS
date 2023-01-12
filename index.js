@@ -44,19 +44,19 @@ function createTaskObject() {
     name: inbox.value,
   }
   arrayInbox.push(objInbox);
-  
+
   console.log(objInbox);
-  
+
   let keyId = `planerTaskObjId_${objInbox.id}`;
   localStorage.setItem(keyId, JSON.stringify(objInbox.id));
 
   let keyObj = `planerTaskObj_${objInbox.id}`;
   localStorage.setItem(keyObj, JSON.stringify(objInbox));
 
-//   let d = localStorage.getItem('c');
-// d = JSON.parse(d);
-// console.log(d);
-// console.log(typeof b);
+  //   let d = localStorage.getItem('c');
+  // d = JSON.parse(d);
+  // console.log(d);
+  // console.log(typeof b);
 
 }
 
@@ -187,9 +187,9 @@ placeInboxList.addEventListener('click', (event) => {
 // ЧЕКБОКС______________________________________________________
 
 let arrayProgressCounter = [];
+let timeoutID;
 
 function checkBox(checkbox) {
-  let timeoutID;
 
   if (checkbox.checked) {
     timeoutID = setTimeout(() =>
@@ -268,7 +268,7 @@ function addValues() {
 
   const name = document.getElementById("modalInput").value;
   currentObject.name = `${name}`;
-    const type = document.getElementById("case_type").value;
+  const type = document.getElementById("case_type").value;
   currentObject.type = `${type}`;
   const category = document.getElementById("project_category").value;
   currentObject.category = `${category}`;
@@ -276,7 +276,7 @@ function addValues() {
   currentObject.context = `${context}`;
   const data = document.getElementById("date_type").value;
   currentObject.data = `${data}`;
-  
+
 
   console.log(currentObject);
   // очищение полей модального окна
