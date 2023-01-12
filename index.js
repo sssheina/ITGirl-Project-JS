@@ -39,15 +39,6 @@ let currentObject = "";
 let taskCard = "";
 
 
-// let key будет указан при вызове метода, или по умолчанию устанавливается в the private property _ITEMS_DESCRIPTOR
-// Storage.prototype.get = function(key) {
-//   var fromStorage = localStorage.getItem(key  ? key : this._planerTaskObjId);
-//   return fromStorage ? JSON.parse(fromStorage) : [];
-// };
-// Storage.prototype.set = function(key, items) {
-//   localStorage.setItem(key, JSON.stringify(items));
-// };
-
 let arrayObjId = [];
 
 
