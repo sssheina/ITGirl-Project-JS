@@ -18,7 +18,21 @@ const modalContext = document.getElementById("context_type");
 
 
 let arrayInbox = [];
-let currObjId = 0;
+let currObjId = giveId();
+
+// проверяет, записан ли последний выданный id в локальное хранилище, если нет - дает 0, если да - забирает значение
+function giveId() {
+  let id = "";
+  if (localStorage.getItem("lastTaskId") === null) {
+    id = 0;
+  }
+  else {
+    id = localStorage.getItem("lastTaskId");
+  }
+  console.log(id);
+  return id;
+}
+
 // глобальная переменная для сохранения обрабатываемого таска из функции findTask
 let currentObject = "";
 // переменная для карточки таска, записывается по нажатию на кнопку редактирования
@@ -47,8 +61,12 @@ function createTaskObject() {
 
   // console.log(objInbox);
 
-  let keyId = `planerTaskObjId_${objInbox.id}`;
-  localStorage.setItem(keyId, JSON.stringify(objInbox.id));
+  // let keyId = `planerTaskObjId_${objInbox.id}`;
+  // localStorage.setItem(keyId, JSON.stringify(objInbox.id));
+
+  // записывает последний выданный объекту id
+  let keyLastId = `lastTaskId`;
+  localStorage.setItem(keyLastId, JSON.stringify(objInbox.id));
 
 
   // сохраняем в локальное хранилище массив входящих задач
@@ -58,7 +76,7 @@ function createTaskObject() {
   // let keyObj = `planerTaskObj_${objInbox.id}`;
   // localStorage.setItem(keyObj, JSON.stringify(objInbox));
 
- 
+
 }
 
 // парсим массив входящих задач
@@ -277,17 +295,17 @@ function addValues() {
 
 
 
-  
+
   let name = document.getElementById("modalInput").value;
   currentObject.name = `${name}`;
-  let type = document.getElementById("case_type").value;
-  currentObject.type = `${type}`;
-  let category = document.getElementById("project_category").value;
-  currentObject.category = `${category}`;
-  let context = document.getElementById("context_type").value;
-  currentObject.context = `${context}`;
-  let data = document.getElementById("date_type").value;
-  currentObject.data = `${data}`;
+  let type = document.getElementById("case_type");
+  currentObject.type = `${type.value}`;
+  let category = document.getElementById("project_category");
+  currentObject.category = `${category.value}`;
+  let context = document.getElementById("context_type");
+  currentObject.context = `${context.value}`;
+  let data = document.getElementById("date_type");
+  currentObject.data = `${data.value}`;
 
 
 
