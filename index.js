@@ -42,22 +42,24 @@ function createTaskObject() {
     name: inbox.value,
   }
   arrayInbox.push(objInbox);
-  // let key = `${currentObject.id}`;
-  // let planerTaskObj_ = objInbox.id;
-  // let a = planerTaskObj_`${objInbox.id}`;
-  // localStorage.setItem(a, JSON.stringify(objInbox.id));
+  
+  console.log(objInbox);
+  
+  let keyId = `planerTaskObjId_${objInbox.id}`;
+  localStorage.setItem(keyId, JSON.stringify(objInbox.id));
 
-//   function Storage() {
-//     objInbox.id = items ; // Я полагаю, ключ по умолчанию?
-//   }
-// Storage.prototype.get = function(key) {
-//   var fromStorage = localStorage.getItem(key  ? key : objInbox.id);
-//   return fromStorage ? JSON.parse(fromStorage) : [];
-// };
-// Storage.prototype.set = function(key, items) {
-//   localStorage.setItem(key, JSON.stringify(objInbox.id));
-// };
+  let keyObj = `planerTaskObj_${objInbox.id}`;
+  localStorage.setItem(keyObj, JSON.stringify(objInbox));
+
+//   let d = localStorage.getItem('c');
+// d = JSON.parse(d);
+// console.log(d);
+// console.log(typeof b);
+
 }
+
+
+
 
 // ЛОКАЛЬНОЕ ХРАНИЛИЩЕ_______________________
 
@@ -256,7 +258,9 @@ function closePopup() {
 function addValues() {
   // нужный объект найден в функции findTask и записан в глобальную переменную currentObject
   // забирает все значения из полей, записывает их в объект и выводит объект в консоль
-  const type = document.getElementById("case_type").value;
+  const name = document.getElementById("modalInput").value;
+  currentObject.name = `${name}`;
+    const type = document.getElementById("case_type").value;
   currentObject.type = `${type}`;
   const category = document.getElementById("project_category").value;
   currentObject.category = `${category}`;
@@ -264,6 +268,7 @@ function addValues() {
   currentObject.context = `${context}`;
   const data = document.getElementById("date_type").value;
   currentObject.data = `${data}`;
+  
   console.log(currentObject);
   closePopup();
 };
