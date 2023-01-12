@@ -1,3 +1,4 @@
+// let openRequest = indexedDB.open(planer, 1);
 const inbox = document.querySelector(".inbox__input");
 const inboxButton = document.querySelector(".inbox__button");
 const placeInboxList = document.querySelector(".inbox__listItems");
@@ -23,6 +24,19 @@ let currentObject = "";
 // переменная для карточки таска, записывается по нажатию на кнопку редактирования
 let taskCard = "";
 
+
+// let key будет указан при вызове метода, или по умолчанию устанавливается в the private property _ITEMS_DESCRIPTOR
+// Storage.prototype.get = function(key) {
+//   var fromStorage = localStorage.getItem(key  ? key : this._planerTaskObjId);
+//   return fromStorage ? JSON.parse(fromStorage) : [];
+// };
+// Storage.prototype.set = function(key, items) {
+//   localStorage.setItem(key, JSON.stringify(items));
+// };
+
+
+
+
 // создает объект из таска и записывает его в массив
 function createTaskObject() {
   const objInbox = {
@@ -30,7 +44,40 @@ function createTaskObject() {
     name: inbox.value,
   }
   arrayInbox.push(objInbox);
+  // let key = `${currentObject.id}`;
+  // let planerTaskObj_ = objInbox.id;
+  // let a = planerTaskObj_`${objInbox.id}`;
+  // localStorage.setItem(a, JSON.stringify(objInbox.id));
+
+//   function Storage() {
+//     objInbox.id = items ; // Я полагаю, ключ по умолчанию?
+//   }
+// Storage.prototype.get = function(key) {
+//   var fromStorage = localStorage.getItem(key  ? key : objInbox.id);
+//   return fromStorage ? JSON.parse(fromStorage) : [];
+// };
+// Storage.prototype.set = function(key, items) {
+//   localStorage.setItem(key, JSON.stringify(objInbox.id));
+// };
 }
+
+// ЛОКАЛЬНОЕ ХРАНИЛИЩЕ_______________________
+
+// function Storage() {
+//   this._ITEMS_DESCRIPTOR = 'items'; // Я полагаю, ключ по умолчанию?
+// }
+// // let key будет указан при вызове метода, или по умолчанию устанавливается в the private property _ITEMS_DESCRIPTOR
+// Storage.prototype.get = function(key) {
+//   var fromStorage = localStorage.getItem(key  ? key : this._planerTaskObjId);
+//   return fromStorage ? JSON.parse(fromStorage) : [];
+// };
+// Storage.prototype.set = function(key, items) {
+//   localStorage.setItem(key, JSON.stringify(items));
+// };
+
+// _________________________________________________________________
+
+
 
 // по нажатию на кнопку редактирования у определенного таска вызывается эта функция
 function findTask(el) {
