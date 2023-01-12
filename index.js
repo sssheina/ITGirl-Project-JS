@@ -66,8 +66,8 @@ function createTaskObject() {
   // localStorage.setItem(keyId, JSON.stringify(objInbox.id));
 
   // записывает последний выданный объекту id
-  let keyLastId = `lastTaskId`;
-  localStorage.setItem("planerArrayObjId", JSON.stringify(objInbox.id));
+  
+  localStorage.setItem("planerLastTaskId", JSON.stringify(objInbox.id));
 
 
 
