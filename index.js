@@ -65,6 +65,19 @@ function createTaskObject() {
 
 // ЛОКАЛЬНОЕ ХРАНИЛИЩЕ_______________________
 
+window.addEventListener('storage', event => {
+  console.log(event);
+
+})
+
+
+// window.addEventListener('storage', function (e) {
+//   console.log('change');
+//   document.querySelector('.out').textContent = localStorage.getItem('b1');
+// });
+
+
+
 // function Storage() {
 //   this._ITEMS_DESCRIPTOR = 'items'; // Я полагаю, ключ по умолчанию?
 // }
@@ -266,9 +279,12 @@ function addValues() {
   // нужный объект найден в функции findTask и записан в глобальную переменную currentObject
   // забирает все значения из полей, записывает их в объект и выводит объект в консоль
 
+
+
+  
   const name = document.getElementById("modalInput").value;
   currentObject.name = `${name}`;
-    const type = document.getElementById("case_type").value;
+  const type = document.getElementById("case_type").value;
   currentObject.type = `${type}`;
   const category = document.getElementById("project_category").value;
   currentObject.category = `${category}`;
@@ -279,6 +295,14 @@ function addValues() {
   
 
   console.log(currentObject);
+
+  // let keyId = `planerTaskObjId_${objInbox.id}`;
+  // localStorage.setItem(keyId, JSON.stringify(objInbox.id));
+
+  // let keyObj = `planerTaskObj_${objInbox.id}`;
+  // localStorage.setItem(keyObj, JSON.stringify(objInbox));
+
+
   // очищение полей модального окна
   type.value = "";
   category.value = "";
