@@ -43,6 +43,7 @@ let arrayObjId = [];
 
 
 
+
 // создает объект из таска и записывает его в массив
 function createTaskObject() {
   const objInbox = {
@@ -50,6 +51,7 @@ function createTaskObject() {
     name: inbox.value,
   }
   arrayInbox.push(objInbox);
+  arrayObjId.push(objInbox.id);
 
   // console.log(objInbox);
 
@@ -64,16 +66,23 @@ function createTaskObject() {
 
 
   // сохраняем в локальное хранилище массив входящих задач
-  // localStorage.setItem('arrayInbox', JSON.stringify(arrayInbox));
-  // console.log(arrayInbox);
+  localStorage.setItem('arrayObjId', JSON.stringify(arrayObjId));
+  console.log(arrayObjId);
+
+  let arrayObjIdParse = localStorage.getItem('arrayObjId');
+  arrayObjIdParse = JSON.parse(arrayObjIdParse);
+  
+  arrayObjIdParse = arrayObjId;
+  console.log(arrayObjId);
+
 
  // сохраняем из входящих в локальное хранилище задачу как объект
   let keyObj = `planerTaskObj_${objInbox.id}`;
   localStorage.setItem(keyObj, JSON.stringify(objInbox));
 
 // сохраняем из входящих в локальное хранилище последний использованный Id
-  let keyLastId = `lastTaskId`;
-  localStorage.setItem(keyLastId, JSON.stringify(objInbox.id));
+  // let keyLastId = `lastTaskId`;
+  localStorage.setItem('lastTaskId', JSON.stringify(objInbox.id));
 
   // objInbox = JSON.parse(keyObj);
   // console.log(objInbox);
