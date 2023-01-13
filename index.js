@@ -25,8 +25,7 @@ function giveId() {
   let id = "";
   if (localStorage.getItem("lastTaskId") === null) {
     id = 0;
-  }
-  else {
+  } else {
     id = Number(localStorage.getItem("lastTaskId")) + 1;
   }
   // console.log(id);
@@ -50,31 +49,22 @@ function createTaskObject() {
     name: inbox.value,
   }
   arrayInbox.push(objInbox);
-
-  // console.log(objInbox);
-
-  // let keyId = `planerTaskObjId_${objInbox.id}`;
-  // localStorage.setItem(keyId, JSON.stringify(objInbox.id));
-
-  // записывает последний выданный объекту id
-  
-  // localStorage.setItem("planerLastTaskId", JSON.stringify(objInbox.id));
-
-
-
+  arrayObjId.push(objInbox.id);
 
   // сохраняем в локальное хранилище массив входящих задач
   // localStorage.setItem('arrayInbox', JSON.stringify(arrayInbox));
   // console.log(arrayInbox);
 
- // сохраняем из входящих в локальное хранилище задачу как объект
+  // сохраняем из входящих в локальное хранилище задачу как объект
   let keyObj = `planerTaskObj_${objInbox.id}`;
   localStorage.setItem(keyObj, JSON.stringify(objInbox));
 
-// сохраняем из входящих в локальное хранилище последний использованный Id
+  // сохраняем из входящих в локальное хранилище последний использованный Id
   let keyLastId = `lastTaskId`;
   localStorage.setItem(keyLastId, JSON.stringify(objInbox.id));
-
+  // сохраняем из входящих в локальное хранилище массив Id входящих объектов
+  let keyArrayId = `ArrayTaskId`;
+  localStorage.setItem(keyArrayId, JSON.stringify(arrayObjId));
   // objInbox = JSON.parse(keyObj);
   // console.log(objInbox);
 
@@ -128,57 +118,57 @@ function showTitle(title) {
   modalInput.innerHTML = `${title}`;
 }
 
-const createСard = (obj) => {
-  const block = document.createElement('li');
-  block.className = "inbox__listItem";
-  const check = document.createElement('div');
-  check.className = "inbox__inputfield";
-  // name.textContent = obj.name;
-  const labelCheck = document.createElement('label');
-  labelCheck.className = "inbox__check check";
-  const inputCheck = document.createElement('input');
-  inputCheck.className = "inbox__input-check";
-  inputCheck.setAttribute("type", "checkbox");
-  const checkmark = document.createElement('span');
-  checkmark.className = "inbox__checkmark checkmark";
-  const item = document.createElement('div');
-  item.className = "inbox__item";
-  item.textContent = `${inbox.value}`;
-  const buttonEdit = document.createElement('button');
-  buttonEdit.className = "inbox__btn-edit";
-  //  const imgButtonEdit = document.createElement('img');
-  // imgButtonEdit.className = "header__buttonpic-edit";
-  const buttonDelite = document.createElement('button');
-  buttonDelite.className = "inbox__btn-delite";
-  //  const imgButtonDelite= document.createElement('img');
-  // imgButtonDelite.className = "header__buttonpic-delite";
+// const createСard = (obj) => {
+//   const block = document.createElement('li');
+//   block.className = "inbox__listItem";
+//   const check = document.createElement('div');
+//   check.className = "inbox__inputfield";
+//   // name.textContent = obj.name;
+//   const labelCheck = document.createElement('label');
+//   labelCheck.className = "inbox__check check";
+//   const inputCheck = document.createElement('input');
+//   inputCheck.className = "inbox__input-check";
+//   inputCheck.setAttribute("type", "checkbox");
+//   const checkmark = document.createElement('span');
+//   checkmark.className = "inbox__checkmark checkmark";
+//   const item = document.createElement('div');
+//   item.className = "inbox__item";
+//   item.textContent = `${inbox.value}`;
+//   const buttonEdit = document.createElement('button');
+//   buttonEdit.className = "inbox__btn-edit";
+//   //  const imgButtonEdit = document.createElement('img');
+//   // imgButtonEdit.className = "header__buttonpic-edit";
+//   const buttonDelite = document.createElement('button');
+//   buttonDelite.className = "inbox__btn-delite";
+//   //  const imgButtonDelite= document.createElement('img');
+//   // imgButtonDelite.className = "header__buttonpic-delite";
 
-  block.append(check);
-  block.append(item);
-  block.append(buttonEdit);
-  block.append(buttonDelite);
-  check.append(labelCheck);
-  labelCheck.append(inputCheck);
-  labelCheck.append(checkmark);
+//   block.append(check);
+//   block.append(item);
+//   block.append(buttonEdit);
+//   block.append(buttonDelite);
+//   check.append(labelCheck);
+//   labelCheck.append(inputCheck);
+//   labelCheck.append(checkmark);
 
-  // проходится по записанным в массив таскам
-  arrayInbox.forEach(el => {
-    // дает создаваемому элементу block (li) id, доставая его из объекта
-    block.setAttribute("id", `${el.id}`);
-    // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
-    buttonEdit.setAttribute("onClick", "findTask(this)");
-    // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
-    inputCheck.setAttribute("onClick", "checkBox(this)");
-  })
-  // buttonEdit.append(imgButtonEdit);
-  // buttonDelite.append(imgButtonDelite);
-  return block;
+//   // проходится по записанным в массив таскам
+//   arrayInbox.forEach(el => {
+//     // дает создаваемому элементу block (li) id, доставая его из объекта
+//     block.setAttribute("id", `${el.id}`);
+//     // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+//     buttonEdit.setAttribute("onClick", "findTask(this)");
+//     // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+//     inputCheck.setAttribute("onClick", "checkBox(this)");
+//   })
+//   // buttonEdit.append(imgButtonEdit);
+//   // buttonDelite.append(imgButtonDelite);
+//   return block;
 
-}
+// }
 
 
 
-const addCard = (objItem,) => {
+const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -188,8 +178,59 @@ if (window.location.href.split('/').at(-1) == "index.html") {
   // слушатель кнопки "Сохранить" на главной
   inboxButton.addEventListener("click", () => {
     createTaskObject();
-    createСard();
-    addCard();
+    // распарсили из хранилища объект - входящий таск
+let arrayInboxParse = localStorage.getItem(`ArrayTaskId`);
+arrayInboxParse = JSON.parse(arrayInboxParse);
+console.log(arrayInboxParse);
+// const createСard = (obj) => {
+//   const block = document.createElement('li');
+//   block.className = "inbox__listItem";
+//   const check = document.createElement('div');
+//   check.className = "inbox__inputfield";
+//   // name.textContent = obj.name;
+//   const labelCheck = document.createElement('label');
+//   labelCheck.className = "inbox__check check";
+//   const inputCheck = document.createElement('input');
+//   inputCheck.className = "inbox__input-check";
+//   inputCheck.setAttribute("type", "checkbox");
+//   const checkmark = document.createElement('span');
+//   checkmark.className = "inbox__checkmark checkmark";
+//   const item = document.createElement('div');
+//   item.className = "inbox__item";
+//   item.textContent = `${arrayInboxParse.name}`;
+//   const buttonEdit = document.createElement('button');
+//   buttonEdit.className = "inbox__btn-edit";
+//   //  const imgButtonEdit = document.createElement('img');
+//   // imgButtonEdit.className = "header__buttonpic-edit";
+//   const buttonDelite = document.createElement('button');
+//   buttonDelite.className = "inbox__btn-delite";
+//   //  const imgButtonDelite= document.createElement('img');
+//   // imgButtonDelite.className = "header__buttonpic-delite";
+
+//   block.append(check);
+//   block.append(item);
+//   block.append(buttonEdit);
+//   block.append(buttonDelite);
+//   check.append(labelCheck);
+//   labelCheck.append(inputCheck);
+//   labelCheck.append(checkmark);
+
+//   // проходится по записанным в массив таскам
+//   arrayInbox.forEach(el => {
+//     // дает создаваемому элементу block (li) id, доставая его из объекта
+//     block.setAttribute("id", `${el.id}`);
+//     // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+//     buttonEdit.setAttribute("onClick", "findTask(this)");
+//     // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+//     inputCheck.setAttribute("onClick", "checkBox(this)");
+//   })
+//   // buttonEdit.append(imgButtonEdit);
+//   // buttonDelite.append(imgButtonDelite);
+//   return block;
+
+// }
+   // createСard();
+   // addCard();
 
     inbox.value = "";
   });
@@ -219,7 +260,7 @@ let timeoutID;
 let progressCounter = document.querySelector(".header__counter");
 
 function checkBox(checkbox) {
-  
+
   if (checkbox.checked) {
     timeoutID = setTimeout(() =>
       checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -241,11 +282,11 @@ function checkBox(checkbox) {
 }
 
 addEventListener('DOMContentLoaded', () => {
-  
-    let lastLenghtCounter = Number(localStorage.getItem("planerCounter"));
-    arrayProgressCounter.length = lastLenghtCounter;
-    progressCounter.textContent = arrayProgressCounter.length;
-    
+
+  let lastLenghtCounter = Number(localStorage.getItem("planerCounter"));
+  arrayProgressCounter.length = lastLenghtCounter;
+  progressCounter.textContent = arrayProgressCounter.length;
+
 })
 
 
@@ -328,12 +369,12 @@ function addValues() {
 
   console.log(currentObject);
 
-  let keyObj  = `planerTaskObj_${currentObject.id}`;
+  let keyObj = `planerTaskObj_${currentObject.id}`;
   localStorage.setItem(keyObj, JSON.stringify(currentObject));
 
-//   let arrayInboxParse = localStorage.getItem('arrayInbox');
-// arrayInboxParse = JSON.parse(arrayInboxParse);
-// console.log(arrayInboxParse);
+  //   let arrayInboxParse = localStorage.getItem('arrayInbox');
+  // arrayInboxParse = JSON.parse(arrayInboxParse);
+  // console.log(arrayInboxParse);
 
   // очищение полей модального окна
   type.value = "";
@@ -345,20 +386,20 @@ function addValues() {
   // закрытие модального окна
   closePopup();
   // sortByType();
-  
-  
+
+
 };
 
 
 // ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
 // let array = [];
 // function sortByType(a, b) {
-  // if (arrayInbox.find(({ type }) => type === "Проекты")) {
-  //   array.push();
-  // }
-  // console.log(array);
+// if (arrayInbox.find(({ type }) => type === "Проекты")) {
+//   array.push();
+// }
+// console.log(array);
 
-  // return arr.filter((el) => el.type.includes(query));
+// return arr.filter((el) => el.type.includes(query));
 // }
 
 // modalButton.onclick = addValues(task);
