@@ -44,7 +44,7 @@ let arrayObjId = [];
 
 
 
-// создает объект из таска и записывает его в массив
+// создает объект из таска и записывает его в массив по нажатию
 function createTaskObject() {
   const objInbox = {
     id: currObjId++,
@@ -67,25 +67,34 @@ function createTaskObject() {
 
   // сохраняем в локальное хранилище массив Id
   localStorage.setItem('arrayObjId', JSON.stringify(arrayObjId));
-  console.log(arrayObjId);
+  // console.log(arrayObjId);
 
+// парсим из локального хранилище массив Id
   let arrayObjIdParse = localStorage.getItem('arrayObjId');
   arrayObjIdParse = JSON.parse(arrayObjIdParse);
   
   arrayObjIdParse = arrayObjId;
-  console.log(arrayObjId);
+  // console.log(arrayObjId);
 
 
  // сохраняем из входящих в локальное хранилище задачу как объект
   let keyObj = `planerTaskObj_${objInbox.id}`;
   localStorage.setItem(keyObj, JSON.stringify(objInbox));
 
+  
+
 // сохраняем из входящих в локальное хранилище последний использованный Id
-  // let keyLastId = `lastTaskId`;
+
   localStorage.setItem('lastTaskId', JSON.stringify(objInbox.id));
 
   // objInbox = JSON.parse(keyObj);
   // console.log(objInbox);
+
+  // arrayObjId.forEach(function (elem, value) {
+  //   // console.log(elem);
+  //   let keyObj = `planerTaskObj_${elem}`;
+  //   objInbox = JSON.parse(keyObj);
+  // })
 
 }
 
