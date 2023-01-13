@@ -65,7 +65,7 @@ function createTaskObject() {
 
 
 
-  // сохраняем в локальное хранилище массив входящих задач
+  // сохраняем в локальное хранилище массив Id
   localStorage.setItem('arrayObjId', JSON.stringify(arrayObjId));
   console.log(arrayObjId);
 
