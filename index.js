@@ -58,7 +58,7 @@ function createTaskObject() {
 
   // записывает последний выданный объекту id
   
-  localStorage.setItem("planerLastTaskId", JSON.stringify(objInbox.id));
+  // localStorage.setItem("planerLastTaskId", JSON.stringify(objInbox.id));
 
 
 
@@ -67,16 +67,23 @@ function createTaskObject() {
   // localStorage.setItem('arrayInbox', JSON.stringify(arrayInbox));
   // console.log(arrayInbox);
 
-  // let keyObj = `planerTaskObj_${objInbox.id}`;
-  // localStorage.setItem(keyObj, JSON.stringify(objInbox));
+ // сохраняем из входящих в локальное хранилище задачу как объект
+  let keyObj = `planerTaskObj_${objInbox.id}`;
+  localStorage.setItem(keyObj, JSON.stringify(objInbox));
 
+// сохраняем из входящих в локальное хранилище последний использованный Id
+  let keyLastId = `lastTaskId`;
+  localStorage.setItem(keyLastId, JSON.stringify(objInbox.id));
+
+  // objInbox = JSON.parse(keyObj);
+  // console.log(objInbox);
 
 }
 
 // парсим массив входящих задач
-let arrayInboxParse = localStorage.getItem('arrayInbox');
-arrayInboxParse = JSON.parse(arrayInboxParse);
-console.log(arrayInboxParse);
+// let arrayInboxParse = localStorage.getItem('arrayInbox');
+// arrayInboxParse = JSON.parse(arrayInboxParse);
+// console.log(arrayInboxParse);
 
 
 
