@@ -67,21 +67,21 @@ function createTaskObject() {
   localStorage.setItem('arrayObjId', JSON.stringify(arrayObjId));
   // console.log(arrayObjId);
 
-// парсим из локального хранилище массив Id
+  // парсим из локального хранилище массив Id
   let arrayObjIdParse = localStorage.getItem('arrayObjId');
   arrayObjIdParse = JSON.parse(arrayObjIdParse);
-  
+
   arrayObjId = arrayObjIdParse;
   // console.log(arrayObjId);
 
 
- // сохраняем из входящих в локальное хранилище задачу как объект
+  // сохраняем из входящих в локальное хранилище задачу как объект
   let keyObj = `planerTaskObj_${objInbox.id}`;
   localStorage.setItem(keyObj, JSON.stringify(objInbox));
 
-  
 
-// сохраняем из входящих в локальное хранилище последний использованный Id
+
+  // сохраняем из входящих в локальное хранилище последний использованный Id
 
   localStorage.setItem('lastTaskId', JSON.stringify(objInbox.id));
 
@@ -235,7 +235,7 @@ let timeoutID;
 let progressCounter = document.querySelector(".header__counter");
 
 function checkBox(checkbox) {
-  
+
   if (checkbox.checked) {
     timeoutID = setTimeout(() =>
       checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -257,28 +257,19 @@ function checkBox(checkbox) {
 }
 
 addEventListener('DOMContentLoaded', () => {
-  
-    let lastLenghtCounter = Number(localStorage.getItem("planerCounter"));
-    arrayProgressCounter.length = lastLenghtCounter;
-    progressCounter.textContent = arrayProgressCounter.length;
 
-    // let currObjId = giveId();
+  let lastLenghtCounter = Number(localStorage.getItem("planerCounter"));
+  arrayProgressCounter.length = lastLenghtCounter;
+  progressCounter.textContent = arrayProgressCounter.length;
 
-// проверяет, записан ли последний выданный id в локальное хранилище, если нет - дает 0, если да - забирает значение
-// function giveId() {
-//   // let arrId = "";
-//   if (localStorage.getItem("arrayObjId") === null) {
-//     arrayObjId = [];
-//   }
-//   else {
-//     arrayObjId = Number(localStorage.getItem("lastTaskId")) + 1;
-//   }
-//   // console.log(id);
-//   return id;
-// }
-    
+  if (localStorage.getItem("arrayObjId") === null) {
+    arrayObjId = [];
+  }
+  else {
+    arrayObjId = JSON.parse(localStorage.getItem("arrayObjId"));
+    console.log('Items: ', arrayObjId, 'TYPE: ', typeof arrayObjId)
+  }
 })
-
 
 
 
@@ -359,12 +350,12 @@ function addValues() {
 
   console.log(currentObject);
 
-  let keyObj  = `planerTaskObj_${currentObject.id}`;
+  let keyObj = `planerTaskObj_${currentObject.id}`;
   localStorage.setItem(keyObj, JSON.stringify(currentObject));
 
-//   let arrayInboxParse = localStorage.getItem('arrayInbox');
-// arrayInboxParse = JSON.parse(arrayInboxParse);
-// console.log(arrayInboxParse);
+  //   let arrayInboxParse = localStorage.getItem('arrayInbox');
+  // arrayInboxParse = JSON.parse(arrayInboxParse);
+  // console.log(arrayInboxParse);
 
   // очищение полей модального окна
   type.value = "";
@@ -376,8 +367,8 @@ function addValues() {
   // закрытие модального окна
   closePopup();
   // sortByType();
-  
-  
+
+
 };
 
 
