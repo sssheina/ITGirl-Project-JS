@@ -76,10 +76,15 @@ function createTaskObject() {
 
 
   // сохраняем из входящих в локальное хранилище задачу как объект
-  let keyObj = `planerTaskObj_${objInbox.id}`;
-  localStorage.setItem(keyObj, JSON.stringify(objInbox));
+  // let keyObj = `planerTaskObj_${objInbox.id}`;
+  // localStorage.setItem(keyObj, JSON.stringify(objInbox));
+  // console.log(objInbox);
 
 
+  // сохраняем из входящих в локальное хранилище задачу как объект
+  
+  localStorage.setItem('arrayInbox', JSON.stringify(arrayInbox));
+  // console.log(arrayInbox);
 
   // сохраняем из входящих в локальное хранилище последний использованный Id
 
@@ -262,19 +267,63 @@ addEventListener('DOMContentLoaded', () => {
   arrayProgressCounter.length = lastLenghtCounter;
   progressCounter.textContent = arrayProgressCounter.length;
 
-  if (localStorage.getItem("arrayObjId") === null) {
-    arrayObjId = [];
+  if (localStorage.getItem("arrayInbox") === null) {
+    arrayInbox = [];
   }
   else {
-    arrayObjId = JSON.parse(localStorage.getItem("arrayObjId"));
-    console.log('Items: ', arrayObjId, 'TYPE: ', typeof arrayObjId)
+    arrayInbox = JSON.parse(localStorage.getItem("arrayInbox"));
+    // console.log('Items: ', arrayInbox, 'TYPE: ', typeof arrayInbox)
   }
+
+
+arrayInbox.forEach(el => {
+
+  const block = document.createElement('li');
+  block.className = "inbox__listItem";
+  const check = document.createElement('div');
+  check.className = "inbox__inputfield";
+  // name.textContent = obj.name;
+  const labelCheck = document.createElement('label');
+  labelCheck.className = "inbox__check check";
+  const inputCheck = document.createElement('input');
+  inputCheck.className = "inbox__input-check";
+  inputCheck.setAttribute("type", "checkbox");
+  const checkmark = document.createElement('span');
+  checkmark.className = "inbox__checkmark checkmark";
+  const item = document.createElement('div');
+  item.className = "inbox__item";
+  item.textContent = el.name;
+  // console.log(el.name);
+  const buttonEdit = document.createElement('button');
+  buttonEdit.className = "inbox__btn-edit";
+  //  const imgButtonEdit = document.createElement('img');
+  // imgButtonEdit.className = "header__buttonpic-edit";
+  const buttonDelite = document.createElement('button');
+  buttonDelite.className = "inbox__btn-delite";
+  //  const imgButtonDelite= document.createElement('img');
+  // imgButtonDelite.className = "header__buttonpic-delite";
+
+  block.append(check);
+  block.append(item);
+  block.append(buttonEdit);
+  block.append(buttonDelite);
+  check.append(labelCheck);
+  labelCheck.append(inputCheck);
+  labelCheck.append(checkmark);
+
+  // проходится по записанным в массив таскам
+ 
+    // дает создаваемому элементу block (li) id, доставая его из объекта
+    block.setAttribute("id", `${el.id}`);
+    // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+    buttonEdit.setAttribute("onClick", "findTask(this)");
+    // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+    inputCheck.setAttribute("onClick", "checkBox(this)");
+ 
+
+  placeInboxList.appendChild(block);
 })
-
-
-
-
-
+})
 
 // МЕНЮ________________________________________________________  _
 
@@ -321,7 +370,7 @@ function hideOtherSubmenu() {
 // --------------- МОДАЛЬНОЕ ОКНО 1 -------------
 
 
-
+let arrayEditedTask = [];
 
 function closePopup() {
   modalWindow.style.display = "none";
@@ -346,12 +395,20 @@ function addValues() {
   let data = document.getElementById("date_type");
   currentObject.data = `${data.value}`;
 
+  console.log(arrayInbox);
+if (type.value != "") {
+  arrayEditedTask.push(currentObject);
+  // console.log(arrayEditedTask);
+  let index = arrayInbox.indexOf(currentObject.id);
+  arrayInbox.splice(index, 1);
+  console.log(arrayInbox);
+}
 
+  // console.log(currentObject);
 
-  console.log(currentObject);
-
-  let keyObj = `planerTaskObj_${currentObject.id}`;
-  localStorage.setItem(keyObj, JSON.stringify(currentObject));
+// сохранение каждой отдельной задачи в локальном хранилище
+  // let keyObj = `planerTaskObj_${currentObject.id}`;
+  // localStorage.setItem(keyObj, JSON.stringify(currentObject));
 
   //   let arrayInboxParse = localStorage.getItem('arrayInbox');
   // arrayInboxParse = JSON.parse(arrayInboxParse);
