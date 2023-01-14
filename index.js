@@ -58,9 +58,7 @@ function createTaskObject() {
   // let keyId = `planerTaskObjId_${objInbox.id}`;
   // localStorage.setItem(keyId, JSON.stringify(objInbox.id));
 
-  // записывает последний выданный объекту id
-  
-  // localStorage.setItem("planerLastTaskId", JSON.stringify(objInbox.id));
+
 
 
 
@@ -73,7 +71,7 @@ function createTaskObject() {
   let arrayObjIdParse = localStorage.getItem('arrayObjId');
   arrayObjIdParse = JSON.parse(arrayObjIdParse);
   
-  arrayObjIdParse = arrayObjId;
+  arrayObjId = arrayObjIdParse;
   // console.log(arrayObjId);
 
 
@@ -263,6 +261,21 @@ addEventListener('DOMContentLoaded', () => {
     let lastLenghtCounter = Number(localStorage.getItem("planerCounter"));
     arrayProgressCounter.length = lastLenghtCounter;
     progressCounter.textContent = arrayProgressCounter.length;
+
+    // let currObjId = giveId();
+
+// проверяет, записан ли последний выданный id в локальное хранилище, если нет - дает 0, если да - забирает значение
+// function giveId() {
+//   // let arrId = "";
+//   if (localStorage.getItem("arrayObjId") === null) {
+//     arrayObjId = [];
+//   }
+//   else {
+//     arrayObjId = Number(localStorage.getItem("lastTaskId")) + 1;
+//   }
+//   // console.log(id);
+//   return id;
+// }
     
 })
 
