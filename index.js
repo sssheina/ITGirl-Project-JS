@@ -198,6 +198,12 @@ if (window.location.href.split('/').at(-1) == "index.html") {
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-delite')) {
     event.target.parentNode.remove();
+
+    const id = event.target.parentNode.id;
+    const task = arrayInbox.find(el => el.id == id);
+    let index = arrayInbox.indexOf(task);
+    arrayInbox.splice(index, 1);
+    UpdatedArray();
   }
 })
 
@@ -425,7 +431,6 @@ function addValues() {
 function UpdatedArray() {
   localStorage.removeItem("arrayInbox");
   localStorage.setItem("arrayInbox", JSON.stringify(arrayInbox));
-
 
 }
 
