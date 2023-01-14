@@ -18,6 +18,7 @@ const modalContext = document.getElementById("context_type");
 
 
 let arrayInbox = [];
+let arrayEditedTask = [];
 let currObjId = giveId();
 
 // проверяет, записан ли последний выданный id в локальное хранилище, если нет - дает 0, если да - забирает значение
@@ -25,8 +26,7 @@ function giveId() {
   let id = "";
   if (localStorage.getItem("lastTaskId") === null) {
     id = 0;
-  }
-  else {
+  } else {
     id = Number(localStorage.getItem("lastTaskId")) + 1;
   }
   // console.log(id);
@@ -37,11 +37,6 @@ function giveId() {
 let currentObject = "";
 // переменная для карточки таска, записывается по нажатию на кнопку редактирования
 let taskCard = "";
-
-
-let arrayObjId = [];
-
-
 
 
 // создает объект из таска и записывает его в массив по нажатию
@@ -57,22 +52,6 @@ function createTaskObject() {
 
   // let keyId = `planerTaskObjId_${objInbox.id}`;
   // localStorage.setItem(keyId, JSON.stringify(objInbox.id));
-
-
-
-
-
-
-  // сохраняем в локальное хранилище массив Id
-  localStorage.setItem('arrayObjId', JSON.stringify(arrayObjId));
-  // console.log(arrayObjId);
-
-  // парсим из локального хранилище массив Id
-  let arrayObjIdParse = localStorage.getItem('arrayObjId');
-  arrayObjIdParse = JSON.parse(arrayObjIdParse);
-
-  arrayObjId = arrayObjIdParse;
-  // console.log(arrayObjId);
 
 
   // сохраняем из входящих в локальное хранилище задачу как объект
@@ -199,7 +178,7 @@ const createСard = (obj) => {
 
 
 
-const addCard = (objItem,) => {
+const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -239,6 +218,7 @@ let arrayProgressCounter = [];
 let timeoutID;
 let progressCounter = document.querySelector(".header__counter");
 let timer;
+let updArray;
 
 function checkBox(checkbox) {
 
@@ -257,37 +237,44 @@ function checkBox(checkbox) {
       arrayInbox.splice(index, 1), 5000
     );
 
+    updArray = setTimeout(() =>
+      UpdatedArray(), 5000
+    );
+
   } else {
     clearTimeout(timeoutID);
     clearTimeout(timer);
+    clearTimeout(updArray);
     arrayProgressCounter.pop();
-    // console.log('unchecked! ' + arrayProgressCounter.length);
   }
 
   // let progressCounter = document.querySelector(".header__counter");
   progressCounter.textContent = arrayProgressCounter.length;
 
-  localStorage.setItem("planerCounter", JSON.stringify(arrayProgressCounter.length));
+  localStorage.setItem("progressCounter", JSON.stringify(arrayProgressCounter.length));
 
 }
+// ЗАГРУЗКА СТРАНИЦЫ________________________________________________
 
 addEventListener('DOMContentLoaded', () => {
 
-  let lastLenghtCounter = Number(localStorage.getItem("planerCounter"));
+  let lastLenghtCounter = Number(localStorage.getItem("progressCounter"));
   arrayProgressCounter.length = lastLenghtCounter;
   progressCounter.textContent = arrayProgressCounter.length;
 
   if (localStorage.getItem("arrayInbox") === null) {
     arrayInbox = [];
-  }
-  else {
+  } else {
     arrayInbox = JSON.parse(localStorage.getItem("arrayInbox"));
-    // console.log('Items: ', arrayInbox, 'TYPE: ', typeof arrayInbox)
   }
 
+  if (localStorage.getItem("editedTasks") === null) {
+    arrayEditedTask = [];
+  } else {
+    arrayEditedTask = JSON.parse(localStorage.getItem("editedTasks"));
+  }
 
   arrayInbox.forEach(el => {
-
     const block = document.createElement('li');
     block.className = "inbox__listItem";
     const check = document.createElement('div');
@@ -380,7 +367,6 @@ function hideOtherSubmenu() {
 
 // --------------- МОДАЛЬНОЕ ОКНО 1 -------------
 
-let arrayEditedTask = [];
 
 function closePopup() {
   modalWindow.style.display = "none";
@@ -390,9 +376,6 @@ function closePopup() {
 function addValues() {
   // нужный объект найден в функции findTask и записан в глобальную переменную currentObject
   // забирает все значения из полей, записывает их в объект и выводит объект в консоль
-
-
-
 
   let name = document.getElementById("modalInput").value;
   currentObject.name = `${name}`;
@@ -407,10 +390,12 @@ function addValues() {
 
   if (type.value != "") {
     arrayEditedTask.push(currentObject);
+    localStorage.setItem('editedTasks', JSON.stringify(arrayEditedTask));
+
     let index = arrayInbox.indexOf(currentObject);
-    console.log(index);
     arrayInbox.splice(index, 1);
     console.log(arrayInbox);
+    UpdatedArray();
   }
 
   // console.log(currentObject);
@@ -432,24 +417,40 @@ function addValues() {
   taskCard.remove();
   // закрытие модального окна
   closePopup();
+
   // sortByType();
-
-
 };
 
 
-// ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
-// let array = [];
-// function sortByType(a, b) {
-  // if (arrayInbox.find(({ type }) => type === "Проекты")) {
-  //   array.push();
-  // }
-  // console.log(array);
+function UpdatedArray() {
+  localStorage.removeItem("arrayInbox");
+  localStorage.setItem("arrayInbox", JSON.stringify(arrayInbox));
 
-  // return arr.filter((el) => el.type.includes(query));
-// }
 
-// modalButton.onclick = addValues(task);
+}
+
+//ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
+//const projects = document.getElementById('projects');
+//projects.addEventListener('click', sortByType());
+
+
+function sortByType() {
+  let array = [];
+
+  // for (let i = 0; i < arrayEditedTask.lenght; i++) {
+  //let projects = arrayEditedTask.find(o => o.type === 'Проекты');
+
+
+  arrayEditedTask.forEach(el => {
+    if (el.type === 'Проекты') {
+      array.push(el);
+    }
+  });
+
+  console.log(array);
+}
+//return arr.filter((el) => el.type.includes(query));
+
 
 // --------------- МОДАЛЬНОЕ ОКНО 2 -------------
 
