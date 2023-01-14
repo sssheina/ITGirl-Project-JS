@@ -51,7 +51,7 @@ function createTaskObject() {
     name: inbox.value,
   }
   arrayInbox.push(objInbox);
-  arrayObjId.push(objInbox.id);
+  console.log(arrayInbox);
 
   // console.log(objInbox);
 
@@ -82,7 +82,7 @@ function createTaskObject() {
 
 
   // сохраняем из входящих в локальное хранилище задачу как объект
-  
+
   localStorage.setItem('arrayInbox', JSON.stringify(arrayInbox));
   // console.log(arrayInbox);
 
@@ -238,18 +238,28 @@ placeInboxList.addEventListener('click', (event) => {
 let arrayProgressCounter = [];
 let timeoutID;
 let progressCounter = document.querySelector(".header__counter");
+let timer;
 
 function checkBox(checkbox) {
 
   if (checkbox.checked) {
+    const id = checkbox.parentNode.parentNode.parentNode.id;
+    const task = arrayInbox.find(el => el.id == id);
+    let index = arrayInbox.indexOf(task);
+    console.log(index);
+
     timeoutID = setTimeout(() =>
       checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
     );
     arrayProgressCounter.push(1);
-    // console.log('checked! ' + arrayProgressCounter.length);
+
+    timer = setTimeout(() =>
+      arrayInbox.splice(index, 1), 5000
+    );
 
   } else {
     clearTimeout(timeoutID);
+    clearTimeout(timer);
     arrayProgressCounter.pop();
     // console.log('unchecked! ' + arrayProgressCounter.length);
   }
@@ -276,53 +286,54 @@ addEventListener('DOMContentLoaded', () => {
   }
 
 
-arrayInbox.forEach(el => {
+  arrayInbox.forEach(el => {
 
-  const block = document.createElement('li');
-  block.className = "inbox__listItem";
-  const check = document.createElement('div');
-  check.className = "inbox__inputfield";
-  // name.textContent = obj.name;
-  const labelCheck = document.createElement('label');
-  labelCheck.className = "inbox__check check";
-  const inputCheck = document.createElement('input');
-  inputCheck.className = "inbox__input-check";
-  inputCheck.setAttribute("type", "checkbox");
-  const checkmark = document.createElement('span');
-  checkmark.className = "inbox__checkmark checkmark";
-  const item = document.createElement('div');
-  item.className = "inbox__item";
-  item.textContent = el.name;
-  // console.log(el.name);
-  const buttonEdit = document.createElement('button');
-  buttonEdit.className = "inbox__btn-edit";
-  //  const imgButtonEdit = document.createElement('img');
-  // imgButtonEdit.className = "header__buttonpic-edit";
-  const buttonDelite = document.createElement('button');
-  buttonDelite.className = "inbox__btn-delite";
-  //  const imgButtonDelite= document.createElement('img');
-  // imgButtonDelite.className = "header__buttonpic-delite";
+    const block = document.createElement('li');
+    block.className = "inbox__listItem";
+    const check = document.createElement('div');
+    check.className = "inbox__inputfield";
+    // name.textContent = obj.name;
+    const labelCheck = document.createElement('label');
+    labelCheck.className = "inbox__check check";
+    const inputCheck = document.createElement('input');
+    inputCheck.className = "inbox__input-check";
+    inputCheck.setAttribute("type", "checkbox");
+    const checkmark = document.createElement('span');
+    checkmark.className = "inbox__checkmark checkmark";
+    const item = document.createElement('div');
+    item.className = "inbox__item";
+    item.textContent = el.name;
+    // console.log(el.name);
+    const buttonEdit = document.createElement('button');
+    buttonEdit.className = "inbox__btn-edit";
+    //  const imgButtonEdit = document.createElement('img');
+    // imgButtonEdit.className = "header__buttonpic-edit";
+    const buttonDelite = document.createElement('button');
+    buttonDelite.className = "inbox__btn-delite";
+    //  const imgButtonDelite= document.createElement('img');
+    // imgButtonDelite.className = "header__buttonpic-delite";
 
-  block.append(check);
-  block.append(item);
-  block.append(buttonEdit);
-  block.append(buttonDelite);
-  check.append(labelCheck);
-  labelCheck.append(inputCheck);
-  labelCheck.append(checkmark);
+    block.append(check);
+    block.append(item);
+    block.append(buttonEdit);
+    block.append(buttonDelite);
+    check.append(labelCheck);
+    labelCheck.append(inputCheck);
+    labelCheck.append(checkmark);
 
-  // проходится по записанным в массив таскам
- 
+    // проходится по записанным в массив таскам
+
     // дает создаваемому элементу block (li) id, доставая его из объекта
     block.setAttribute("id", `${el.id}`);
     // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
     buttonEdit.setAttribute("onClick", "findTask(this)");
     // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
     inputCheck.setAttribute("onClick", "checkBox(this)");
- 
 
-  placeInboxList.appendChild(block);
-})
+
+    placeInboxList.appendChild(block);
+    console.log(arrayInbox);
+  })
 })
 
 // МЕНЮ________________________________________________________  _
@@ -369,7 +380,6 @@ function hideOtherSubmenu() {
 
 // --------------- МОДАЛЬНОЕ ОКНО 1 -------------
 
-
 let arrayEditedTask = [];
 
 function closePopup() {
@@ -395,18 +405,17 @@ function addValues() {
   let data = document.getElementById("date_type");
   currentObject.data = `${data.value}`;
 
-  console.log(arrayInbox);
-if (type.value != "") {
-  arrayEditedTask.push(currentObject);
-  // console.log(arrayEditedTask);
-  let index = arrayInbox.indexOf(currentObject.id);
-  arrayInbox.splice(index, 1);
-  console.log(arrayInbox);
-}
+  if (type.value != "") {
+    arrayEditedTask.push(currentObject);
+    let index = arrayInbox.indexOf(currentObject);
+    console.log(index);
+    arrayInbox.splice(index, 1);
+    console.log(arrayInbox);
+  }
 
   // console.log(currentObject);
 
-// сохранение каждой отдельной задачи в локальном хранилище
+  // сохранение каждой отдельной задачи в локальном хранилище
   // let keyObj = `planerTaskObj_${currentObject.id}`;
   // localStorage.setItem(keyObj, JSON.stringify(currentObject));
 
