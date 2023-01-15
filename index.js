@@ -325,7 +325,7 @@ addEventListener('DOMContentLoaded', () => {
 
 
     placeInboxList.appendChild(block);
-    console.log(arrayInbox);
+    // console.log(arrayInbox);
   })
 })
 
@@ -404,8 +404,6 @@ function addValues() {
     UpdatedArray();
   }
 
-  // console.log(currentObject);
-
   // сохранение каждой отдельной задачи в локальном хранилище
   // let keyObj = `planerTaskObj_${currentObject.id}`;
   // localStorage.setItem(keyObj, JSON.stringify(currentObject));
@@ -426,6 +424,12 @@ function addValues() {
 
   // sortByType();
 };
+
+ // парсим arrayEditedTask
+//  let arrayEditedTaskParse  = localStorage.getItem('editedTasks');
+//  arrayEditedTaskParse = JSON.parse('editedTasks');
+//  console.log(arrayEditedTaskParse);
+ // arrayEditedTaskParse = arrayEditedTask;
 
 
 function UpdatedArray() {

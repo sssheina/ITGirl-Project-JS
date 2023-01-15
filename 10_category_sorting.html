@@ -197,18 +197,18 @@
                       </div>
 
 
-                      <button class="category-sorting__btn-edit btn">
-                        <img class="category-sorting__buttonpic" src="./assets/images/pencil_white.png" alt="logo_white">
+                      <button class="inbox__btn-edit btn">
+                        
                       </button>
-                      <button class="category-sorting__btn-delite btn">
-                        <img class="category-sorting__buttonpic" src="./assets/images/delite_white.png" alt="logo_white">
+                      <button class="inbox__btn-delite btn">
+                        
                       </button>
                     </div>
                   </div>
 
                   <!-- второй пункт -->
 
-                  <div class="category-sorting__block">
+                  <!-- <div class="category-sorting__block">
                     <div class="category-sorting__listItem listItem">
                       <div class="category-sorting__category category-home"></div>
 
@@ -231,11 +231,11 @@
                         <img class="category-sorting__buttonpic" src="./assets/images/delite_white.png" alt="logo_white">
                       </button>
                     </div>
-                  </div>
+                  </div> -->
 
                   <!-- третий пункт -->
 
-                  <div class="category-sorting__block">
+                  <!-- <div class="category-sorting__block">
                     <div class="category-sorting__listItem listItem">
                       <div class="category-sorting__category category-home"></div>
 
@@ -257,11 +257,11 @@
                         <img class="category-sorting__buttonpic" src="./assets/images/delite_white.png" alt="logo_white">
                       </button>
                     </div>
-                  </div>
+                  </div> -->
 
                   <!-- четвёртый пункт  -->
 
-                  <div class="category-sorting__block">
+                  <!-- <div class="category-sorting__block">
                     <div class="category-sorting__listItem listItem">
                       <div class="category-sorting__category category-home "></div>
 
@@ -281,7 +281,9 @@
                         <img class="category-sorting__buttonpic" src="./assets/images/delite_white.png" alt="logo_white">
                       </button>
                     </div>
-                  </div>
+                  </div> -->
+
+
                 </div>
               </section>
 
@@ -291,6 +293,92 @@
         </div>
       </div>
     </main>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+
+    <div id="overlay" class="overlay">
+      <div id="popup" class="popup">
+        
+          
+        <div class="window_name">Название входящей задачи</div>
+          <!-- <div>
+              <label for="change_name" id="change_text"> Переименовать </label>
+              <input type="text" id="change_name" class="input" name="change_name" required />
+          </div> -->
+          <div class="modal_enterBlock">
+          <div class="modal__inputfield">
+            <label class="modal__lable">ПЕРЕИМЕНОВАТЬ:</label>
+            <textarea
+              rows="3"
+              cols="45"
+              class="inbox__input input"
+              id="modalInput"
+            ></textarea>
+          </div>
+          <div class="modal__inputfield">
+              <label for="case_type" id="case_text" class="modal__lable"> ТИП: </label><br />
+              <select id="case_type" class="input">
+                  <option class="modal__type" value=""> </option>
+                  <option class="modal__type" value="Быстрые дела"> БЫСТРЫЕ ДЕЛА</option>
+                  <option class="modal__type" value="Проекты"> ПРОЕКТЫ</option>
+                  <option class="modal__type" value="Справочны материалы"> СПРАВОЧНЫЕ МАТЕРИАЛЫ</option>
+                  <option class="modal__type" value="Лист ожидания"> ЛИСТ ОЖИДАНИЯ</option>
+              </select>
+          </div>
+
+
+          <div class="modal__inputfield">
+              <label for="project_category" id="category_text" class="modal__lable"> КАТЕГОРИЯ: </label><br />
+              <select id="project_category" class="input">
+                  <option class="modal__category" value=""> </option>
+                  <option class="modal__category" value="Семья"> ДОМ</option>
+                  <option class="modal__category" value="Дом"> УЧЁБА</option>
+                  <option class="modal__category" value="Работа"> РАБОТА</option>
+                  <option class="modal__category" value="Саморазвитие"> САМОРАЗВИТИЕ</option>
+                  <option class="modal__category" value="Здоровье"> ЗДОРОВЬЕ</option>
+                  <option class="modal__category" value="Отдых"> ОТДЫХ</option>
+                  <option class="modal__category" value="Хобби"> ХОББИ</option>
+                  <option class="modal__category" value="Идеи"> ИДЕИ</option>
+                  <option class="modal__category" value="Хозяйство"> ХОЗЯЙСТВО</option>
+                  <option class="modal__category" value="Спорт"> СПОРТ</option>
+                  <option class="modal__category" value="Уход за собой"> УХОД ЗА СОБОЙ</option>
+                  <option class="modal__category" value="Отдых"> ОТДЫХ</option>
+              </select>
+          </div>
+
+          <div class="modal__inputfield">
+            <label for="context_type" id="context_text" class="modal__lable"> КОНТЕКСТ: </label><br />
+            <select id="context_type" class="input">
+                <option class="modal__context" value=""> </option>
+                <option class="modal__context" value="Дом"> ДОМ</option>
+                <option class="modal__context" value="Телефон"> ТЕЛЕФОН</option>
+                <option class="modal__context" value="Вне дома"> ВНЕ ДОМА</option>
+                <option class="modal__context" value="Компьютер"> КОМПЬЮТЕР</option>
+                <option class="modal__context" value="Делегироване"> ДЕЛЕГИРОВАНИЕ</option>
+                <option class="modal__context" value="Город"> ГОРОД</option>
+                <option class="modal__context" value="Школа"> ШКОЛА</option>
+                <option class="modal__context" value="Детсад"> ДЕТСАД</option>
+                <option class="modal__context" value="Минск"> МИНСК</option>
+            </select>
+        </div>
+
+
+          <div class="modal__inputfield">
+            <label for="date_type" id="date_text" class="modal__lable"> ДАТА: </label><br />
+            <input type="date" id="date_type" class="input">
+            </input>
+        </div>
+
+          <button id="close" class="close" title="Close" onclick="closePopup()"></button>
+        <!-- <a href="#" class="close btn">Сохранить</a> -->
+        <div>
+          <button class="modal__button btn" onclick="addValues()">СОХРАНИТЬ</button>
+        </div>
+      </div>
+      </div>
+  </div>
+
+  <!-- конец модального окна -->
 
     <!-- ФУТЕР -->
     <footer class="footer">
