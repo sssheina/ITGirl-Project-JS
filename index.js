@@ -221,6 +221,247 @@ placeInboxList.addEventListener('click', (event) => {
   }
 })
 
+// ДЛЯ 3 СТРАНИЦЫ "БЫСТРЫЕ ДЕЛА"_______________________________________________________________
+
+const createСardQuick = (obj) => {
+  const block = document.createElement('li');
+  block.className = "quick__listItem";
+  const category = document.createElement('div'); 
+  category.className = "quick__category";
+  const check = document.createElement('div');
+  check.className = "quick__inputfield";
+  // name.textContent = obj.name;
+  const labelCheck = document.createElement('label');
+  labelCheck.className = "quick__check check";
+  const inputCheck = document.createElement('input');
+  inputCheck.className = "quick__input-check";
+  inputCheck.setAttribute("type", "checkbox");
+  const checkmark = document.createElement('span');
+  checkmark.className = "quick__checkmark checkmark";
+  const item = document.createElement('div');
+  item.className = "quick__item-name";
+  item.textContent = obj.name;
+  const contextItem = document.createElement('div'); 
+  contextItem.className = "quick__item";
+  const context = document.createElement('span'); 
+  context.className = "quick__context";
+  const buttonEdit = document.createElement('button');
+  buttonEdit.className = "inbox__btn-edit";
+  //  const imgButtonEdit = document.createElement('img');
+  // imgButtonEdit.className = "header__buttonpic-edit";
+  const buttonDelite = document.createElement('button');
+  buttonDelite.className = "inbox__btn-delite";
+  //  const imgButtonDelite= document.createElement('img');
+  // imgButtonDelite.className = "header__buttonpic-delite";
+
+  block.append(check);
+  block.append(category);
+  block.append(item);
+  block.append(contextItem);
+  block.append(buttonEdit);
+  block.append(buttonDelite);
+  check.append(labelCheck);
+  labelCheck.append(inputCheck);
+  labelCheck.append(checkmark);
+  contextItem.append(context);
+
+  // проходится по записанным в массив таскам
+  arrayQuick.forEach(el => {
+    // дает создаваемому элементу block (li) id, доставая его из объекта
+    // block.setAttribute("id", `${el.id}`);
+    // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+    buttonEdit.setAttribute("onClick", "findTask(this)");
+    // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+    inputCheck.setAttribute("onClick", "checkBox(this)");
+  })
+  // buttonEdit.append(imgButtonEdit);
+  // buttonDelite.append(imgButtonDelite);
+  return block;
+
+}
+
+
+
+// ДЛЯ 4 СТРАНИЦЫ "ПРОЕКТЫ"_______________________________________________________________
+
+const createСardproject = (obj) => {
+  const block = document.createElement('li');
+  block.className = "projects__listItem";
+  const category = document.createElement('div'); 
+  category.className = "projects__category";
+  const check = document.createElement('div');
+  check.className = "projects__inputfield";
+  // name.textContent = obj.name;
+  const labelCheck = document.createElement('label');
+  labelCheck.className = "projects__check check";
+  const inputCheck = document.createElement('input');
+  inputCheck.className = "projects__input-check";
+  inputCheck.setAttribute("type", "checkbox");
+  const checkmark = document.createElement('span');
+  checkmark.className = "projects__checkmark checkmark";
+  const item = document.createElement('div');
+  item.className = "projects__item-name";
+  item.textContent = obj.name;
+  // const contextItem = document.createElement('div'); 
+  // contextItem.className = "projects__item";
+  // const context = document.createElement('span'); 
+  // context.className = "projects__context";
+  const buttonEdit = document.createElement('button');
+  buttonEdit.className = "inbox__btn-edit";
+  //  const imgButtonEdit = document.createElement('img');
+  // imgButtonEdit.className = "header__buttonpic-edit";
+  const buttonDelite = document.createElement('button');
+  buttonDelite.className = "inbox__btn-delite";
+  //  const imgButtonDelite= document.createElement('img');
+  // imgButtonDelite.className = "header__buttonpic-delite";
+
+  block.append(check);
+  block.append(category);
+  block.append(item);
+  // block.append(contextItem);
+  block.append(buttonEdit);
+  block.append(buttonDelite);
+  check.append(labelCheck);
+  labelCheck.append(inputCheck);
+  labelCheck.append(checkmark);
+  // contextItem.append(context);
+
+  // проходится по записанным в массив таскам
+  arrayProject.forEach(el => {
+    // дает создаваемому элементу block (li) id, доставая его из объекта
+    // block.setAttribute("id", `${el.id}`);
+    // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+    buttonEdit.setAttribute("onClick", "findTask(this)");
+    // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+    inputCheck.setAttribute("onClick", "checkBox(this)");
+  })
+  // buttonEdit.append(imgButtonEdit);
+  // buttonDelite.append(imgButtonDelite);
+  return block;
+
+}
+
+
+// ДЛЯ 7 СТРАНИЦЫ "СПРАВОЧНЫЕ МАТЕРИАЛЫ"_______________________________________________________________
+
+const createСardReference = (obj) => {
+  const block = document.createElement('li');
+  block.className = "reference__listItem";
+  const category = document.createElement('div'); 
+  category.className = "reference__category";
+  const check = document.createElement('div');
+  check.className = "reference__inputfield";
+  // name.textContent = obj.name;
+  const labelCheck = document.createElement('label');
+  labelCheck.className = "reference__check check";
+  const inputCheck = document.createElement('input');
+  inputCheck.className = "reference__input-check";
+  inputCheck.setAttribute("type", "checkbox");
+  const checkmark = document.createElement('span');
+  checkmark.className = "reference__checkmark checkmark";
+  const item = document.createElement('div');
+  item.className = "reference__item-name";
+  item.textContent = obj.name;
+  const contextItem = document.createElement('div'); 
+  contextItem.className = "reference__item";
+  const context = document.createElement('span'); 
+  context.className = "reference__context";
+  const buttonEdit = document.createElement('button');
+  buttonEdit.className = "inbox__btn-edit";
+  //  const imgButtonEdit = document.createElement('img');
+  // imgButtonEdit.className = "header__buttonpic-edit";
+  const buttonDelite = document.createElement('button');
+  buttonDelite.className = "inbox__btn-delite";
+  //  const imgButtonDelite= document.createElement('img');
+  // imgButtonDelite.className = "header__buttonpic-delite";
+
+  block.append(check);
+  block.append(category);
+  block.append(item);
+  block.append(contextItem);
+  block.append(buttonEdit);
+  block.append(buttonDelite);
+  check.append(labelCheck);
+  labelCheck.append(inputCheck);
+  labelCheck.append(checkmark);
+  contextItem.append(context);
+
+  // проходится по записанным в массив таскам
+  arrayReference.forEach(el => {
+    // дает создаваемому элементу block (li) id, доставая его из объекта
+    // block.setAttribute("id", `${el.id}`);
+    // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+    buttonEdit.setAttribute("onClick", "findTask(this)");
+    // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+    inputCheck.setAttribute("onClick", "checkBox(this)");
+  })
+  // buttonEdit.append(imgButtonEdit);
+  // buttonDelite.append(imgButtonDelite);
+  return block;
+
+}
+
+
+// ДЛЯ 8 СТРАНИЦЫ "ЛИСТ ОЖИДАНИЯ"_______________________________________________________________
+
+const createСardWaitingList = (obj) => {
+  const block = document.createElement('li');
+  block.className = "waiting-list__listItem";
+  const category = document.createElement('div'); 
+  category.className = "waiting-list__category";
+  const check = document.createElement('div');
+  check.className = "waiting-list__inputfield";
+  // name.textContent = obj.name;
+  const labelCheck = document.createElement('label');
+  labelCheck.className = "waiting-list__check check";
+  const inputCheck = document.createElement('input');
+  inputCheck.className = "waiting-list__input-check";
+  inputCheck.setAttribute("type", "checkbox");
+  const checkmark = document.createElement('span');
+  checkmark.className = "waiting-list__checkmark checkmark";
+  const item = document.createElement('div');
+  item.className = "waiting-list__item-name";
+  item.textContent = obj.name;
+  const contextItem = document.createElement('div'); 
+  contextItem.className = "waiting-list__item";
+  const context = document.createElement('span'); 
+  context.className = "waiting-list__context";
+  const buttonEdit = document.createElement('button');
+  buttonEdit.className = "inbox__btn-edit";
+  //  const imgButtonEdit = document.createElement('img');
+  // imgButtonEdit.className = "header__buttonpic-edit";
+  const buttonDelite = document.createElement('button');
+  buttonDelite.className = "inbox__btn-delite";
+  //  const imgButtonDelite= document.createElement('img');
+  // imgButtonDelite.className = "header__buttonpic-delite";
+
+  block.append(check);
+  block.append(category);
+  block.append(item);
+  block.append(contextItem);
+  block.append(buttonEdit);
+  block.append(buttonDelite);
+  check.append(labelCheck);
+  labelCheck.append(inputCheck);
+  labelCheck.append(checkmark);
+  contextItem.append(context);
+
+  // проходится по записанным в массив таскам
+  arrayWaitingList.forEach(el => {
+    // дает создаваемому элементу block (li) id, доставая его из объекта
+    // block.setAttribute("id", `${el.id}`);
+    // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+    buttonEdit.setAttribute("onClick", "findTask(this)");
+    // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+    inputCheck.setAttribute("onClick", "checkBox(this)");
+  })
+  // buttonEdit.append(imgButtonEdit);
+  // buttonDelite.append(imgButtonDelite);
+  return block;
+
+}
+
+
 // ЧЕКБОКС______________________________________________________
 
 let arrayProgressCounter = [];
