@@ -15,7 +15,10 @@ const modalCategory = document.querySelector(".modal__category");
 const modalType = document.querySelector(".modal__type");
 const modalDate = document.getElementById("date_type");
 const modalContext = document.getElementById("context_type");
-
+const typeMenuProject = document.querySelector(".menu__item_submenu-projects");
+const typeMenuQuick = document.querySelector(".menu__item_submenu-quick");
+const typeMenuReference = document.querySelector(".menu__item_submenu-reference");
+const typeMenuWaiting = document.querySelector(".menu__item_submenu-waiting");
 
 let arrayInbox = [];
 let arrayEditedTask = [];
@@ -46,7 +49,7 @@ function createTaskObject() {
     name: inbox.value,
   }
   arrayInbox.push(objInbox);
-  console.log(arrayInbox);
+  // console.log(arrayInbox);
 
   // console.log(objInbox);
 
@@ -232,7 +235,7 @@ function checkBox(checkbox) {
     const id = checkbox.parentNode.parentNode.parentNode.id;
     const task = arrayInbox.find(el => el.id == id);
     let index = arrayInbox.indexOf(task);
-    console.log(index);
+    // console.log(index);
 
     timeoutID = setTimeout(() =>
       checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -365,11 +368,21 @@ submenu.forEach(el => {
   });
 });
 
-function hideOtherSubmenu() {
-  submenu.forEach(el => {
-    el.classList.remove('menu__item_submenu_selected');
-  })
-};
+// function hideOtherSubmenu() {
+//   submenu.forEach(el => {
+//     el.classList.remove('menu__item_submenu_selected');
+//   })
+// };
+
+
+// typeMenuProject.addEventListener('click', () => {
+  
+//   arrayProjectParse = localStorage.parse("arrayProject");
+//   console.log(arrayProjectParse);
+//   createСard();
+//   addCard();
+// });
+
 
 // --------------- МОДАЛЬНОЕ ОКНО 1 -------------
 
@@ -400,7 +413,7 @@ function addValues() {
 
     let index = arrayInbox.indexOf(currentObject);
     arrayInbox.splice(index, 1);
-    console.log(arrayInbox);
+    // console.log(arrayInbox);
     UpdatedArray();
   }
 
@@ -422,7 +435,14 @@ function addValues() {
   // закрытие модального окна
   closePopup();
 
-  // sortByType();
+  sortByType();
+
+  localStorage.setItem("arrayProject", JSON.stringify(arrayProject));
+  localStorage.setItem("arrayReference", JSON.stringify(arrayReference));
+  localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
+  localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList));
+
+
 };
 
  // парсим arrayEditedTask
@@ -441,7 +461,10 @@ function UpdatedArray() {
 //ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
 //const projects = document.getElementById('projects');
 //projects.addEventListener('click', sortByType());
-
+let arrayProject = [];
+let arrayReference = [];
+let arrayQuick = [];
+let arrayWaitingList = [];
 
 function sortByType() {
   let array = [];
@@ -452,12 +475,30 @@ function sortByType() {
 
   arrayEditedTask.forEach(el => {
     if (el.type === 'Проекты') {
-      array.push(el);
+      arrayProject.push(el);
+    }
+    if (el.type === 'Быстрые дела') {
+      arrayQuick.push(el);
+    }
+    if (el.type === 'Справочны материалы') {
+      arrayReference.push(el);
+    }
+    if (el.type === 'Лист ожидания') {
+      arrayWaitingList.push(el);
     }
   });
 
-  console.log(array);
+  
+
+  // console.log(arrayProject);
+  // console.log(arrayReference);
+  // console.log(arrayQuick);
+  // console.log(arrayWaitingList);
 }
+
+
+
+
 //return arr.filter((el) => el.type.includes(query));
 
 
