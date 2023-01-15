@@ -301,7 +301,10 @@ const createСardproject = (obj) => {
   checkmark.className = "projects__checkmark checkmark";
   const item = document.createElement('div');
   item.className = "projects__item-name";
-  item.textContent = obj.name;
+  
+  const nameLink = document.createElement('a');
+  nameLink.textContent = obj.name;
+  nameLink.href = "./5_stages.html";
   // const contextItem = document.createElement('div'); 
   // contextItem.className = "projects__item";
   // const context = document.createElement('span'); 
