@@ -139,7 +139,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem, ) => {
+const addCard = (objItem,) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -565,7 +565,7 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
 
     arrayProject.forEach(el => {
       const block = document.createElement('li');
-      block.className = "projects__listItem";
+      block.className = "projects__listItem listItem";
       const category = document.createElement('div');
       category.className = "projects__category";
       if (el.category === 'Дом') {
@@ -618,8 +618,8 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
       buttonDelite.className = "inbox__btn-delite";
 
 
-      block.append(check);
       block.append(category);
+      block.append(check);
       block.append(item);
       // block.append(contextItem);
       block.append(buttonEdit);
@@ -711,7 +711,7 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
         context.className = 'quick__context kindergarten-tag';
       } else if (el.context === 'Минск') {
         context.className = 'quick__context minsk-tag';
-      } 
+      }
 
       const buttonEdit = document.createElement('button');
       buttonEdit.className = "inbox__btn-edit";
