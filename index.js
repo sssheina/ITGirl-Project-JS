@@ -139,7 +139,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem,) => {
+const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -309,36 +309,64 @@ let timer;
 let updArray;
 
 function checkBox(checkbox) {
+  if (window.location.href.split('/').at(-1) == "index.html") {
+    if (checkbox.checked) {
+      const id = checkbox.parentNode.parentNode.parentNode.id;
+      const task = arrayInbox.find(el => el.id == id);
+      let index = arrayInbox.indexOf(task);
+      // console.log(index);
 
-  if (checkbox.checked) {
-    const id = checkbox.parentNode.parentNode.parentNode.id;
-    const task = arrayInbox.find(el => el.id == id);
-    let index = arrayInbox.indexOf(task);
-    // console.log(index);
+      timeoutID = setTimeout(() =>
+        checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
+      );
+      arrayProgressCounter.push(1);
 
-    timeoutID = setTimeout(() =>
-      checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
-    );
-    arrayProgressCounter.push(1);
+      timer = setTimeout(() =>
+        arrayInbox.splice(index, 1), 5000
+      );
 
-    timer = setTimeout(() =>
-      arrayInbox.splice(index, 1), 5000
-    );
+      updArray = setTimeout(() =>
+        UpdatedArray(), 5000
+      );
 
-    updArray = setTimeout(() =>
-      UpdatedArray(), 5000
-    );
-
-  } else {
-    clearTimeout(timeoutID);
-    clearTimeout(timer);
-    clearTimeout(updArray);
-    arrayProgressCounter.pop();
+    } else {
+      clearTimeout(timeoutID);
+      clearTimeout(timer);
+      clearTimeout(updArray);
+      arrayProgressCounter.pop();
+    }
   }
 
+  if (window.location.toString().indexOf('/3_quick.html') > 0) {
+    if (checkbox.checked) {
+      const id = checkbox.parentNode.parentNode.parentNode.id;
+      const task = arrayQuick.find(el => el.id == id);
+      let index = arrayQuick.indexOf(task);
+      // console.log(index);
+
+      timeoutID = setTimeout(() =>
+        checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
+      );
+      arrayProgressCounter.push(1);
+
+      timer = setTimeout(() =>
+        arrayQuick.splice(index, 1), 5000
+      );
+
+      updArray = setTimeout(() =>
+        UpdatedArray(), 5000
+      );
+      console.log(arrayQuick);
+
+    } else {
+      clearTimeout(timeoutID);
+      clearTimeout(timer);
+      clearTimeout(updArray);
+      arrayProgressCounter.pop();
+    }
+  }
   // let progressCounter = document.querySelector(".header__counter");
   progressCounter.textContent = arrayProgressCounter.length;
-
   localStorage.setItem("progressCounter", JSON.stringify(arrayProgressCounter.length));
 
 }
@@ -522,9 +550,15 @@ function addValues() {
 
 
 function UpdatedArray() {
-  localStorage.removeItem("arrayInbox");
-  localStorage.setItem("arrayInbox", JSON.stringify(arrayInbox));
+  if (window.location.href.split('/').at(-1) == "index.html") {
+    localStorage.removeItem("arrayInbox");
+    localStorage.setItem("arrayInbox", JSON.stringify(arrayInbox));
+  }
 
+  if (window.location.toString().indexOf('/3_quick.html') > 0) {
+    localStorage.removeItem("arrayQuick");
+    localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
+  }
 }
 
 //ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
@@ -635,7 +669,7 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
       // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
       //buttonEdit.setAttribute("onClick", "findTask(this)");
       // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
-      //inputCheck.setAttribute("onClick", "checkBox(this)");
+      inputCheck.setAttribute("onClick", "checkBox(this)");
       placeInboxList.appendChild(block);
       // console.log(arrayInbox);
     })
