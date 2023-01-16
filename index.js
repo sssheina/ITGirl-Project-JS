@@ -180,14 +180,14 @@ const createСard = (obj) => {
 }
 
 
-
-const addCard = (objItem, ) => {
-  const item = createСard(objItem);
-  placeInboxList.appendChild(item);
-}
-
-// проверка нахождения пользователя на главной странице
 if (window.location.href.split('/').at(-1) == "index.html") {
+  const addCard = (objItem,) => {
+    const item = createСard(objItem);
+    placeInboxList.appendChild(item);
+  }
+
+  // проверка нахождения пользователя на главной странице
+
   // слушатель кнопки "Сохранить" на главной
   inboxButton.addEventListener("click", () => {
     createTaskObject();
@@ -526,54 +526,55 @@ addEventListener('DOMContentLoaded', () => {
   } else {
     arrayEditedTask = JSON.parse(localStorage.getItem("editedTasks"));
   }
+  if (window.location.toString().indexOf('/index.html') > 0) {
+    arrayInbox.forEach(el => {
+      const block = document.createElement('li');
+      block.className = "inbox__listItem";
+      const check = document.createElement('div');
+      check.className = "inbox__inputfield";
+      // name.textContent = obj.name;
+      const labelCheck = document.createElement('label');
+      labelCheck.className = "inbox__check check";
+      const inputCheck = document.createElement('input');
+      inputCheck.className = "inbox__input-check";
+      inputCheck.setAttribute("type", "checkbox");
+      const checkmark = document.createElement('span');
+      checkmark.className = "inbox__checkmark checkmark";
+      const item = document.createElement('div');
+      item.className = "inbox__item";
+      item.textContent = el.name;
+      // console.log(el.name);
+      const buttonEdit = document.createElement('button');
+      buttonEdit.className = "inbox__btn-edit";
+      //  const imgButtonEdit = document.createElement('img');
+      // imgButtonEdit.className = "header__buttonpic-edit";
+      const buttonDelite = document.createElement('button');
+      buttonDelite.className = "inbox__btn-delite";
+      //  const imgButtonDelite= document.createElement('img');
+      // imgButtonDelite.className = "header__buttonpic-delite";
 
-  arrayInbox.forEach(el => {
-    const block = document.createElement('li');
-    block.className = "inbox__listItem";
-    const check = document.createElement('div');
-    check.className = "inbox__inputfield";
-    // name.textContent = obj.name;
-    const labelCheck = document.createElement('label');
-    labelCheck.className = "inbox__check check";
-    const inputCheck = document.createElement('input');
-    inputCheck.className = "inbox__input-check";
-    inputCheck.setAttribute("type", "checkbox");
-    const checkmark = document.createElement('span');
-    checkmark.className = "inbox__checkmark checkmark";
-    const item = document.createElement('div');
-    item.className = "inbox__item";
-    item.textContent = el.name;
-    // console.log(el.name);
-    const buttonEdit = document.createElement('button');
-    buttonEdit.className = "inbox__btn-edit";
-    //  const imgButtonEdit = document.createElement('img');
-    // imgButtonEdit.className = "header__buttonpic-edit";
-    const buttonDelite = document.createElement('button');
-    buttonDelite.className = "inbox__btn-delite";
-    //  const imgButtonDelite= document.createElement('img');
-    // imgButtonDelite.className = "header__buttonpic-delite";
+      block.append(check);
+      block.append(item);
+      block.append(buttonEdit);
+      block.append(buttonDelite);
+      check.append(labelCheck);
+      labelCheck.append(inputCheck);
+      labelCheck.append(checkmark);
 
-    block.append(check);
-    block.append(item);
-    block.append(buttonEdit);
-    block.append(buttonDelite);
-    check.append(labelCheck);
-    labelCheck.append(inputCheck);
-    labelCheck.append(checkmark);
+      // проходится по записанным в массив таскам
 
-    // проходится по записанным в массив таскам
-
-    // дает создаваемому элементу block (li) id, доставая его из объекта
-    block.setAttribute("id", `${el.id}`);
-    // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
-    buttonEdit.setAttribute("onClick", "findTask(this)");
-    // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
-    inputCheck.setAttribute("onClick", "checkBox(this)");
+      // дает создаваемому элементу block (li) id, доставая его из объекта
+      block.setAttribute("id", `${el.id}`);
+      // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+      buttonEdit.setAttribute("onClick", "findTask(this)");
+      // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+      inputCheck.setAttribute("onClick", "checkBox(this)");
 
 
-    placeInboxList.appendChild(block);
-    // console.log(arrayInbox);
-  })
+      placeInboxList.appendChild(block);
+      // console.log(arrayInbox);
+    })
+  }
 })
 
 // МЕНЮ________________________________________________________  _
@@ -801,45 +802,45 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
     }
     arrayQuick.forEach(el => {
       const block = document.createElement('li');
-  block.className = "quick__listItem";
-  const category = document.createElement('div');
-  category.className = "quick__category";
-  const check = document.createElement('div');
-  check.className = "quick__inputfield";
-  // name.textContent = obj.name;
-  const labelCheck = document.createElement('label');
-  labelCheck.className = "quick__check check";
-  const inputCheck = document.createElement('input');
-  inputCheck.className = "quick__input-check";
-  inputCheck.setAttribute("type", "checkbox");
-  const checkmark = document.createElement('span');
-  checkmark.className = "quick__checkmark checkmark";
-  const item = document.createElement('div');
-  item.className = "quick__item-name";
-  item.textContent = el.name;
-  const contextItem = document.createElement('div');
-  contextItem.className = "quick__item";
-  const context = document.createElement('span');
-  context.className = "quick__context";
-  const buttonEdit = document.createElement('button');
-  buttonEdit.className = "inbox__btn-edit";
-  //  const imgButtonEdit = document.createElement('img');
-  // imgButtonEdit.className = "header__buttonpic-edit";
-  const buttonDelite = document.createElement('button');
-  buttonDelite.className = "inbox__btn-delite";
-  //  const imgButtonDelite= document.createElement('img');
-  // imgButtonDelite.className = "header__buttonpic-delite";
+      block.className = "quick__listItem";
+      const category = document.createElement('div');
+      category.className = "quick__category";
+      const check = document.createElement('div');
+      check.className = "quick__inputfield";
+      // name.textContent = obj.name;
+      const labelCheck = document.createElement('label');
+      labelCheck.className = "quick__check check";
+      const inputCheck = document.createElement('input');
+      inputCheck.className = "quick__input-check";
+      inputCheck.setAttribute("type", "checkbox");
+      const checkmark = document.createElement('span');
+      checkmark.className = "quick__checkmark checkmark";
+      const item = document.createElement('div');
+      item.className = "quick__item-name";
+      item.textContent = el.name;
+      const contextItem = document.createElement('div');
+      contextItem.className = "quick__item";
+      const context = document.createElement('span');
+      context.className = "quick__context";
+      const buttonEdit = document.createElement('button');
+      buttonEdit.className = "inbox__btn-edit";
+      //  const imgButtonEdit = document.createElement('img');
+      // imgButtonEdit.className = "header__buttonpic-edit";
+      const buttonDelite = document.createElement('button');
+      buttonDelite.className = "inbox__btn-delite";
+      //  const imgButtonDelite= document.createElement('img');
+      // imgButtonDelite.className = "header__buttonpic-delite";
 
-  block.append(check);
-  block.append(category);
-  block.append(item);
-  block.append(contextItem);
-  block.append(buttonEdit);
-  block.append(buttonDelite);
-  check.append(labelCheck);
-  labelCheck.append(inputCheck);
-  labelCheck.append(checkmark);
-  contextItem.append(context);
+      block.append(check);
+      block.append(category);
+      block.append(item);
+      block.append(contextItem);
+      block.append(buttonEdit);
+      block.append(buttonDelite);
+      check.append(labelCheck);
+      labelCheck.append(inputCheck);
+      labelCheck.append(checkmark);
+      contextItem.append(context);
 
       // проходится по записанным в массив таскам
 
