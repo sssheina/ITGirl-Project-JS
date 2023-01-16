@@ -514,14 +514,6 @@ function addValues() {
     UpdatedArray();
   }
 
-  // сохранение каждой отдельной задачи в локальном хранилище
-  // let keyObj = `planerTaskObj_${currentObject.id}`;
-  // localStorage.setItem(keyObj, JSON.stringify(currentObject));
-
-  //   let arrayInboxParse = localStorage.getItem('arrayInbox');
-  // arrayInboxParse = JSON.parse(arrayInboxParse);
-  // console.log(arrayInboxParse);
-
   // очищение полей модального окна
   type.value = "";
   category.value = "";
@@ -538,15 +530,7 @@ function addValues() {
   localStorage.setItem("arrayReference", JSON.stringify(arrayReference));
   localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
   localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList));
-
-
 };
-
-// парсим arrayEditedTask
-//  let arrayEditedTaskParse  = localStorage.getItem('editedTasks');
-//  arrayEditedTaskParse = JSON.parse('editedTasks');
-//  console.log(arrayEditedTaskParse);
-// arrayEditedTaskParse = arrayEditedTask;
 
 
 function UpdatedArray() {
@@ -575,13 +559,13 @@ function sortByType() {
     if (el.type === 'Проекты') {
       arrayProject.push(el);
     }
-    if (el.type === 'Быстрые дела') {
+    else if (el.type === 'Быстрые дела') {
       arrayQuick.push(el);
     }
-    if (el.type === 'Справочные материалы') {
+    else if (el.type === 'Справочные материалы') {
       arrayReference.push(el);
     }
-    if (el.type === 'Лист ожидания') {
+    else if (el.type === 'Лист ожидания') {
       arrayWaitingList.push(el);
     }
   });
