@@ -562,11 +562,46 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
     } else {
       arrayProject = JSON.parse(localStorage.getItem("arrayProject"));
     }
+    
     arrayProject.forEach(el => {
       const block = document.createElement('li');
       block.className = "projects__listItem";
       const category = document.createElement('div');
       category.className = "projects__category";
+      if (el.category === 'Дом') {
+        category.className = 'projects__category category-home';
+      } 
+      else if (el.category === 'Учеба') {
+        category.className = 'projects__category category-learning';
+      }
+      else if (el.category === 'Работа') {
+        category.className = 'projects__category category-job';
+      }
+      else if (el.category === 'Саморазвитие') {
+        category.className = 'projects__category category-self-development';
+      }
+      else if (el.category === 'Здоровье') {
+        category.className = 'projects__category category-health';
+      }
+      else if (el.category === 'Отдых') {
+        category.className = 'projects__category category-recreation';
+      }
+      else if (el.category === 'Хобби') {
+        category.className = 'projects__category category-hobby';
+      }
+      else if (el.category === 'Идеи') {
+        category.className = 'projects__category category-ideas';
+      }
+      else if (el.category === 'Хозяйство') {
+        category.className = 'projects__category category-household';
+      }
+      else if (el.category === 'Спорт') {
+        category.className = 'projects__category category-sport';
+      }
+      else if (el.category === 'Уход за собой') {
+        category.className = 'projects__category category-self-care';
+      }
+
       const check = document.createElement('div');
       check.className = "projects__inputfield";
       // name.textContent = obj.name;
