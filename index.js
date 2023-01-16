@@ -181,7 +181,7 @@ const createСard = (obj) => {
 
 
 
-const addCard = (objItem, ) => {
+const addCard = (objItem,) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
