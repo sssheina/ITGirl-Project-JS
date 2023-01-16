@@ -139,7 +139,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem,) => {
+const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -365,6 +365,33 @@ function checkBox(checkbox) {
       arrayProgressCounter.pop();
     }
   }
+  if (window.location.toString().indexOf('/4_projects.html') > 0) {
+    if (checkbox.checked) {
+      const id = checkbox.parentNode.parentNode.parentNode.id;
+      const task = arrayProject.find(el => el.id == id);
+      let index = arrayProject.indexOf(task);
+      // console.log(index);
+
+      timeoutID = setTimeout(() =>
+        checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
+      );
+      arrayProgressCounter.push(1);
+
+      timer = setTimeout(() =>
+        arrayProject.splice(index, 1), 5000
+      );
+
+      updArray = setTimeout(() =>
+        UpdatedArray(), 5000
+      );
+
+    } else {
+      clearTimeout(timeoutID);
+      clearTimeout(timer);
+      clearTimeout(updArray);
+      arrayProgressCounter.pop();
+    }
+  }
   // let progressCounter = document.querySelector(".header__counter");
   progressCounter.textContent = arrayProgressCounter.length;
   localStorage.setItem("progressCounter", JSON.stringify(arrayProgressCounter.length));
@@ -537,6 +564,10 @@ function UpdatedArray() {
     localStorage.removeItem("arrayQuick");
     localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
   }
+  if (window.location.toString().indexOf('/4_projects.html') > 0) {
+    localStorage.removeItem("arrayProject");
+    localStorage.setItem("arrayProject", JSON.stringify(arrayProject));
+  }
 }
 
 //ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
@@ -552,16 +583,13 @@ function sortByType() {
   arrayEditedTask.forEach(el => {
     if (el.type === 'Проекты') {
       arrayProject.push(el);
-    }
-    else if (el.type === 'Быстрые дела') {
+    } else if (el.type === 'Быстрые дела') {
       arrayQuick.push(el);
       console.log(arrayQuick);
-    }
-    else if (el.type === 'Справочные материалы') {
+    } else if (el.type === 'Справочные материалы') {
       arrayReference.push(el);
       console.log(arrayReference);
-    }
-    else if (el.type === 'Лист ожидания') {
+    } else if (el.type === 'Лист ожидания') {
       arrayWaitingList.push(el);
       console.log(arrayWaitingList);
     }
