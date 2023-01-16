@@ -181,7 +181,7 @@ const createСard = (obj) => {
 
 
 
-const addCard = (objItem,) => {
+const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -711,11 +711,6 @@ let arrayQuick = [];
 let arrayWaitingList = [];
 
 function sortByType() {
-  let array = [];
-
-  // for (let i = 0; i < arrayEditedTask.lenght; i++) {
-  //let projects = arrayEditedTask.find(o => o.type === 'Проекты');
-
 
   arrayEditedTask.forEach(el => {
     if (el.type === 'Проекты') {
@@ -724,7 +719,7 @@ function sortByType() {
     if (el.type === 'Быстрые дела') {
       arrayQuick.push(el);
     }
-    if (el.type === 'Справочны материалы') {
+    if (el.type === 'Справочные материалы') {
       arrayReference.push(el);
     }
     if (el.type === 'Лист ожидания') {
@@ -734,6 +729,7 @@ function sortByType() {
 }
 
 // загрузка массива проекты на страницу проекты с отрисовкой
+
 if (window.location.toString().indexOf('/4_projects.html') > 0) {
   document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("arrayProject") === null) {
@@ -770,7 +766,7 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
       buttonEdit.className = "inbox__btn-edit";
       const buttonDelite = document.createElement('button');
       buttonDelite.className = "inbox__btn-delite";
-      
+
 
       block.append(check);
       block.append(category);
