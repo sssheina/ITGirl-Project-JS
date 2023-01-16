@@ -712,7 +712,7 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
       } else if (el.context === 'Минск') {
         context.className = 'quick__context minsk-tag';
       }
-
+      context.textContent = el.context;
       const buttonEdit = document.createElement('button');
       buttonEdit.className = "inbox__btn-edit";
       //  const imgButtonEdit = document.createElement('img');
