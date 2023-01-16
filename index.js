@@ -508,14 +508,6 @@ function addValues() {
     UpdatedArray();
   }
 
-  // сохранение каждой отдельной задачи в локальном хранилище
-  // let keyObj = `planerTaskObj_${currentObject.id}`;
-  // localStorage.setItem(keyObj, JSON.stringify(currentObject));
-
-  //   let arrayInboxParse = localStorage.getItem('arrayInbox');
-  // arrayInboxParse = JSON.parse(arrayInboxParse);
-  // console.log(arrayInboxParse);
-
   // очищение полей модального окна
   type.value = "";
   category.value = "";
@@ -532,15 +524,7 @@ function addValues() {
   localStorage.setItem("arrayReference", JSON.stringify(arrayReference));
   localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
   localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList));
-
-
 };
-
-// парсим arrayEditedTask
-//  let arrayEditedTaskParse  = localStorage.getItem('editedTasks');
-//  arrayEditedTaskParse = JSON.parse('editedTasks');
-//  console.log(arrayEditedTaskParse);
-// arrayEditedTaskParse = arrayEditedTask;
 
 
 function UpdatedArray() {
