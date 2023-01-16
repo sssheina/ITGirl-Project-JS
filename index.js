@@ -651,7 +651,7 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
     }
     arrayQuick.forEach(el => {
       const block = document.createElement('li');
-      block.className = "quick__listItem";
+      block.className = "quick__listItem listItem";
       const category = document.createElement('div');
       if (el.category === 'Дом') {
         category.className = 'quick__category category-home';
@@ -722,8 +722,8 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
       //  const imgButtonDelite= document.createElement('img');
       // imgButtonDelite.className = "header__buttonpic-delite";
 
-      block.append(check);
       block.append(category);
+      block.append(check);
       block.append(item);
       block.append(contextItem);
       block.append(buttonEdit);
