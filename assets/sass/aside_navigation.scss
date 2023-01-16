@@ -1,6 +1,7 @@
 .page__menu {
   list-style-type: none;
   text-transform: uppercase;
+  user-select: none;
 }
 
 .menu__list {
@@ -15,6 +16,7 @@
   display: block;
   font-weight: 800;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .menu__arrow {
@@ -41,7 +43,7 @@
   margin-top: 8px;
   letter-spacing: 1.1px;
   font-weight: 500;
-  background-color:#fdc2b1;
+  background-color: #fdc2b1;
   padding: 15px;
 }
 
@@ -68,6 +70,7 @@ ul {
   color: #c5c5c5;
   margin-bottom: 10px;
 }
+
 a {
   text-decoration: none;
   display: block;
@@ -94,7 +97,7 @@ a {
   // border-radius: 6px;
   text-transform: none;
   box-shadow: 0 0 10px 4px rgba(64, 86, 98, 0.2);
-  
+
 
   /* Расположите текст подсказки */
   position: absolute;

@@ -181,7 +181,7 @@ const createСard = (obj) => {
 
 
 
-const addCard = (objItem, ) => {
+const addCard = (objItem,) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -226,7 +226,7 @@ placeInboxList.addEventListener('click', (event) => {
 const createСardQuick = (obj) => {
   const block = document.createElement('li');
   block.className = "quick__listItem";
-  const category = document.createElement('div'); 
+  const category = document.createElement('div');
   category.className = "quick__category";
   const check = document.createElement('div');
   check.className = "quick__inputfield";
@@ -241,9 +241,9 @@ const createСardQuick = (obj) => {
   const item = document.createElement('div');
   item.className = "quick__item-name";
   item.textContent = obj.name;
-  const contextItem = document.createElement('div'); 
+  const contextItem = document.createElement('div');
   contextItem.className = "quick__item";
-  const context = document.createElement('span'); 
+  const context = document.createElement('span');
   context.className = "quick__context";
   const buttonEdit = document.createElement('button');
   buttonEdit.className = "inbox__btn-edit";
@@ -287,7 +287,7 @@ const createСardQuick = (obj) => {
 const createСardproject = (obj) => {
   const block = document.createElement('li');
   block.className = "projects__listItem";
-  const category = document.createElement('div'); 
+  const category = document.createElement('div');
   category.className = "projects__category";
   const check = document.createElement('div');
   check.className = "projects__inputfield";
@@ -301,7 +301,7 @@ const createСardproject = (obj) => {
   checkmark.className = "projects__checkmark checkmark";
   const item = document.createElement('div');
   item.className = "projects__item-name";
-  
+
   const nameLink = document.createElement('a');
   nameLink.textContent = obj.name;
   nameLink.href = "./5_stages.html";
@@ -350,7 +350,7 @@ const createСardproject = (obj) => {
 const createСardReference = (obj) => {
   const block = document.createElement('li');
   block.className = "reference__listItem";
-  const category = document.createElement('div'); 
+  const category = document.createElement('div');
   category.className = "reference__category";
   const check = document.createElement('div');
   check.className = "reference__inputfield";
@@ -365,9 +365,9 @@ const createСardReference = (obj) => {
   const item = document.createElement('div');
   item.className = "reference__item-name";
   item.textContent = obj.name;
-  const contextItem = document.createElement('div'); 
+  const contextItem = document.createElement('div');
   contextItem.className = "reference__item";
-  const context = document.createElement('span'); 
+  const context = document.createElement('span');
   context.className = "reference__context";
   const buttonEdit = document.createElement('button');
   buttonEdit.className = "inbox__btn-edit";
@@ -410,7 +410,7 @@ const createСardReference = (obj) => {
 const createСardWaitingList = (obj) => {
   const block = document.createElement('li');
   block.className = "waiting-list__listItem";
-  const category = document.createElement('div'); 
+  const category = document.createElement('div');
   category.className = "waiting-list__category";
   const check = document.createElement('div');
   check.className = "waiting-list__inputfield";
@@ -425,9 +425,9 @@ const createСardWaitingList = (obj) => {
   const item = document.createElement('div');
   item.className = "waiting-list__item-name";
   item.textContent = obj.name;
-  const contextItem = document.createElement('div'); 
+  const contextItem = document.createElement('div');
   contextItem.className = "waiting-list__item";
-  const context = document.createElement('span'); 
+  const context = document.createElement('span');
   context.className = "waiting-list__context";
   const buttonEdit = document.createElement('button');
   buttonEdit.className = "inbox__btn-edit";
@@ -612,15 +612,15 @@ submenu.forEach(el => {
   });
 });
 
-// function hideOtherSubmenu() {
-//   submenu.forEach(el => {
-//     el.classList.remove('menu__item_submenu_selected');
-//   })
-// };
+function hideOtherSubmenu() {
+  submenu.forEach(el => {
+    el.classList.remove('menu__item_submenu_selected');
+  })
+};
 
 
 // typeMenuProject.addEventListener('click', () => {
-  
+
 //   arrayProjectParse = localStorage.parse("arrayProject");
 //   console.log(arrayProjectParse);
 //   createСard();
@@ -689,11 +689,11 @@ function addValues() {
 
 };
 
- // парсим arrayEditedTask
+// парсим arrayEditedTask
 //  let arrayEditedTaskParse  = localStorage.getItem('editedTasks');
 //  arrayEditedTaskParse = JSON.parse('editedTasks');
 //  console.log(arrayEditedTaskParse);
- // arrayEditedTaskParse = arrayEditedTask;
+// arrayEditedTaskParse = arrayEditedTask;
 
 
 function UpdatedArray() {
@@ -732,7 +732,7 @@ function sortByType() {
     }
   });
 
-  
+
 
   // console.log(arrayProject);
   // console.log(arrayReference);
