@@ -731,15 +731,69 @@ function sortByType() {
       arrayWaitingList.push(el);
     }
   });
-
-
-
-  // console.log(arrayProject);
-  // console.log(arrayReference);
-  // console.log(arrayQuick);
-  // console.log(arrayWaitingList);
 }
 
+if (window.location.toString().indexOf('/4_projects.html') > 0) {
+  document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("arrayProject") === null) {
+      arrayProject = [];
+    } else {
+      arrayProject = JSON.parse(localStorage.getItem("arrayProject"));
+    }
+    arrayProject.forEach(el => {
+      const block = document.createElement('li');
+      block.className = "projects__listItem";
+      const category = document.createElement('div');
+      category.className = "projects__category";
+      const check = document.createElement('div');
+      check.className = "projects__inputfield";
+      // name.textContent = obj.name;
+      const labelCheck = document.createElement('label');
+      labelCheck.className = "projects__check check";
+      const inputCheck = document.createElement('input');
+      inputCheck.className = "projects__input-check";
+      inputCheck.setAttribute("type", "checkbox");
+      const checkmark = document.createElement('span');
+      checkmark.className = "projects__checkmark checkmark";
+      const item = document.createElement('div');
+      item.className = "projects__item-name";
+      item.textContent = el.name;
+      // const nameLink = document.createElement('a');
+      // nameLink.textContent = el.name;
+      //nameLink.href = "./5_stages.html";
+      // const contextItem = document.createElement('div'); 
+      // contextItem.className = "projects__item";
+      // const context = document.createElement('span'); 
+      // context.className = "projects__context";
+      const buttonEdit = document.createElement('button');
+      buttonEdit.className = "inbox__btn-edit";
+      const buttonDelite = document.createElement('button');
+      buttonDelite.className = "inbox__btn-delite";
+      
+
+      block.append(check);
+      block.append(category);
+      block.append(item);
+      // block.append(contextItem);
+      block.append(buttonEdit);
+      block.append(buttonDelite);
+      check.append(labelCheck);
+      labelCheck.append(inputCheck);
+      labelCheck.append(checkmark);
+
+      // проходится по записанным в массив таскам
+
+      // дает создаваемому элементу block (li) id, доставая его из объекта
+      //block.setAttribute("id", `${el.id}`);
+      // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+      //buttonEdit.setAttribute("onClick", "findTask(this)");
+      // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+      //inputCheck.setAttribute("onClick", "checkBox(this)");
+      placeInboxList.appendChild(block);
+      // console.log(arrayInbox);
+    })
+  })
+};
 
 
 
@@ -906,4 +960,3 @@ function sortByType() {
 // };
 // Storage.prototype.set = function(key, items) {
 //   localStorage.setItem(key, JSON.stringify(items));
-// };
