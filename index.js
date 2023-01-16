@@ -139,7 +139,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem, ) => {
+const addCard = (objItem,) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -385,11 +385,6 @@ addEventListener('DOMContentLoaded', () => {
     arrayInbox = JSON.parse(localStorage.getItem("arrayInbox"));
   }
 
-  if (localStorage.getItem("editedTasks") === null) {
-    arrayEditedTask = [];
-  } else {
-    arrayEditedTask = JSON.parse(localStorage.getItem("editedTasks"));
-  }
   if (window.location.toString().indexOf('/index.html') > 0) {
     arrayInbox.forEach(el => {
       const block = document.createElement('li');
@@ -506,7 +501,6 @@ function addValues() {
 
   if (type.value != "") {
     arrayEditedTask.push(currentObject);
-    localStorage.setItem('editedTasks', JSON.stringify(arrayEditedTask));
 
     let index = arrayInbox.indexOf(currentObject);
     arrayInbox.splice(index, 1);
@@ -575,16 +569,20 @@ function sortByType() {
     if (el.type === 'Проекты') {
       arrayProject.push(el);
     }
-    if (el.type === 'Быстрые дела') {
+    else if (el.type === 'Быстрые дела') {
       arrayQuick.push(el);
+      console.log(arrayQuick);
     }
-    if (el.type === 'Справочные материалы') {
+    else if (el.type === 'Справочные материалы') {
       arrayReference.push(el);
+      console.log(arrayReference);
     }
-    if (el.type === 'Лист ожидания') {
+    else if (el.type === 'Лист ожидания') {
       arrayWaitingList.push(el);
+      console.log(arrayWaitingList);
     }
   });
+  arrayEditedTask = [];
 }
 
 // загрузка массива проекты на страницу проекты с отрисовкой
