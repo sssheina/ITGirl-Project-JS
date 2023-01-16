@@ -139,7 +139,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem,) => {
+const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -562,7 +562,7 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
     } else {
       arrayProject = JSON.parse(localStorage.getItem("arrayProject"));
     }
-    
+
     arrayProject.forEach(el => {
       const block = document.createElement('li');
       block.className = "projects__listItem";
@@ -570,35 +570,25 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
       category.className = "projects__category";
       if (el.category === 'Дом') {
         category.className = 'projects__category category-home';
-      } 
-      else if (el.category === 'Учеба') {
+      } else if (el.category === 'Учеба') {
         category.className = 'projects__category category-learning';
-      }
-      else if (el.category === 'Работа') {
+      } else if (el.category === 'Работа') {
         category.className = 'projects__category category-job';
-      }
-      else if (el.category === 'Саморазвитие') {
+      } else if (el.category === 'Саморазвитие') {
         category.className = 'projects__category category-self-development';
-      }
-      else if (el.category === 'Здоровье') {
+      } else if (el.category === 'Здоровье') {
         category.className = 'projects__category category-health';
-      }
-      else if (el.category === 'Отдых') {
+      } else if (el.category === 'Отдых') {
         category.className = 'projects__category category-recreation';
-      }
-      else if (el.category === 'Хобби') {
+      } else if (el.category === 'Хобби') {
         category.className = 'projects__category category-hobby';
-      }
-      else if (el.category === 'Идеи') {
+      } else if (el.category === 'Идеи') {
         category.className = 'projects__category category-ideas';
-      }
-      else if (el.category === 'Хозяйство') {
+      } else if (el.category === 'Хозяйство') {
         category.className = 'projects__category category-household';
-      }
-      else if (el.category === 'Спорт') {
+      } else if (el.category === 'Спорт') {
         category.className = 'projects__category category-sport';
-      }
-      else if (el.category === 'Уход за собой') {
+      } else if (el.category === 'Уход за собой') {
         category.className = 'projects__category category-self-care';
       }
 
@@ -663,7 +653,29 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
       const block = document.createElement('li');
       block.className = "quick__listItem";
       const category = document.createElement('div');
-      category.className = "quick__category";
+      if (el.category === 'Дом') {
+        category.className = 'quick__category category-home';
+      } else if (el.category === 'Учеба') {
+        category.className = 'quick__category category-learning';
+      } else if (el.category === 'Работа') {
+        category.className = 'quick__category category-job';
+      } else if (el.category === 'Саморазвитие') {
+        category.className = 'quick__category category-self-development';
+      } else if (el.category === 'Здоровье') {
+        category.className = 'quick__category category-health';
+      } else if (el.category === 'Отдых') {
+        category.className = 'quick__category category-recreation';
+      } else if (el.category === 'Хобби') {
+        category.className = 'quick__category category-hobby';
+      } else if (el.category === 'Идеи') {
+        category.className = 'quick__category category-ideas';
+      } else if (el.category === 'Хозяйство') {
+        category.className = 'quick__category category-household';
+      } else if (el.category === 'Спорт') {
+        category.className = 'quick__category category-sport';
+      } else if (el.category === 'Уход за собой') {
+        category.className = 'quick__category category-self-care';
+      }
       const check = document.createElement('div');
       check.className = "quick__inputfield";
       // name.textContent = obj.name;
@@ -680,7 +692,27 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
       const contextItem = document.createElement('div');
       contextItem.className = "quick__item";
       const context = document.createElement('span');
-      context.className = "quick__context";
+
+      if (el.context === 'Дом') {
+        context.className = 'quick__context home-tag';
+      } else if (el.context === 'Телефон') {
+        context.className = 'quick__context phone-tag';
+      } else if (el.context === 'Вне дома') {
+        context.className = 'quick__context outdoors-tag';
+      } else if (el.context === 'Компьютер') {
+        context.className = 'quick__context computer-tag';
+      } else if (el.context === 'Делегироване') {
+        context.className = 'quick__context delegating-tag';
+      } else if (el.context === 'Город') {
+        context.className = 'quick__context city-tag';
+      } else if (el.context === 'Школа') {
+        context.className = 'quick__context school-tag';
+      } else if (el.context === 'Детсад') {
+        context.className = 'quick__context kindergarten-tag';
+      } else if (el.context === 'Минск') {
+        context.className = 'quick__context minsk-tag';
+      } 
+
       const buttonEdit = document.createElement('button');
       buttonEdit.className = "inbox__btn-edit";
       //  const imgButtonEdit = document.createElement('img');
