@@ -160,12 +160,28 @@ if (window.location.href.split('/').at(-1) == "index.html") {
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-delite')) {
     event.target.parentNode.remove();
+    if (window.location.href.split('/').at(-1) == "index.html") {
+      const id = event.target.parentNode.id;
+      const task = arrayInbox.find(el => el.id == id);
+      let index = arrayInbox.indexOf(task);
+      arrayInbox.splice(index, 1);
+      UpdatedArray();
+    }
 
-    const id = event.target.parentNode.id;
-    const task = arrayInbox.find(el => el.id == id);
-    let index = arrayInbox.indexOf(task);
-    arrayInbox.splice(index, 1);
-    UpdatedArray();
+    if (window.location.toString().indexOf('/3_quick.html') > 0) {
+      const id = event.target.parentNode.id;
+      const task = arrayQuick.find(el => el.id == id);
+      let index = arrayQuick.indexOf(task);
+      arrayQuick.splice(index, 1);
+      UpdatedArray();
+    }
+    if (window.location.toString().indexOf('/4_projects.html') > 0) {
+      const id = event.target.parentNode.id;
+      const task = arrayInbox.find(el => el.id == id);
+      let index = arrayProject.indexOf(task);
+      arrayProject.splice(index, 1);
+      UpdatedArray();
+    }
   }
 })
 
