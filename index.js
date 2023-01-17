@@ -42,7 +42,7 @@ let currentObject = "";
 let taskCard = "";
 
 
-// создает объект из таска и записывает его в массив по нажатию
+// создает объект из таска и записывает его в массив
 function createTaskObject() {
   const objInbox = {
     id: currObjId++,
@@ -77,6 +77,7 @@ function createTaskObject() {
 function findTask(el) {
   // забирает id из родительского элемента, который мы дали при создании карточки таска в createCard 
   const id = el.parentNode.id;
+  console.log(id);
   // находит в массиве тасков соответсвующий таск по id
   const task = arrayInbox.find(el => el.id == id);
   // передает имя таска в showTitle
@@ -95,32 +96,44 @@ function showTitle(title) {
 const createСard = (obj) => {
   const block = document.createElement('li');
   block.className = "inbox__listItem";
+
   const check = document.createElement('div');
   check.className = "inbox__inputfield";
-  // name.textContent = obj.name;
+
   const labelCheck = document.createElement('label');
   labelCheck.className = "inbox__check check";
+
   const inputCheck = document.createElement('input');
   inputCheck.className = "inbox__input-check";
   inputCheck.setAttribute("type", "checkbox");
+
   const checkmark = document.createElement('span');
   checkmark.className = "inbox__checkmark checkmark";
+
   const item = document.createElement('div');
   item.className = "inbox__item";
   item.textContent = `${inbox.value}`;
+
   const buttonEdit = document.createElement('button');
   buttonEdit.className = "inbox__btn-edit";
-  //  const imgButtonEdit = document.createElement('img');
-  // imgButtonEdit.className = "header__buttonpic-edit";
+
   const buttonDelite = document.createElement('button');
   buttonDelite.className = "inbox__btn-delite";
-  //  const imgButtonDelite= document.createElement('img');
-  // imgButtonDelite.className = "header__buttonpic-delite";
+
+  const imgButtonEdit = new Image(20, 20);
+  imgButtonEdit.src = "./assets/images/pencil_white.png"
+  imgButtonEdit.className = "header__buttonpic-edit";
+
+  const imgButtonDelite = new Image(20, 20);
+  imgButtonDelite.src = "./assets/images/delite_white.png"
+  imgButtonDelite.className = "header__buttonpic-delite";
 
   block.append(check);
   block.append(item);
   block.append(buttonEdit);
+  buttonEdit.append(imgButtonEdit);
   block.append(buttonDelite);
+  buttonDelite.append(imgButtonDelite);
   check.append(labelCheck);
   labelCheck.append(inputCheck);
   labelCheck.append(checkmark);
@@ -134,12 +147,11 @@ const createСard = (obj) => {
     // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
     inputCheck.setAttribute("onClick", "checkBox(this)");
   })
-  // buttonEdit.append(imgButtonEdit);
-  // buttonDelite.append(imgButtonDelite);
+
   return block;
 }
 
-const addCard = (objItem, ) => {
+const addCard = (objItem,) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -188,12 +200,10 @@ placeInboxList.addEventListener('click', (event) => {
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-edit')) {
     modalWindow.style.display = "block";
-
   }
-  if (event.target.classList.contains('overlay')) {
-    modalWindow.style.display = "none";
-
-  }
+  // else if (event.target.classList.contains('overlay')) {
+  //   modalWindow.style.display = "none";
+  // }
 })
 
 // ДЛЯ 7 СТРАНИЦЫ "СПРАВОЧНЫЕ МАТЕРИАЛЫ"_______________________________________________________________
@@ -425,7 +435,7 @@ addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem("arrayInbox") === null) {
     arrayInbox = [];
   } else {
-    arrayInbox = JSON.parse(localStorage.getItem("arrayInbox"));
+    getLocStorage(arrayInbox)
   }
 
   if (window.location.toString().indexOf('/index.html') > 0) {
@@ -477,6 +487,16 @@ addEventListener('DOMContentLoaded', () => {
       // console.log(arrayInbox);
     })
   }
+
+  if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-home") {
+    const arrTasks = getLocStorage("editedTasks");
+    const homeTasks = arrTasks.filter(el => el.category === 'Дом');
+
+    innerTask(homeTasks, { circle: true, tag: true });
+  }
+  else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-study") {
+
+  }
 })
 
 // МЕНЮ________________________________________________________  _
@@ -520,7 +540,10 @@ function hideOtherSubmenu() {
 };
 
 // --------------- МОДАЛЬНОЕ ОКНО 1 -------------
-
+let arrayProject = [];
+let arrayReference = [];
+let arrayQuick = [];
+let arrayWaitingList = [];
 
 function closePopup() {
   modalWindow.style.display = "none";
@@ -544,10 +567,9 @@ function addValues() {
 
   if (type.value != "") {
     arrayEditedTask.push(currentObject);
-
+    localStorage.setItem("editedTasks", JSON.stringify(arrayEditedTask));
     let index = arrayInbox.indexOf(currentObject);
     arrayInbox.splice(index, 1);
-    // console.log(arrayInbox);
     UpdatedArray();
   }
 
@@ -559,7 +581,6 @@ function addValues() {
   // удаление карточки таска
   taskCard.remove();
   // закрытие модального окна
-  closePopup();
 
   sortByType();
 
@@ -567,6 +588,8 @@ function addValues() {
   localStorage.setItem("arrayReference", JSON.stringify(arrayReference));
   localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
   localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList));
+
+  closePopup();
 };
 
 
@@ -589,28 +612,31 @@ function UpdatedArray() {
 //ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
 //const projects = document.getElementById('projects');
 //projects.addEventListener('click', sortByType());
-let arrayProject = [];
-let arrayReference = [];
-let arrayQuick = [];
-let arrayWaitingList = [];
+
 
 function sortByType() {
 
-  arrayEditedTask.forEach(el => {
-    if (el.type === 'Проекты') {
-      arrayProject.push(el);
-    } else if (el.type === 'Быстрые дела') {
-      arrayQuick.push(el);
-      console.log(arrayQuick);
-    } else if (el.type === 'Справочные материалы') {
-      arrayReference.push(el);
-      console.log(arrayReference);
-    } else if (el.type === 'Лист ожидания') {
-      arrayWaitingList.push(el);
-      console.log(arrayWaitingList);
-    }
-  });
-  arrayEditedTask = [];
+  if (currentObject.type === 'Проекты') {
+    arrayProject.push(currentObject);
+  } else if (currentObject.type === 'Быстрые дела') {
+    arrayQuick.push(currentObject);
+  } else if (currentObject.type === 'Справочные материалы') {
+    arrayReference.push(currentObject);
+  } else if (currentObject.type === 'Лист ожидания') {
+    arrayWaitingList.push(currentObject);
+  }
+
+
+  // const inventory = [
+  //   { name: "apples", quantity: 2 },
+  //   { name: "bananas", quantity: 0 },
+  //   { name: "cherries", quantity: 5 },
+  // ];
+
+  // const result = inventory.find(({ name }) => name === "cherries");
+
+  // console.log(result); // { name: 'cherries', quantity: 5 }
+
 }
 
 // загрузка массива проекты на страницу проекты с отрисовкой
@@ -620,7 +646,7 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
     if (localStorage.getItem("arrayProject") === null) {
       arrayProject = [];
     } else {
-      arrayProject = JSON.parse(localStorage.getItem("arrayProject"));
+      getLocStorage(arrayProject)
     }
 
     arrayProject.forEach(el => {
@@ -804,6 +830,9 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
   })
 };
 
+function getLocStorage(key) {
+  return JSON.parse(localStorage.getItem(key))
+}
 
 //return arr.filter((el) => el.type.includes(query));
 
