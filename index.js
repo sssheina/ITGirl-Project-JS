@@ -147,6 +147,17 @@ const addCard = (objItem, ) => {
 // проверка нахождения пользователя на главной странице
 if (window.location.href.split('/').at(-1) == "index.html") {
 
+  // слушатель для инпута по кнопке "Enter" на главной
+  inbox.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      createTaskObject();
+      createСard();
+      addCard();
+
+      inbox.value = "";
+    }
+  });
   // слушатель кнопки "Сохранить" на главной
   inboxButton.addEventListener("click", () => {
     createTaskObject();
