@@ -168,6 +168,8 @@ if (window.location.href.split('/').at(-1) == "index.html") {
   });
 };
 
+// КНОПКИ УДАЛИТЬ И РЕДАКТИРОВАТЬ_______________________________
+
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-delite')) {
     event.target.parentNode.remove();
@@ -558,6 +560,7 @@ function addValues() {
 
     let index = arrayInbox.indexOf(currentObject);
     arrayInbox.splice(index, 1);
+    console.log(arrayEditedTask);
     // console.log(arrayInbox);
     UpdatedArray();
   }
@@ -612,13 +615,10 @@ function sortByType() {
       arrayProject.push(el);
     } else if (el.type === 'Быстрые дела') {
       arrayQuick.push(el);
-      console.log(arrayQuick);
     } else if (el.type === 'Справочные материалы') {
       arrayReference.push(el);
-      console.log(arrayReference);
     } else if (el.type === 'Лист ожидания') {
       arrayWaitingList.push(el);
-      console.log(arrayWaitingList);
     }
   });
   arrayEditedTask = [];
