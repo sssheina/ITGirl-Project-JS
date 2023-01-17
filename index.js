@@ -771,6 +771,8 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
         context.className = 'quick__context kindergarten-tag';
       } else if (el.context === 'Минск') {
         context.className = 'quick__context minsk-tag';
+      } else if (el.context === 'Работа') {
+        context.className = 'quick__context job-tag';
       }
       context.textContent = el.context;
       const buttonEdit = document.createElement('button');
