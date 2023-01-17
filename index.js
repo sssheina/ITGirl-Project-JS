@@ -448,7 +448,7 @@ addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem("arrayInbox") === null) {
     arrayInbox = [];
   } else {
-    getLocStorage(arrayInbox)
+    arrayInbox = JSON.parse(localStorage.getItem("arrayInbox"));
   }
 
   if (window.location.toString().indexOf('/index.html') > 0) {
@@ -659,7 +659,7 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
     if (localStorage.getItem("arrayProject") === null) {
       arrayProject = [];
     } else {
-      getLocStorage(arrayProject)
+      arrayProject = JSON.parse(localStorage.getItem("arrayProject"));
     }
 
     arrayProject.forEach(el => {
@@ -1026,9 +1026,7 @@ if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
       //  const imgButtonDelite= document.createElement('img');
       // imgButtonDelite.className = "header__buttonpic-delite";
 
-function getLocStorage(key) {
-  return JSON.parse(localStorage.getItem(key))
-}
+
 
 
       block.append(category);
@@ -1052,6 +1050,10 @@ function getLocStorage(key) {
     })
   })
 };
+
+function getLocStorage(key) {
+  return JSON.parse(localStorage.getItem(key))
+}
 //return arr.filter((el) => el.type.includes(query));
 
 
