@@ -26,7 +26,7 @@
     width: 65%;
     min-width: 260px;
     max-width: 667px;
-    height: 431px;
+    // height: 431px;
     position: absolute;
     // padding: 1rem;
     // box-shadow: 0 0 10px 4px rgba(64, 86, 98, 0.8);
@@ -42,8 +42,8 @@
     right: 10px;
     width: 32px;
     height: 32px;
-    background-color: white;
-    color:#F4A48D;
+    background-color: #F4A48D;
+    color:#ffffff;
     position: absolute;
     border: none;
     -webkit-border-radius: 50%;
@@ -65,6 +65,8 @@
     // color: #000;
     // color: rgba(255, 255, 255, 0.9);
     content: "X";
+    font-weight: 400;
+    font-size: 25px;
     // text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
     // -webkit-transition: all 0.5s;
     // -moz-transition: all 0.5s;
@@ -72,37 +74,56 @@
   }
   /* кнопка закрытия при наведении */
   .close2:hover {
-    background-color: rgba(255, 255, 255, 0.6);
+    color: #fdc2b1;
   }
 
 
   .window_name2 {
+    display: flex;
+    flex-direction: row;
     width: 667px;
-    height: 54px;
+    height: 74px;
     background-color: #F4A48D;
-    color: white;
+    color: #ffffff;
     font-size: 20px;
     font-weight: 800;
-    padding-left: 35px;
-    padding-top: 15px;
+    padding-left: 50px;
+    // padding-top: 15px;
+    padding-right: 50px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px dashed #ffffff;
+  border-top: none;
+  border-right: none;
+  border-left: none;
   }
 
   .stage_name2 {
+    display: flex;
+    flex-direction: row;
     width: 667px;
-    height: 54px;
-    background-color: white;
-    color: #F4A48D;
+    height: 74px;
+    background-color: #F4A48D;
+    color: #ffffff;
     font-size: 20px;
     font-weight: 800;
-    padding-left: 35px;
-    padding-top: 15px;
+    padding-left: 50px;
+    // padding-top: 15px;
+    padding-right: 50px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px dashed #ffffff;
+  border-top: none;
+  border-right: none;
+  border-left: none;
   }
-  .modal_enterBlock2 {
+  .modal_enterBlock2, .modal_enterBlock1 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 317px;
+    height: 417px;
+    
   }
 
   .modal__inputfield2 {
@@ -132,7 +153,46 @@
     font-size: 16px;
 font-weight: 800;
 }
+
+.modal__button-plus_1, .modal__button-plus_2 {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
   
+.stages__block {
+  width: 667px;
+  background-color:#ffffff;
+}
+
+.stages__listItem {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 8.5fr 4fr 1.2fr;
+  align-items: center;
+  border: 1px dashed #CCD1D0;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding: 1.3em;
+  height: 70px;
+  justify-items: start;
+}
+
+.stages__item {
+    
+  font-size: 12px;
+  font-weight: 600;
+  
+}
+
+.stages__btn-edit, .stages__btn-delite {
+  height: 40px;
+  width: 40px;
+  background-color: #F4A48D;
+  color:white;
+}
+
   @media (max-width: 456px) {
     .popup {
       top: 2rem;
@@ -145,3 +205,5 @@ font-weight: 800;
       font-size: calc(10px + (2 + 2 * 0.7) * ((100vw - 320px) / 744));
     }
   }
+
+  
