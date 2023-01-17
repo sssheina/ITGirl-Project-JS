@@ -814,8 +814,208 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
     })
   })
 };
+// загрузка массива справочные материалы на страницу справочные материалы с отрисовкой
+if (window.location.toString().indexOf('/7_reference.html') > 0) {
+  document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("arrayReference") === null) {
+      arrayReference = [];
+    } else {
+      arrayReference = JSON.parse(localStorage.getItem("arrayReference"));
+    }
+    arrayReference.forEach(el => {
+      const block = document.createElement('li');
+      block.className = "reference__listItem listItem";
+      const category = document.createElement('div');
+      if (el.category === 'Дом') {
+        category.className = 'reference__category category-home';
+      } else if (el.category === 'Учеба') {
+        category.className = 'reference__category category-learning';
+      } else if (el.category === 'Работа') {
+        category.className = 'reference__category category-job';
+      } else if (el.category === 'Саморазвитие') {
+        category.className = 'reference__category category-self-development';
+      } else if (el.category === 'Здоровье') {
+        category.className = 'reference__category category-health';
+      } else if (el.category === 'Отдых') {
+        category.className = 'reference__category category-recreation';
+      } else if (el.category === 'Хобби') {
+        category.className = 'reference__category category-hobby';
+      } else if (el.category === 'Идеи') {
+        category.className = 'reference__category category-ideas';
+      } else if (el.category === 'Хозяйство') {
+        category.className = 'reference__category category-household';
+      } else if (el.category === 'Спорт') {
+        category.className = 'reference__category category-sport';
+      } else if (el.category === 'Уход за собой') {
+        category.className = 'reference__category category-self-care';
+      }
+      const check = document.createElement('div');
+      check.className = "reference__inputfield";
+      const labelCheck = document.createElement('label');
+      labelCheck.className = "reference__check check";
+      const inputCheck = document.createElement('input');
+      inputCheck.className = "reference__input-check";
+      inputCheck.setAttribute("type", "checkbox");
+      const checkmark = document.createElement('span');
+      checkmark.className = "reference__checkmark checkmark";
+      const item = document.createElement('div');
+      item.className = "reference__item-name";
+      item.textContent = el.name;
+      const contextItem = document.createElement('div');
+      contextItem.className = "reference__item";
+      const context = document.createElement('span');
 
+      if (el.context === 'Дом') {
+        context.className = 'reference__context home-tag';
+      } else if (el.context === 'Телефон') {
+        context.className = 'reference__context phone-tag';
+      } else if (el.context === 'Вне дома') {
+        context.className = 'reference__context outdoors-tag';
+      } else if (el.context === 'Компьютер') {
+        context.className = 'reference__context computer-tag';
+      } else if (el.context === 'Делегироване') {
+        context.className = 'reference__context delegating-tag';
+      } else if (el.context === 'Город') {
+        context.className = 'reference__context city-tag';
+      } else if (el.context === 'Школа') {
+        context.className = 'reference__context school-tag';
+      } else if (el.context === 'Детсад') {
+        context.className = 'reference__context kindergarten-tag';
+      } else if (el.context === 'Минск') {
+        context.className = 'reference__context minsk-tag';
+      }
+      context.textContent = el.context;
+      const buttonEdit = document.createElement('button');
+      buttonEdit.className = "inbox__btn-edit";
+      //  const imgButtonEdit = document.createElement('img');
+      // imgButtonEdit.className = "header__buttonpic-edit";
+      const buttonDelite = document.createElement('button');
+      buttonDelite.className = "inbox__btn-delite";
+      //  const imgButtonDelite= document.createElement('img');
+      // imgButtonDelite.className = "header__buttonpic-delite";
 
+      block.append(category);
+      block.append(check);
+      block.append(item);
+      block.append(contextItem);
+      block.append(buttonEdit);
+      block.append(buttonDelite);
+      check.append(labelCheck);
+      labelCheck.append(inputCheck);
+      labelCheck.append(checkmark);
+      contextItem.append(context);
+      // дает создаваемому элементу block (li) id, доставая его из объекта
+      block.setAttribute("id", `${el.id}`);
+      // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+      buttonEdit.setAttribute("onClick", "findTask(this)");
+      // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+      inputCheck.setAttribute("onClick", "checkBox(this)");
+      placeInboxList.appendChild(block);
+      // console.log(arrayInbox);
+    })
+  })
+};
+// загрузка массива лист ожилания на страницу лист ожидания с отрисовкой
+if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
+  document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("arrayWaitingList") === null) {
+      arrayWaitingList = [];
+    } else {
+      arrayWaitingList = JSON.parse(localStorage.getItem("arrayWaitingList"));
+    }
+    arrayWaitingList.forEach(el => {
+      const block = document.createElement('li');
+      block.className = "waiting-list__listItem listItem";
+      const category = document.createElement('div');
+      if (el.category === 'Дом') {
+        category.className = 'waiting-list__category category-home';
+      } else if (el.category === 'Учеба') {
+        category.className = 'waiting-list__category category-learning';
+      } else if (el.category === 'Работа') {
+        category.className = 'waiting-list__category category-job';
+      } else if (el.category === 'Саморазвитие') {
+        category.className = 'waiting-list__category category-self-development';
+      } else if (el.category === 'Здоровье') {
+        category.className = 'waiting-list__category category-health';
+      } else if (el.category === 'Отдых') {
+        category.className = 'waiting-list__category category-recreation';
+      } else if (el.category === 'Хобби') {
+        category.className = 'waiting-list__category category-hobby';
+      } else if (el.category === 'Идеи') {
+        category.className = 'waiting-list__category category-ideas';
+      } else if (el.category === 'Хозяйство') {
+        category.className = 'waiting-list__category category-household';
+      } else if (el.category === 'Спорт') {
+        category.className = 'waiting-list__category category-sport';
+      } else if (el.category === 'Уход за собой') {
+        category.className = 'waiting-list__category category-self-care';
+      }
+      const check = document.createElement('div');
+      check.className = "waiting-list__inputfield";
+      const labelCheck = document.createElement('label');
+      labelCheck.className = "waiting-list__check check";
+      const inputCheck = document.createElement('input');
+      inputCheck.className = "waiting-list__input-check";
+      inputCheck.setAttribute("type", "checkbox");
+      const checkmark = document.createElement('span');
+      checkmark.className = "waiting-list__checkmark checkmark";
+      const item = document.createElement('div');
+      item.className = "waiting-list__item-name";
+      item.textContent = el.name;
+      const contextItem = document.createElement('div');
+      contextItem.className = "waiting-list__item";
+      const context = document.createElement('span');
+
+      if (el.context === 'Дом') {
+        context.className = 'waiting-list__context home-tag';
+      } else if (el.context === 'Телефон') {
+        context.className = 'waiting-list__context phone-tag';
+      } else if (el.context === 'Вне дома') {
+        context.className = 'waiting-list__context outdoors-tag';
+      } else if (el.context === 'Компьютер') {
+        context.className = 'waiting-list__context computer-tag';
+      } else if (el.context === 'Делегироване') {
+        context.className = 'waiting-list__context delegating-tag';
+      } else if (el.context === 'Город') {
+        context.className = 'waiting-list__context city-tag';
+      } else if (el.context === 'Школа') {
+        context.className = 'waiting-list__context school-tag';
+      } else if (el.context === 'Детсад') {
+        context.className = 'waiting-list__context kindergarten-tag';
+      } else if (el.context === 'Минск') {
+        context.className = 'waiting-list__context minsk-tag';
+      }
+      context.textContent = el.context;
+      const buttonEdit = document.createElement('button');
+      buttonEdit.className = "inbox__btn-edit";
+      //  const imgButtonEdit = document.createElement('img');
+      // imgButtonEdit.className = "header__buttonpic-edit";
+      const buttonDelite = document.createElement('button');
+      buttonDelite.className = "inbox__btn-delite";
+      //  const imgButtonDelite= document.createElement('img');
+      // imgButtonDelite.className = "header__buttonpic-delite";
+
+      block.append(category);
+      block.append(check);
+      block.append(item);
+      block.append(contextItem);
+      block.append(buttonEdit);
+      block.append(buttonDelite);
+      check.append(labelCheck);
+      labelCheck.append(inputCheck);
+      labelCheck.append(checkmark);
+      contextItem.append(context);
+      // дает создаваемому элементу block (li) id, доставая его из объекта
+      block.setAttribute("id", `${el.id}`);
+      // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
+      buttonEdit.setAttribute("onClick", "findTask(this)");
+      // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
+      inputCheck.setAttribute("onClick", "checkBox(this)");
+      placeInboxList.appendChild(block);
+      // console.log(arrayInbox);
+    })
+  })
+};
 //return arr.filter((el) => el.type.includes(query));
 
 
