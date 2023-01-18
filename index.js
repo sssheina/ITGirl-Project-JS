@@ -382,6 +382,7 @@ let arrayReference = [];
 let arrayQuick = [];
 let arrayWaitingList = [];
 
+
 function closePopup() {
   modalWindow.style.display = "none";
 };
@@ -390,7 +391,8 @@ function closePopup() {
 function addValues() {
   // нужный объект найден в функции findTask и записан в глобальную переменную currentObject
   // забирает все значения из полей, записывает их в объект и выводит объект в консоль
-
+  const modalTypeErr = document.querySelector('.type_error_message');
+  const modalCategoryErr = document.querySelector('.category_error_message')
   let name = document.getElementById("modalInput").value;
   currentObject.name = `${name}`;
   let type = document.getElementById("case_type");
@@ -402,31 +404,52 @@ function addValues() {
   let data = document.getElementById("date_type");
   currentObject.data = `${data.value}`;
 
-  if (type.value != "") {
+  if (type.value == "") {
+    modalTypeErr.textContent = "Пожалуйста, укажите тип";
+    type.style.border = "1px solid red";
+  }
+  if (category.value == "") {
+    modalCategoryErr.textContent = "Пожалуйста, укажите категорию";
+    category.style.border = "1px solid red";
+  }
+  if ((type.value != "") && (category.value != "")) {
+    type.style.border = '1px solid #d5dbd9';
+    category.style.border = '1px solid #d5dbd9';
+    modalTypeErr.textContent = "";
+    modalCategoryErr.textContent = "";
+
     arrayEditedTask.push(currentObject);
+
     localStorage.setItem("editedTasks", JSON.stringify(arrayEditedTask));
+
     let index = arrayInbox.indexOf(currentObject);
     arrayInbox.splice(index, 1);
     UpdatedArray();
+    taskCard.remove();
+    sortByType();
+
+    localStorage.setItem("arrayProject", JSON.stringify(arrayProject));
+    localStorage.setItem("arrayReference", JSON.stringify(arrayReference));
+    localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
+    localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList));
+
+    closePopup();
+
+    type.value = "";
+    category.value = "";
+    context.value = "";
+    data.value = "";
   }
   // очищение полей модального окна
-  type.value = "";
-  category.value = "";
-  context.value = "";
-  data.value = "";
+
   // удаление карточки таска
-  taskCard.remove();
   // закрытие модального окна
 
-  sortByType();
-
-  localStorage.setItem("arrayProject", JSON.stringify(arrayProject));
-  localStorage.setItem("arrayReference", JSON.stringify(arrayReference));
-  localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
-  localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList));
-
-  closePopup();
 };
+
+// function isEmpty() {
+
+// }
 
 
 function UpdatedArray() {
