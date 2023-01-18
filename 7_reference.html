@@ -197,7 +197,7 @@
                   <div class="reference__container-page">
                     <div class="reference__name">
                       <div class="reference__title">СПРАВОЧНЫЕ МАТЕРИАЛЫ</div>
-                      <button class="reference__buttonPlus btn">
+                      <button class="reference__buttonPlus btn" onclick="document.location='/index.html'">
                         <!-- <img
                           class="categories__buttonpic"
                           src="./assets/images/plus_peach_transparent.png"
@@ -426,29 +426,6 @@
                 </select>
             </div>
 
-            <div class="modal__inputfield">
-              <label for="context_type" id="context_text" class="modal__lable"> КОНТЕКСТ: </label><br />
-              <select id="context_type" class="input">
-                  <option class="modal__context" value=""> </option>
-                  <option class="modal__context" value="Дом"> ДОМ</option>
-                  <option class="modal__context" value="Телефон"> ТЕЛЕФОН</option>
-                  <option class="modal__context" value="Вне дома"> ВНЕ ДОМА</option>
-                  <option class="modal__context" value="Компьютер"> КОМПЬЮТЕР</option>
-                  <option class="modal__context" value="Делегироване"> ДЕЛЕГИРОВАНИЕ</option>
-                  <option class="modal__context" value="Город"> ГОРОД</option>
-                  <option class="modal__context" value="Школа"> ШКОЛА</option>
-                  <option class="modal__context" value="Детсад"> ДЕТСАД</option>
-                  <option class="modal__context" value="Минск"> МИНСК</option>
-              </select>
-          </div>
-
-
-            <div class="modal__inputfield">
-              <label for="date_type" id="date_text" class="modal__lable"> ДАТА: </label><br />
-              <input type="date" id="date_type" class="input">
-              </input>
-          </div>
-
             <button id="close" class="close" title="Close" onclick="closePopup()"></button>
           <!-- <a href="#" class="close btn">Сохранить</a> -->
           <div>
@@ -468,5 +445,6 @@
 
     <script src="./index.js"></script>
     <script src="./assets/components/createElement.js"></script>
+    <script src="/assets/components/reference.js"></script>
   </body>
 </html>
