@@ -540,163 +540,79 @@ function getLocStorage(key) {
 //return arr.filter((el) => el.type.includes(query));
 
 
-// --------------- МОДАЛЬНОЕ ОКНО 2 -------------
 
-// let modalWindow2 = document.getElementById("overlay2");
-// let btnClosePopup2 = document.getElementById("close2");
-// let delay_popup2 = 5000;
+// ____________________ЧЕК_ЛИСТ
 
-// setTimeout(() => {
-//   modalWindow2.style.display = "block";
-// }, delay_popup2);
+let inp = document.querySelector(".todo__inp");
+      list = document.querySelector(".todo-list");
+      btnAdd = document.querySelector(".btn-add");
+    
+    list.innerHTML = localStorage.getItem("tasks");
 
-// btnClosePopup2.onclick = () => {
-//   modalWindow2.style.display = "none";
-// };
+    function createTodo() {
+      if (inp.value === '') {
+        alert('Заполните поле'); 
+        return;
+      }
 
+      let
+        todo = `
+          <span class="check"></span>
+          <input class="inp inp-task no-event" value="${inp.value}" type="text">
+          <button class="btn btn-edit _active">edit</button>
+          <button class="btn btn-del">delete</button>
+        `;
+        item = document.createElement("li");
 
+      item.classList = "row";
+      item.innerHTML = todo;
 
-// ЧЕК_ЛИСТ
+      list.appendChild(item);
 
-// $('.task__add').on('focus',function(){
-//   $(this).val('');
-// });
+      localStorage.setItem("tasks", list.innerHTML);
+      
+    }
 
-// $('.task__add').on('blur',function(){
-//   $(this).val('+ add new task');
-// });
+    btnAdd.onclick = function() {
+      createTodo();
+      
+    }
 
-// $('form').on('submit', function(event){
-//   event.preventDefault();
+    list.addEventListener("click", function(e) {
+      let 
+        el = e.target;
+        parent = el.parentElement;
+        inpTask = parent.querySelector(".inp-task");
+        check = parent.querySelector(".check");
+        btnEdit = parent.querySelector(".btn-edit");
+     
+      if (el.classList.contains("check")) {
+        inpTask.classList.toggle("_completed");
+        check.classList.toggle("_active");
+      }
 
-//   var taskText = $('.task__add').val();
-//   var tasksN = $('.task').length + 1;
+      if (el.classList.contains("btn-del")) {
+        parent.remove();
+      }
 
-//   var newTask = '<label for="task--' + tasksN + '" class="task task--new"><input class="task__check" type="checkbox" id="task--' + tasksN + '" /> <div class="task__field task--row">' + taskText + '<button class="task__important"><i class="fa fa-check" aria-hidden="true"></i></button></div></label>'
+      if (el.classList.contains("btn-edit")) {
 
+        inpTask.classList.toggle("_active");
 
-//   $('.task__list').append(newTask);
+        btnEdit.classList.toggle("_active");
+        inpTask.classList.toggle("no-event");
 
-//   $('.task__add').val('');
-//   checkList();
-// });
+        if (btnEdit.innerHTML === "edit") {
+          btnEdit.innerHTML = "save";
+          inpTask.focus();
+        }
 
-// var lastDeletedTask = '';
+        else {
+          btnEdit.innerHTML = "edit";
+          inpTask.setAttribute("value", inpTask.value);
+        }
 
+      }
 
-// function checkList() {
-
-
-//   $('.task').each(function(){
-
-//     var $field = $(this).find('.task__field');
-//     var mousedown = false;
-
-
-//     $field.on('mousedown', function(){
-//         mousedown = true;
-//         $field.addClass('shaking');
-//         setTimeout(deleteTask,1000)
-//     });
-
-//     $field.on('mouseup', function(){
-//         mousedown = false;
-//         $field.removeClass('shaking');
-//     });
-
-//     function deleteTask(){
-//       if(mousedown) {
-//         $field.addClass('delete');
-//         lastDeletedTask = $field.text();
-//         console.log(lastDeletedTask);
-
-//         setTimeout(function(){
-//            $field.remove();
-//         }, 200);
-//        } else {return;}
-//     }
-
-//   });
-// }
-
-// checkList();
-
-// let nameTask == inbox.value;
-
-// let task = {
-//     nameTask: "",
-//     category: "",
-//     contextTask: "",
-//     dateTask: "",
-//     stages:[]
-// }
-
-// let stage = {
-//   nameStage: "",
-//   contextStage: "",
-//     dateStage: "",
-// }
-
-
-
-// function generateInboxList() {
-//     arrayInbox.push(inbox.value);
-//     console.log(arrayInbox);
-//     placeInboxList.innerHTML += `<li class="inbox__listItem listItem">
-
-
-//     <div class="inbox__inputfield">
-//       <label class="inbox__check check">
-//         <input type="checkbox" class="inbox__input-check"/>
-//         <span class="inbox__checkmark checkmark"></span>
-//       </label>
-//     </div>
-
-
-
-//     <div class="inbox__item">${inbox.value}</div>
-//     <button class="inbox__btn-edit btn">
-//       <img
-//         class="header__buttonpic-edit"
-//         src="./assets/images/pencil_white.png"
-//         alt="logo_white"
-//       />
-//     </button>
-//     <button class="inbox__btn-delite btn" onclick="InboxDelite()">
-//       <img
-//         class="header__buttonpic"
-//         src="./assets/images/delite_white.png"
-//         alt="logo_white"
-//       />
-//     </button>
-//   </li>`
-
-//   inbox.value = "";
-//   console.log(buttonInboxEdit);
-// }
-
-// const objInbox = {
-//   name: inbox.value,
-//   type: "",
-//   category: "",
-//   context: "",
-//   date: "",
-// id:"",
-
-//     }
-
-// function InboxDelite() {
-//     inboxItem.innerHTML = null;
-// }
-// placeInboxList
-
-// function Storage() {
-//   this._ITEMS_DESCRIPTOR = 'items'; // Я полагаю, ключ по умолчанию?
-// }
-// // let key будет указан при вызове метода, или по умолчанию устанавливается в the private property _ITEMS_DESCRIPTOR
-// Storage.prototype.get = function(key) {
-//   var fromStorage = localStorage.getItem(key  ? key : this._planerTaskObjId);
-//   return fromStorage ? JSON.parse(fromStorage) : [];
-// };
-// Storage.prototype.set = function(key, items) {
-//   localStorage.setItem(key, JSON.stringify(items));
+      localStorage.setItem("tasks", list.innerHTML);
+    });
