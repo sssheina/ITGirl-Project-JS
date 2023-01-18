@@ -505,7 +505,7 @@ addEventListener('DOMContentLoaded', () => {
     const arrTasks = getLocStorage("editedTasks");
     const homeTasks = arrTasks.filter(el => el.category === 'Дом');
 
-    innerTask(homeTasks, { circle: true, tag: true });
+    innerTask(homeTasks);
   }
   else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-study") {
 

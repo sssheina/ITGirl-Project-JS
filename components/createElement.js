@@ -1,31 +1,34 @@
 const ul = document.querySelector(".inbox__listItems")
 
-function innerTask(tasks, { circle, tag }) {
+function innerTask(tasks) {
 
   tasks.forEach(el => {
 
     const li = document.createElement('li');
-    li.className = "projects__listItem listItem";
+    li.className = "inbox__listItem";
+    li.setAttribute("id", `${el.id}`);
+
     const item = document.createElement('div');
     item.className = "projects__item-name";
+
     const check = document.createElement('div');
     check.className = "projects__inputfield";
+
     const labelCheck = document.createElement('label');
     labelCheck.className = "projects__check check";
+
     const inputCheck = document.createElement('input');
     inputCheck.className = "projects__input-check";
     inputCheck.setAttribute("type", "checkbox");
+    inputCheck.setAttribute("onClick", "checkBox(this)");
+
     const checkmark = document.createElement('span');
     checkmark.className = "projects__checkmark checkmark";
 
     ul.append(li);
-    li.append(item);
-    li.append(check);
-    item.textContent = el.name;
 
-
-    if (circle == true) {
-
+    if (el.category != "") {
+      li.className = "projects__listItem listItem";
       const category = document.createElement('div');
       category.className = "projects__category";
       if (el.category === 'Дом') {
@@ -52,11 +55,26 @@ function innerTask(tasks, { circle, tag }) {
         category.className = 'projects__category category-self-care';
       }
       li.append(category);
-
     }
 
-    if (tag == true) {
 
+
+
+
+
+    labelCheck.append(inputCheck);
+    labelCheck.append(checkmark);
+    li.append(check);
+    li.append(item);
+    item.textContent = el.name;
+    check.append(labelCheck);
+
+
+
+    if (el.context != "") {
+      li.className = "quick__listItem listItem";
+      const contextItem = document.createElement('div');
+      // contextItem.className = "quick__item";
       const context = document.createElement('span');
       if (el.context === 'Дом') {
         context.className = 'quick__context home-tag';
@@ -78,7 +96,29 @@ function innerTask(tasks, { circle, tag }) {
         context.className = 'quick__context minsk-tag';
       }
       context.textContent = el.context;
+      li.append(contextItem);
+      contextItem.append(context);
     }
+
+    const buttonEdit = document.createElement('button');
+    buttonEdit.className = "inbox__btn-edit";
+    buttonEdit.setAttribute("onClick", "findTask(this)");
+
+    const buttonDelite = document.createElement('button');
+    buttonDelite.className = "inbox__btn-delite";
+
+    const imgButtonEdit = new Image(20, 20);
+    imgButtonEdit.src = "./assets/images/pencil_white.png"
+    imgButtonEdit.className = "header__buttonpic-edit";
+
+    const imgButtonDelite = new Image(20, 20);
+    imgButtonDelite.src = "./assets/images/delite_white.png"
+    imgButtonDelite.className = "header__buttonpic-delite";
+
+    li.append(buttonEdit);
+    buttonEdit.append(imgButtonEdit);
+    li.append(buttonDelite);
+    buttonDelite.append(imgButtonDelite);
   });
 }
 
