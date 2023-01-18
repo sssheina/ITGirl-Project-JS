@@ -149,7 +149,7 @@ font-weight: 800;
   .row {
     display: grid;
     grid-template-columns: 1fr 8fr 2fr 2fr;
-    justify-items: start;
+    justify-items: none;
     align-items: center;
     border: 1px dashed #CCD1D0;
     border-top: none;
@@ -193,5 +193,5 @@ height: 40px;
   .inp-task._completed {
     color: #6a6a6a;
     text-decoration: line-through;
-    width: 300px; 
+    width: 380px; 
   }
