@@ -185,6 +185,24 @@
                     <div class="list-checklists__title">ЧЕК-ЛИСТЫ</div>
                   </div>
 
+
+                  <div class="list-checklists__enterBlock">
+                    <div class="list-checklists__inputfield">
+                      <label class="list-checklists__lable">ВВЕДИТЕ НАЗВАНИЕ</label>
+                      <textarea
+                        rows="3"
+                        cols="45"
+                        class="list-checklists__input input"
+                        id="list-checklistsInput"
+                      ></textarea>
+                    </div>
+                    <div>
+                      <button class="list-checklists__button btn">СОХРАНИТЬ</button>
+                    </div>
+                  </div>
+
+                  <!-- СПИСОК ВХОДЯЩИХ-->
+                  <ul class="list-checklists__listItems"></ul>
                   <!-- СПИСОК КОНТЕКСТОВ-->
 
                   <!-- первый пункт -->
@@ -203,7 +221,7 @@
                       </div>
 
 
-                      <button class="list-checklists__btn-edit btn">
+                      <button class="list-checklists__btn-edit btn inbox__btn-edit">
                         <img class="list-checklists__buttonpic" src="./assets/images/pencil_white.png" alt="logo_white">
                       </button>
                       <button class="list-checklists__btn-delite btn">
@@ -297,6 +315,56 @@
         </div>
       </div>
     </main>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+
+    <div id="overlay" class="overlay3">
+      <div id="popup" class="popup3">
+        
+        <section class="page__checklist">
+          <div class="checklist__container container inbox__listItems">
+            <!-- ИНПУТ -->
+
+            
+                <div class="task__head task--row">ЧЕК-ЛИСТ</div>
+                
+                <div class="rowBlock">
+
+                  <div class="inpBox1">
+                    <label class="todo__label">ПЕРЕИМЕНОВАТЬ:</label>
+                    <textarea
+                      rows="3"
+                      cols="45"
+                      class="todo__input input"
+                      id="todoInput"
+                    ></textarea>
+                  </div>
+                  <div>
+
+                    <button class="todo__save-button btn" onclick="addValues()">СОХРАНИТЬ</button>
+                  </div>
+
+                  <div class="inpBox">
+                    <label class="todo__label" for="todo__inp">ДОБАВЬТЕ ЗАДАНИЕ:</label>
+                    <input class="inp todo__inp input" type="text">
+                  </div>
+                    <button class="btn btn-add">ДОБАВИТЬ</button>
+                </div>
+              </div>
+          
+              <div class="body">
+                <ul class="todo-list"></ul>
+              </div>
+              <button id="close" class="close3" title="Close" onclick="closePopup()"></button>
+            </div>
+            
+          </div>
+          
+        </section>
+      </div>
+  </div>
+
+  <!-- конец модального окна -->
 
     <!-- ФУТЕР -->
     <footer class="footer">
