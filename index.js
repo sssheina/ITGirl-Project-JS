@@ -208,7 +208,7 @@ placeInboxList.addEventListener('click', (event) => {
       UpdatedArray();
     }
   }
-})
+});
 
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-edit')) {
@@ -218,126 +218,6 @@ placeInboxList.addEventListener('click', (event) => {
   //   modalWindow.style.display = "none";
   // }
 })
-
-// ДЛЯ 7 СТРАНИЦЫ "СПРАВОЧНЫЕ МАТЕРИАЛЫ"_______________________________________________________________
-
-const createСardReference = (obj) => {
-  const block = document.createElement('li');
-  block.className = "reference__listItem";
-  const category = document.createElement('div');
-  category.className = "reference__category";
-  const check = document.createElement('div');
-  check.className = "reference__inputfield";
-  // name.textContent = obj.name;
-  const labelCheck = document.createElement('label');
-  labelCheck.className = "reference__check check";
-  const inputCheck = document.createElement('input');
-  inputCheck.className = "reference__input-check";
-  inputCheck.setAttribute("type", "checkbox");
-  const checkmark = document.createElement('span');
-  checkmark.className = "reference__checkmark checkmark";
-  const item = document.createElement('div');
-  item.className = "reference__item-name";
-  item.textContent = obj.name;
-  const contextItem = document.createElement('div');
-  contextItem.className = "reference__item";
-  const context = document.createElement('span');
-  context.className = "reference__context";
-  const buttonEdit = document.createElement('button');
-  buttonEdit.className = "inbox__btn-edit";
-  //  const imgButtonEdit = document.createElement('img');
-  // imgButtonEdit.className = "header__buttonpic-edit";
-  const buttonDelite = document.createElement('button');
-  buttonDelite.className = "inbox__btn-delite";
-  //  const imgButtonDelite= document.createElement('img');
-  // imgButtonDelite.className = "header__buttonpic-delite";
-
-  block.append(check);
-  block.append(category);
-  block.append(item);
-  block.append(contextItem);
-  block.append(buttonEdit);
-  block.append(buttonDelite);
-  check.append(labelCheck);
-  labelCheck.append(inputCheck);
-  labelCheck.append(checkmark);
-  contextItem.append(context);
-
-  // проходится по записанным в массив таскам
-  arrayReference.forEach(el => {
-    // дает создаваемому элементу block (li) id, доставая его из объекта
-    // block.setAttribute("id", `${el.id}`);
-    // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
-    buttonEdit.setAttribute("onClick", "findTask(this)");
-    // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
-    inputCheck.setAttribute("onClick", "checkBox(this)");
-  })
-  // buttonEdit.append(imgButtonEdit);
-  // buttonDelite.append(imgButtonDelite);
-  return block;
-
-}
-
-
-// ДЛЯ 8 СТРАНИЦЫ "ЛИСТ ОЖИДАНИЯ"_______________________________________________________________
-
-const createСardWaitingList = (obj) => {
-  const block = document.createElement('li');
-  block.className = "waiting-list__listItem";
-  const category = document.createElement('div');
-  category.className = "waiting-list__category";
-  const check = document.createElement('div');
-  check.className = "waiting-list__inputfield";
-  // name.textContent = obj.name;
-  const labelCheck = document.createElement('label');
-  labelCheck.className = "waiting-list__check check";
-  const inputCheck = document.createElement('input');
-  inputCheck.className = "waiting-list__input-check";
-  inputCheck.setAttribute("type", "checkbox");
-  const checkmark = document.createElement('span');
-  checkmark.className = "waiting-list__checkmark checkmark";
-  const item = document.createElement('div');
-  item.className = "waiting-list__item-name";
-  item.textContent = obj.name;
-  const contextItem = document.createElement('div');
-  contextItem.className = "waiting-list__item";
-  const context = document.createElement('span');
-  context.className = "waiting-list__context";
-  const buttonEdit = document.createElement('button');
-  buttonEdit.className = "inbox__btn-edit";
-  //  const imgButtonEdit = document.createElement('img');
-  // imgButtonEdit.className = "header__buttonpic-edit";
-  const buttonDelite = document.createElement('button');
-  buttonDelite.className = "inbox__btn-delite";
-  //  const imgButtonDelite= document.createElement('img');
-  // imgButtonDelite.className = "header__buttonpic-delite";
-
-  block.append(check);
-  block.append(category);
-  block.append(item);
-  block.append(contextItem);
-  block.append(buttonEdit);
-  block.append(buttonDelite);
-  check.append(labelCheck);
-  labelCheck.append(inputCheck);
-  labelCheck.append(checkmark);
-  contextItem.append(context);
-
-  // проходится по записанным в массив таскам
-  arrayWaitingList.forEach(el => {
-    // дает создаваемому элементу block (li) id, доставая его из объекта
-    // block.setAttribute("id", `${el.id}`);
-    // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
-    buttonEdit.setAttribute("onClick", "findTask(this)");
-    // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
-    inputCheck.setAttribute("onClick", "checkBox(this)");
-  })
-  // buttonEdit.append(imgButtonEdit);
-  // buttonDelite.append(imgButtonDelite);
-  return block;
-
-}
-
 
 // ЧЕКБОКС И СЧЕТЧИК______________________________________________________
 
@@ -452,65 +332,51 @@ addEventListener('DOMContentLoaded', () => {
   }
 
   if (window.location.toString().indexOf('/index.html') > 0) {
-    arrayInbox.forEach(el => {
-      const block = document.createElement('li');
-      block.className = "inbox__listItem";
-      const check = document.createElement('div');
-      check.className = "inbox__inputfield";
-      // name.textContent = obj.name;
-      const labelCheck = document.createElement('label');
-      labelCheck.className = "inbox__check check";
-      const inputCheck = document.createElement('input');
-      inputCheck.className = "inbox__input-check";
-      inputCheck.setAttribute("type", "checkbox");
-      const checkmark = document.createElement('span');
-      checkmark.className = "inbox__checkmark checkmark";
-      const item = document.createElement('div');
-      item.className = "inbox__item";
-      item.textContent = el.name;
-      // console.log(el.name);
-      const buttonEdit = document.createElement('button');
-      buttonEdit.className = "inbox__btn-edit";
-      //  const imgButtonEdit = document.createElement('img');
-      // imgButtonEdit.className = "header__buttonpic-edit";
-      const buttonDelite = document.createElement('button');
-      buttonDelite.className = "inbox__btn-delite";
-      //  const imgButtonDelite= document.createElement('img');
-      // imgButtonDelite.className = "header__buttonpic-delite";
-
-      block.append(check);
-      block.append(item);
-      block.append(buttonEdit);
-      block.append(buttonDelite);
-      check.append(labelCheck);
-      labelCheck.append(inputCheck);
-      labelCheck.append(checkmark);
-
-      // проходится по записанным в массив таскам
-
-      // дает создаваемому элементу block (li) id, доставая его из объекта
-      block.setAttribute("id", `${el.id}`);
-      // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
-      buttonEdit.setAttribute("onClick", "findTask(this)");
-      // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
-      inputCheck.setAttribute("onClick", "checkBox(this)");
-
-
-      placeInboxList.appendChild(block);
-      // console.log(arrayInbox);
-    })
+    insertTasks(arrayInbox);
   }
+
+  const arrTasks = getLocStorage("editedTasks");
 
   if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-home") {
-    const arrTasks = getLocStorage("editedTasks");
-    const homeTasks = arrTasks.filter(el => el.category === 'Дом');
-
-    innerTask(homeTasks);
+    sortByCategory(arrTasks, 'Дом');
   }
+
   else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-study") {
-
+    sortByCategory(arrTasks, 'Учеба');
   }
-})
+  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-work") {
+    sortByCategory(arrTasks, 'Работа');
+  }
+  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-selfimprovment") {
+    sortByCategory(arrTasks, 'Саморазвитие');
+  }
+  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-health") {
+    sortByCategory(arrTasks, 'Здоровье');
+  }
+  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-rest") {
+    sortByCategory(arrTasks, 'Отдых');
+  }
+  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-hobby") {
+    sortByCategory(arrTasks, 'Хобби');
+  }
+  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-ideas") {
+    sortByCategory(arrTasks, 'Идеи');
+  }
+  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-household") {
+    sortByCategory(arrTasks, 'Хозяйство');
+  }
+  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-sport") {
+    sortByCategory(arrTasks, 'Спорт');
+  }
+  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-selfcare") {
+    sortByCategory(arrTasks, 'Уход за собой');
+  }
+});
+
+function sortByCategory(tasks, category) {
+  const arr = tasks.filter(el => el.category === `${category}`);
+  insertTasks(arr);
+}
 
 // МЕНЮ________________________________________________________  _
 
@@ -585,7 +451,6 @@ function addValues() {
     arrayInbox.splice(index, 1);
     UpdatedArray();
   }
-
   // очищение полей модального окна
   type.value = "";
   category.value = "";
@@ -620,7 +485,7 @@ function UpdatedArray() {
     localStorage.removeItem("arrayProject");
     localStorage.setItem("arrayProject", JSON.stringify(arrayProject));
   }
-}
+};
 
 //ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
 //const projects = document.getElementById('projects');
@@ -639,18 +504,7 @@ function sortByType() {
     arrayWaitingList.push(currentObject);
   }
 
-
-  // const inventory = [
-  //   { name: "apples", quantity: 2 },
-  //   { name: "bananas", quantity: 0 },
-  //   { name: "cherries", quantity: 5 },
-  // ];
-
-  // const result = inventory.find(({ name }) => name === "cherries");
-
-  // console.log(result); // { name: 'cherries', quantity: 5 }
-
-}
+};
 
 // загрузка массива проекты на страницу проекты с отрисовкой
 
@@ -661,84 +515,8 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
     } else {
       arrayProject = JSON.parse(localStorage.getItem("arrayProject"));
     }
-
-    arrayProject.forEach(el => {
-      const block = document.createElement('li');
-      block.className = "projects__listItem listItem";
-      const category = document.createElement('div');
-      category.className = "projects__category";
-      if (el.category === 'Дом') {
-        category.className = 'projects__category category-home';
-      } else if (el.category === 'Учеба') {
-        category.className = 'projects__category category-learning';
-      } else if (el.category === 'Работа') {
-        category.className = 'projects__category category-job';
-      } else if (el.category === 'Саморазвитие') {
-        category.className = 'projects__category category-self-development';
-      } else if (el.category === 'Здоровье') {
-        category.className = 'projects__category category-health';
-      } else if (el.category === 'Отдых') {
-        category.className = 'projects__category category-recreation';
-      } else if (el.category === 'Хобби') {
-        category.className = 'projects__category category-hobby';
-      } else if (el.category === 'Идеи') {
-        category.className = 'projects__category category-ideas';
-      } else if (el.category === 'Хозяйство') {
-        category.className = 'projects__category category-household';
-      } else if (el.category === 'Спорт') {
-        category.className = 'projects__category category-sport';
-      } else if (el.category === 'Уход за собой') {
-        category.className = 'projects__category category-self-care';
-      }
-
-      const check = document.createElement('div');
-      check.className = "projects__inputfield";
-      // name.textContent = obj.name;
-      const labelCheck = document.createElement('label');
-      labelCheck.className = "projects__check check";
-      const inputCheck = document.createElement('input');
-      inputCheck.className = "projects__input-check";
-      inputCheck.setAttribute("type", "checkbox");
-      const checkmark = document.createElement('span');
-      checkmark.className = "projects__checkmark checkmark";
-      const item = document.createElement('div');
-      item.className = "projects__item-name";
-      item.textContent = el.name;
-      // const nameLink = document.createElement('a');
-      // nameLink.textContent = el.name;
-      //nameLink.href = "./5_stages.html";
-      // const contextItem = document.createElement('div'); 
-      // contextItem.className = "projects__item";
-      // const context = document.createElement('span'); 
-      // context.className = "projects__context";
-      const buttonEdit = document.createElement('button');
-      buttonEdit.className = "inbox__btn-edit";
-      const buttonDelite = document.createElement('button');
-      buttonDelite.className = "inbox__btn-delite";
-
-
-      block.append(category);
-      block.append(check);
-      block.append(item);
-      // block.append(contextItem);
-      block.append(buttonEdit);
-      block.append(buttonDelite);
-      check.append(labelCheck);
-      labelCheck.append(inputCheck);
-      labelCheck.append(checkmark);
-
-      // проходится по записанным в массив таскам
-
-      // дает создаваемому элементу block (li) id, доставая его из объекта
-      //block.setAttribute("id", `${el.id}`);
-      // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
-      //buttonEdit.setAttribute("onClick", "findTask(this)");
-      // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
-      inputCheck.setAttribute("onClick", "checkBox(this)");
-      placeInboxList.appendChild(block);
-      // console.log(arrayInbox);
-    })
-  })
+    insertTasks(arrayProject);
+  });
 };
 // загрузка массива быстрые дела на страницу быстрые дела с отрисовкой
 if (window.location.toString().indexOf('/3_quick.html') > 0) {
@@ -748,102 +526,10 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
     } else {
       arrayQuick = JSON.parse(localStorage.getItem("arrayQuick"));
     }
-    arrayQuick.forEach(el => {
-      const block = document.createElement('li');
-      block.className = "quick__listItem listItem";
-      const category = document.createElement('div');
-      if (el.category === 'Дом') {
-        category.className = 'quick__category category-home';
-      } else if (el.category === 'Учеба') {
-        category.className = 'quick__category category-learning';
-      } else if (el.category === 'Работа') {
-        category.className = 'quick__category category-job';
-      } else if (el.category === 'Саморазвитие') {
-        category.className = 'quick__category category-self-development';
-      } else if (el.category === 'Здоровье') {
-        category.className = 'quick__category category-health';
-      } else if (el.category === 'Отдых') {
-        category.className = 'quick__category category-recreation';
-      } else if (el.category === 'Хобби') {
-        category.className = 'quick__category category-hobby';
-      } else if (el.category === 'Идеи') {
-        category.className = 'quick__category category-ideas';
-      } else if (el.category === 'Хозяйство') {
-        category.className = 'quick__category category-household';
-      } else if (el.category === 'Спорт') {
-        category.className = 'quick__category category-sport';
-      } else if (el.category === 'Уход за собой') {
-        category.className = 'quick__category category-self-care';
-      }
-      const check = document.createElement('div');
-      check.className = "quick__inputfield";
-      // name.textContent = obj.name;
-      const labelCheck = document.createElement('label');
-      labelCheck.className = "quick__check check";
-      const inputCheck = document.createElement('input');
-      inputCheck.className = "quick__input-check";
-      inputCheck.setAttribute("type", "checkbox");
-      const checkmark = document.createElement('span');
-      checkmark.className = "quick__checkmark checkmark";
-      const item = document.createElement('div');
-      item.className = "quick__item-name";
-      item.textContent = el.name;
-      const contextItem = document.createElement('div');
-      contextItem.className = "quick__item";
-      const context = document.createElement('span');
-
-      if (el.context === 'Дом') {
-        context.className = 'quick__context home-tag';
-      } else if (el.context === 'Телефон') {
-        context.className = 'quick__context phone-tag';
-      } else if (el.context === 'Вне дома') {
-        context.className = 'quick__context outdoors-tag';
-      } else if (el.context === 'Компьютер') {
-        context.className = 'quick__context computer-tag';
-      } else if (el.context === 'Делегироване') {
-        context.className = 'quick__context delegating-tag';
-      } else if (el.context === 'Город') {
-        context.className = 'quick__context city-tag';
-      } else if (el.context === 'Школа') {
-        context.className = 'quick__context school-tag';
-      } else if (el.context === 'Детсад') {
-        context.className = 'quick__context kindergarten-tag';
-      } else if (el.context === 'Минск') {
-        context.className = 'quick__context minsk-tag';
-      } else if (el.context === 'Работа') {
-        context.className = 'quick__context job-tag';
-      }
-      context.textContent = el.context;
-      const buttonEdit = document.createElement('button');
-      buttonEdit.className = "inbox__btn-edit";
-      //  const imgButtonEdit = document.createElement('img');
-      // imgButtonEdit.className = "header__buttonpic-edit";
-      const buttonDelite = document.createElement('button');
-      buttonDelite.className = "inbox__btn-delite";
-      //  const imgButtonDelite= document.createElement('img');
-      // imgButtonDelite.className = "header__buttonpic-delite";
-
-      block.append(category);
-      block.append(check);
-      block.append(item);
-      block.append(contextItem);
-      block.append(buttonEdit);
-      block.append(buttonDelite);
-      check.append(labelCheck);
-      labelCheck.append(inputCheck);
-      labelCheck.append(checkmark);
-      contextItem.append(context);
-      // дает создаваемому элементу block (li) id, доставая его из объекта
-      block.setAttribute("id", `${el.id}`);
-      // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
-      buttonEdit.setAttribute("onClick", "findTask(this)");
-      // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
-      inputCheck.setAttribute("onClick", "checkBox(this)");
-      placeInboxList.appendChild(block);
-      // console.log(arrayInbox);
-    })
-  })
+    insertTasks(arrayQuick);
+  });
 };
+
 // загрузка массива справочные материалы на страницу справочные материалы с отрисовкой
 if (window.location.toString().indexOf('/7_reference.html') > 0) {
   document.addEventListener("DOMContentLoaded", () => {
@@ -852,98 +538,8 @@ if (window.location.toString().indexOf('/7_reference.html') > 0) {
     } else {
       arrayReference = JSON.parse(localStorage.getItem("arrayReference"));
     }
-    arrayReference.forEach(el => {
-      const block = document.createElement('li');
-      block.className = "reference__listItem listItem";
-      const category = document.createElement('div');
-      if (el.category === 'Дом') {
-        category.className = 'reference__category category-home';
-      } else if (el.category === 'Учеба') {
-        category.className = 'reference__category category-learning';
-      } else if (el.category === 'Работа') {
-        category.className = 'reference__category category-job';
-      } else if (el.category === 'Саморазвитие') {
-        category.className = 'reference__category category-self-development';
-      } else if (el.category === 'Здоровье') {
-        category.className = 'reference__category category-health';
-      } else if (el.category === 'Отдых') {
-        category.className = 'reference__category category-recreation';
-      } else if (el.category === 'Хобби') {
-        category.className = 'reference__category category-hobby';
-      } else if (el.category === 'Идеи') {
-        category.className = 'reference__category category-ideas';
-      } else if (el.category === 'Хозяйство') {
-        category.className = 'reference__category category-household';
-      } else if (el.category === 'Спорт') {
-        category.className = 'reference__category category-sport';
-      } else if (el.category === 'Уход за собой') {
-        category.className = 'reference__category category-self-care';
-      }
-      const check = document.createElement('div');
-      check.className = "reference__inputfield";
-      const labelCheck = document.createElement('label');
-      labelCheck.className = "reference__check check";
-      const inputCheck = document.createElement('input');
-      inputCheck.className = "reference__input-check";
-      inputCheck.setAttribute("type", "checkbox");
-      const checkmark = document.createElement('span');
-      checkmark.className = "reference__checkmark checkmark";
-      const item = document.createElement('div');
-      item.className = "reference__item-name";
-      item.textContent = el.name;
-      const contextItem = document.createElement('div');
-      contextItem.className = "reference__item";
-      const context = document.createElement('span');
-
-      if (el.context === 'Дом') {
-        context.className = 'reference__context home-tag';
-      } else if (el.context === 'Телефон') {
-        context.className = 'reference__context phone-tag';
-      } else if (el.context === 'Вне дома') {
-        context.className = 'reference__context outdoors-tag';
-      } else if (el.context === 'Компьютер') {
-        context.className = 'reference__context computer-tag';
-      } else if (el.context === 'Делегироване') {
-        context.className = 'reference__context delegating-tag';
-      } else if (el.context === 'Город') {
-        context.className = 'reference__context city-tag';
-      } else if (el.context === 'Школа') {
-        context.className = 'reference__context school-tag';
-      } else if (el.context === 'Детсад') {
-        context.className = 'reference__context kindergarten-tag';
-      } else if (el.context === 'Минск') {
-        context.className = 'reference__context minsk-tag';
-      }
-      context.textContent = el.context;
-      const buttonEdit = document.createElement('button');
-      buttonEdit.className = "inbox__btn-edit";
-      //  const imgButtonEdit = document.createElement('img');
-      // imgButtonEdit.className = "header__buttonpic-edit";
-      const buttonDelite = document.createElement('button');
-      buttonDelite.className = "inbox__btn-delite";
-      //  const imgButtonDelite= document.createElement('img');
-      // imgButtonDelite.className = "header__buttonpic-delite";
-
-      block.append(category);
-      block.append(check);
-      block.append(item);
-      block.append(contextItem);
-      block.append(buttonEdit);
-      block.append(buttonDelite);
-      check.append(labelCheck);
-      labelCheck.append(inputCheck);
-      labelCheck.append(checkmark);
-      contextItem.append(context);
-      // дает создаваемому элементу block (li) id, доставая его из объекта
-      block.setAttribute("id", `${el.id}`);
-      // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
-      buttonEdit.setAttribute("onClick", "findTask(this)");
-      // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
-      inputCheck.setAttribute("onClick", "checkBox(this)");
-      placeInboxList.appendChild(block);
-      // console.log(arrayInbox);
-    })
-  })
+    insertTasks(arrayReference);
+  });
 };
 // загрузка массива лист ожилания на страницу лист ожидания с отрисовкой
 if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
@@ -953,102 +549,8 @@ if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
     } else {
       arrayWaitingList = JSON.parse(localStorage.getItem("arrayWaitingList"));
     }
-    arrayWaitingList.forEach(el => {
-      const block = document.createElement('li');
-      block.className = "waiting-list__listItem listItem";
-      const category = document.createElement('div');
-      if (el.category === 'Дом') {
-        category.className = 'waiting-list__category category-home';
-      } else if (el.category === 'Учеба') {
-        category.className = 'waiting-list__category category-learning';
-      } else if (el.category === 'Работа') {
-        category.className = 'waiting-list__category category-job';
-      } else if (el.category === 'Саморазвитие') {
-        category.className = 'waiting-list__category category-self-development';
-      } else if (el.category === 'Здоровье') {
-        category.className = 'waiting-list__category category-health';
-      } else if (el.category === 'Отдых') {
-        category.className = 'waiting-list__category category-recreation';
-      } else if (el.category === 'Хобби') {
-        category.className = 'waiting-list__category category-hobby';
-      } else if (el.category === 'Идеи') {
-        category.className = 'waiting-list__category category-ideas';
-      } else if (el.category === 'Хозяйство') {
-        category.className = 'waiting-list__category category-household';
-      } else if (el.category === 'Спорт') {
-        category.className = 'waiting-list__category category-sport';
-      } else if (el.category === 'Уход за собой') {
-        category.className = 'waiting-list__category category-self-care';
-      }
-      const check = document.createElement('div');
-      check.className = "waiting-list__inputfield";
-      const labelCheck = document.createElement('label');
-      labelCheck.className = "waiting-list__check check";
-      const inputCheck = document.createElement('input');
-      inputCheck.className = "waiting-list__input-check";
-      inputCheck.setAttribute("type", "checkbox");
-      const checkmark = document.createElement('span');
-      checkmark.className = "waiting-list__checkmark checkmark";
-      const item = document.createElement('div');
-      item.className = "waiting-list__item-name";
-      item.textContent = el.name;
-      const contextItem = document.createElement('div');
-      contextItem.className = "waiting-list__item";
-      const context = document.createElement('span');
-
-
-      if (el.context === 'Дом') {
-        context.className = 'waiting-list__context home-tag';
-      } else if (el.context === 'Телефон') {
-        context.className = 'waiting-list__context phone-tag';
-      } else if (el.context === 'Вне дома') {
-        context.className = 'waiting-list__context outdoors-tag';
-      } else if (el.context === 'Компьютер') {
-        context.className = 'waiting-list__context computer-tag';
-      } else if (el.context === 'Делегироване') {
-        context.className = 'waiting-list__context delegating-tag';
-      } else if (el.context === 'Город') {
-        context.className = 'waiting-list__context city-tag';
-      } else if (el.context === 'Школа') {
-        context.className = 'waiting-list__context school-tag';
-      } else if (el.context === 'Детсад') {
-        context.className = 'waiting-list__context kindergarten-tag';
-      } else if (el.context === 'Минск') {
-        context.className = 'waiting-list__context minsk-tag';
-      }
-      context.textContent = el.context;
-      const buttonEdit = document.createElement('button');
-      buttonEdit.className = "inbox__btn-edit";
-      //  const imgButtonEdit = document.createElement('img');
-      // imgButtonEdit.className = "header__buttonpic-edit";
-      const buttonDelite = document.createElement('button');
-      buttonDelite.className = "inbox__btn-delite";
-      //  const imgButtonDelite= document.createElement('img');
-      // imgButtonDelite.className = "header__buttonpic-delite";
-
-
-
-
-      block.append(category);
-      block.append(check);
-      block.append(item);
-      block.append(contextItem);
-      block.append(buttonEdit);
-      block.append(buttonDelite);
-      check.append(labelCheck);
-      labelCheck.append(inputCheck);
-      labelCheck.append(checkmark);
-      contextItem.append(context);
-      // дает создаваемому элементу block (li) id, доставая его из объекта
-      block.setAttribute("id", `${el.id}`);
-      // дает создаваемой кнопке редкатирования onClick, который по нажатию отправляет элемент в функцию findTask
-      buttonEdit.setAttribute("onClick", "findTask(this)");
-      // дает создаваемому чекбокчу onClick, который по нажатию отправляет элемент в функцию checkBox
-      inputCheck.setAttribute("onClick", "checkBox(this)");
-      placeInboxList.appendChild(block);
-      // console.log(arrayInbox);
-    })
-  })
+    insertTasks(arrayWaitingList);
+  });
 };
 
 function getLocStorage(key) {

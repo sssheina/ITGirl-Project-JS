@@ -1,6 +1,6 @@
 const ul = document.querySelector(".inbox__listItems")
 
-function innerTask(tasks) {
+function insertTasks(tasks) {
 
   tasks.forEach(el => {
 
@@ -27,7 +27,7 @@ function innerTask(tasks) {
 
     ul.append(li);
 
-    if (el.category != "") {
+    if (el.category) {
       li.className = "projects__listItem listItem";
       const category = document.createElement('div');
       category.className = "projects__category";
@@ -71,7 +71,7 @@ function innerTask(tasks) {
 
 
 
-    if (el.context != "") {
+    if (el.context) {
       li.className = "quick__listItem listItem";
       const contextItem = document.createElement('div');
       // contextItem.className = "quick__item";
