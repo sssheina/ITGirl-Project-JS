@@ -345,7 +345,6 @@ addEventListener('DOMContentLoaded', () => {
     sortByCategory(arrTasks, 'Учеба');
   }
   else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-work") {
-    const arrTasks = getLocStorage("editedTasks");
     sortByCategory(arrTasks, 'Работа');
   }
   else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-selfimprovment") {
@@ -372,6 +371,35 @@ addEventListener('DOMContentLoaded', () => {
   else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-selfcare") {
     sortByCategory(arrTasks, 'Уход за собой');
   }
+
+  if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-tel") {
+    sortByContext(arrTasks, 'Телефон');
+  }
+  else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-home") {
+    sortByContext(arrTasks, 'Дом');
+  }
+  else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-outside") {
+    sortByContext(arrTasks, 'Вне дома');
+  }
+  else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-school") {
+    sortByContext(arrTasks, 'Школа');
+  }
+  else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-kindergarden") {
+    sortByContext(arrTasks, 'Дет. сад');
+  }
+  else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-computer") {
+    sortByContext(arrTasks, 'Компьютер');
+  }
+  else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-minsk") {
+    sortByContext(arrTasks, 'Минск');
+  }
+  else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-in-town") {
+    sortByContext(arrTasks, 'В городе');
+  }
+  else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-delegated") {
+    sortByContext(arrTasks, 'Делегировано');
+  }
+
 });
 
 function sortByCategory(tasks, category) {
@@ -379,6 +407,10 @@ function sortByCategory(tasks, category) {
   insertTasks(arr);
 }
 
+function sortByContext(tasks, context) {
+  const arr = tasks.filter(el => el.context === `${context}`);
+  insertTasks(arr);
+}
 // МЕНЮ________________________________________________________  _
 
 // показывает выбранный пункт меню, выдавая класс с цветом
