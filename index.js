@@ -344,31 +344,32 @@ addEventListener('DOMContentLoaded', () => {
   else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-study") {
     sortByCategory(arrTasks, 'Учеба');
   }
-  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-work") {
+  else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-work") {
+    const arrTasks = getLocStorage("editedTasks");
     sortByCategory(arrTasks, 'Работа');
   }
-  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-selfimprovment") {
+  else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-selfimprovment") {
     sortByCategory(arrTasks, 'Саморазвитие');
   }
-  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-health") {
+  else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-health") {
     sortByCategory(arrTasks, 'Здоровье');
   }
-  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-rest") {
+  else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-rest") {
     sortByCategory(arrTasks, 'Отдых');
   }
-  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-hobby") {
+  else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-hobby") {
     sortByCategory(arrTasks, 'Хобби');
   }
-  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-ideas") {
+  else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-ideas") {
     sortByCategory(arrTasks, 'Идеи');
   }
-  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-household") {
+  else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-household") {
     sortByCategory(arrTasks, 'Хозяйство');
   }
-  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-sport") {
+  else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-sport") {
     sortByCategory(arrTasks, 'Спорт');
   }
-  else if (window.location.href.split('/').at(-1) == "./10_category_sorting.html?category-selfcare") {
+  else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-selfcare") {
     sortByCategory(arrTasks, 'Уход за собой');
   }
 });
