@@ -552,7 +552,7 @@ let inp = document.querySelector(".todo__inp");
 
     btnAdd.onclick = function() {
       createTodo();
-      
+      inp.value = ''; 
     }
 
     list.addEventListener("click", function(e) {
