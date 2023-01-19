@@ -110,7 +110,7 @@ const createСard = (obj) => {
   const checkmark = document.createElement('span');
   checkmark.className = "inbox__checkmark checkmark";
 
-  const item = document.createElement('div');
+  const item = document.createElement('div'); 
   item.className = "inbox__item";
   item.textContent = `${inbox.value}`;
 
@@ -311,12 +311,65 @@ function checkBox(checkbox) {
       arrayProgressCounter.pop();
     }
   }
+  if (window.location.toString().indexOf('/7_reference.html') > 0) {
+    if (checkbox.checked) {
+      const id = checkbox.parentNode.parentNode.parentNode.id;
+      const task = arrayReference.find(el => el.id == id);
+      let index = arrayReference.indexOf(task);
+      // console.log(index);
+
+      timeoutID = setTimeout(() =>
+        checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
+      );
+      arrayProgressCounter.push(1);
+
+      timer = setTimeout(() =>
+      arrayReference.splice(index, 1), 5000
+      );
+
+      updArray = setTimeout(() =>
+        UpdatedArray(), 5000
+      );
+
+    } else {
+      clearTimeout(timeoutID);
+      clearTimeout(timer);
+      clearTimeout(updArray);
+      arrayProgressCounter.pop();
+    }
+  }
+  // let progressCounter = document.querySelector(".header__counter");
+  if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
+    if (checkbox.checked) {
+      const id = checkbox.parentNode.parentNode.parentNode.id;
+      const task = arrayWaitingList.find(el => el.id == id);
+      let index = arrayWaitingList.indexOf(task);
+      // console.log(index);
+
+      timeoutID = setTimeout(() =>
+        checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
+      );
+      arrayProgressCounter.push(1);
+
+      timer = setTimeout(() =>
+      arrayWaitingList.splice(index, 1), 5000
+      );
+
+      updArray = setTimeout(() =>
+        UpdatedArray(), 5000
+      );
+
+    } else {
+      clearTimeout(timeoutID);
+      clearTimeout(timer);
+      clearTimeout(updArray);
+      arrayProgressCounter.pop();
+    }
+  }
   // let progressCounter = document.querySelector(".header__counter");
   progressCounter.textContent = arrayProgressCounter.length;
   localStorage.setItem("progressCounter", JSON.stringify(arrayProgressCounter.length));
-
 }
-
 // ЗАГРУЗКА СТРАНИЦЫ________________________________________________
 
 addEventListener('DOMContentLoaded', () => {
