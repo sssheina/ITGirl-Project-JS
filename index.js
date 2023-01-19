@@ -78,8 +78,18 @@ function findTask(el) {
   // забирает id из родительского элемента, который мы дали при создании карточки таска в createCard 
   const id = el.parentNode.id;
   console.log(id);
+  let task = "";
   // находит в массиве тасков соответсвующий таск по id
-  const task = arrayInbox.find(el => el.id == id);
+  if (window.location.href.split('/').at(-1) == "index.html") {
+    getLocStorage(arrayInbox);
+    task = arrayInbox.find(el => el.id == id);
+  }
+  else if (window.location.href.split('/').at(-1) !== "index.html") {
+    getLocStorage(arrayEditedTask);
+    task = arrayEditedTask.find(el => el.id == id);
+  }
+
+
   // передает имя таска в showTitle
   showTitle(task.name);
   // записывает в глобальную переменную найденный объект, чтобы передавать его в другие функции
@@ -544,75 +554,75 @@ function getLocStorage(key) {
 // ____________________ЧЕК_ЛИСТ
 
 let inp = document.querySelector(".todo__inp");
-      list = document.querySelector(".todo-list");
-      btnAdd = document.querySelector(".btn-add");
-    
-    list.innerHTML = localStorage.getItem("tasks");
+list = document.querySelector(".todo-list");
+btnAdd = document.querySelector(".btn-add");
 
-    function createTodo() {
-      if (inp.value === '') {
-        alert('Заполните поле'); 
-        return;
-      }
+list.innerHTML = localStorage.getItem("tasks");
 
-      let
-        todo = `
+function createTodo() {
+  if (inp.value === '') {
+    alert('Заполните поле');
+    return;
+  }
+
+  let
+    todo = `
           <span class="check"></span>
           <input class="inp inp-task no-event" value="${inp.value}" type="text">
           <button class="btn btn-edit _active">edit</button>
           <button class="btn btn-del">delete</button>
         `;
-        item = document.createElement("li");
+  item = document.createElement("li");
 
-      item.classList = "row";
-      item.innerHTML = todo;
+  item.classList = "row";
+  item.innerHTML = todo;
 
-      list.appendChild(item);
+  list.appendChild(item);
 
-      localStorage.setItem("tasks", list.innerHTML);
-      
+  localStorage.setItem("tasks", list.innerHTML);
+
+}
+
+btnAdd.onclick = function () {
+  createTodo();
+  inp.value = '';
+}
+
+list.addEventListener("click", function (e) {
+  let
+    el = e.target;
+  parent = el.parentElement;
+  inpTask = parent.querySelector(".inp-task");
+  check = parent.querySelector(".check");
+  btnEdit = parent.querySelector(".btn-edit");
+
+  if (el.classList.contains("check")) {
+    inpTask.classList.toggle("_completed");
+    check.classList.toggle("_active");
+  }
+
+  if (el.classList.contains("btn-del")) {
+    parent.remove();
+  }
+
+  if (el.classList.contains("btn-edit")) {
+
+    inpTask.classList.toggle("_active");
+
+    btnEdit.classList.toggle("_active");
+    inpTask.classList.toggle("no-event");
+
+    if (btnEdit.innerHTML === "edit") {
+      btnEdit.innerHTML = "save";
+      inpTask.focus();
     }
 
-    btnAdd.onclick = function() {
-      createTodo();
-      inp.value = ''; 
+    else {
+      btnEdit.innerHTML = "edit";
+      inpTask.setAttribute("value", inpTask.value);
     }
 
-    list.addEventListener("click", function(e) {
-      let 
-        el = e.target;
-        parent = el.parentElement;
-        inpTask = parent.querySelector(".inp-task");
-        check = parent.querySelector(".check");
-        btnEdit = parent.querySelector(".btn-edit");
-     
-      if (el.classList.contains("check")) {
-        inpTask.classList.toggle("_completed");
-        check.classList.toggle("_active");
-      }
+  }
 
-      if (el.classList.contains("btn-del")) {
-        parent.remove();
-      }
-
-      if (el.classList.contains("btn-edit")) {
-
-        inpTask.classList.toggle("_active");
-
-        btnEdit.classList.toggle("_active");
-        inpTask.classList.toggle("no-event");
-
-        if (btnEdit.innerHTML === "edit") {
-          btnEdit.innerHTML = "save";
-          inpTask.focus();
-        }
-
-        else {
-          btnEdit.innerHTML = "edit";
-          inpTask.setAttribute("value", inpTask.value);
-        }
-
-      }
-
-      localStorage.setItem("tasks", list.innerHTML);
-    });
+  localStorage.setItem("tasks", list.innerHTML);
+});
