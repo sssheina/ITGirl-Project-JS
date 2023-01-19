@@ -470,7 +470,7 @@ function addValues() {
   if (type.value == "") {
     modalTypeErr.textContent = "Пожалуйста, укажите тип";
     type.style.border = "1px solid red";
-  }
+  } 
   if (category.value == "") {
     modalCategoryErr.textContent = "Пожалуйста, укажите категорию";
     category.style.border = "1px solid red";
@@ -509,7 +509,19 @@ function addValues() {
   // закрытие модального окна
 
 };
-
+let type = document.getElementById("case_type");
+let context  = document.getElementById("context_type");
+let data = document.getElementById("date_type");
+type.addEventListener('change', (event) => {
+if (type.value === 'Справочные материалы') {
+ context.disabled = true;
+ data.disabled = true;
+}
+if (type.value === 'Лист ожидания') {
+  context.disabled = true;
+  data.disabled = true;
+ }
+});
 // function isEmpty() {
 
 // }
