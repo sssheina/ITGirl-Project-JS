@@ -8,7 +8,7 @@ function insertTasks(tasks) {
     li.className = "inbox__listItem";
     li.setAttribute("id", `${el.id}`);
 
-    const item = document.createElement('div');
+    const item = document.createElement('p');
     item.className = "projects__item-name";
 
     const check = document.createElement('div');
