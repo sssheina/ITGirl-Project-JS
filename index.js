@@ -265,13 +265,17 @@ function checkBox(checkbox) {
     }
   }
 
-  if (window.location.toString().indexOf('/3_quick.html') > 0) {
+  // УДАЛЕНИЕ РАБОТАЕТ ДЛЯ БЫСТРЫХ ДЕЛ!
+
+  if (window.location.toString().indexOf('/3_quick.html') > 0) { 
     if (checkbox.checked) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
       const task = arrayQuick.find(el => el.id == id);
+      const task1 = arrayEditedTask.find(el => el.id == id);
       let index = arrayQuick.indexOf(task);
-      let index1 = arrayEditedTask.indexOf(task);
-      console.log(index + index1);
+      let index1 = arrayEditedTask.indexOf(task1);
+      console.log(index);
+      console.log(index1); 
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -284,7 +288,8 @@ function checkBox(checkbox) {
       );
 
       updArray = setTimeout(() =>
-        UpdatedArray(), 5000
+        UpdatedArray(), 5000,
+        UpdEditedArray(), 5000
       );
 
     } else {
@@ -294,6 +299,8 @@ function checkBox(checkbox) {
       arrayProgressCounter.pop();
     }
   }
+
+
   if (window.location.toString().indexOf('/4_projects.html') > 0) {
     if (checkbox.checked) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
@@ -506,7 +513,7 @@ function addValues() {
 
     let index = arrayInbox.indexOf(currentObject);
     arrayInbox.splice(index, 1);
-    //UpdatedArray();
+    UpdatedArray();
     taskCard.remove();
     sortByType();
 
@@ -561,6 +568,11 @@ function UpdatedArray() {
     localStorage.setItem("arrayProject", JSON.stringify(arrayProject));
   }
 };
+
+function UpdEditedArray() {
+  localStorage.removeItem("editedTasks");
+  localStorage.setItem("editedTasks", JSON.stringify(arrayEditedTask));
+}
 
 //ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
 //const projects = document.getElementById('projects');
