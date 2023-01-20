@@ -77,6 +77,5 @@ function sortByCategory(tasks, category) {
 function sortByContext(tasks, context) {
   const arr = tasks.filter(el => el.context === `${context}`);
   titleContext.textContent = context;
-  title.textContent = context;
   insertTasks(arr);
 }
