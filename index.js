@@ -160,7 +160,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem, ) => {
+const addCard = (objItem,) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -610,16 +610,16 @@ function addValues() {
 let type = document.getElementById("case_type");
 let context = document.getElementById("context_type");
 let data = document.getElementById("date_type");
-// type.addEventListener('change', (event) => {
-//   if (type.value === 'Справочные материалы') {
-//     context.disabled = true;
-//     data.disabled = true;
-//   }
-//   if (type.value === 'Лист ожидания') {
-//     context.disabled = true;
-//     data.disabled = true;
-//   }
-// });
+type.addEventListener('change', (event) => {
+  if (type.value === 'Справочные материалы') {
+    context.disabled = true;
+    data.disabled = true;
+  }
+  if (type.value === 'Лист ожидания') {
+    context.disabled = true;
+    data.disabled = true;
+  }
+});
 // function isEmpty() {
 
 // }
