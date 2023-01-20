@@ -26,7 +26,7 @@
     width: 65%;
     min-width: 260px;
     max-width: 667px;
-    height: 490px;
+    // height: 490px;
     position: absolute;
     // padding: 1rem;
     // box-shadow: 0 0 10px 4px rgba(64, 86, 98, 0.8);
@@ -78,13 +78,15 @@
 
   .window_name {
     width: 667px;
-    height: 74px;
+    // height: 74px;
     background-color: #F4A48D;
     color: white;
     font-size: 20px;
     font-weight: 800;
     padding-left: 35px;
     padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 55px;
   }
   .modal_enterBlock {
     display: flex;
