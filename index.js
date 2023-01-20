@@ -93,6 +93,7 @@ function findTask(el) {
   // записывает в глобальную переменную найденный объект, чтобы передавать его в другие функции
   currentObject = task;
   taskCard = el.parentNode;
+  validateModalWindow(arrayReference);
 }
 
 // засовывает имя таска в модальное окно
@@ -159,7 +160,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem,) => {
+const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -171,20 +172,30 @@ if (window.location.href.split('/').at(-1) == "index.html") {
   inbox.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
+      validateInboxTask();
+    }
+  });
+  const inboxErr = document.querySelector('.inboxErr');
+
+  function validateInboxTask() {
+    if (inbox.value == "") {
+      inboxErr.textContent = "Пожалуйста, запишите входящее дело!";
+      inbox.style.border = "2px solid red";
+    } else {
+      inbox.style.border = '2px solid #d5dbd9';
+      inboxErr.textContent = "";
+
       createTaskObject();
       createСard();
       addCard();
 
+
       inbox.value = "";
     }
-  });
+  }
   // слушатель кнопки "Сохранить" на главной
   inboxButton.addEventListener("click", () => {
-    createTaskObject();
-    createСard();
-    addCard();
-
-    inbox.value = "";
+    validateInboxTask();
   });
 };
 
@@ -194,14 +205,10 @@ placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-delite')) {
     event.target.parentNode.remove();
     deleteFromArray(event)
-  }
-
-  else if (event.target.parentNode.classList.contains('inbox__btn-delite')) {
+  } else if (event.target.parentNode.classList.contains('inbox__btn-delite')) {
     event.target.parentNode.parentNode.remove();
     deleteFromArray(event)
-  }
-
-  else if (event.target.classList.contains('inbox__btn-edit') || (event.target.classList.contains('header__buttonpic-edit'))) {
+  } else if (event.target.classList.contains('inbox__btn-edit') || (event.target.classList.contains('header__buttonpic-edit'))) {
     modalWindow.style.display = "block";
   }
   // else if (event.target.classList.contains('overlay')) {

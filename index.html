@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="./assets/images/logo_peach.png"
-      type="image/png"
-    />
-    <link rel="stylesheet" href="./dist/styles/style.css" />
-    <title>ПЛАНЕР</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- ХЕДЕР -->
 
-      <header class="header">
-        <div class="header__container _container">
-          <div><a href="./index.html" class="header__logo"
-            ><img
-              class="header__logopic"
-              src="./assets/images/logo_white.svg"
-              alt="logo"
-            />ПЛАНЕР</a
-          ></div>
-          <!-- <nav class="header__menu menu">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./assets/images/logo_peach.png" type="image/png" />
+  <link rel="stylesheet" href="./dist/styles/style.css" />
+  <title>ПЛАНЕР</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- ХЕДЕР -->
+
+    <header class="header">
+      <div class="header__container _container">
+        <div><a href="./index.html" class="header__logo"><img class="header__logopic"
+              src="./assets/images/logo_white.svg" alt="logo" />ПЛАНЕР</a></div>
+        <!-- <nav class="header__menu menu">
             <ul class="menu__list"></ul>
           </nav> -->
-          <!-- <button class="header__button btn">
+        <!-- <button class="header__button btn">
             <img
               class="header__buttonpic"
               src="./assets/images/plus_peach_transparent.png"
@@ -36,89 +29,80 @@
             />
           </button> -->
 
-          <!-- СЧЁТЧИК -->
-          <div class="header__labelCounter">ЗАВЕРШЁННЫЕ ДЕЛА:<br><br><span class="header__counter">0</span></div>
-          <!-- конец СЧЁТЧИКа -->
+        <!-- СЧЁТЧИК -->
+        <div class="header__labelCounter">ЗАВЕРШЁННЫЕ ДЕЛА:<br><br><span class="header__counter">0</span></div>
+        <!-- конец СЧЁТЧИКа -->
 
-        </div>
-      </header>
+      </div>
+    </header>
 
-      <!-- ОСНОВНОЙ БЛОК -->
+    <!-- ОСНОВНОЙ БЛОК -->
 
-      <main class="page">
-        <div class="page__container _container">
-          <!-- ХЛЕБНЫЕ КРОШКИ -->
+    <main class="page">
+      <div class="page__container _container">
+        <!-- ХЛЕБНЫЕ КРОШКИ -->
 
-          <ul class="page__breadcrumb breadcrumb">
-            <li class="active">
-              <a href="./index.html"
-                ><span class="breadcrumb">ВХОДЯЩИЕ</span></a
-              >
-            </li>
-          </ul>
+        <ul class="page__breadcrumb breadcrumb">
+          <li class="active">
+            <a href="./index.html"><span class="breadcrumb">ВХОДЯЩИЕ</span></a>
+          </li>
+        </ul>
 
-          <!-- КОНЕЦ ХЛЕБНЫЕ КРОШКИ -->
+        <!-- КОНЕЦ ХЛЕБНЫЕ КРОШКИ -->
 
-          <div class="page__main-block main-block">
-            <div class="main-block__container _container">
-              <div class="main-block__body">
-                <!-- БОКОВОЕ МЕНЮ -->
+        <div class="page__main-block main-block">
+          <div class="main-block__container _container">
+            <div class="main-block__body">
+              <!-- БОКОВОЕ МЕНЮ -->
 
-                <nav class="page__menu menu">
-                  <ul class="menu__list">
-                    <div class="menu__tooltip">
-                      <li class="menu__item menu__item_selected">
-                        <a href="./index.html">Входящие</a>
-                      </li>
-                      <span class="menu__tooltiptext"><span class="menu__spanTitle">ВХОДЯЩИЕ</span><br>все быстрые дела, многоэтапные проекты, 
-                        письма, документы, справочные материалы и задачи на будущее, которые надо добавить в планер, чтобы обработать позже</span>
-                    </div>
-                    <div class="menu__tooltip">
-                      <li class="menu__item">
-                        <a class="menu__item_withSubmenu" id="current">
-                          Актуальные
-                          <img 
-                            class="menu__arrow"
-                            src="./assets/images/arrow_down.svg"
-                            alt="show"
-                          >
-                        </a>
-                        <ul class="menu__item_submenu">
-                          <li class="menu__item_submenu-quick"><a href="./3_quick.html">Быстрые дела</a></li>
-                          <li class="menu__item_submenu-projects"><a href="./4_projects.html">Проекты</a></li>
-                        </ul>
-                      </li>
-                    <span class="menu__tooltiptext"><span class="menu__spanTitle">АКТУАЛЬНЫЕ</span><br>1. БЫСТРЫЕ ДЕЛА - выполнение занимает около 2 минут;<br>
+              <nav class="page__menu menu">
+                <ul class="menu__list">
+                  <div class="menu__tooltip">
+                    <li class="menu__item menu__item_selected">
+                      <a href="./index.html">Входящие</a>
+                    </li>
+                    <span class="menu__tooltiptext"><span class="menu__spanTitle">ВХОДЯЩИЕ</span><br>все быстрые дела,
+                      многоэтапные проекты,
+                      письма, документы, справочные материалы и задачи на будущее, которые надо добавить в планер, чтобы
+                      обработать позже</span>
+                  </div>
+                  <div class="menu__tooltip">
+                    <li class="menu__item">
+                      <a class="menu__item_withSubmenu" id="current">
+                        Актуальные
+                        <img class="menu__arrow" src="./assets/images/arrow_down.svg" alt="show">
+                      </a>
+                      <ul class="menu__item_submenu">
+                        <li class="menu__item_submenu-quick"><a href="./3_quick.html">Быстрые дела</a></li>
+                        <li class="menu__item_submenu-projects"><a href="./4_projects.html">Проекты</a></li>
+                      </ul>
+                    </li>
+                    <span class="menu__tooltiptext"><span class="menu__spanTitle">АКТУАЛЬНЫЕ</span><br>1. БЫСТРЫЕ ДЕЛА -
+                      выполнение занимает около 2 минут;<br>
                       2. ПРОЕКТЫ - долгосрочные, делятся на несколько этапов - физических действий.</span>
-                    </div>
-                    <div class="menu__tooltip">
+                  </div>
+                  <div class="menu__tooltip">
                     <li class="menu__item">
                       <a class="menu__item_withSubmenu" id="delayed">
                         Отложенные
-                        <img 
-                          class="menu__arrow"
-                          src="./assets/images/arrow_down.svg"
-                          alt="show"
-                        >
+                        <img class="menu__arrow" src="./assets/images/arrow_down.svg" alt="show">
                       </a>
                       <ul class="menu__item_submenu">
-                        <li class="menu__item_submenu-reference"><a href="./7_reference.html">Справочные материалы</a></li>
+                        <li class="menu__item_submenu-reference"><a href="./7_reference.html">Справочные материалы</a>
+                        </li>
                         <li class="menu__item_submenu-waiting"><a href="./8_waiting-list.html">Лист ожидания</a></li>
                       </ul>
                     </li>
-                    <p class="menu__tooltiptext"><span class="menu__spanTitle">ОТЛОЖЕННЫЕ</span><br>1. СПРАВОЧНЫЕ МАТЕРИАЛЫ, которые надо сохранить - инструкции, адреса, визитные карточки и т.п;<br>
-                    2. ЛИСТ ОЖИДАНИЯ - отложенные на неопределённый период проекты и задачи.</p>
-                    </div>
-                    <div class="menu__tooltip">
+                    <p class="menu__tooltiptext"><span class="menu__spanTitle">ОТЛОЖЕННЫЕ</span><br>1. СПРАВОЧНЫЕ
+                      МАТЕРИАЛЫ, которые надо сохранить - инструкции, адреса, визитные карточки и т.п;<br>
+                      2. ЛИСТ ОЖИДАНИЯ - отложенные на неопределённый период проекты и задачи.</p>
+                  </div>
+                  <div class="menu__tooltip">
                     <li class="menu__item">
                       <a href="./9_categories.html">Категории</a>
                       <a class="menu__item_withSubmenu">
                         Сортировка по категориям
-                        <img 
-                          class="menu__arrow"
-                          src="./assets/images/arrow_down.svg"
-                          alt="show"
-                        >
+                        <img class="menu__arrow" src="./assets/images/arrow_down.svg" alt="show">
                       </a>
                       <ul class="menu__item_submenu">
                         <li><a href="./10_category_sorting.html?category-home">Дом</a></li>
@@ -134,7 +118,9 @@
                         <li><a href="./10_category_sorting.html?category-selfcare">Уход за собой</a></li>
                       </ul>
                     </li>
-                    <span  class="menu__tooltiptext"><span class="menu__spanTitle">КАТЕГОРИЯ</span><br>одна из сфер жизни, к которой относится проект или задача. <br>Например, работа, дом, учёба, личное, хозяйство и т.п.</span>
+                    <span class="menu__tooltiptext"><span class="menu__spanTitle">КАТЕГОРИЯ</span><br>одна из сфер
+                      жизни, к которой относится проект или задача. <br>Например, работа, дом, учёба, личное, хозяйство
+                      и т.п.</span>
                   </div>
                   <div class="menu__tooltip">
                     <li class="menu__item">
@@ -143,11 +129,7 @@
                         <li>
                           <a class="menu__item_withSubmenu">
                             Сортировка по контекстам
-                            <img 
-                              class="menu__arrow"
-                              src="./assets/images/arrow_down.svg"
-                              alt="show"
-                            >
+                            <img class="menu__arrow" src="./assets/images/arrow_down.svg" alt="show">
                           </a>
                           <ul class="menu__item_submenu">
                             <li><a href="./12_context_sorting.html?context-tel">Телефон</a></li>
@@ -163,47 +145,46 @@
                         </li>
                       </ul>
                     </li>
-                    <span  class="menu__tooltiptext"><span class="menu__spanTitle">КОНТЕКСТ</span><br>общее место выполнения или один и тот же инструмент для выполнения разных задач (этапов или быстрых дел). Например, телефон, вне дома, магазин, компьютер и т.п.</span>
+                    <span class="menu__tooltiptext"><span class="menu__spanTitle">КОНТЕКСТ</span><br>общее место
+                      выполнения или один и тот же инструмент для выполнения разных задач (этапов или быстрых дел).
+                      Например, телефон, вне дома, магазин, компьютер и т.п.</span>
                   </div>
                   <div class="menu__tooltip">
                     <li class="menu__item">
                       <a href="./13_list-checklists.html" class="show">Чек-листы</a>
                     </li>
-                    <span class="menu__tooltiptext"><span class="menu__spanTitle">ЧЕК-ЛИСТ</span><br>список пунктов для рутины или для 
-                      какого-то повторяющегося дела. 
-                      Например, список утренней рутины для 
-                      сбора на работу или список 
+                    <span class="menu__tooltiptext"><span class="menu__spanTitle">ЧЕК-ЛИСТ</span><br>список пунктов для
+                      рутины или для
+                      какого-то повторяющегося дела.
+                      Например, список утренней рутины для
+                      сбора на работу или список
                       повторяющихся действий для подготовки
                       к запуску нового проекта.</span>
                   </div>
-                  </ul>
-                </nav>
-                <!-- КОНЕЦ БОКОВОЕ МЕНЮ -->
+                </ul>
+              </nav>
+              <!-- КОНЕЦ БОКОВОЕ МЕНЮ -->
 
-                <!-- ОСНОВНОЙ КОНТЕНТ -->
+              <!-- ОСНОВНОЙ КОНТЕНТ -->
 
-                <section class="page__inbox">
-                  <div class="inbox__container">
-                    <!-- ИНПУТ -->
+              <section class="page__inbox">
+                <div class="inbox__container">
+                  <!-- ИНПУТ -->
 
-                    <div class="inbox__name">ВХОДЯЩИЕ</div>
-                    <div class="inbox__enterBlock">
-                      <div class="inbox__inputfield">
-                        <label class="inbox__lable">ВВЕДИТЕ НАЗВАНИЕ</label>
-                        <textarea
-                          rows="3"
-                          cols="45"
-                          class="inbox__input input"
-                          id="inboxInput"
-                        ></textarea>
-                      </div>
-                      <div>
-                        <button class="inbox__button btn">СОХРАНИТЬ</button>
-                      </div>
+                  <div class="inbox__name">ВХОДЯЩИЕ</div>
+                  <div class="inbox__enterBlock">
+                    <div class="inbox__inputfield">
+                      <label class="inbox__lable">ВВЕДИТЕ НАЗВАНИЕ</label>
+                      <textarea rows="3" cols="45" class="inbox__input input" id="inboxInput"></textarea>
                     </div>
+                    <div class="inboxErr"></div>
+                    <div>
+                      <button class="inbox__button btn">СОХРАНИТЬ</button>
+                    </div>
+                  </div>
 
-                    <!-- СПИСОК ВХОДЯЩИХ-->
-                    <ul class="inbox__listItems">
+                  <!-- СПИСОК ВХОДЯЩИХ-->
+                  <ul class="inbox__listItems">
 
                     <!-- <li class="inbox__listItem listItem">
                       
@@ -235,114 +216,110 @@
                     </li> -->
 
                   </ul>
-                  </div>
-                </section>
+                </div>
+              </section>
 
-                <!-- ОКОНЧАНИЕ ОСНОВНОГО КОНТЕНТА -->
-              </div>
+              <!-- ОКОНЧАНИЕ ОСНОВНОГО КОНТЕНТА -->
             </div>
           </div>
         </div>
-      </main>
+      </div>
+    </main>
 
 
-      <!-- МОДАЛЬНОЕ ОКНО -->
+    <!-- МОДАЛЬНОЕ ОКНО -->
 
-      <div id="overlay" class="overlay">
-        <div id="popup" class="popup">
-          
-            
-          <div class="window_name">Название входящей задачи</div>
-            <!-- <div>
+    <div id="overlay" class="overlay">
+      <div id="popup" class="popup">
+
+
+        <div class="window_name">Название входящей задачи</div>
+        <!-- <div>
                 <label for="change_name" id="change_text"> Переименовать </label>
                 <input type="text" id="change_name" class="input" name="change_name" required />
             </div> -->
-            <div class="modal_enterBlock">
-            <div class="modal__inputfield">
-              <label class="modal__lable">ПЕРЕИМЕНОВАТЬ:</label>
-              <textarea
-                rows="3"
-                cols="45"
-                class="inbox__input input"
-                id="modalInput"
-              ></textarea>
-            </div>
-            <div class="modal__inputfield">
-                <label for="case_type" id="case_text" class="modal__lable"> ТИП: </label><br />
-                <select id="case_type" class="input">
-                    <option class="modal__type" value=""> </option>
-                    <option class="modal__type" value="Быстрые дела"> БЫСТРЫЕ ДЕЛА</option>
-                    <option class="modal__type" value="Проекты"> ПРОЕКТЫ</option>
-                    <option class="modal__type" value="Справочные материалы"> СПРАВОЧНЫЕ МАТЕРИАЛЫ</option>
-                    <option class="modal__type" value="Лист ожидания"> ЛИСТ ОЖИДАНИЯ</option>
-                </select>
-            </div>
-            <p class="type_error_message"></p>
+        <div class="modal_enterBlock">
+          <div class="modal__inputfield">
+            <label class="modal__lable">ПЕРЕИМЕНОВАТЬ:</label>
+            <textarea rows="3" cols="45" class="inbox__input input" id="modalInput"></textarea>
+          </div>
+          <div class="modal__inputfield">
+            <label for="case_type" id="case_text" class="modal__lable"> ТИП: </label><br />
+            <select id="case_type" class="input">
+              <option class="modal__type" value=""> </option>
+              <option class="modal__type" value="Быстрые дела"> БЫСТРЫЕ ДЕЛА</option>
+              <option class="modal__type" value="Проекты"> ПРОЕКТЫ</option>
+              <option class="modal__type" value="Справочные материалы"> СПРАВОЧНЫЕ МАТЕРИАЛЫ</option>
+              <option class="modal__type" value="Лист ожидания"> ЛИСТ ОЖИДАНИЯ</option>
+            </select>
+          </div>
+          <p class="type_error_message"></p>
 
 
-            <div class="modal__inputfield">
-                <label for="project_category" id="category_text" class="modal__lable"> КАТЕГОРИЯ: </label><br />
-                <select id="project_category" class="input">
-                    <option class="modal__category" value=""> </option>
-                    <option class="modal__category" value="Дом"> ДОМ</option>
-                    <option class="modal__category" value="Учеба"> УЧЁБА</option>
-                    <option class="modal__category" value="Работа"> РАБОТА</option>
-                    <option class="modal__category" value="Саморазвитие"> САМОРАЗВИТИЕ</option>
-                    <option class="modal__category" value="Здоровье"> ЗДОРОВЬЕ</option>
-                    <option class="modal__category" value="Отдых"> ОТДЫХ</option>
-                    <option class="modal__category" value="Хобби"> ХОББИ</option>
-                    <option class="modal__category" value="Идеи"> ИДЕИ</option>
-                    <option class="modal__category" value="Хозяйство"> ХОЗЯЙСТВО</option>
-                    <option class="modal__category" value="Спорт"> СПОРТ</option>
-                    <option class="modal__category" value="Уход за собой"> УХОД ЗА СОБОЙ</option>
-                </select>
-            </div>
-            <p class="category_error_message"></p>
+          <div class="modal__inputfield">
+            <label for="project_category" id="category_text" class="modal__lable"> КАТЕГОРИЯ: </label><br />
+            <select id="project_category" class="input">
+              <option class="modal__category" value=""> </option>
+              <option class="modal__category" value="Дом"> ДОМ</option>
+              <option class="modal__category" value="Учеба"> УЧЁБА</option>
+              <option class="modal__category" value="Работа"> РАБОТА</option>
+              <option class="modal__category" value="Саморазвитие"> САМОРАЗВИТИЕ</option>
+              <option class="modal__category" value="Здоровье"> ЗДОРОВЬЕ</option>
+              <option class="modal__category" value="Отдых"> ОТДЫХ</option>
+              <option class="modal__category" value="Хобби"> ХОББИ</option>
+              <option class="modal__category" value="Идеи"> ИДЕИ</option>
+              <option class="modal__category" value="Хозяйство"> ХОЗЯЙСТВО</option>
+              <option class="modal__category" value="Спорт"> СПОРТ</option>
+              <option class="modal__category" value="Уход за собой"> УХОД ЗА СОБОЙ</option>
+            </select>
+          </div>
+          <p class="category_error_message"></p>
 
-            <div class="modal__inputfield">
-              <label for="context_type" id="context_text" class="modal__lable"> КОНТЕКСТ: </label><br />
-              <select id="context_type" class="input">
-                  <option class="modal__context" value=""> </option>
-                  <option class="modal__context" value="Дом"> ДОМ</option>
-                  <option class="modal__context" value="Телефон"> ТЕЛЕФОН</option>
-                  <option class="modal__context" value="Вне дома"> ВНЕ ДОМА</option>
-                  <option class="modal__context" value="Компьютер"> КОМПЬЮТЕР</option>
-                  <option class="modal__context" value="Делегироване"> ДЕЛЕГИРОВАНИЕ</option>
-                  <option class="modal__context" value="Город"> ГОРОД</option>
-                  <option class="modal__context" value="Школа"> ШКОЛА</option>
-                  <option class="modal__context" value="Детсад"> ДЕТСАД</option>
-                  <option class="modal__context" value="Минск"> МИНСК</option>
-                  <option class="modal__context" value="Работа">РАБОТА</option>
+          <div class="modal__inputfield">
+            <label for="context_type" id="context_text" class="modal__lable"> КОНТЕКСТ: </label><br />
+            <select id="context_type" class="input">
+              <option class="modal__context" value=""> </option>
+              <option class="modal__context" value="Дом"> ДОМ</option>
+              <option class="modal__context" value="Телефон"> ТЕЛЕФОН</option>
+              <option class="modal__context" value="Вне дома"> ВНЕ ДОМА</option>
+              <option class="modal__context" value="Компьютер"> КОМПЬЮТЕР</option>
+              <option class="modal__context" value="Делегироване"> ДЕЛЕГИРОВАНИЕ</option>
+              <option class="modal__context" value="Город"> ГОРОД</option>
+              <option class="modal__context" value="Школа"> ШКОЛА</option>
+              <option class="modal__context" value="Детсад"> ДЕТСАД</option>
+              <option class="modal__context" value="Минск"> МИНСК</option>
+              <option class="modal__context" value="Работа">РАБОТА</option>
 
-              </select>
+            </select>
           </div>
 
 
-            <div class="modal__inputfield">
-              <label for="date_type" id="date_text" class="modal__lable"> ДАТА: </label><br />
-              <input type="date" id="date_type" class="input">
-              </input>
+          <div class="modal__inputfield">
+            <label for="date_type" id="date_text" class="modal__lable"> ДАТА: </label><br />
+            <input type="date" id="date_type" class="input">
+            </input>
           </div>
 
-            <button id="close" class="close" title="Close" onclick="closePopup()"></button>
+          <button id="close" class="close" title="Close" onclick="closePopup()"></button>
           <!-- <a href="#" class="close btn">Сохранить</a> -->
           <div>
 
             <button class="modal__button btn" onclick="addValues()">СОХРАНИТЬ</button>
           </div>
         </div>
-        </div>
+      </div>
     </div>
 
     <!-- конец модального окна -->
 
-      <!-- ФУТЕР -->
-      <footer class="footer">
-        <h4 class="footer__text">2022 © DESIGN AND DEVELOPMENT CREATORS</h4>
-      </footer>
-    </div>
+    <!-- ФУТЕР -->
+    <footer class="footer">
+      <h4 class="footer__text">2022 © DESIGN AND DEVELOPMENT CREATORS</h4>
+    </footer>
+  </div>
 
-    <script src="./index.js"></script>
-    <script src="./assets/components/createElement.js"></script>
-  </body>
+  <script src="./index.js"></script>
+  <script src="./assets/components/createElement.js"></script>
+</body>
+
 </html>
