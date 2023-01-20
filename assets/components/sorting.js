@@ -1,3 +1,6 @@
+const titleCategory = document.querySelector(".category-sorting__sort");
+const titleContext = document.querySelector(".contexts__sort");
+
 addEventListener('DOMContentLoaded', () => {
   const arrTasks = getLocStorage("editedTasks");
 
@@ -60,18 +63,20 @@ addEventListener('DOMContentLoaded', () => {
     sortByContext(arrTasks, 'Город');
   }
   else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-delegated") {
-    sortByContext(arrTasks, 'Делегироване');
+    sortByContext(arrTasks, 'Делегировано');
   }
 
 });
 
 function sortByCategory(tasks, category) {
   const arr = tasks.filter(el => el.category === `${category}`);
+  titleCategory.textContent = category;
   insertTasks(arr);
 }
 
 function sortByContext(tasks, context) {
   const arr = tasks.filter(el => el.context === `${context}`);
+  titleContext.textContent = context;
   insertTasks(arr);
 }
 
