@@ -82,10 +82,8 @@ function findTask(el) {
   let task = "";
   // находит в массиве тасков соответсвующий таск по id
   if (window.location.href.split('/').at(-1) == "index.html") {
-    getLocStorage(arrayInbox);
     task = arrayInbox.find(el => el.id == id);
   } else if (window.location.href.split('/').at(-1) != "index.html") {
-    getLocStorage(arrayEditedTask);
     task = arrayEditedTask.find(el => el.id == id);
   }
   // передает имя таска в showTitle
@@ -159,7 +157,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem, ) => {
+const addCard = (objItem,) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -207,7 +205,7 @@ placeInboxList.addEventListener('click', (event) => {
     event.target.parentNode.remove();
     deleteFromArray(id);
 
-  }  else if (event.target.parentNode.classList.contains('inbox__btn-delite')) {
+  } else if (event.target.parentNode.classList.contains('inbox__btn-delite')) {
     let id = event.target.parentNode.parentNode.id;
     event.target.parentNode.parentNode.remove();
     deleteFromArray(id);
@@ -580,23 +578,53 @@ function closePopup() {
   modalWindow.style.display = "none";
 };
 
+let name = document.getElementById("modalInput").value;
+let type = document.getElementById("case_type");
+let category = document.getElementById("project_category");
+let context = document.getElementById("context_type");
+let data = document.getElementById("date_type");
 // висит на онклике кнопки "Сохранить" в модальном окне
 function addValues() {
   // нужный объект найден в функции findTask и записан в глобальную переменную currentObject
   // забирает все значения из полей, записывает их в объект и выводит объект в консоль
+  if (validateModal() == true) {
+    currentObject.name = `${name}`;
+    currentObject.type = `${type.value}`;
+    currentObject.category = `${category.value}`;
+    currentObject.context = `${context.value}`;
+    currentObject.data = `${data.value}`;
+    arrayEditedTask.push(currentObject);
+
+    localStorage.setItem("editedTasks", JSON.stringify(arrayEditedTask));
+
+    let index = arrayInbox.indexOf(currentObject);
+    arrayInbox.splice(index, 1);
+    UpdatedArray();
+    // удаление карточки таска
+    taskCard.remove();
+    sortByType();
+
+    localStorage.setItem("arrayProject", JSON.stringify(arrayProject));
+    localStorage.setItem("arrayReference", JSON.stringify(arrayReference));
+    localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
+    localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList));
+    // закрытие модального окна
+    closePopup();
+    // очищение полей модального окна
+    type.value = "";
+    category.value = "";
+    context.value = "";
+    data.value = "";
+  }
+
+
+}
+
+
+
+function validateModal() {
   const modalTypeErr = document.querySelector('.type_error_message');
   const modalCategoryErr = document.querySelector('.category_error_message')
-  let name = document.getElementById("modalInput").value;
-  currentObject.name = `${name}`;
-  let type = document.getElementById("case_type");
-  currentObject.type = `${type.value}`;
-  let category = document.getElementById("project_category");
-  currentObject.category = `${category.value}`;
-  let context = document.getElementById("context_type");
-  currentObject.context = `${context.value}`;
-  let data = document.getElementById("date_type");
-  currentObject.data = `${data.value}`;
-
   if (type.value == "") {
     modalTypeErr.textContent = "Пожалуйста, укажите тип";
     type.style.border = "1px solid red";
@@ -610,39 +638,13 @@ function addValues() {
     category.style.border = '1px solid #d5dbd9';
     modalTypeErr.textContent = "";
     modalCategoryErr.textContent = "";
-
-    arrayEditedTask.push(currentObject);
-
-    localStorage.setItem("editedTasks", JSON.stringify(arrayEditedTask));
-
-    let index = arrayInbox.indexOf(currentObject);
-    arrayInbox.splice(index, 1);
-    UpdatedArray();
-    taskCard.remove();
-    sortByType();
-
-    localStorage.setItem("arrayProject", JSON.stringify(arrayProject));
-    localStorage.setItem("arrayReference", JSON.stringify(arrayReference));
-    localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
-    localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList));
-
-    closePopup();
-
-    type.value = "";
-    category.value = "";
-    context.value = "";
-    data.value = "";
+    return true;
   }
-  // очищение полей модального окна
-
-  // удаление карточки таска
-  // закрытие модального окна
-
 };
 
-let type = document.getElementById("case_type");
-let context = document.getElementById("context_type");
-let data = document.getElementById("date_type");
+// let type = document.getElementById("case_type");
+// let context = document.getElementById("context_type");
+// let data = document.getElementById("date_type");
 // type.addEventListener('change', (event) => {
 //   if (type.value === 'Справочные материалы') {
 //     context.disabled = true;
@@ -688,11 +690,6 @@ function UpdEditedArray() {
   localStorage.removeItem("editedTasks");
   localStorage.setItem("editedTasks", JSON.stringify(arrayEditedTask));
 }
-
-//ЧЕРНОВИК СОРТИРОВКИ С ВЫВОДОМ В КОНСОЛЬ
-//const projects = document.getElementById('projects');
-//projects.addEventListener('click', sortByType());
-
 
 function sortByType() {
 
@@ -775,8 +772,3 @@ if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
     insertTasks(arrayWaitingList);
   });
 };
-
-function getLocStorage(key) {
-  return JSON.parse(localStorage.getItem(key))
-}
-//return arr.filter((el) => el.type.includes(query));
