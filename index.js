@@ -208,7 +208,7 @@ placeInboxList.addEventListener('click', (event) => {
     event.target.parentNode.remove();
     deleteFromArray(id);
 
-  }  else if (event.target.parentNode.classList.contains('inbox__btn-delite')) {
+  } else if (event.target.parentNode.classList.contains('inbox__btn-delite')) {
     let id = event.target.parentNode.parentNode.id;
     event.target.parentNode.parentNode.remove();
     deleteFromArray(id);
@@ -293,6 +293,33 @@ let updArray;
 let updArray1;
 
 function checkBox(checkbox) {
+//это выведется при сортировке!
+  if (checkbox.checked) {
+    const id = checkbox.parentNode.parentNode.parentNode.id;
+    const task = arrayInbox.find(el => el.id == id);
+    let index = arrayInbox.indexOf(task);
+
+    timeoutID = setTimeout(() =>
+      checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
+    );
+
+    timer = setTimeout(() =>
+      arrayInbox.splice(index, 1), 5000
+    );
+
+    updArray = setTimeout(() =>
+      UpdatedArray(), 5000
+    );
+
+    arrayProgressCounter.push(1);
+
+  } else {
+    clearTimeout(timeoutID);
+    clearTimeout(timer);
+    clearTimeout(updArray);
+    arrayProgressCounter.pop();
+  }
+
   if (window.location.href.split('/').at(-1) == "index.html") {
     if (checkbox.checked) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
