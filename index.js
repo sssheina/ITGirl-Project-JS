@@ -291,42 +291,42 @@ let updArray;
 let updArray1;
 
 function checkBox(checkbox) {
-//это выведется при сортировке!
+  //это выведется при сортировке!
   if (checkbox.checked) {
     const id = checkbox.parentNode.parentNode.parentNode.id;
-      const task = arrayQuick.find(el => el.id == id); // тут должен передаваться нужный массив в зависимости от типа
-      const task1 = arrayEditedTask.find(el => el.id == id);
-      let index = arrayQuick.indexOf(task); // тут должен передаваться нужный массив в зависимости от типа
-      let index1 = arrayEditedTask.indexOf(task1);
-      console.log(index);
-      console.log(index1);
+    const task = arrayQuick.find(el => el.id == id); // тут должен передаваться нужный массив в зависимости от типа
+    const task1 = arrayEditedTask.find(el => el.id == id);
+    let index = arrayQuick.indexOf(task); // тут должен передаваться нужный массив в зависимости от типа
+    let index1 = arrayEditedTask.indexOf(task1);
+    console.log(index);
+    console.log(index1);
 
-      timeoutID = setTimeout(() =>
-        checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
-      );
+    timeoutID = setTimeout(() =>
+      checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
+    );
 
-      timer = setTimeout(() =>
-        arrayQuick.splice(index, 1), 5000, // тут должен передаваться нужный массив в зависимости от типа
-        arrayEditedTask.splice(index1, 1), 5000
-      );
+    timer = setTimeout(() =>
+      arrayQuick.splice(index, 1), 5000, // тут должен передаваться нужный массив в зависимости от типа
+      arrayEditedTask.splice(index1, 1), 5000
+    );
 
-      updArray = setTimeout(() =>
-        UpdatedArray(), 5000 // тут должен передаваться нужный массив в зависимости от типа/ фунеция работает по местонахождению юзера
-      );
+    updArray = setTimeout(() =>
+      UpdatedArray(), 5000 // тут должен передаваться нужный массив в зависимости от типа/ фунеция работает по местонахождению юзера
+    );
 
-      updArray1 = setTimeout(() =>
-        UpdEditedArray(), 5000
-      );
+    updArray1 = setTimeout(() =>
+      UpdEditedArray(), 5000
+    );
 
-      arrayProgressCounter.push(1);
+    arrayProgressCounter.push(1);
 
-    } else {
-      clearTimeout(timeoutID);
-      clearTimeout(timer);
-      clearTimeout(updArray);
-      clearTimeout(updArray1);
-      arrayProgressCounter.pop();
-    }
+  } else {
+    clearTimeout(timeoutID);
+    clearTimeout(timer);
+    clearTimeout(updArray);
+    clearTimeout(updArray1);
+    arrayProgressCounter.pop();
+  }
 
 
   if (window.location.href.split('/').at(-1) == "index.html") {
@@ -617,16 +617,36 @@ function closePopup() {
   modalWindow.style.display = "none";
 };
 
-let name = document.getElementById("modalInput").value;
-let type = document.getElementById("case_type");
-let category = document.getElementById("project_category");
-let context = document.getElementById("context_type");
-let data = document.getElementById("date_type");
+
 // висит на онклике кнопки "Сохранить" в модальном окне
 function addValues() {
   // нужный объект найден в функции findTask и записан в глобальную переменную currentObject
   // забирает все значения из полей, записывает их в объект и выводит объект в консоль
-  if (validateModal() == true) {
+
+  let name = document.getElementById("modalInput").value;
+  let type = document.getElementById("case_type");
+  let category = document.getElementById("project_category");
+  let context = document.getElementById("context_type");
+  let data = document.getElementById("date_type");
+
+  const modalTypeErr = document.querySelector('.type_error_message');
+  const modalCategoryErr = document.querySelector('.category_error_message')
+  if (type.value == "") {
+    modalTypeErr.textContent = "Пожалуйста, укажите тип";
+    type.style.border = "1px solid red";
+  }
+  if (category.value == "") {
+    modalCategoryErr.textContent = "Пожалуйста, укажите категорию";
+    category.style.border = "1px solid red";
+  }
+  if ((type.value != "") && (category.value != "")) {
+    type.style.border = '1px solid #d5dbd9';
+    category.style.border = '1px solid #d5dbd9';
+
+    modalTypeErr.textContent = "";
+    modalCategoryErr.textContent = "";
+
+
     currentObject.name = `${name}`;
     currentObject.type = `${type.value}`;
     currentObject.category = `${category.value}`;
@@ -655,31 +675,11 @@ function addValues() {
     context.value = "";
     data.value = "";
   }
-
-
 }
 
 
 
-function validateModal() {
-  const modalTypeErr = document.querySelector('.type_error_message');
-  const modalCategoryErr = document.querySelector('.category_error_message')
-  if (type.value == "") {
-    modalTypeErr.textContent = "Пожалуйста, укажите тип";
-    type.style.border = "1px solid red";
-  }
-  if (category.value == "") {
-    modalCategoryErr.textContent = "Пожалуйста, укажите категорию";
-    category.style.border = "1px solid red";
-  }
-  if ((type.value != "") && (category.value != "")) {
-    type.style.border = '1px solid #d5dbd9';
-    category.style.border = '1px solid #d5dbd9';
-    modalTypeErr.textContent = "";
-    modalCategoryErr.textContent = "";
-    return true;
-  }
-};
+
 
 // let type = document.getElementById("case_type");
 // let context = document.getElementById("context_type");
