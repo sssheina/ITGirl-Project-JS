@@ -93,7 +93,7 @@ function findTask(el) {
   // записывает в глобальную переменную найденный объект, чтобы передавать его в другие функции
   currentObject = task;
   taskCard = el.parentNode;
-  validateModalWindow(arrayReference);
+  // validateModalWindow(arrayReference);
 }
 
 // засовывает имя таска в модальное окно
@@ -160,7 +160,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem,) => {
+const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -175,9 +175,11 @@ if (window.location.href.split('/').at(-1) == "index.html") {
       validateInboxTask();
     }
   });
-  const inboxErr = document.querySelector('.inboxErr');
+
 
   function validateInboxTask() {
+    const inboxErr = document.querySelector('.inboxErr');
+
     if (inbox.value == "") {
       inboxErr.textContent = "Пожалуйста, запишите входящее дело!";
       inbox.style.border = "2px solid red";
@@ -188,7 +190,6 @@ if (window.location.href.split('/').at(-1) == "index.html") {
       createTaskObject();
       createСard();
       addCard();
-
 
       inbox.value = "";
     }
@@ -203,11 +204,15 @@ if (window.location.href.split('/').at(-1) == "index.html") {
 
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-delite')) {
+    let id = event.target.parentNode.id;
     event.target.parentNode.remove();
-    deleteFromArray(event)
-  } else if (event.target.parentNode.classList.contains('inbox__btn-delite')) {
+    deleteFromArray(id);
+
+  }  else if (event.target.parentNode.classList.contains('inbox__btn-delite')) {
+    let id = event.target.parentNode.parentNode.id;
     event.target.parentNode.parentNode.remove();
-    deleteFromArray(event)
+    deleteFromArray(id);
+
   } else if (event.target.classList.contains('inbox__btn-edit') || (event.target.classList.contains('header__buttonpic-edit'))) {
     modalWindow.style.display = "block";
   }
@@ -216,8 +221,8 @@ placeInboxList.addEventListener('click', (event) => {
   // }
 })
 
-function deleteFromArray(event) {
-  const id = event.target.parentNode.id;
+function deleteFromArray(id) {
+
   if (window.location.href.split('/').at(-1) == "index.html") {
     const task = arrayInbox.find(el => el.id == id);
     let index = arrayInbox.indexOf(task);
@@ -226,14 +231,15 @@ function deleteFromArray(event) {
   }
 
   if (window.location.toString().indexOf('/3_quick.html') > 0) {
+
     let task = arrayQuick.find(el => el.id == id);
     let index = arrayQuick.indexOf(task);
     arrayQuick.splice(index, 1);
     UpdatedArray();
 
-    task = arrayEditedTask.find(el => el.id == id);
-    index = arrayEditedTask.indexOf(task);
-    arrayEditedTask.splice(index, 1);
+    let task1 = arrayEditedTask.find(el => el.id == id);
+    index1 = arrayEditedTask.indexOf(task1);
+    arrayEditedTask.splice(index1, 1);
     UpdEditedArray();
   }
 
@@ -242,10 +248,37 @@ function deleteFromArray(event) {
     let index = arrayProject.indexOf(task);
     arrayProject.splice(index, 1);
     UpdatedArray();
+    console.log(index);
 
-    task = arrayEditedTask.find(el => el.id == id);
-    index = arrayEditedTask.indexOf(task);
-    arrayEditedTask.splice(index, 1);
+
+    let task1 = arrayEditedTask.find(el => el.id == id);
+    let index1 = arrayEditedTask.indexOf(task1);
+    arrayEditedTask.splice(index1, 1);
+    UpdEditedArray();
+    console.log(index1);
+  }
+
+  if (window.location.toString().indexOf('/7_reference.html') > 0) {
+    let task = arrayReference.find(el => el.id == id);
+    let index = arrayReference.indexOf(task);
+    arrayReference.splice(index, 1);
+    UpdatedArray();
+
+    let task1 = arrayEditedTask.find(el => el.id == id);
+    let index1 = arrayEditedTask.indexOf(task1);
+    arrayEditedTask.splice(index1, 1);
+    UpdEditedArray();
+  }
+
+  if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
+    let task = arrayWaitingList.find(el => el.id == id);
+    let index = arrayWaitingList.indexOf(task);
+    arrayWaitingList.splice(index, 1);
+    UpdatedArray();
+
+    let task1 = arrayEditedTask.find(el => el.id == id);
+    let index1 = arrayEditedTask.indexOf(task1);
+    arrayEditedTask.splice(index1, 1);
     UpdEditedArray();
   }
 }
@@ -607,19 +640,20 @@ function addValues() {
   // закрытие модального окна
 
 };
+
 let type = document.getElementById("case_type");
 let context = document.getElementById("context_type");
 let data = document.getElementById("date_type");
-type.addEventListener('change', (event) => {
-  if (type.value === 'Справочные материалы') {
-    context.disabled = true;
-    data.disabled = true;
-  }
-  if (type.value === 'Лист ожидания') {
-    context.disabled = true;
-    data.disabled = true;
-  }
-});
+// type.addEventListener('change', (event) => {
+//   if (type.value === 'Справочные материалы') {
+//     context.disabled = true;
+//     data.disabled = true;
+//   }
+//   if (type.value === 'Лист ожидания') {
+//     context.disabled = true;
+//     data.disabled = true;
+//   }
+// });
 // function isEmpty() {
 
 // }
