@@ -286,7 +286,10 @@ function checkBox(checkbox) {
       );
 
       updArray = setTimeout(() =>
-        UpdatedArray(), 5000,
+        UpdatedArray(), 5000
+      );
+
+      updArray1 = setTimeout(() =>
         UpdEditedArray(), 5000
       );
 
@@ -294,6 +297,7 @@ function checkBox(checkbox) {
       clearTimeout(timeoutID);
       clearTimeout(timer);
       clearTimeout(updArray);
+      clearTimeout(updArray1);
       arrayProgressCounter.pop();
     }
   }
@@ -320,7 +324,10 @@ function checkBox(checkbox) {
       );
 
       updArray = setTimeout(() =>
-        UpdatedArray(), 5000,
+        UpdatedArray(), 5000
+      );
+
+      updArray1 = setTimeout(() =>
         UpdEditedArray(), 5000
       );
 
@@ -328,6 +335,7 @@ function checkBox(checkbox) {
       clearTimeout(timeoutID);
       clearTimeout(timer);
       clearTimeout(updArray);
+      clearTimeout(updArray1);
       arrayProgressCounter.pop();
     }
   }
@@ -354,7 +362,10 @@ function checkBox(checkbox) {
       );
 
       updArray = setTimeout(() =>
-        UpdatedArray(), 5000,
+        UpdatedArray(), 5000
+      );
+
+      updArray1 = setTimeout(() =>
         UpdEditedArray(), 5000
       );
 
@@ -362,11 +373,12 @@ function checkBox(checkbox) {
       clearTimeout(timeoutID);
       clearTimeout(timer);
       clearTimeout(updArray);
+      clearTimeout(updArray1);
       arrayProgressCounter.pop();
     }
   }
 
-  
+
   // let progressCounter = document.querySelector(".header__counter");
   if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
     if (checkbox.checked) {
@@ -389,7 +401,10 @@ function checkBox(checkbox) {
       );
 
       updArray = setTimeout(() =>
-        UpdatedArray(), 5000,
+        UpdatedArray(), 5000
+      );
+
+      updArray1 = setTimeout(() =>
         UpdEditedArray(), 5000
       );
 
@@ -397,6 +412,7 @@ function checkBox(checkbox) {
       clearTimeout(timeoutID);
       clearTimeout(timer);
       clearTimeout(updArray);
+      clearTimeout(updArray1);
       arrayProgressCounter.pop();
     }
   }
@@ -601,7 +617,7 @@ function UpdatedArray() {
     localStorage.removeItem("arrayReference");
     localStorage.setItem("arrayReference", JSON.stringify(arrayReference))
   }
-  
+
   if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
     localStorage.removeItem("arrayWaitingList");
     localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList))
