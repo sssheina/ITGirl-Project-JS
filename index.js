@@ -265,9 +265,7 @@ function checkBox(checkbox) {
     }
   }
 
-  // УДАЛЕНИЕ РАБОТАЕТ ДЛЯ БЫСТРЫХ ДЕЛ!
-
-  if (window.location.toString().indexOf('/3_quick.html') > 0) { 
+  if (window.location.toString().indexOf('/3_quick.html') > 0) {
     if (checkbox.checked) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
       const task = arrayQuick.find(el => el.id == id);
@@ -275,7 +273,7 @@ function checkBox(checkbox) {
       let index = arrayQuick.indexOf(task);
       let index1 = arrayEditedTask.indexOf(task1);
       console.log(index);
-      console.log(index1); 
+      console.log(index1);
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -305,8 +303,11 @@ function checkBox(checkbox) {
     if (checkbox.checked) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
       const task = arrayProject.find(el => el.id == id);
+      const task1 = arrayEditedTask.find(el => el.id == id);
       let index = arrayProject.indexOf(task);
-      // console.log(index);
+      let index1 = arrayEditedTask.indexOf(task1);
+      console.log(index);
+      console.log(index1);
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -314,11 +315,13 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
-        arrayProject.splice(index, 1), 5000
+        arrayProject.splice(index, 1), 5000,
+        arrayEditedTask.splice(index1, 1), 5000
       );
 
       updArray = setTimeout(() =>
-        UpdatedArray(), 5000
+        UpdatedArray(), 5000,
+        UpdEditedArray(), 5000
       );
 
     } else {
@@ -328,12 +331,17 @@ function checkBox(checkbox) {
       arrayProgressCounter.pop();
     }
   }
+
+
   if (window.location.toString().indexOf('/7_reference.html') > 0) {
     if (checkbox.checked) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
       const task = arrayReference.find(el => el.id == id);
+      const task1 = arrayEditedTask.find(el => el.id == id);
       let index = arrayReference.indexOf(task);
-      // console.log(index);
+      let index1 = arrayEditedTask.indexOf(task1);
+      console.log(index);
+      console.log(index1);
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -341,11 +349,13 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
-        arrayReference.splice(index, 1), 5000
+        arrayReference.splice(index, 1), 5000,
+        arrayEditedTask.splice(index1, 1), 5000
       );
 
       updArray = setTimeout(() =>
-        UpdatedArray(), 5000
+        UpdatedArray(), 5000,
+        UpdEditedArray(), 5000
       );
 
     } else {
@@ -355,13 +365,18 @@ function checkBox(checkbox) {
       arrayProgressCounter.pop();
     }
   }
+
+  
   // let progressCounter = document.querySelector(".header__counter");
   if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
     if (checkbox.checked) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
       const task = arrayWaitingList.find(el => el.id == id);
+      const task1 = arrayEditedTask.find(el => el.id == id);
       let index = arrayWaitingList.indexOf(task);
-      // console.log(index);
+      let index1 = arrayEditedTask.indexOf(task1);
+      console.log(index);
+      console.log(index1);
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -369,11 +384,13 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
-        arrayWaitingList.splice(index, 1), 5000
+        arrayWaitingList.splice(index, 1), 5000,
+        arrayEditedTask.splice(index1, 1), 5000
       );
 
       updArray = setTimeout(() =>
-        UpdatedArray(), 5000
+        UpdatedArray(), 5000,
+        UpdEditedArray(), 5000
       );
 
     } else {
@@ -387,7 +404,7 @@ function checkBox(checkbox) {
   progressCounter.textContent = arrayProgressCounter.length;
   localStorage.setItem("progressCounter", JSON.stringify(arrayProgressCounter.length));
 }
-// ЗАГРУЗКА СТРАНИЦЫ________________________________________________
+// ЗАГРУЗКА СТРАНИЦЫ________________________________________________ + добавила парсинг всех массивов!
 
 addEventListener('DOMContentLoaded', () => {
 
@@ -418,10 +435,20 @@ addEventListener('DOMContentLoaded', () => {
   } else {
     arrayProject = JSON.parse(localStorage.getItem("arrayProject"));
   }
-
+  if (localStorage.getItem("arrayReference") === null) {
+    arrayReference = [];
+  } else {
+    arrayReference = JSON.parse(localStorage.getItem("arrayReference"));
+  }
 
   if (window.location.toString().indexOf('/index.html') > 0) {
     insertTasks(arrayInbox);
+  }
+
+  if (localStorage.getItem("arrayWaitingList") === null) {
+    arrayWaitingList = [];
+  } else {
+    arrayWaitingList = JSON.parse(localStorage.getItem("arrayWaitingList"));
   }
 
 });
@@ -567,6 +594,16 @@ function UpdatedArray() {
     localStorage.removeItem("arrayProject");
     localStorage.setItem("arrayProject", JSON.stringify(arrayProject));
   }
+
+  if (window.location.toString().indexOf('/7_reference.html') > 0) {
+    localStorage.removeItem("arrayReference");
+    localStorage.setItem("arrayReference", JSON.stringify(arrayReference))
+  }
+  
+  if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
+    localStorage.removeItem("arrayWaitingList");
+    localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList))
+  }
 };
 
 function UpdEditedArray() {
@@ -593,7 +630,7 @@ function sortByType() {
 
 };
 
-// загрузка массива проекты на страницу проекты с отрисовкой
+// загрузка массива проекты на страницу проекты с отрисовкой + arrayEditedTask
 
 if (window.location.toString().indexOf('/4_projects.html') > 0) {
   document.addEventListener("DOMContentLoaded", () => {
@@ -627,7 +664,7 @@ if (window.location.toString().indexOf('/3_quick.html') > 0) {
   });
 };
 
-// загрузка массива справочные материалы на страницу справочные материалы с отрисовкой
+// загрузка массива справочные материалы на страницу справочные материалы с отрисовкой + arrayEditedTask
 if (window.location.toString().indexOf('/7_reference.html') > 0) {
   document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("arrayReference") === null) {
@@ -644,7 +681,7 @@ if (window.location.toString().indexOf('/7_reference.html') > 0) {
   });
 };
 
-// загрузка массива лист ожилания на страницу лист ожидания с отрисовкой
+// загрузка массива лист ожилания на страницу лист ожидания с отрисовкой + arrayEditedTask
 if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
   document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("arrayWaitingList") === null) {
