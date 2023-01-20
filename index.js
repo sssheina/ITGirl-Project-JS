@@ -83,8 +83,7 @@ function findTask(el) {
   if (window.location.href.split('/').at(-1) == "index.html") {
     getLocStorage(arrayInbox);
     task = arrayInbox.find(el => el.id == id);
-  }
-  else if (window.location.href.split('/').at(-1) !== "index.html") {
+  } else if (window.location.href.split('/').at(-1) !== "index.html") {
     getLocStorage(arrayEditedTask);
     task = arrayEditedTask.find(el => el.id == id);
   }
@@ -120,7 +119,7 @@ const createСard = (obj) => {
   const checkmark = document.createElement('span');
   checkmark.className = "inbox__checkmark checkmark";
 
-  const item = document.createElement('div'); 
+  const item = document.createElement('div');
   item.className = "inbox__item";
   item.textContent = `${inbox.value}`;
 
@@ -161,7 +160,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem,) => {
+const addCard = (objItem, ) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -212,7 +211,7 @@ placeInboxList.addEventListener('click', (event) => {
     }
     if (window.location.toString().indexOf('/4_projects.html') > 0) {
       const id = event.target.parentNode.id;
-      const task = arrayInbox.find(el => el.id == id);
+      const task = arrayProject.find(el => el.id == id);
       let index = arrayProject.indexOf(task);
       arrayProject.splice(index, 1);
       UpdatedArray();
@@ -243,7 +242,7 @@ function checkBox(checkbox) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
       const task = arrayInbox.find(el => el.id == id);
       let index = arrayInbox.indexOf(task);
-      // console.log(index);
+
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -271,7 +270,8 @@ function checkBox(checkbox) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
       const task = arrayQuick.find(el => el.id == id);
       let index = arrayQuick.indexOf(task);
-      // console.log(index);
+      let index1 = arrayEditedTask.indexOf(task);
+      console.log(index + index1);
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -279,13 +279,13 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
-        arrayQuick.splice(index, 1), 5000
+        arrayQuick.splice(index, 1), 5000,
+        arrayEditedTask.splice(index1, 1), 5000
       );
 
       updArray = setTimeout(() =>
         UpdatedArray(), 5000
       );
-      console.log(arrayQuick);
 
     } else {
       clearTimeout(timeoutID);
@@ -334,7 +334,7 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
-      arrayReference.splice(index, 1), 5000
+        arrayReference.splice(index, 1), 5000
       );
 
       updArray = setTimeout(() =>
@@ -362,7 +362,7 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
-      arrayWaitingList.splice(index, 1), 5000
+        arrayWaitingList.splice(index, 1), 5000
       );
 
       updArray = setTimeout(() =>
@@ -393,6 +393,25 @@ addEventListener('DOMContentLoaded', () => {
   } else {
     arrayInbox = JSON.parse(localStorage.getItem("arrayInbox"));
   }
+
+  if (localStorage.getItem("editedTasks") === null) {
+    arrayEditedTask = [];
+  } else {
+    arrayEditedTask = JSON.parse(localStorage.getItem("editedTasks"));
+  }
+
+  if (localStorage.getItem("arrayQuick") === null) {
+    arrayQuick = [];
+  } else {
+    arrayQuick = JSON.parse(localStorage.getItem("arrayQuick"));
+  }
+
+  if (localStorage.getItem("arrayProject") === null) {
+    arrayProject = [];
+  } else {
+    arrayProject = JSON.parse(localStorage.getItem("arrayProject"));
+  }
+
 
   if (window.location.toString().indexOf('/index.html') > 0) {
     insertTasks(arrayInbox);
@@ -470,7 +489,7 @@ function addValues() {
   if (type.value == "") {
     modalTypeErr.textContent = "Пожалуйста, укажите тип";
     type.style.border = "1px solid red";
-  } 
+  }
   if (category.value == "") {
     modalCategoryErr.textContent = "Пожалуйста, укажите категорию";
     category.style.border = "1px solid red";
@@ -487,7 +506,7 @@ function addValues() {
 
     let index = arrayInbox.indexOf(currentObject);
     arrayInbox.splice(index, 1);
-    UpdatedArray();
+    //UpdatedArray();
     taskCard.remove();
     sortByType();
 
@@ -510,18 +529,18 @@ function addValues() {
 
 };
 let type = document.getElementById("case_type");
-let context  = document.getElementById("context_type");
+let context = document.getElementById("context_type");
 let data = document.getElementById("date_type");
-type.addEventListener('change', (event) => {
-if (type.value === 'Справочные материалы') {
- context.disabled = true;
- data.disabled = true;
-}
-if (type.value === 'Лист ожидания') {
-  context.disabled = true;
-  data.disabled = true;
- }
-});
+// type.addEventListener('change', (event) => {
+//   if (type.value === 'Справочные материалы') {
+//     context.disabled = true;
+//     data.disabled = true;
+//   }
+//   if (type.value === 'Лист ожидания') {
+//     context.disabled = true;
+//     data.disabled = true;
+//   }
+// });
 // function isEmpty() {
 
 // }
@@ -571,16 +590,26 @@ if (window.location.toString().indexOf('/4_projects.html') > 0) {
     } else {
       arrayProject = JSON.parse(localStorage.getItem("arrayProject"));
     }
+    if (localStorage.getItem("editedTasks") === null) {
+      arrayEditedTask = [];
+    } else {
+      arrayEditedTask = JSON.parse(localStorage.getItem("editedTasks"));
+    }
     insertTasks(arrayProject);
   });
 };
-// загрузка массива быстрые дела на страницу быстрые дела с отрисовкой
+// загрузка массива быстрые дела & editedtasks на страницу быстрые дела с отрисовкой
 if (window.location.toString().indexOf('/3_quick.html') > 0) {
   document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("arrayQuick") === null) {
       arrayQuick = [];
     } else {
       arrayQuick = JSON.parse(localStorage.getItem("arrayQuick"));
+    }
+    if (localStorage.getItem("editedTasks") === null) {
+      arrayEditedTask = [];
+    } else {
+      arrayEditedTask = JSON.parse(localStorage.getItem("editedTasks"));
     }
     insertTasks(arrayQuick);
   });
@@ -594,9 +623,15 @@ if (window.location.toString().indexOf('/7_reference.html') > 0) {
     } else {
       arrayReference = JSON.parse(localStorage.getItem("arrayReference"));
     }
+    if (localStorage.getItem("editedTasks") === null) {
+      arrayEditedTask = [];
+    } else {
+      arrayEditedTask = JSON.parse(localStorage.getItem("editedTasks"));
+    }
     insertTasks(arrayReference);
   });
 };
+
 // загрузка массива лист ожилания на страницу лист ожидания с отрисовкой
 if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
   document.addEventListener("DOMContentLoaded", () => {
@@ -604,6 +639,11 @@ if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
       arrayWaitingList = [];
     } else {
       arrayWaitingList = JSON.parse(localStorage.getItem("arrayWaitingList"));
+    }
+    if (localStorage.getItem("editedTasks") === null) {
+      arrayEditedTask = [];
+    } else {
+      arrayEditedTask = JSON.parse(localStorage.getItem("editedTasks"));
     }
     insertTasks(arrayWaitingList);
   });
@@ -613,6 +653,3 @@ function getLocStorage(key) {
   return JSON.parse(localStorage.getItem(key))
 }
 //return arr.filter((el) => el.type.includes(query));
-
-
-
