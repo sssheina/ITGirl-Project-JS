@@ -93,6 +93,7 @@ function findTask(el) {
   // записывает в глобальную переменную найденный объект, чтобы передавать его в другие функции
   currentObject = task;
   taskCard = el.parentNode;
+  // validateModalWindow(arrayReference);
 }
 
 // засовывает имя таска в модальное окно
