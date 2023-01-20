@@ -91,6 +91,7 @@ function findTask(el) {
   // записывает в глобальную переменную найденный объект, чтобы передавать его в другие функции
   currentObject = task;
   taskCard = el.parentNode;
+  // validateModalWindow(arrayReference);
 }
 
 // засовывает имя таска в модальное окно
@@ -290,6 +291,44 @@ let updArray;
 let updArray1;
 
 function checkBox(checkbox) {
+//это выведется при сортировке!
+  if (checkbox.checked) {
+    const id = checkbox.parentNode.parentNode.parentNode.id;
+      const task = arrayQuick.find(el => el.id == id); // тут должен передаваться нужный массив в зависимости от типа
+      const task1 = arrayEditedTask.find(el => el.id == id);
+      let index = arrayQuick.indexOf(task); // тут должен передаваться нужный массив в зависимости от типа
+      let index1 = arrayEditedTask.indexOf(task1);
+      console.log(index);
+      console.log(index1);
+
+      timeoutID = setTimeout(() =>
+        checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
+      );
+
+      timer = setTimeout(() =>
+        arrayQuick.splice(index, 1), 5000, // тут должен передаваться нужный массив в зависимости от типа
+        arrayEditedTask.splice(index1, 1), 5000
+      );
+
+      updArray = setTimeout(() =>
+        UpdatedArray(), 5000 // тут должен передаваться нужный массив в зависимости от типа/ фунеция работает по местонахождению юзера
+      );
+
+      updArray1 = setTimeout(() =>
+        UpdEditedArray(), 5000
+      );
+
+      arrayProgressCounter.push(1);
+
+    } else {
+      clearTimeout(timeoutID);
+      clearTimeout(timer);
+      clearTimeout(updArray);
+      clearTimeout(updArray1);
+      arrayProgressCounter.pop();
+    }
+
+
   if (window.location.href.split('/').at(-1) == "index.html") {
     if (checkbox.checked) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
