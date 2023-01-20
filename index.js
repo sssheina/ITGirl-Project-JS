@@ -248,7 +248,6 @@ function checkBox(checkbox) {
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
       );
-      arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
         arrayInbox.splice(index, 1), 5000
@@ -257,6 +256,8 @@ function checkBox(checkbox) {
       updArray = setTimeout(() =>
         UpdatedArray(), 5000
       );
+
+      arrayProgressCounter.push(1);
 
     } else {
       clearTimeout(timeoutID);
@@ -279,7 +280,6 @@ function checkBox(checkbox) {
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
       );
-      arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
         arrayQuick.splice(index, 1), 5000,
@@ -293,6 +293,8 @@ function checkBox(checkbox) {
       updArray1 = setTimeout(() =>
         UpdEditedArray(), 5000
       );
+
+      arrayProgressCounter.push(1);
 
     } else {
       clearTimeout(timeoutID);
@@ -317,7 +319,6 @@ function checkBox(checkbox) {
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
       );
-      arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
         arrayProject.splice(index, 1), 5000,
@@ -331,6 +332,8 @@ function checkBox(checkbox) {
       updArray1 = setTimeout(() =>
         UpdEditedArray(), 5000
       );
+
+      arrayProgressCounter.push(1);
 
     } else {
       clearTimeout(timeoutID);
@@ -355,7 +358,6 @@ function checkBox(checkbox) {
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
       );
-      arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
         arrayReference.splice(index, 1), 5000,
@@ -370,6 +372,8 @@ function checkBox(checkbox) {
         UpdEditedArray(), 5000
       );
 
+      arrayProgressCounter.push(1);
+
     } else {
       clearTimeout(timeoutID);
       clearTimeout(timer);
@@ -380,7 +384,6 @@ function checkBox(checkbox) {
   }
 
 
-  // let progressCounter = document.querySelector(".header__counter");
   if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
     if (checkbox.checked) {
       const id = checkbox.parentNode.parentNode.parentNode.id;
@@ -394,7 +397,6 @@ function checkBox(checkbox) {
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
       );
-      arrayProgressCounter.push(1);
 
       timer = setTimeout(() =>
         arrayWaitingList.splice(index, 1), 5000,
@@ -408,6 +410,8 @@ function checkBox(checkbox) {
       updArray1 = setTimeout(() =>
         UpdEditedArray(), 5000
       );
+
+      arrayProgressCounter.push(1);
 
     } else {
       clearTimeout(timeoutID);
