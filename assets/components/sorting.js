@@ -79,3 +79,4 @@ function sortByContext(tasks, context) {
   titleContext.textContent = context;
   insertTasks(arr);
 }
+
