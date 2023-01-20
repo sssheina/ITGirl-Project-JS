@@ -400,10 +400,12 @@ function checkBox(checkbox) {
       arrayProgressCounter.pop();
     }
   }
-  // let progressCounter = document.querySelector(".header__counter");
+
   progressCounter.textContent = arrayProgressCounter.length;
   localStorage.setItem("progressCounter", JSON.stringify(arrayProgressCounter.length));
 }
+
+
 // ЗАГРУЗКА СТРАНИЦЫ________________________________________________ + добавила парсинг всех массивов!
 
 addEventListener('DOMContentLoaded', () => {
@@ -440,7 +442,7 @@ addEventListener('DOMContentLoaded', () => {
   } else {
     arrayReference = JSON.parse(localStorage.getItem("arrayReference"));
   }
-  
+
   if (localStorage.getItem("arrayWaitingList") === null) {
     arrayWaitingList = [];
   } else {
