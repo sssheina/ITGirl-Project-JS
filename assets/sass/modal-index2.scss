@@ -24,7 +24,7 @@
     right: 40px;
     margin: 0 auto;
     width: 65%;
-    height: 85%;
+    // height: 85%;
     min-width: 260px;
     max-width: 667px;
     // height: 431px;
@@ -43,8 +43,8 @@
     right: 10px;
     width: 32px;
     height: 32px;
-    background-color: #F4A48D;
-    color:#ffffff;
+    background-color: white;
+    color:#F4A48D;
     position: absolute;
     border: none;
     -webkit-border-radius: 50%;
@@ -90,7 +90,7 @@
     font-weight: 800;
     padding-left: 50px;
     // padding-top: 15px;
-    padding-right: 50px;
+    padding-right: 55px;
     justify-content: space-between;
     align-items: center;
     border: 1px dashed #ffffff;
@@ -123,9 +123,13 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 917px;
+    // height: 917px;
+    gap:20px;
+    padding: 30px;
     
   }
+
+  
 
   .modal__inputfield2 {
     display: flex;

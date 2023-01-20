@@ -42,8 +42,8 @@
     right: 10px;
     width: 32px;
     height: 32px;
-    background-color: #F4A48D;
-    color:#ffffff;
+    background-color: white;
+    color:#F4A48D;
     position: absolute;
     border: none;
     -webkit-border-radius: 50%;
@@ -98,6 +98,20 @@
     to   {height: 50px;}
   }
   
+
+  .window_name {
+    width: 667px;
+    // height: 74px;
+    background-color: #F4A48D;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    padding-left: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 55px;
+  }
+
   .task--row {
     height: 50px;
     padding:0 20px;

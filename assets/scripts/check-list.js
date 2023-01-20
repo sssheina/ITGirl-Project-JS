@@ -1,5 +1,5 @@
 const todoInput = document.querySelector('.list-checklists__input');
-const nameChecklist = document.querySelector('.task__head');
+const nameChecklist = document.querySelector('.window_name');
 const nameModalInputChecklist = document.querySelector('.todo__input');
 const modalTodoInput = document.getElementById('todoInput');
 const placeChecklistsList = document.querySelector(".list-checklists__listItems");
