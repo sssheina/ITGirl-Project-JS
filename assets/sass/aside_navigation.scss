@@ -84,6 +84,7 @@ a {
 .menu__tooltip {
   position: relative;
   display: block;
+  z-index: 1;
 }
 
 /* Текст подсказки */
