@@ -1,4 +1,6 @@
-.context-sorting__container, .context-sorting__container-main, .context-sorting__container-page  {
+.context-sorting__container,
+.context-sorting__container-main,
+.context-sorting__container-page {
     display: flex;
     flex-direction: column;
 }
@@ -21,11 +23,13 @@
     align-items: center;
     justify-content: space-between;
 }
-.context-sorting__title, .context-sorting__sort {
+
+.context-sorting__title,
+.context-sorting__sort {
     color: white;
     font-size: 20px;
     font-weight: 800;
-    
+    text-transform: uppercase;
 }
 
 
@@ -40,11 +44,12 @@
     padding: 1.3em;
     // height: 70px;
 }
+
 .context-sorting__item {
-    
+
     font-size: 12px;
     font-weight: 600;
-    
+
 }
 
 
@@ -58,9 +63,10 @@
     flex-direction: row;
 }
 
-.context-sorting__btn-edit, .context-sorting__btn-delite {
+.context-sorting__btn-edit,
+.context-sorting__btn-delite {
     height: 40px;
     width: 40px;
     background-color: #F4A48D;
-    color:white;
+    color: white;
 }
