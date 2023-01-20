@@ -112,22 +112,22 @@
     padding-right: 55px;
   }
 
-  .task--row {
-    height: 50px;
-    padding:0 20px;
-    line-height:50px;
-  }
+  // .task--row {
+  //   height: 50px;
+  //   padding:0 20px;
+  //   line-height:50px;
+  // }
   
-  .task__head {
-    background: #F4A48D;
-    color: white;
-    font-size: 20px;
-    font-weight:800;
-    height: 70px;
-    padding-top: 13px;
+  // .task__head {
+  //   background: #F4A48D;
+  //   color: white;
+  //   font-size: 20px;
+  //   font-weight:800;
+  //   height: 70px;
+  //   padding-top: 13px;
     // border-top-left-radius:6px;
     // border-top-right-radius:6px;
-  }
+  // }
   
 
   // ___________________
@@ -199,6 +199,7 @@
     font-size: 16px;
     font-weight: 800;
     margin-bottom: 50px;
+    margin-top: 50px;
   }
 
   .todo__label {
@@ -243,5 +244,6 @@ height: 40px;
     font-size: 16px;
     font-weight: 800;
     margin-top: 50px;
+    margin-bottom: 50px;
   }
 
