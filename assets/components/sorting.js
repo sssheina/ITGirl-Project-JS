@@ -2,7 +2,8 @@ const titleCategory = document.querySelector(".category-sorting__sort");
 const titleContext = document.querySelector(".contexts__sort");
 
 addEventListener('DOMContentLoaded', () => {
-  const arrTasks = getLocStorage("editedTasks");
+  getLocStorage();
+  arrTasks = arrayEditedTask;
 
   if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-home") {
     sortByCategory(arrTasks, 'Дом');

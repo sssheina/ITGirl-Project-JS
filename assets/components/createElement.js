@@ -77,7 +77,7 @@ function insertTasks(tasks) {
         context.className = 'quick__context outdoors-tag';
       } else if (el.context === 'Компьютер') {
         context.className = 'quick__context computer-tag';
-      } else if (el.context === 'Делегироване') {
+      } else if (el.context === 'Делегировано') {
         context.className = 'quick__context delegating-tag';
       } else if (el.context === 'Город') {
         context.className = 'quick__context city-tag';
