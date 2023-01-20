@@ -38,9 +38,14 @@
   border-right: none;
   border-left: none;
   padding: 1.3em;
-  height: 70px;
+  // height: 70px;
 }
 .projects__item {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.projects__item-name {
   font-size: 12px;
   font-weight: 600;
 }
