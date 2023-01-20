@@ -119,7 +119,7 @@ const createСard = (obj) => {
   const checkmark = document.createElement('span');
   checkmark.className = "inbox__checkmark checkmark";
 
-  const item = document.createElement('div');
+  const item = document.createElement('p');
   item.className = "inbox__item";
   item.textContent = `${inbox.value}`;
 
