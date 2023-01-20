@@ -235,6 +235,7 @@ let timeoutID;
 let progressCounter = document.querySelector(".header__counter");
 let timer;
 let updArray;
+let updArray1;
 
 function checkBox(checkbox) {
   if (window.location.href.split('/').at(-1) == "index.html") {
