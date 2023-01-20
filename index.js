@@ -440,15 +440,15 @@ addEventListener('DOMContentLoaded', () => {
   } else {
     arrayReference = JSON.parse(localStorage.getItem("arrayReference"));
   }
-
-  if (window.location.toString().indexOf('/index.html') > 0) {
-    insertTasks(arrayInbox);
-  }
-
+  
   if (localStorage.getItem("arrayWaitingList") === null) {
     arrayWaitingList = [];
   } else {
     arrayWaitingList = JSON.parse(localStorage.getItem("arrayWaitingList"));
+  }
+
+  if (window.location.toString().indexOf('/index.html') > 0) {
+    insertTasks(arrayInbox);
   }
 
 });
