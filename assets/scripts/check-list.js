@@ -351,7 +351,8 @@ function createTodo() {
   item.innerHTML = todo;
 
   list.appendChild(item);
-  // currentObjectChecklist.Math.random = `${todo}`;
+  // let key = `currentObjectChecklist_${Math.random()}`;
+  // currentObjectChecklist.sub_`${Math.random()}` = `${todo}`;
   console.log(currentObjectChecklist);
   localStorage.setItem("tasks", list.innerHTML);
 
