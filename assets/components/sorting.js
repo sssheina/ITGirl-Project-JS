@@ -4,7 +4,6 @@ addEventListener('DOMContentLoaded', () => {
   if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-home") {
     sortByCategory(arrTasks, 'Дом');
   }
-
   else if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-study") {
     sortByCategory(arrTasks, 'Учеба');
   }

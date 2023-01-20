@@ -57,19 +57,12 @@ function insertTasks(tasks) {
       li.append(category);
     }
 
-
-
-
-
-
     labelCheck.append(inputCheck);
     labelCheck.append(checkmark);
     li.append(check);
     li.append(item);
     item.textContent = el.name;
     check.append(labelCheck);
-
-
 
     if (el.context) {
       li.className = "quick__listItem listItem";

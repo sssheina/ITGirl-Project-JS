@@ -7,7 +7,7 @@ const buttonInboxDelite = document.querySelector(".inbox__btn-delite");
 let inboxItem = document.querySelector(".inbox__item");
 let modalWindow = document.getElementById("overlay");
 let btnClosePopup = document.getElementById("close");
-let nameModale = document.querySelector(".window_name");
+let nameModal = document.querySelector(".window_name");
 const headerButton = document.querySelector(".header__button")
 const modalButton = document.querySelector(".modal__button");
 const modalInput = document.getElementById("modalInput");
@@ -73,6 +73,7 @@ function createTaskObject() {
 
 // _________________________________________________________________
 
+
 // по нажатию на кнопку редактирования у определенного таска вызывается эта функция
 function findTask(el) {
   // забирает id из родительского элемента, который мы дали при создании карточки таска в createCard 
@@ -83,12 +84,10 @@ function findTask(el) {
   if (window.location.href.split('/').at(-1) == "index.html") {
     getLocStorage(arrayInbox);
     task = arrayInbox.find(el => el.id == id);
-  } else if (window.location.href.split('/').at(-1) !== "index.html") {
+  } else if (window.location.href.split('/').at(-1) != "index.html") {
     getLocStorage(arrayEditedTask);
     task = arrayEditedTask.find(el => el.id == id);
   }
-
-
   // передает имя таска в showTitle
   showTitle(task.name);
   // записывает в глобальную переменную найденный объект, чтобы передавать его в другие функции
@@ -98,7 +97,7 @@ function findTask(el) {
 
 // засовывает имя таска в модальное окно
 function showTitle(title) {
-  nameModale.innerHTML = `${title}`;
+  nameModal.innerHTML = `${title}`;
   modalInput.innerHTML = `${title}`;
 }
 
@@ -119,7 +118,7 @@ const createСard = (obj) => {
   const checkmark = document.createElement('span');
   checkmark.className = "inbox__checkmark checkmark";
 
-  const item = document.createElement('div');
+  const item = document.createElement('p');
   item.className = "inbox__item";
   item.textContent = `${inbox.value}`;
 
@@ -160,7 +159,7 @@ const createСard = (obj) => {
   return block;
 }
 
-const addCard = (objItem, ) => {
+const addCard = (objItem,) => {
   const item = createСard(objItem);
   placeInboxList.appendChild(item);
 }
@@ -194,39 +193,55 @@ if (window.location.href.split('/').at(-1) == "index.html") {
 placeInboxList.addEventListener('click', (event) => {
   if (event.target.classList.contains('inbox__btn-delite')) {
     event.target.parentNode.remove();
-    if (window.location.href.split('/').at(-1) == "index.html") {
-      const id = event.target.parentNode.id;
-      const task = arrayInbox.find(el => el.id == id);
-      let index = arrayInbox.indexOf(task);
-      arrayInbox.splice(index, 1);
-      UpdatedArray();
-    }
-
-    if (window.location.toString().indexOf('/3_quick.html') > 0) {
-      const id = event.target.parentNode.id;
-      const task = arrayQuick.find(el => el.id == id);
-      let index = arrayQuick.indexOf(task);
-      arrayQuick.splice(index, 1);
-      UpdatedArray();
-    }
-    if (window.location.toString().indexOf('/4_projects.html') > 0) {
-      const id = event.target.parentNode.id;
-      const task = arrayProject.find(el => el.id == id);
-      let index = arrayProject.indexOf(task);
-      arrayProject.splice(index, 1);
-      UpdatedArray();
-    }
+    deleteFromArray(event)
   }
-});
 
-placeInboxList.addEventListener('click', (event) => {
-  if (event.target.classList.contains('inbox__btn-edit')) {
+  else if (event.target.parentNode.classList.contains('inbox__btn-delite')) {
+    event.target.parentNode.parentNode.remove();
+    deleteFromArray(event)
+  }
+
+  else if (event.target.classList.contains('inbox__btn-edit') || (event.target.classList.contains('header__buttonpic-edit'))) {
     modalWindow.style.display = "block";
   }
   // else if (event.target.classList.contains('overlay')) {
   //   modalWindow.style.display = "none";
   // }
 })
+
+function deleteFromArray(event) {
+  const id = event.target.parentNode.id;
+  if (window.location.href.split('/').at(-1) == "index.html") {
+    const task = arrayInbox.find(el => el.id == id);
+    let index = arrayInbox.indexOf(task);
+    arrayInbox.splice(index, 1);
+    UpdatedArray();
+  }
+
+  if (window.location.toString().indexOf('/3_quick.html') > 0) {
+    let task = arrayQuick.find(el => el.id == id);
+    let index = arrayQuick.indexOf(task);
+    arrayQuick.splice(index, 1);
+    UpdatedArray();
+
+    task = arrayEditedTask.find(el => el.id == id);
+    index = arrayEditedTask.indexOf(task);
+    arrayEditedTask.splice(index, 1);
+    UpdEditedArray();
+  }
+
+  if (window.location.toString().indexOf('/4_projects.html') > 0) {
+    let task = arrayProject.find(el => el.id == id);
+    let index = arrayProject.indexOf(task);
+    arrayProject.splice(index, 1);
+    UpdatedArray();
+
+    task = arrayEditedTask.find(el => el.id == id);
+    index = arrayEditedTask.indexOf(task);
+    arrayEditedTask.splice(index, 1);
+    UpdEditedArray();
+  }
+}
 
 // ЧЕКБОКС И СЧЕТЧИК______________________________________________________
 
