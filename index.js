@@ -32,7 +32,6 @@ function giveId() {
   } else {
     id = Number(localStorage.getItem("lastTaskId")) + 1;
   }
-  // console.log(id);
   return id;
 }
 
@@ -56,19 +55,6 @@ function createTaskObject() {
   // сохраняем в локальное хранилище последний использованный Id
   localStorage.setItem('lastTaskId', JSON.stringify(objInbox.id));
 }
-
-// ЛОКАЛЬНОЕ ХРАНИЛИЩЕ_______________________
-
-// window.addEventListener('storage', event => {
-//   // console.log(event);
-
-// })
-
-
-// window.addEventListener('storage', function (e) {
-//   console.log('change');
-//   document.querySelector('.out').textContent = localStorage.getItem('b1');
-// });
 
 
 // _________________________________________________________________
@@ -246,14 +232,12 @@ function deleteFromArray(id) {
     let index = arrayProject.indexOf(task);
     arrayProject.splice(index, 1);
     UpdatedArray();
-    console.log(index);
 
 
     let task1 = arrayEditedTask.find(el => el.id == id);
     let index1 = arrayEditedTask.indexOf(task1);
     arrayEditedTask.splice(index1, 1);
     UpdEditedArray();
-    console.log(index1);
   }
 
   if (window.location.toString().indexOf('/7_reference.html') > 0) {
@@ -287,47 +271,26 @@ let arrayProgressCounter = [];
 let timeoutID;
 let progressCounter = document.querySelector(".header__counter");
 let timer;
+let timer1;
 let updArray;
 let updArray1;
 
 function checkBox(checkbox) {
-  //это выведется при сортировке!
-  if (checkbox.checked) {
+  if ((window.location.href.indexOf("category_sorting") > 0) || (((window.location.href.indexOf("context_sorting") > 0)))) {
     const id = checkbox.parentNode.parentNode.parentNode.id;
-    const task = arrayQuick.find(el => el.id == id); // тут должен передаваться нужный массив в зависимости от типа
-    const task1 = arrayEditedTask.find(el => el.id == id);
-    let index = arrayQuick.indexOf(task); // тут должен передаваться нужный массив в зависимости от типа
-    let index1 = arrayEditedTask.indexOf(task1);
-    console.log(index);
-    console.log(index1);
+    if (checkbox.checked) {
+      deleteFromAllArrays(checkbox, id);
 
-    timeoutID = setTimeout(() =>
-      checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
-    );
+      timeoutID = setTimeout(() =>
+        checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
+      );
 
-    timer = setTimeout(() =>
-      arrayQuick.splice(index, 1), 5000, // тут должен передаваться нужный массив в зависимости от типа
-      arrayEditedTask.splice(index1, 1), 5000
-    );
+      arrayProgressCounter.push(1);
 
-    updArray = setTimeout(() =>
-      UpdatedArray(), 5000 // тут должен передаваться нужный массив в зависимости от типа/ фунеция работает по местонахождению юзера
-    );
-
-    updArray1 = setTimeout(() =>
-      UpdEditedArray(), 5000
-    );
-
-    arrayProgressCounter.push(1);
-
-  } else {
-    clearTimeout(timeoutID);
-    clearTimeout(timer);
-    clearTimeout(updArray);
-    clearTimeout(updArray1);
-    arrayProgressCounter.pop();
+    } else {
+      clearEverithing();
+    }
   }
-
 
   if (window.location.href.split('/').at(-1) == "index.html") {
     if (checkbox.checked) {
@@ -351,10 +314,7 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
     } else {
-      clearTimeout(timeoutID);
-      clearTimeout(timer);
-      clearTimeout(updArray);
-      arrayProgressCounter.pop();
+      clearEverithing();
     }
   }
 
@@ -365,8 +325,6 @@ function checkBox(checkbox) {
       const task1 = arrayEditedTask.find(el => el.id == id);
       let index = arrayQuick.indexOf(task);
       let index1 = arrayEditedTask.indexOf(task1);
-      console.log(index);
-      console.log(index1);
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -388,11 +346,7 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
     } else {
-      clearTimeout(timeoutID);
-      clearTimeout(timer);
-      clearTimeout(updArray);
-      clearTimeout(updArray1);
-      arrayProgressCounter.pop();
+      clearEverithing();
     }
   }
 
@@ -404,8 +358,6 @@ function checkBox(checkbox) {
       const task1 = arrayEditedTask.find(el => el.id == id);
       let index = arrayProject.indexOf(task);
       let index1 = arrayEditedTask.indexOf(task1);
-      console.log(index);
-      console.log(index1);
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -427,11 +379,7 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
     } else {
-      clearTimeout(timeoutID);
-      clearTimeout(timer);
-      clearTimeout(updArray);
-      clearTimeout(updArray1);
-      arrayProgressCounter.pop();
+      clearEverithing();
     }
   }
 
@@ -443,8 +391,6 @@ function checkBox(checkbox) {
       const task1 = arrayEditedTask.find(el => el.id == id);
       let index = arrayReference.indexOf(task);
       let index1 = arrayEditedTask.indexOf(task1);
-      console.log(index);
-      console.log(index1);
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -466,11 +412,7 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
     } else {
-      clearTimeout(timeoutID);
-      clearTimeout(timer);
-      clearTimeout(updArray);
-      clearTimeout(updArray1);
-      arrayProgressCounter.pop();
+      clearEverithing();
     }
   }
 
@@ -482,8 +424,6 @@ function checkBox(checkbox) {
       const task1 = arrayEditedTask.find(el => el.id == id);
       let index = arrayWaitingList.indexOf(task);
       let index1 = arrayEditedTask.indexOf(task1);
-      console.log(index);
-      console.log(index1);
 
       timeoutID = setTimeout(() =>
         checkbox.parentNode.parentNode.parentNode.style.display = 'none', 5000
@@ -505,11 +445,7 @@ function checkBox(checkbox) {
       arrayProgressCounter.push(1);
 
     } else {
-      clearTimeout(timeoutID);
-      clearTimeout(timer);
-      clearTimeout(updArray);
-      clearTimeout(updArray1);
-      arrayProgressCounter.pop();
+      clearEverithing();
     }
   }
 
@@ -517,6 +453,98 @@ function checkBox(checkbox) {
   localStorage.setItem("progressCounter", JSON.stringify(arrayProgressCounter.length));
 }
 
+function clearEverithing() {
+  clearTimeout(timeoutID);
+  clearTimeout(timer);
+  clearTimeout(updArray);
+  clearTimeout(updArray1);
+  arrayProgressCounter.pop();
+}
+
+function deleteFromAllArrays(check, id) {
+  console.log(arrayQuick);
+  let task;
+  let index;
+  // console.log(id);
+  if (check.checked) {
+
+    task = arrayProject.find(el => el.id == id);
+    index = arrayProject.indexOf(task);
+
+    timer = setTimeout(() =>
+      arrayProject.splice(index, 1), 5000,
+    );
+
+    updArray = setTimeout(() =>
+      updArrayTemplate('arrayProject', arrayProject), 5000 // тут должен передаваться нужный массив в зависимости от типа/ фунеция работает по местонахождению юзера
+    );
+
+  } else {
+    clearEverithing();
+  }
+  if (check.checked) {
+
+    task = arrayQuick.find(el => el.id == id);
+    index = arrayQuick.indexOf(task);
+
+    timer = setTimeout(() =>
+      arrayQuick.splice(index, 1), 5000,
+    );
+
+    updArray = setTimeout(() =>
+      updArrayTemplate('arrayQuick', arrayQuick), 5000
+    );
+
+  } else {
+    clearEverithing();
+  }
+  if (check.checked) {
+    task = arrayReference.find(el => el.id == id);
+    index = arrayReference.indexOf(task);
+
+    timer = setTimeout(() =>
+      arrayReference.splice(index, 1), 5000,
+    );
+
+    updArray = setTimeout(() =>
+      updArrayTemplate('arrayReference', arrayReference), 5000
+    );
+
+  } else {
+    clearEverithing();
+  }
+  if (check.checked) {
+    task = arrayWaitingList.find(el => el.id == id);
+    index = arrayWaitingList.indexOf(task);
+
+    timer = setTimeout(() =>
+      arrayWaitingList.splice(index, 1), 5000,
+    );
+
+    updArray = setTimeout(() =>
+      updArrayTemplate('arrayWaitingList', arrayWaitingList), 5000
+    );
+
+  } else {
+    clearEverithing();
+  }
+  if (check.checked) {
+
+    task = arrayEditedTask.find(el => el.id == id);
+    index = arrayEditedTask.indexOf(task);
+
+    timer = setTimeout(() =>
+      arrayEditedTask.splice(index, 1), 5000,
+    );
+
+    updArray = setTimeout(() =>
+      updArrayTemplate('editedTasks', arrayEditedTask), 5000
+    );
+
+  } else {
+    clearEverithing();
+  }
+}
 
 // ЗАГРУЗКА СТРАНИЦЫ________________________________________________ + добавила парсинг всех массивов!
 
@@ -526,7 +554,41 @@ addEventListener('DOMContentLoaded', () => {
   arrayProgressCounter.length = lastLenghtCounter;
   progressCounter.textContent = arrayProgressCounter.length;
 
-  getLocStorage();
+  if (localStorage.getItem("arrayInbox") === null) {
+    arrayInbox = [];
+  } else {
+    arrayInbox = JSON.parse(localStorage.getItem("arrayInbox"));
+  }
+
+  if (localStorage.getItem("editedTasks") === null) {
+    arrayEditedTask = [];
+  } else {
+    arrayEditedTask = JSON.parse(localStorage.getItem("editedTasks"));
+  }
+
+  if (localStorage.getItem("arrayQuick") === null) {
+    arrayQuick = [];
+  } else {
+    arrayQuick = JSON.parse(localStorage.getItem("arrayQuick"));
+  }
+
+  if (localStorage.getItem("arrayProject") === null) {
+    arrayProject = [];
+  } else {
+    arrayProject = JSON.parse(localStorage.getItem("arrayProject"));
+  }
+  if (localStorage.getItem("arrayReference") === null) {
+    arrayReference = [];
+  } else {
+    arrayReference = JSON.parse(localStorage.getItem("arrayReference"));
+  }
+
+  if (localStorage.getItem("arrayWaitingList") === null) {
+    arrayWaitingList = [];
+  } else {
+    arrayWaitingList = JSON.parse(localStorage.getItem("arrayWaitingList"));
+  }
+
   if (window.location.toString().indexOf('/index.html') > 0) {
     insertTasks(arrayInbox);
   }
@@ -620,10 +682,10 @@ function addValues() {
     currentObject.data = `${data.value}`;
     arrayEditedTask.push(currentObject);
 
-    localStorage.setItem("editedTasks", JSON.stringify(arrayEditedTask));
 
     let index = arrayInbox.indexOf(currentObject);
     arrayInbox.splice(index, 1);
+    localStorage.setItem("editedTasks", JSON.stringify(arrayEditedTask));
     UpdatedArray();
     // удаление карточки таска
     taskCard.remove();
@@ -667,29 +729,28 @@ function addValues() {
 
 function UpdatedArray() {
   if (window.location.href.split('/').at(-1) == "index.html") {
-    localStorage.removeItem("arrayInbox");
-    localStorage.setItem("arrayInbox", JSON.stringify(arrayInbox));
+    updArrayTemplate('arrayInbox', arrayInbox);
   }
 
   if (window.location.toString().indexOf('/3_quick.html') > 0) {
-    localStorage.removeItem("arrayQuick");
-    localStorage.setItem("arrayQuick", JSON.stringify(arrayQuick));
+    updArrayTemplate('arrayQuick', arrayQuick);
   }
   if (window.location.toString().indexOf('/4_projects.html') > 0) {
-    localStorage.removeItem("arrayProject");
-    localStorage.setItem("arrayProject", JSON.stringify(arrayProject));
+    updArrayTemplate('arrayProject', arrayProject);
   }
 
   if (window.location.toString().indexOf('/7_reference.html') > 0) {
-    localStorage.removeItem("arrayReference");
-    localStorage.setItem("arrayReference", JSON.stringify(arrayReference))
+    updArrayTemplate('arrayReference', arrayReference);
   }
 
   if (window.location.toString().indexOf('/8_waiting-list.html') > 0) {
-    localStorage.removeItem("arrayWaitingList");
-    localStorage.setItem("arrayWaitingList", JSON.stringify(arrayWaitingList))
+    updArrayTemplate('arrayReference', arrayWaitingList);
   }
 };
+
+function updArrayTemplate(name, arr) {
+  localStorage.setItem(name, JSON.stringify(arr));
+}
 
 function UpdEditedArray() {
   localStorage.removeItem("editedTasks");

@@ -2,7 +2,6 @@ const titleCategory = document.querySelector(".category-sorting__sort");
 const titleContext = document.querySelector(".contexts__sort");
 
 addEventListener('DOMContentLoaded', () => {
-  getLocStorage();
   arrTasks = arrayEditedTask;
 
   if (window.location.href.split('/').at(-1) == "10_category_sorting.html?category-home") {
@@ -66,6 +65,9 @@ addEventListener('DOMContentLoaded', () => {
   else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-delegated") {
     sortByContext(arrTasks, 'Делегировано');
   }
+  else if (window.location.href.split('/').at(-1) == "12_context_sorting.html?context-work") {
+    sortByContext(arrTasks, 'Работа');
+  }
 
 });
 
@@ -80,4 +82,3 @@ function sortByContext(tasks, context) {
   titleContext.textContent = context;
   insertTasks(arr);
 }
-
