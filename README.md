@@ -1,7 +1,7 @@
 
 # GTD planner
 
-<p align="center">About the project:</p>
+
 <p align="center">
     <img src="https://img.shields.io/github/issues/sssheina/ITGirl-Project-JS">
     <img src="https://img.shields.io/github/forks/sssheina/ITGirl-Project-JS">
