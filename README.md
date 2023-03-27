@@ -63,7 +63,6 @@ We made array lists with pop-up modal windows, as our task was to practice JS an
 We wanted to implement this project as best we could. There were so many things we wanted to add, and we needed to do so many things so that every feature was also very useful. Communication and clear results were key, especially with our big time difference.
 
 But we were faced with the issue of storing personal data, which in this project is still stored in Local Storage.
-
 <br>
 <br>
 
