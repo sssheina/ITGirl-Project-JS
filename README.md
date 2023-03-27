@@ -74,7 +74,7 @@ Exploring new areas of development and new languages and frameworks that we now 
 
 ## What's next for GTD planner
 
-We plan to complete the JS part, and make a plan to write the backend part of the project. And do user authorisation for better usability.
+We would like to keep working, create a useful application and collaborate with more community members to develop the backend part of the project. And do user authorisation for better usability.
 <br>
 <br>
 
