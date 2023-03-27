@@ -85,7 +85,7 @@ We would like to keep working, create a useful application and collaborate with 
 <td align="center"><a href="https://github.com/sssheina"><img src="https://avatars.githubusercontent.com/u/108290460?v=4" width="100px;" alt=""/><br /><sub><b>Veta Sheina</b></sub></a></td></tr>
 </table>
 <br>
-<br>
+
 
 ## Thanks to all Contributors 💪
 Thanks a lot for spending your time helping GTD planner grow. Thanks a lot! Keep rocking!
@@ -93,7 +93,7 @@ Thanks a lot for spending your time helping GTD planner grow. Thanks a lot! Keep
 [![Contributors](https://contrib.rocks/image?repo=sssheina/ITGirl-Project-JS)](https://github.com/sssheina/ITGirl-Project-JS/graphs/contributors)
 
 <br>
-<br>
+
 
 <h2>Contacts</h2>
 
