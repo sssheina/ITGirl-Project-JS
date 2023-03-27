@@ -57,3 +57,16 @@ First I built a hierarchy of task lists and made a prototype in Figma, based on 
 We made array lists with pop-up modal windows, as our task was to practice JS and CSS skills.
 <br>
 <br>
+
+## Challenges we ran into
+
+We wanted to implement this project as best we could. There were so many things we wanted to add, and we needed to do so many things so that every feature was also very useful. Communication and clear results were key, especially with our big time difference.
+
+But we were faced with the issue of storing personal data, which in this project is still stored in Local Storage.
+
+<br>
+<br>
+
+## Accomplishments that we're proud of
+
+Exploring new areas of development and new languages and frameworks that we now feel we can confidently continue to build for our own projects. We have done so much during our time working on the project, and we are so proud of what we have created and how this application can help us and others improve the quality of life.
