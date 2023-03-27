@@ -84,4 +84,4 @@ We plan to complete the JS part, and make a plan to write the backend part of th
 
 <h2>Contacts</h2>
 
-**Veta Sheina** – (LinkedIn) *[https://www.linkedin.com/in/olga-bulgakova-014254243/](https://www.linkedin.com/in/veta-sheina-521666249/)* – (E-mail) - sviatlana.v.sheina@gmail.com*
+**Veta Sheina** – (LinkedIn) *https://www.linkedin.com/in/veta-sheina-521666249/* – (E-mail) - sviatlana.v.sheina@gmail.com*
