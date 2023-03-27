@@ -1,6 +1,22 @@
 
 # GTD planner
 
+<p align="center">About the project:</p>
+<p align="center">
+    <img src="https://img.shields.io/github/issues/sssheina/ITGirl-Project-JS"> 
+    <img src="https://img.shields.io/github/issues-pr/sssheina/ITGirl-Project-JS">
+    <img src="https://img.shields.io/github/forks/sssheina/ITGirl-Project-JS">
+    <img src="https://img.shields.io/github/stars/sssheina/ITGirl-Project-JS">
+    <img src="https://img.shields.io/github/license/sssheina/ITGirl-Project-JS">
+</p>
+
+<p align="center">Tech Stack:</p>
+<p align="center">
+    <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"> 
+    <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
+    <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
+    <img src="https://img.shields.io/badge/Sass-ff69b4?style=for-the-badge&logo=sass&logoColor=white">
+</p>
 <br>
 <br>
 
