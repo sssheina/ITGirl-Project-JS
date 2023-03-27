@@ -69,3 +69,19 @@ But we were faced with the issue of storing personal data, which in this project
 ## Accomplishments that we're proud of
 
 Exploring new areas of development and new languages and frameworks that we now feel we can confidently continue to build for our own projects. We have done so much during our time working on the project, and we are so proud of what we have created and how this application can help us and others improve the quality of life.
+<br>
+<br>
+
+## What's next for GTD planner
+
+We plan to complete the JS part, and make a plan to write the backend part of the project. And do user authorisation for better usability.
+<br>
+<br>
+
+
+
+
+
+<h2>Contacts</h2>
+
+**Veta Sheina** – (LinkedIn) *[https://www.linkedin.com/in/olga-bulgakova-014254243/](https://www.linkedin.com/in/veta-sheina-521666249/)* – (E-mail) - sviatlana.v.sheina@gmail.com*
