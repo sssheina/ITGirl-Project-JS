@@ -48,3 +48,12 @@ https://user-images.githubusercontent.com/108290460/228015369-c30a9780-611e-4c52
 [<img width="700" src="https://user-images.githubusercontent.com/108290460/228018052-faf8762e-eab7-4848-aaa4-cf3165717e54.png"/>](https://sssheina.github.io/ITGirl-Project-JS/)
 <br>
 <br>
+
+## How we built it
+
+We wanted to best model the work environment, so we started with an in-depth understanding of the problem with a proper focus group survey, which led to the creation of functions and prioritisation of those functions. After prioritising, we divided the workload into small parts.
+
+First I built a hierarchy of task lists and made a prototype in Figma, based on which I implemented the layout design. 
+We made array lists with pop-up modal windows, as our task was to practice JS and CSS skills.
+<br>
+<br>
