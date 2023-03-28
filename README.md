@@ -34,7 +34,7 @@ After learning about the GTD (Getting Things Done)  planning system and trying t
 <br>
 
 ## Brief overview video:
->For a brief explanation about PetMe, you can watch the following video.
+>For a brief explanation about GTD planner, you can watch the following video.
 
 https://user-images.githubusercontent.com/108290460/228015369-c30a9780-611e-4c52-a752-8be0bb71c322.mov
 
