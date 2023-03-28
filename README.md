@@ -97,7 +97,7 @@ Thanks a lot for spending your time helping GTD planner grow. Thanks a lot! Keep
 
 ## Contacts
 
-📫**Veta Sheina**: sviatlana.v.sheina@gmail.com
+📫 How to reach me: sviatlana.v.sheina@gmail.com
 
  <a href="https://www.linkedin.com/in/veta-sheina-521666249" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
