@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sssheina/ITGirl-Project-JS#readme",
   "dependencies": {
-    "browserify": "^17.0.0"
+    "browserify": "^17.0.0",
+    "elliptic": "^6.5.7"
   }
 }
